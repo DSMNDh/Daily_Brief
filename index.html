@@ -3,96 +3,142 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mamee Brief — Saturday, 18 April 2026</title>
+<title>Mamee Intelligence Brief — 17 April 2026</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
-    --bg: #0f0f13;
-    --surface: #1a1a24;
-    --surface2: #22222f;
-    --border: #2e2e3e;
-    --text: #e2e2ef;
-    --text-dim: #888899;
-    --accent: #6366F1;
-    --accent2: #818cf8;
-    --red: #ef4444;
-    --green: #22c55e;
-    --yellow: #eab308;
-    --orange: #f97316;
+    --red: #E8192C; --yellow: #FFD000;
+    --dark: #0D0D0D; --dark2: #1A1A1A; --dark3: #242424; --dark4: #2E2E2E;
+    --muted: #888; --text: #F0F0F0; --text-dim: #AAAAAA; --border: rgba(255,255,255,0.07);
+    --green: #22C55E; --blue: #3B82F6; --purple: #A855F7; --orange: #F97316;
+    --teal: #14B8A6; --indigo: #6366F1;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 14px; line-height: 1.5; padding: 20px; }
-  .header { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
+  body { font-family: 'Inter', sans-serif; background: var(--dark); color: var(--text); font-size: 14px; line-height: 1.6; }
+  .header { background: linear-gradient(135deg, #0D0D0D 0%, #1a0508 50%, #0D0D0D 100%); border-bottom: 1px solid var(--border); padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
   .header-left { display: flex; align-items: center; gap: 16px; }
-  .logo { width: 48px; height: 48px; background: linear-gradient(135deg, #6366F1, #818cf8); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
-  .header-title { font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
-  .header-sub { font-size: 12px; color: var(--text-dim); margin-top: 2px; }
-  .header-date { font-size: 13px; color: var(--text-dim); text-align: right; }
-  .header-date strong { display: block; font-size: 16px; color: var(--text); }
-  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .grid-wide { grid-column: 1 / -1; }
-  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
-  .card-accent { height: 3px; border-radius: 2px; margin-bottom: 16px; }
-  .card-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent2); margin-bottom: 4px; }
-  .card-headline { font-size: 15px; font-weight: 600; margin-bottom: 12px; }
-  .signal { padding: 12px 0; border-bottom: 1px solid var(--border); }
-  .signal:last-child { border-bottom: none; padding-bottom: 0; }
-  .signal-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-dim); margin-bottom: 4px; }
-  .signal-text { font-size: 13px; color: var(--text); }
-  .signal-text a { color: var(--accent2); text-decoration: none; }
-  .signal-meta { font-size: 11px; color: var(--text-dim); margin-top: 4px; }
-  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-  .badge-red { background: rgba(239,68,68,0.15); color: var(--red); }
-  .badge-green { background: rgba(34,197,94,0.15); color: var(--green); }
-  .badge-yellow { background: rgba(234,179,8,0.15); color: var(--yellow); }
-  .badge-blue { background: rgba(99,102,241,0.15); color: var(--accent2); }
-  .tag { display: inline-block; padding: 3px 10px; background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; font-size: 11px; color: var(--text-dim); margin: 3px 3px 3px 0; }
-  .ideas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-  .idea-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 14px; }
-  .idea-num { font-size: 10px; font-weight: 700; color: var(--accent2); margin-bottom: 6px; }
-  .idea-title { font-size: 12px; font-weight: 600; margin-bottom: 4px; }
-  .idea-body { font-size: 11px; color: var(--text-dim); }
-  .watchlist-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-  .watch-item { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
-  .watch-brand { font-size: 12px; font-weight: 700; margin-bottom: 4px; }
-  .watch-move { font-size: 11px; color: var(--text-dim); }
-  .card-fmcg .card-accent { background: linear-gradient(90deg, #22c55e, #4ade80); }
-  .card-fmcg .card-title { color: #4ade80; }
-  .card-social .card-accent { background: linear-gradient(90deg, #f97316, #fb923c); }
-  .card-social .card-title { color: #fb923c; }
-  .card-creative .card-accent { background: linear-gradient(90deg, #a855f7, #c084fc); }
-  .card-creative .card-title { color: #c084fc; }
-  .card-news .card-accent { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
-  .card-news .card-title { color: #60a5fa; }
+  .logo-mark { width: 40px; height: 40px; background: var(--red); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 16px; color: white; flex-shrink: 0; }
+  .header-title { font-size: 15px; font-weight: 700; color: white; }
+  .header-sub { font-size: 11px; color: var(--text-dim); margin-top: 1px; }
+  .header-right { display: flex; align-items: center; gap: 12px; }
+  .date-badge { background: var(--dark3); border: 1px solid var(--border); padding: 6px 14px; border-radius: 100px; font-size: 12px; font-weight: 500; color: var(--text-dim); }
+  .live-dot { display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: var(--green); text-transform: uppercase; letter-spacing: 0.5px; }
+  .live-dot::before { content: ''; width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .hero { margin: 28px 32px 0; background: linear-gradient(135deg, #1a0205 0%, #2d0510 50%, #1a0208 100%); border: 1px solid rgba(232,25,44,0.3); border-radius: 16px; padding: 28px 32px; position: relative; overflow: hidden; }
+  .hero::before { content:''; position:absolute; top:-60px; right:-60px; width:200px; height:200px; background:radial-gradient(circle, rgba(232,25,44,0.12) 0%, transparent 70%); pointer-events:none; }
+  .hero-label { display: inline-flex; align-items: center; gap: 6px; background: rgba(232,25,44,0.15); border: 1px solid rgba(232,25,44,0.3); color: #ff4d5e; padding: 4px 12px; border-radius: 100px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; }
+  .hero-title { font-size: 20px; font-weight: 800; color: white; line-height: 1.3; margin-bottom: 10px; letter-spacing: -0.5px; }
+  .hero-body { font-size: 13.5px; color: #CCCCCC; line-height: 1.7; max-width: 800px; }
+  .hero-source { margin-top: 14px; font-size: 11px; color: var(--text-dim); }
+  .hero-source a { color: #ff4d5e; text-decoration: none; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 24px 32px; }
+  .grid-wide { grid-column: span 3; }
+  .card { background: var(--dark2); border: 1px solid var(--border); border-radius: 14px; padding: 22px 24px; position: relative; overflow: hidden; transition: border-color 0.2s, transform 0.2s; }
+  .card:hover { border-color: rgba(255,255,255,0.13); transform: translateY(-1px); }
+  .card-accent { position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 14px 14px 0 0; }
+  .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+  .card-icon { font-size: 18px; line-height: 1; }
+  .card-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-dim); }
+  .card-count { margin-left: auto; background: var(--dark4); color: var(--text-dim); font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 100px; }
+  .signal-list { display: flex; flex-direction: column; gap: 14px; }
+  .signal-item { padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+  .signal-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .signal-headline { font-size: 13px; font-weight: 600; color: white; margin-bottom: 4px; line-height: 1.4; }
+  .signal-body { font-size: 12px; color: var(--text-dim); line-height: 1.6; margin-bottom: 6px; }
+  .signal-implication { font-size: 11px; color: #AAAAAA; font-style: italic; padding: 5px 10px; background: rgba(255,255,255,0.03); border-left: 2px solid rgba(255,255,255,0.1); border-radius: 0 4px 4px 0; }
+  .signal-source { margin-top: 6px; font-size: 10px; color: var(--muted); }
+  .signal-source a { color: #818cf8; text-decoration: none; }
+  .signal-source a:hover { text-decoration: underline; color: #a5b4fc; }
+  .card-mynews .card-accent { background: linear-gradient(90deg, #60a5fa, #93c5fd); }
+  .card-mynews .card-title { color: #93c5fd; }
+  .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .news-item { padding: 14px 16px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 10px; transition: background 0.2s; }
+  .news-item:hover { background: rgba(255,255,255,0.04); }
+  .news-category { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-dim); margin-bottom: 6px; }
+  .news-headline { font-size: 13px; font-weight: 600; color: white; line-height: 1.4; margin-bottom: 5px; }
+  .news-summary { font-size: 11.5px; color: var(--text-dim); line-height: 1.55; margin-bottom: 7px; }
+  .news-flag { font-size: 11px; color: #fbbf24; font-style: italic; padding: 4px 8px; background: rgba(251,191,36,0.06); border-left: 2px solid rgba(251,191,36,0.3); border-radius: 0 4px 4px 0; margin-bottom: 6px; }
+  .news-source { font-size: 10px; color: var(--muted); }
+  .news-source a { color: #818cf8; text-decoration: none; }
+  .news-source a:hover { text-decoration: underline; color: #a5b4fc; }
+  .cd-card { background: linear-gradient(135deg, #0e0a1a 0%, #150d24 100%); border-color: rgba(168,85,247,0.2); }
+  .cd-card .card-accent { background: linear-gradient(90deg, var(--purple), var(--indigo)); }
+  .cd-ideas-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+  .cd-idea { display: flex; gap: 14px; padding: 16px; background: rgba(168,85,247,0.05); border: 1px solid rgba(168,85,247,0.12); border-radius: 10px; transition: background 0.2s; }
+  .cd-idea:hover { background: rgba(168,85,247,0.09); }
+  .cd-number { width: 26px; height: 26px; background: rgba(168,85,247,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; color: #c084fc; flex-shrink: 0; }
+  .cd-idea-title { font-size: 13px; font-weight: 700; color: white; margin-bottom: 5px; line-height: 1.3; }
+  .cd-idea-body { font-size: 12px; color: #BBBBBB; line-height: 1.6; }
+  .watchlist-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+  .watchlist-item { display: flex; gap: 12px; padding: 12px 14px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 10px; }
+  .watch-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; background: var(--yellow); }
+  .watchlist-title { font-size: 12.5px; font-weight: 600; color: white; margin-bottom: 3px; }
+  .watchlist-body { font-size: 11.5px; color: var(--text-dim); line-height: 1.5; }
   .card-sea .card-accent { background: linear-gradient(90deg, #6366F1, #818cf8); }
   .card-sea .card-title { color: #a5b4fc; }
-  .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .sea-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .sea-country-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
   .sea-country-flag { font-size: 20px; line-height: 1; }
   .sea-country-name { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: white; }
   .sea-country-sub { font-size: 10px; color: var(--text-dim); margin-left: auto; }
+  .card-fmcg .card-accent { background: linear-gradient(90deg, #E8192C, #ff6b6b); } .card-fmcg .card-title { color: #ff6b6b; }
+  .card-retail .card-accent { background: linear-gradient(90deg, #F97316, #fbbf24); } .card-retail .card-title { color: #fbbf24; }
+  .card-consumer .card-accent { background: linear-gradient(90deg, #3B82F6, #60a5fa); } .card-consumer .card-title { color: #60a5fa; }
+  .card-tiktok .card-accent { background: linear-gradient(90deg, #000, #69C9D0); } .card-tiktok .card-title { color: #69C9D0; }
+  .card-ig .card-accent { background: linear-gradient(90deg, #833AB4, #E1306C, #F77737); } .card-ig .card-title { color: #E1306C; }
+  .card-china .card-accent { background: linear-gradient(90deg, #E8192C, #ff4d4d); } .card-china .card-title { color: #ff6b6b; }
+  .card-aotw .card-accent { background: linear-gradient(90deg, #22C55E, #86efac); } .card-aotw .card-title { color: #4ade80; }
+  .card-industry .card-accent { background: linear-gradient(90deg, #6366F1, #a78bfa); } .card-industry .card-title { color: #a78bfa; }
+  .card-watch .card-accent { background: linear-gradient(90deg, #FFD000, #f59e0b); } .card-watch .card-title { color: #FFD000; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 100px; font-size: 10px; font-weight: 600; margin-right: 4px; }
+  .tag-hot { background: rgba(232,25,44,0.15); color: #ff4d5e; }
+  .tag-new { background: rgba(34,197,94,0.15); color: #4ade80; }
+  .tag-watch { background: rgba(255,208,0,0.15); color: #FFD000; }
+  .tag-steal { background: rgba(168,85,247,0.15); color: #c084fc; }
+  .footer { padding: 20px 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: var(--muted); }
+  .footer-brand { display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--text-dim); }
+  ::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-track { background: var(--dark); } ::-webkit-scrollbar-thumb { background: var(--dark4); border-radius: 3px; }
 
+  /* TABLET */
   @media (max-width: 1100px) {
-    .grid { grid-template-columns: 1fr 1fr; }
-    .ideas-grid { grid-template-columns: 1fr 1fr; }
-    .watchlist-grid { grid-template-columns: 1fr 1fr; }
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .grid-wide { grid-column: span 2; }
+    .news-grid { grid-template-columns: repeat(2, 1fr); }
+    .cd-ideas-grid { grid-template-columns: repeat(2, 1fr); }
+    .watchlist-grid { grid-template-columns: repeat(2, 1fr); }
   }
+  /* MOBILE */
   @media (max-width: 700px) {
-    .grid { grid-template-columns: 1fr; }
-    .ideas-grid { grid-template-columns: 1fr; }
-    .watchlist-grid { grid-template-columns: 1fr; }
-    .news-grid { grid-template-columns: 1fr; }
+    .grid { grid-template-columns: 1fr; padding: 12px 16px; gap: 12px; }
+    .grid-wide { grid-column: span 1; }
+    .header { padding: 14px 16px; flex-wrap: wrap; gap: 10px; }
+    .header-sub { display: none; }
+    .header-title { font-size: 13px; }
+    .logo-mark { width: 34px; height: 34px; font-size: 14px; }
+    .date-badge { font-size: 11px; padding: 5px 10px; }
+    .hero { margin: 16px 16px 0; padding: 20px 18px; }
+    .hero-title { font-size: 16px; }
+    .hero-body { font-size: 12.5px; }
+    .card { padding: 18px 16px; }
+    .news-grid { grid-template-columns: 1fr; gap: 8px; }
+    .cd-ideas-grid { grid-template-columns: 1fr; gap: 10px; }
+    .watchlist-grid { grid-template-columns: 1fr; gap: 8px; }
     .sea-grid { grid-template-columns: 1fr; gap: 12px; }
-    body { padding: 12px; }
-    .header { padding: 14px 16px; }
-    .header-title { font-size: 17px; }
-    .card { padding: 16px; }
+    .footer { padding: 16px; flex-direction: column; gap: 6px; text-align: center; }
+    .signal-headline { font-size: 12.5px; }
+    .signal-body { font-size: 11.5px; }
+    .news-headline { font-size: 12.5px; }
+    .news-summary { font-size: 11px; }
+    .card-title { font-size: 11px; }
   }
+  /* SMALL MOBILE */
   @media (max-width: 390px) {
-    body { padding: 8px; }
-    .header-title { font-size: 15px; }
-    .card { padding: 12px; }
-    .card-headline { font-size: 13px; }
+    .hero-title { font-size: 14px; }
+    .hero { padding: 16px 14px; margin: 12px 12px 0; }
+    .card { padding: 14px 12px; }
+    .grid { padding: 10px 12px; gap: 10px; }
+    .header { padding: 12px 14px; }
   }
 </style>
 </head>
@@ -100,220 +146,379 @@
 
 <div class="header">
   <div class="header-left">
-    <div class="logo">🍜</div>
+    <div class="logo-mark">M</div>
     <div>
-      <div class="header-title">Mamee Double Decker · Daily Brief</div>
-      <div class="header-sub">Malaysia · Singapore · Thailand · Global Intelligence</div>
+      <div class="header-title">Mamee Intelligence Brief</div>
+      <div class="header-sub">Daily intelligence dashboard for the Mamee Double Decker team</div>
     </div>
   </div>
-  <div class="header-date">
-    <strong>Saturday, 18 April 2026</strong>
-    Updated 07:00 MYT
+  <div class="header-right">
+    <div class="date-badge">🇲🇾 Friday, 17 April 2026</div>
+    <div class="live-dot">Live</div>
   </div>
+</div>
+
+<div class="hero">
+  <div class="hero-label">🔥 Top Signal of the Day</div>
+  <div class="hero-title">Malaysia's snack market volumes set for 5.3% growth in 2026 — immunity, functional & natural snacks are the fastest-rising segments</div>
+  <div class="hero-body">Fresh FMCG data confirms Malaysia snack volume growth hits 5.3% this year, with the sharpest momentum in functional snacks (protein, energy, immune-support), DIY formats, and natural ingredients. Online grocery is on track to reach 18 million users in Malaysia by year-end — meaning more snack discovery and impulse purchase is now happening on screen, not on shelf. For Mamee, the window to own a "better-for-you snack" narrative alongside core products is open and competitive right now.</div>
+  <div class="hero-source">Source: <a href="https://sellercraft.co/top-20-trending-fmcg-products-to-sell-in-malaysia-in-2025-2026/" target="_blank">Sellercraft FMCG Malaysia 2026</a></div>
 </div>
 
 <div class="grid">
 
   <!-- MALAYSIA TOP NEWS -->
-  <div class="card card-news grid-wide">
+  <div class="card card-mynews grid-wide">
     <div class="card-accent"></div>
-    <div class="card-title">🇲🇾 Malaysia — Top News</div>
-    <div class="card-headline">Malaysia Q1 2026 GDP grows 5.3% — ringgit surges near 8-year high against the US dollar</div>
+    <div class="card-header"><span class="card-icon">🇲🇾</span><span class="card-title">Malaysia Top News Today</span><span class="card-count">6 stories</span></div>
     <div class="news-grid">
-      <div>
-        <div class="signal">
-          <div class="signal-label">Economy</div>
-          <div class="signal-text">Malaysia's Q1 2026 GDP rose 5.3% year-on-year according to DOSM advance estimates, easing from 6.3% in Q4 2025 but beating Bloomberg consensus of 5.5%. Services sector grew 5.4%, anchored by wholesale and retail trade. Mining sector contracted 1.1% due to lower crude oil and natural gas output.</div>
-          <div class="signal-meta">Malay Mail / DOSM · 17 April 2026</div>
-        </div>
-        <div class="signal">
-          <div class="signal-label">Ringgit &amp; Trade</div>
-          <div class="signal-text">The Malaysian ringgit strengthened to near RM3.90 vs the US dollar — close to an 8-year high — buoyed by positive Q1 GDP figures. US Customs will begin accepting tariff refund requests from importers on 20 April after the Supreme Court invalidated Trump's sweeping global tariffs. Trade boost for Malaysian exporters as tariff tailwind continues.</div>
-          <div class="signal-meta">The Star / Bloomberg · 17–18 April 2026</div>
-        </div>
+
+      <div class="news-item">
+        <div class="news-category">Health Policy</div>
+        <div class="news-headline">Health Ministry rolling out new prescription format requiring fuller product information</div>
+        <div class="news-summary">New nationwide prescription standards mandate more detailed labelling — part of a broader transparency push in consumer health products. Likely to drive demand for cleaner, more clearly-labelled food and snack products in the mid-term.</div>
+        <div class="news-flag">📌 Brand angle: Clean-label and ingredient transparency is now a policy direction, not just a trend. Worth front-running with Mamee packaging copy.</div>
+        <div class="news-source"><a href="https://www.malaymail.com/news/malaysia" target="_blank">↗ Malay Mail</a></div>
       </div>
-      <div>
-        <div class="signal">
-          <div class="signal-label">Geopolitics</div>
-          <div class="signal-text">One of seven Malaysian fuel ships is damaged and stuck in the Strait of Hormuz. PM Anwar confirms Iran's clearance but says new logistical hurdles remain. The incident highlights Malaysia's continued exposure to Middle East supply chain risks, with energy supply disruption a key watch point for FMCG input costs.</div>
-          <div class="signal-meta">Free Malaysia Today · 18 April 2026</div>
-        </div>
-        <div class="signal">
-          <div class="signal-label">IMF Forecast</div>
-          <div class="signal-text">The IMF raised Malaysia's 2026 GDP growth forecast to 4.7% (from 4.3% in January WEO), citing resilient domestic demand and a diversified export base. Domestic consumption is expected to hold firm, supported by a stable labour market and civil servant wage adjustments — positive signals for FMCG staple and snack categories.</div>
-          <div class="signal-meta">The Star / Bernama · 15 April 2026</div>
-        </div>
+
+      <div class="news-item">
+        <div class="news-category">Digital & Social</div>
+        <div class="news-headline">Meta expands Instagram teen safety features to Malaysia — under-18s auto-placed on 13+ content settings</div>
+        <div class="news-summary">Instagram users under 18 in Malaysia are now automatically filtered into age-appropriate content settings. This affects how youth-targeted ads and influencer content is surfaced — brands targeting teens via IG will see reach adjustments.</div>
+        <div class="news-flag">📌 Brand angle: Mamee's youth audience may be harder to reach on IG. TikTok and Xiaohongshu become even more critical for Gen Z engagement.</div>
+        <div class="news-source"><a href="https://www.malaymail.com/news/malaysia" target="_blank">↗ Malay Mail</a></div>
       </div>
+
+      <div class="news-item">
+        <div class="news-category">Security</div>
+        <div class="news-headline">Suspended police DSP and five others charged for RM4M+ armed gang robbery in Kepong</div>
+        <div class="news-summary">A high-profile case involving luxury car theft and RM4 million losses is expected to dominate news cycles today. Public trust in institutions remains a sensitive backdrop for brand communication.</div>
+        <div class="news-flag">📌 Brand angle: Avoid social posts that could be seen as tone-deaf against crime or economic anxiety stories today.</div>
+        <div class="news-source"><a href="https://www.freemalaysiatoday.com" target="_blank">↗ Free Malaysia Today</a></div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-category">FMCG Market</div>
+        <div class="news-headline">MNC brands hold 51% value share in Malaysia — but local brands close gap to 18%</div>
+        <div class="news-summary">Multinational FMCG brands still dominate value share, but local brands have grown from 15% to 18% over 3 years. Consumers increasingly mix MNC and local choices, with local brands winning on price-value and authenticity.</div>
+        <div class="news-flag">📌 Brand angle: Mamee sits at the sweet spot — Malaysian heritage + scale. This is the moment to double down on "proudly Malaysian" messaging.</div>
+        <div class="news-source"><a href="https://onpresscapital.co.uk/fmcg-company-malaysia/" target="_blank">↗ OnPress Capital FMCG Malaysia</a></div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-category">E-Commerce</div>
+        <div class="news-headline">Online grocery expected to reach 18 million Malaysian users in 2026</div>
+        <div class="news-summary">Driven by same-day delivery, subscription boxes, and mobile-first habits, Malaysian online grocery is accelerating. Categories like snacks, beverages and pantry staples are top online sellers.</div>
+        <div class="news-flag">📌 Brand angle: Is Mamee's online shelf (Shopee, Lazada, GrabMart listings) optimised with the same care as physical shelf? Worth auditing.</div>
+        <div class="news-source"><a href="https://sellercraft.co/top-20-trending-fmcg-products-to-sell-in-malaysia-in-2025-2026/" target="_blank">↗ Sellercraft FMCG Malaysia</a></div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-category">Food Business</div>
+        <div class="news-headline">Jom Chá now at 55 outlets, targeting 5–8 new locations in 2026 outside malls</div>
+        <div class="news-summary">The F&B chain is deliberately moving into non-mall footprints — neighbourhood areas, transport hubs, community spaces — a shift that mirrors where consumers are spending time and snacking.</div>
+        <div class="news-flag">📌 Brand angle: Non-mall snacking occasions are growing. Mamee's convenience & impulse channel strategy should reflect this footprint shift.</div>
+        <div class="news-source"><a href="https://theedgemalaysia.com/node/775713" target="_blank">↗ The Edge Malaysia</a></div>
+      </div>
+
     </div>
   </div>
 
   <!-- SEA REGIONAL PULSE -->
   <div class="card card-sea grid-wide">
     <div class="card-accent"></div>
-    <div class="card-title">🌏 SEA Regional Pulse</div>
-    <div class="card-headline">Singapore &amp; Thailand — FMCG, Economy &amp; Consumer Signals</div>
+    <div class="card-header"><span class="card-icon">🌏</span><span class="card-title">SEA Regional Pulse — Singapore &amp; Thailand</span><span class="card-count">6 signals</span></div>
     <div class="sea-grid">
+
       <!-- SINGAPORE -->
       <div>
         <div class="sea-country-header">
           <span class="sea-country-flag">🇸🇬</span>
           <span class="sea-country-name">Singapore</span>
-          <span class="sea-country-sub">18 April 2026</span>
+          <span class="sea-country-sub">17 April 2026</span>
         </div>
-        <div class="signal">
-          <div class="signal-label">Industry Event</div>
-          <div class="signal-text">Food &amp; Hospitality Asia (FHA) 2026 opens 21–24 April at Singapore EXPO — the biggest edition in a decade with 2,750+ exhibitors from 50+ countries and 800,000+ food &amp; beverage innovations on show, co-located with Prowine Singapore and IndusFood Asia. A key sourcing and trend-scouting opportunity for the region.</div>
-          <div class="signal-meta">PR Newswire / Visit Singapore · April 2026</div>
-        </div>
-        <div class="signal">
-          <div class="signal-label">Retail Growth</div>
-          <div class="signal-text">Singapore retail sales rose 8.3% year-on-year in February 2026, reversing a 0.5% decline in January. For Jan–Feb 2026, retail grew 3.5%. OCBC forecasts 2–3% full-year retail growth underpinned by government support measures, though Middle East tensions may weigh on hiring and consumer sentiment.</div>
-          <div class="signal-meta">Xinhua / OCBC Group Research · April 2026</div>
-        </div>
-        <div class="signal">
-          <div class="signal-label">Consumer Shift</div>
-          <div class="signal-text">Singaporeans are prioritising value, transparency, and ethical practices in 2026. The ready-to-eat food market is valued at USD 0.28 billion and growing at 3.1% CAGR. Second-hand luxury platforms (Vestiaire, RealReal) are surging — signalling a broader mindful consumption wave that extends to food and snack choices.</div>
-          <div class="signal-meta">Apeiron MRC / Mordor Intelligence · April 2026</div>
+        <div class="signal-list">
+          <div class="signal-item">
+            <div class="signal-headline">Singapore food market projected at 3.3% volume growth in 2026</div>
+            <div class="signal-body">Steady growth driven by health-conscious consumers, plant-based/organic demand, and zero-waste retail. E-commerce grocery continues to rise with same-day delivery and subscription services as key drivers.</div>
+            <div class="signal-source"><a href="https://www.statista.com/outlook/cmo/food/singapore" target="_blank">↗ Statista — Singapore Food Outlook 2026</a></div>
+          </div>
+          <div class="signal-item">
+            <div class="signal-headline">Food &amp; Hospitality Asia 2026 kicks off April 21–24 at Singapore Expo</div>
+            <div class="signal-body">Asia's biggest F&B trade event returns as "the biggest in a decade" — 100+ countries, thousands of buyers and suppliers. Key moment to track competitor launches and regional food innovation coming to market.</div>
+            <div class="signal-source"><a href="https://www.prnewswire.com/apac/news-releases/food--hospitality-asia-2026-returns-as-the-biggest-event-in-a-decade-302710778.html" target="_blank">↗ PRNewswire — FHA 2026</a></div>
+          </div>
+          <div class="signal-item">
+            <div class="signal-headline">SG retail F&amp;B online sales at 26.3% of total — digital-first FMCG strategy is now essential</div>
+            <div class="signal-body">Singapore's F&B retail hit S$1.0 billion with 26.3% sold online. Combined MY+SG urban Chinese-speaking audience on Xiaohongshu is 4.3 million — a high-value, underserved audience for Mamee premium positioning.</div>
+            <div class="signal-source"><a href="https://www.syfe.com/magazine/investors-guide-to-singapores-fmcg-industry/" target="_blank">↗ Syfe — Singapore FMCG 2026</a></div>
+          </div>
         </div>
       </div>
+
       <!-- THAILAND -->
       <div>
         <div class="sea-country-header">
           <span class="sea-country-flag">🇹🇭</span>
           <span class="sea-country-name">Thailand</span>
-          <span class="sea-country-sub">18 April 2026</span>
+          <span class="sea-country-sub">17 April 2026</span>
         </div>
-        <div class="signal">
-          <div class="signal-label">Economic Pressure</div>
-          <div class="signal-text">Thailand faces its weakest growth in three decades, with 2026 GDP forecast at only 1.5–1.8%. Consumer Confidence Index fell to 51.8 in April (down from 53.7), weighed down by a severe household debt crisis, weak private investment, and political uncertainty. Over 70% of Thai marketers will not increase budgets in 2026.</div>
-          <div class="signal-meta">Nation Thailand / Thailand Business News · April 2026</div>
-        </div>
-        <div class="signal">
-          <div class="signal-label">Snack Opportunity</div>
-          <div class="signal-text">Affordable snacking is up: fast food grew 9% in Thailand while fine dining plummeted 81%. Lay's Thailand launched "Esarn Hot Pot" (Jim Jum) chips celebrating Northeast Thai herbal, sour, and spicy regional flavors — a textbook example of hyper-local flavor storytelling driving relevance in a budget-cautious market.</div>
-          <div class="signal-meta">Kantar / The Shiv Snacks Report · April 2026</div>
-        </div>
-        <div class="signal">
-          <div class="signal-label">Wellness Trend</div>
-          <div class="signal-text">Gut health is the defining Thai food trend in 2026: products featuring prebiotics, probiotics, and psychobiotic formulations are surging. Consumers are linking gut health to stress relief, anxiety management, and better sleep. Sensory-driven textures — "crack, pop, and melt" using freeze-dried pieces — are driving premium snack innovation.</div>
-          <div class="signal-meta">USDA FAS Bangkok / Innova Market Insights · April 2026</div>
+        <div class="signal-list">
+          <div class="signal-item">
+            <div class="signal-headline">Thailand snack market expanding from US$4B to US$5B by 2030 — premiumisation leads growth</div>
+            <div class="signal-body">CAGR of ~4.57% with health-focused snacks (low-sugar, plant-based, functional) driving premiumisation. TikTok Shop is the fastest-growing sales channel for snacks in Thailand, especially among under-30s.</div>
+            <div class="signal-source"><a href="https://the-shiv.com/snacks-in-thailand/" target="_blank">↗ The Shiv — Snacks in Thailand 2026</a></div>
+          </div>
+          <div class="signal-item">
+            <div class="signal-headline">Thailand raw material price hikes hitting FMCG across the board in April 2026</div>
+            <div class="signal-body">Edible oils, flavourings, and packaging costs rising across the supply chain. The pressure isn't 1–2 baht per item — it's across entire baskets. Brands that can absorb costs or reframe value are winning shelf space.</div>
+            <div class="signal-source"><a href="https://www.nationthailand.com/business/economy/40060602" target="_blank">↗ Nation Thailand</a></div>
+          </div>
+          <div class="signal-item">
+            <div class="signal-headline">Post-Songkran: 191 road deaths during holidays as Thailand safety concerns dominate news</div>
+            <div class="signal-body">Songkran's five-day road toll of 191 deaths and 911 injuries is dominating Thai news today. Brands should hold celebratory or high-energy social posts targeting TH audiences today — read the room.</div>
+            <div class="signal-source"><a href="https://www.bangkokpost.com" target="_blank">↗ Bangkok Post</a></div>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 
   <!-- FMCG PULSE -->
   <div class="card card-fmcg">
     <div class="card-accent"></div>
-    <div class="card-title">📦 FMCG Pulse — Malaysia</div>
-    <div class="card-headline">Snack volume growth at 5.3% in 2026 — halal trust and value packs lead purchase drivers</div>
-    <div class="signal">
-      <div class="signal-label">Market Growth</div>
-      <div class="signal-text">Malaysia's snack food market is forecast to grow 5.3% by volume in 2026. Local brands now hold 18% value share (up from lower bases), while MNCs retain 51%. The market is bifurcating: premium indulgence at one end, budget-conscious practicality at the other — with limited mid-market breathing room.</div>
-      <div class="signal-meta">Statista / OnPress Capital · April 2026</div>
-    </div>
-    <div class="signal">
-      <div class="signal-label">Halal &amp; Trust</div>
-      <div class="signal-text">Halal and kosher certification remain the single biggest purchase influencer for Malaysian snack buyers in 2026, ahead of price and taste claims. Functional claims — reduced sugar, protein content, natural ingredients — are rising fast, particularly among urban Gen Z consumers aged 18–34 exploring lifestyle-aligned snacking.</div>
-      <div class="signal-meta">Innova Market Insights / Euromonitor · April 2026</div>
-    </div>
-    <div class="signal">
-      <div class="signal-label">Digital Commerce</div>
-      <div class="signal-text">TikTok Shop's GMV in Malaysia grew from USD 0.3B (2022) to USD 2.8B (2024), now commanding ~24% of e-commerce share. FMCG brands using live-stream selling and creator-led content are seeing fastest discovery-to-purchase conversions. Shopee's April 15 Mid-Month Madness sale (until April 19) continues to drive impulse snack purchases.</div>
-      <div class="signal-meta">Sellercraft / Shopee Malaysia · April 2026</div>
+    <div class="card-header"><span class="card-icon">📦</span><span class="card-title">FMCG Pulse — Malaysia</span><span class="card-count">3 signals</span></div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <div class="signal-headline">Immunity supplements, organic baby food &amp; DIY bubble tea kits up 70–100% YoY</div>
+        <div class="signal-body">The fastest-growing FMCG categories in Malaysia aren't traditional snacks — they're functional and experiential. Consumers want snacks that do something (immunity, energy, protein) or let them participate in making.</div>
+        <div class="signal-implication">💡 A Mamee "build your own" snack kit or functional variant (e.g. high-protein Monster) could tap both the DIY and functional trends simultaneously.</div>
+        <div class="signal-source"><a href="https://sellercraft.co/top-20-trending-fmcg-products-to-sell-in-malaysia-in-2025-2026/" target="_blank">↗ Sellercraft FMCG Malaysia 2026</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-headline">Snack volume growth 5.3% in 2026 — natural/organic ingredients &amp; functional formats driving share</div>
+        <div class="signal-body">The snack category is healthy overall but the growth is concentrated in better-for-you and functional sub-segments. Plain commodity snacks are flat. Premium, purposeful snacks are up.</div>
+        <div class="signal-implication">💡 Are Mamee's ingredient stories visible on pack? Consumers are reading labels more than ever — "real ingredients" claims need to be front-facing.</div>
+        <div class="signal-source"><a href="https://onpresscapital.co.uk/fmcg-company-malaysia/" target="_blank">↗ OnPress Capital FMCG 2026</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-headline">Local FMCG brands closing value share gap — grew from 15% to 18% in 3 years</div>
+        <div class="signal-body">Consumers increasingly trust and choose local brands, especially post-pandemic. The "Made in Malaysia" signal is becoming a genuine purchase driver, not just a patriotic afterthought.</div>
+        <div class="signal-implication">💡 Mamee's Malaysian heritage is a competitive asset vs MNC competitors — worth activating more aggressively in campaign and packaging narrative.</div>
+        <div class="signal-source"><a href="https://onpresscapital.co.uk/fmcg-company-malaysia/" target="_blank">↗ OnPress Capital FMCG Malaysia</a></div>
+      </div>
     </div>
   </div>
 
-  <!-- SOCIAL MEDIA -->
-  <div class="card card-social">
+  <!-- TIKTOK -->
+  <div class="card card-tiktok">
     <div class="card-accent"></div>
-    <div class="card-title">📱 Social Media Signals</div>
-    <div class="card-headline">#hopecore and wellness content dominating Malaysian feeds — authenticity over polish</div>
-    <div class="signal">
-      <div class="signal-label">TikTok MY</div>
-      <div class="signal-text">TikTok Malaysia is riding a wellness and inner-strength content wave this April. Hashtags like #hopecore, #affirmations, and #SelfCare are dominating Gen Z and millennial feeds. Short-form video with emotional storytelling and "real moments" outperforms polished brand content. TikTok remains the fastest discovery-to-purchase platform for snacks and FMCG.</div>
-      <div class="signal-meta">Shopify MY / Space Ops Marketing · April 2026</div>
-    </div>
-    <div class="signal">
-      <div class="signal-label">Instagram MY</div>
-      <div class="signal-text">Instagram surpasses 16 million users in Malaysia in early 2026. Brands are shifting from follower-count metrics to engagement rate, audience quality, and niche authority. Live-streaming continues to grow as a trust-building and real-time sales tool, especially for food and snack categories where texture and taste demonstrations drive conversion.</div>
-      <div class="signal-meta">Vodus / DataReportal Digital 2026 Malaysia · April 2026</div>
-    </div>
-    <div class="signal">
-      <div class="signal-label">Xiaohongshu / RedNote</div>
-      <div class="signal-text">Malaysia and Singapore together have 4.3 million XHS users — among the highest outside China. The platform's user base in Malaysia grew 4% over the past year, skewing female (63% aged 16–34), predominantly Chinese, and brand-enthusiast in intent. RedNote users treat it as a search engine for product discovery and authentic reviews — not broadcast media. RedNote recently launched "Redshop," an integrated e-commerce layer expanding its shopping utility.</div>
-      <div class="signal-meta">Hashmeta / Marketing Interactive / Rest of World · April 2026</div>
+    <div class="card-header"><span class="card-icon">🎵</span><span class="card-title">TikTok Malaysia</span><span class="card-count">3 signals</span></div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <div class="signal-headline">TikTok functions as full consumer journey: discovery → trust → purchase in one scroll</div>
+        <div class="signal-body">Malaysians spend 3 hours/day on social platforms — highest in the region. For food brands, TikTok is now the single most important platform for both brand discovery and conversion. TikTok Shop integration means content = commerce.</div>
+        <div class="signal-implication">💡 Every Mamee TikTok video should now have a shop link. The "watch to buy" pathway is direct and immediate.</div>
+        <div class="signal-source"><a href="https://findniche.com/tiktok/top-sellers-food-and-beverages-my" target="_blank">↗ FindNiche TikTok MY</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-headline">Short-form food content dominates — ASMR, snack hauls &amp; "rate my snack" formats trending</div>
+        <div class="signal-body">Food-related TikTok content in Malaysia is led by texture/sound (ASMR crunch), honest taste reviews, and snack haul unboxings. Creators who go unscripted and reactive perform better than polished ad-style content.</div>
+        <div class="signal-implication">💡 Brief creators to react to Mamee products unscripted — the raw, honest crunch moment beats any produced ad in TikTok's algorithm.</div>
+        <div class="signal-source"><a href="https://www.accio.com/business/tiktok-food-trends" target="_blank">↗ Accio TikTok Food Trends 2026</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-headline">Gula Melaka &amp; heritage Malaysian flavours surging on TikTok FYP in 2026</div>
+        <div class="signal-body">Local flavour nostalgia is viral fuel. Gula Melaka, pandan, salted egg and ulam-inspired flavours are performing strongly on FYP for food brands. Authenticity and local identity is what the algorithm rewards right now.</div>
+        <div class="signal-implication">💡 A limited Mamee "Rasa Malaysia" flavour collab — especially gula melaka or cendol — would be algorithmically timed perfectly right now.</div>
+        <div class="signal-source"><a href="https://www.gulamelaka.my/en/post/7-viral-gula-melaka-food-ideas-for-tiktok-fyp-2026-trending" target="_blank">↗ GulaMelaka.my — TikTok FYP Trends 2026</a></div>
+      </div>
     </div>
   </div>
 
-  <!-- GLOBAL CREATIVE -->
-  <div class="card card-creative">
+  <!-- INSTAGRAM & SOCIAL -->
+  <div class="card card-ig">
     <div class="card-accent"></div>
-    <div class="card-title">🎨 Global Creative Industry</div>
-    <div class="card-headline">FIFA World Cup 2026 snack campaigns kick off — culture-first storytelling defines 2026 advertising</div>
-    <div class="signal">
-      <div class="signal-label">Campaign Spotlight</div>
-      <div class="signal-text">Sabritas (PepsiCo's Mexican snack brand) launched "What We Do, We Do for Football" — a major campaign celebrating its role as the official FIFA World Cup 2026 snack partner. The work positions snacking as inseparable from the football viewing ritual. A powerful playbook for any snack brand seeking cultural relevance through sports sponsorship this year.</div>
-      <div class="signal-meta">Ads of the World · April 2026</div>
-    </div>
-    <div class="signal">
-      <div class="signal-label">Trend Watch</div>
-      <div class="signal-text">FMCG packaging in 2026 is moving toward human-centered imperfection: hand-drawn lines, uneven typography, and layered textures that signal authenticity over AI-generated polish. Transparency is also booming — clean ingredient lists, ethical sourcing callouts, and see-through packaging windows are winning shelf space and shelf trust simultaneously.</div>
-      <div class="signal-meta">Greatergood Brands / Zenpack / DesignerPeople · April 2026</div>
-    </div>
-    <div class="signal">
-      <div class="signal-label">Brand Move</div>
-      <div class="signal-text">Birkenstock's Ramadan campaign "A Journey Through Tradition" used deeply authentic cultural storytelling — focusing on the lived daily experiences of Ramadan rather than just religious iconography. The campaign's emotional resonance and restraint earned wide creative recognition. A reminder that Raya/Ramadan season in Malaysia remains underutilised by most snack brands for genuine cultural depth.</div>
-      <div class="signal-meta">Futurists.in / StoryChief Best Campaigns 2026 · April 2026</div>
-    </div>
-  </div>
-
-  <!-- TEAM IDEAS -->
-  <div class="card grid-wide">
-    <div class="card-accent" style="background: linear-gradient(90deg, #6366F1, #a855f7)"></div>
-    <div class="card-title">💡 Today's Inspiration Sparks</div>
-    <div class="card-headline">Ideas &amp; angles worth exploring for Mamee</div>
-    <div class="ideas-grid">
-      <div class="idea-card">
-        <div class="idea-num">01</div>
-        <div class="idea-title">Deep Regional Flavour Storytelling</div>
-        <div class="idea-body">Inspired by Lay's Thailand's "Esarn Hot Pot" campaign, Mamee could explore a hyper-local Malaysian flavours series — Sabah bamboo chicken, Sarawak laksa, Kedah asam pedas — treating each flavour as a cultural love letter rather than a product variant. This is the snack brand equivalent of a tourism campaign.</div>
+    <div class="card-header"><span class="card-icon">📸</span><span class="card-title">Instagram &amp; Social MY</span><span class="card-count">3 signals</span></div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <div class="signal-headline">Instagram teen safety changes limit under-18 reach for food brands in Malaysia</div>
+        <div class="signal-body">Meta's automatic 13+ content filtering for Malaysian teens restricts how FMCG brands can reach youth audiences via IG ads and influencer content. Expect reduced reach and higher CPMs for youth-skewed targeting on Instagram.</div>
+        <div class="signal-implication">💡 Shift youth-targeted budgets toward TikTok and YouTube Shorts where reach restrictions are less severe right now.</div>
+        <div class="signal-source"><a href="https://www.malaymail.com/news/malaysia" target="_blank">↗ Malay Mail — Meta Teen Safety MY</a></div>
       </div>
-      <div class="idea-card">
-        <div class="idea-num">02</div>
-        <div class="idea-title">TikTok #hopecore Snack Moments</div>
-        <div class="idea-body">The #hopecore and #SelfCare wave sweeping Malaysian TikTok is a genuine opening for Mamee to show up in "comfort snack" content — small joy moments, end-of-day rituals, and study/work break scenes. Low-production, creator-led, emotionally real. This pairs well with the current 07:00 energy that the brief targets.</div>
+      <div class="signal-item">
+        <div class="signal-headline">Instagram positioned as long-term brand equity builder vs TikTok's mass reach</div>
+        <div class="signal-body">Data shows Malaysian brands using Instagram for aspirational storytelling, community building, and lifestyle positioning — while TikTok drives volume and virality. Best brands use both in tandem with different briefs.</div>
+        <div class="signal-implication">💡 Mamee IG should feel premium and curated — product aesthetics, behind-the-brand content, team stories. Save the raw energy for TikTok.</div>
+        <div class="signal-source"><a href="https://www.modash.io/find-influencers/malaysia/food" target="_blank">↗ Modash MY Food Influencers 2026</a></div>
       </div>
-      <div class="idea-card">
-        <div class="idea-num">03</div>
-        <div class="idea-title">FIFA World Cup 2026 — Fan Snack Territory</div>
-        <div class="idea-body">With Sabritas going all-in on the FIFA World Cup 2026 and Malaysia's football community energised, there's a window for Mamee to own "Malaysian game night" snacking — whether through limited-edition packs, creator content around match screenings, or a TikTok-native campaign tying noodle snacks to the communal viewing experience.</div>
+      <div class="signal-item">
+        <div class="signal-headline">S-Commerce growing fast: Instagram Live Shopping &amp; Facebook Shop driving FMCG impulse buys</div>
+        <div class="signal-body">Social commerce channels — IG Live, FB Shop, TikTok Shop — are becoming primary snack purchase occasions, especially for limited editions and bundle deals. Real-time sales events are outperforming static product posts.</div>
+        <div class="signal-implication">💡 A weekly Mamee IG Live drop — limited packs, bundle deals, exclusive flavours — could create a recurring purchase ritual with core fans.</div>
+        <div class="signal-source"><a href="https://www.heepsy.com/ranking/top-food-influencers-in-malaysia" target="_blank">↗ Heepsy Malaysia Influencers 2026</a></div>
       </div>
     </div>
   </div>
 
-  <!-- WATCH LIST -->
-  <div class="card grid-wide">
-    <div class="card-accent" style="background: linear-gradient(90deg, #ef4444, #f97316)"></div>
-    <div class="card-title">👁 Brand &amp; Competitor Watch</div>
-    <div class="card-headline">Competitors &amp; adjacent brands making moves</div>
+  <!-- XIAOHONGSHU -->
+  <div class="card card-china">
+    <div class="card-accent"></div>
+    <div class="card-header"><span class="card-icon">🔴</span><span class="card-title">Xiaohongshu / RedNote</span><span class="card-count">3 signals</span></div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <div class="signal-headline">MY + SG combined Xiaohongshu audience: 4.3 million — up 4% YoY, highest new user growth</div>
+        <div class="signal-body">Malaysia had the highest percentage growth in new RED users in the region. The audience skews female, 16–34, predominantly Chinese-speaking, high income. Premium snack and lifestyle brands are seeing strong organic discovery here.</div>
+        <div class="signal-implication">💡 Mamee's premium or limited products (e.g. collector packs, collab flavours) should have a RED content strategy — it's a direct line to the most influential snack opinion-formers in MY+SG.</div>
+        <div class="signal-source"><a href="https://www.up2china.com/xiaohongshu-little-red-book-guide-international-brands/" target="_blank">↗ Up2China Xiaohongshu Guide 2026</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-headline">Authentic storytelling embedded with commercial intent is RED's winning content formula</div>
+        <div class="signal-body">Unlike IG or TikTok, Xiaohongshu rewards long-form personal experience notes, honest reviews, and lifestyle context. KOC (Key Opinion Consumers) outperform KOL celebrities in trust and conversion.</div>
+        <div class="signal-implication">💡 Seed Mamee products with everyday KOCs — real consumers, real photos, honest notes. Not polished influencer shoots.</div>
+        <div class="signal-source"><a href="https://hubofchina.com/red-influencer-marketing-china/" target="_blank">↗ Hub of China RED Influencer 2026</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-headline">2026 RED trends: "dopamine dressing," "slow living" &amp; "comfort snacking" all trending in Chinese-speaking communities</div>
+        <div class="signal-body">The platform's lifestyle trends index shows snacking positioned as self-care and mood elevation — not just eating. Comfort foods with nostalgic or artisanal qualities are tagged under wellbeing content, not food content.</div>
+        <div class="signal-implication">💡 Position Mamee on RED as a comfort ritual, not a snack. The framing is "your moment" not "our product."</div>
+        <div class="signal-source"><a href="https://chinaskinny.com/blog/xiaohongshu-rednote-2026-lifestyle-trends" target="_blank">↗ China Skinny RED 2026 Trends</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADS OF THE WORLD / GLOBAL CREATIVE -->
+  <div class="card card-aotw">
+    <div class="card-accent"></div>
+    <div class="card-header"><span class="card-icon">🎬</span><span class="card-title">Global Campaigns — Ads of the World</span><span class="card-count">3 picks</span></div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <div class="signal-headline">Sabritas "No Sabritas, No Game" — official FIFA World Cup 2026 snack partner flagship</div>
+        <div class="signal-body">Mexico's Sabritas (PepsiCo) launched a massive football-linked snack campaign as official FIFA 2026 partner. The creative ties snack consumption directly to the match ritual — "what we do, we do for football." Emotional, high-energy, community-driven.</div>
+        <div class="signal-implication">💡 World Cup 2026 is a live opportunity for Mamee. What's the Malaysian equivalent of "no snack, no match"? This campaign is the brief.</div>
+        <div class="signal-source"><a href="https://www.adsoftheworld.com/campaigns/what-we-do-we-do-for-football" target="_blank">↗ Ads of the World — Sabritas FIFA 2026</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-headline">Coca-Cola Japan "Fizz or Sizz" — nationwide guessing game on sound similarity to karaage</div>
+        <div class="signal-body">A beautifully simple sensory campaign: Coke asks Japan whether its fizz sounds like karaage sizzling. The campaign drives massive UGC as consumers submit their verdict. Sound, culture, and food collide in one playful idea.</div>
+        <div class="signal-implication">💡 Mamee's crunch is iconic. A "what does Mamee sound like?" sound-matching social challenge could go just as viral in MY.</div>
+        <div class="signal-source"><a href="https://www.adsoftheworld.com/campaigns/fizz-or-sizz" target="_blank">↗ Ads of the World — Coca-Cola Japan</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-headline">UN Women "Active Voice" (Brazil) — reframes passive grammar as a tool that erases women's experiences</div>
+        <div class="signal-body">A linguistically sharp campaign that turns passive voice in media into a cultural critique. Won widespread press coverage and industry acclaim for how a simple idea in language can carry immense social weight.</div>
+        <div class="signal-implication">💡 A reminder that the sharpest creative ideas are often the simplest. A language or naming insight can be a campaign on its own.</div>
+        <div class="signal-source"><a href="https://www.adsoftheworld.com/campaigns/active-voice" target="_blank">↗ Ads of the World — UN Women</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INDUSTRY TRENDS -->
+  <div class="card card-industry">
+    <div class="card-accent"></div>
+    <div class="card-header"><span class="card-icon">📐</span><span class="card-title">Packaging &amp; Creative Trends</span><span class="card-count">3 directions</span></div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <div class="signal-headline">Human imperfection as design strategy — hand-drawn, uneven, layered textures beating AI-generated visuals</div>
+        <div class="signal-body">As AI floods design with perfection, the market is rewarding intentional imperfection: hand-drawn lines, irregular type, visible craft. FMCG packaging that looks "made" rather than "generated" is winning shelf standout in 2026.</div>
+        <div class="signal-implication">💡 Does Mamee's pack feel handmade or algorithm-made? Even small texture, type and illustration choices signal authenticity on shelf.</div>
+        <div class="signal-source"><a href="https://designkick.in/blog/design-trends-2026-whats-next-for-food-and-beverage-packaging" target="_blank">↗ DesignKick Packaging Trends 2026</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-headline">Smart packaging going mainstream: QR, NFC &amp; WebAR turning packs into brand channels</div>
+        <div class="signal-body">Leading FMCG brands are turning physical packaging into interactive brand experiences — scan-to-play, scan-for-recipe, NFC loyalty tap, AR unboxing. The pack is now a media surface, not just a container.</div>
+        <div class="signal-implication">💡 A Mamee pack QR that unlocks a TikTok challenge, exclusive flavour vote, or loyalty reward would bridge physical retail and digital engagement.</div>
+        <div class="signal-source"><a href="https://designkick.in/blog/design-trends-2026-whats-next-for-food-and-beverage-packaging" target="_blank">↗ DesignKick Packaging Trends 2026</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-headline">Global ad revenue growing 8.8% in 2026 — human authenticity is the scarcest, most valuable creative asset</div>
+        <div class="signal-body">With digital ad spend at $786B globally, the brands cutting through aren't spending more — they're making more emotionally grounded, culture-first work. The agency consensus: human stories are now the anti-AI differentiator.</div>
+        <div class="signal-implication">💡 Mamee has 60+ years of real Malaysian stories. Mining founder stories, factory floor moments, and community roots is free, authentic, and unbeatable content.</div>
+        <div class="signal-source"><a href="https://www.thegonetwork.com/articles/the-best-marketing-campaigns-of-2026---monthly-review-2026" target="_blank">↗ The Gone Network — Best Campaigns 2026</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TODAY'S INSPIRATION SPARKS -->
+  <div class="card cd-card grid-wide">
+    <div class="card-accent"></div>
+    <div class="card-header"><span class="card-icon">💡</span><span class="card-title">Today's Inspiration Sparks</span></div>
+    <div class="cd-ideas-grid">
+      <div class="cd-idea">
+        <div class="cd-number">01</div>
+        <div>
+          <div class="cd-idea-title">The FIFA Snack Play</div>
+          <div class="cd-idea-body">World Cup 2026 is live. Sabritas just fired the starting pistol with "No Sabritas, No Game." Mamee needs a Malaysian equivalent before the tournament window closes — "No Mamee, No Match" or a match-ritual campaign with a footballer or football community. Brief creative this week.</div>
+        </div>
+      </div>
+      <div class="cd-idea">
+        <div class="cd-number">02</div>
+        <div>
+          <div class="cd-idea-title">The Crunch Sound Challenge</div>
+          <div class="cd-idea-body">Coca-Cola Japan built a viral campaign around a single sound question. Mamee's crunch is one of Malaysia's most iconic snack sounds. Launch a TikTok challenge: "Does Mamee crunch sound like ___?" Let the internet decide. The UGC writes itself.</div>
+        </div>
+      </div>
+      <div class="cd-idea">
+        <div class="cd-number">03</div>
+        <div>
+          <div class="cd-idea-title">Rasa Malaysia Heritage Drop</div>
+          <div class="cd-idea-body">Heritage Malaysian flavours (gula melaka, pandan, cendol, ulam) are exploding on TikTok FYP right now. A limited "Rasa Malaysia" flavour series — authentic, local, seasonal — would be algorithmically timed perfectly and press-worthy. Consider a community vote for the next flavour.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRAND & COMPETITOR WATCH -->
+  <div class="card card-watch grid-wide">
+    <div class="card-accent"></div>
+    <div class="card-header"><span class="card-icon">👁</span><span class="card-title">Brand &amp; Competitor Watch</span><span class="card-count">5 brands</span></div>
     <div class="watchlist-grid">
-      <div class="watch-item">
-        <div class="watch-brand">Sabritas / Lay's (PepsiCo)</div>
-        <div class="watch-move">Launched "What We Do, We Do for Football" — officially aligning their snack brand with FIFA World Cup 2026. Also: Lay's Thailand's regional flavor "Esarn Hot Pot" chips are winning cultural credibility with hyper-local storytelling. Two different playbooks worth watching closely.</div>
+      <div class="watchlist-item">
+        <div class="watch-dot"></div>
+        <div>
+          <div class="watchlist-title">Sabritas (PepsiCo)</div>
+          <div class="watchlist-body">Launched major FIFA World Cup 2026 snack partner campaign. "No Sabritas, No Game" — tying snacking to football ritual. Sets the creative bar for all snack brands going into the tournament.</div>
+        </div>
       </div>
-      <div class="watch-item">
-        <div class="watch-brand">Nestlé Malaysia</div>
-        <div class="watch-move">Smart factory upgrade using robotics for packaging has increased output by 20%, lowering per-unit production cost. As the most recognised FMCG brand in Malaysia, Nestlé's investment in operational efficiency raises the competitive bar for shelf availability and pricing across the entire snack and food category.</div>
+      <div class="watchlist-item">
+        <div class="watch-dot"></div>
+        <div>
+          <div class="watchlist-title">Coca-Cola Japan</div>
+          <div class="watchlist-body">"Fizz or Sizz" sound-matching campaign driving massive UGC. Proves sensory-led food/drink creative is a playbook that travels — and wins awards. Snack brands should be watching closely.</div>
+        </div>
       </div>
-      <div class="watch-item">
-        <div class="watch-brand">RedNote / Xiaohongshu (Redshop)</div>
-        <div class="watch-move">RedNote launched "Redshop," an integrated e-commerce layer within the platform, expanding from content discovery to direct purchase. With 4.3M users across Malaysia and Singapore, this is a new direct-to-consumer channel that FMCG brands — including snack brands — cannot afford to ignore in 2026.</div>
+      <div class="watchlist-item">
+        <div class="watch-dot"></div>
+        <div>
+          <div class="watchlist-title">Jom Chá (F&amp;B chain)</div>
+          <div class="watchlist-body">Expanding to 55+ outlets with deliberate non-mall strategy. Signals where snacking occasions are shifting — away from malls, into neighbourhoods and transit hubs. Opportunity for Mamee distribution review.</div>
+        </div>
+      </div>
+      <div class="watchlist-item">
+        <div class="watch-dot"></div>
+        <div>
+          <div class="watchlist-title">MNC FMCG Brands</div>
+          <div class="watchlist-body">Still hold 51% value share in Malaysia but local brands are closing fast. MNCs are investing heavily in digital and social. Mamee's competitive window for "local hero" positioning is open but won't be forever.</div>
+        </div>
+      </div>
+      <div class="watchlist-item">
+        <div class="watch-dot"></div>
+        <div>
+          <div class="watchlist-title">Thai FMCG Brands</div>
+          <div class="watchlist-body">Raw material cost pressure is forcing Thai snack brands to reformulate or reprice. Thai players with lower cost bases may eye Malaysian shelf space at competitive price points. Watch for import activity into MY.</div>
+        </div>
       </div>
     </div>
   </div>
 
 </div><!-- /grid -->
+
+<div class="footer">
+  <div class="footer-brand"><span>🍜</span> Mamee Intelligence Brief</div>
+  <div>Friday, 17 April 2026 · Compiled 7:00 AM MYT · Sources: The Star, Malay Mail, FMT, The Edge MY, Sellercraft, Ads of the World, DesignKick, Bangkok Post, Nation Thailand, Statista SG</div>
+</div>
 
 </body>
 </html>
