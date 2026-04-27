@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mamee Intelligence Brief — 26 April 2026</title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Mamee Intelligence Brief — 27 April 2026</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -58,74 +61,41 @@
   .news-item { padding: 14px 16px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 10px; transition: background 0.2s; }
   .news-item:hover { background: rgba(255,255,255,0.04); }
   .news-category { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-dim); margin-bottom: 6px; }
-  .news-headline { font-size: 13px; font-weight: 600; color: white; line-height: 1.4; margin-bottom: 5px; }
-  .news-summary { font-size: 11.5px; color: var(--text-dim); line-height: 1.55; margin-bottom: 7px; }
-  .news-flag { font-size: 11px; color: #fbbf24; font-style: italic; padding: 4px 8px; background: rgba(251,191,36,0.06); border-left: 2px solid rgba(251,191,36,0.3); border-radius: 0 4px 4px 0; margin-bottom: 6px; }
-  .news-source { font-size: 10px; }
+  .news-headline { font-size: 12.5px; font-weight: 600; color: white; line-height: 1.4; margin-bottom: 6px; }
+  .news-source { font-size: 10px; color: var(--muted); }
   .news-source a { color: #818cf8; text-decoration: none; }
-  .news-source a:hover { text-decoration: underline; color: #a5b4fc; }
-  .cd-card { background: linear-gradient(135deg, #0e0a1a 0%, #150d24 100%); border-color: rgba(168,85,247,0.2); }
-  .cd-card .card-accent { background: linear-gradient(90deg, var(--purple), var(--indigo)); }
-  .cd-ideas-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
-  .cd-idea { display: flex; gap: 14px; padding: 16px; background: rgba(168,85,247,0.05); border: 1px solid rgba(168,85,247,0.12); border-radius: 10px; transition: background 0.2s; }
-  .cd-idea:hover { background: rgba(168,85,247,0.09); }
-  .cd-number { width: 26px; height: 26px; background: rgba(168,85,247,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; color: #c084fc; flex-shrink: 0; }
-  .cd-idea-title { font-size: 13px; font-weight: 700; color: white; margin-bottom: 5px; line-height: 1.3; }
-  .cd-idea-body { font-size: 12px; color: #BBBBBB; line-height: 1.6; margin-bottom: 5px; }
-  .cd-idea-source { font-size: 10px; }
-  .cd-idea-source a { color: #c084fc; text-decoration: none; }
-  .cd-idea-source a:hover { text-decoration: underline; color: #d8b4fe; }
-  .watchlist-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
-  .watchlist-item { display: flex; gap: 12px; padding: 12px 14px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 10px; }
-  .watch-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; background: var(--yellow); }
-  .watchlist-title { font-size: 12.5px; font-weight: 600; color: white; margin-bottom: 3px; }
-  .watchlist-body { font-size: 11.5px; color: var(--text-dim); line-height: 1.5; margin-bottom: 5px; }
-  .watchlist-source { font-size: 10px; }
-  .watchlist-source a { color: #818cf8; text-decoration: none; }
-  .watchlist-source a:hover { text-decoration: underline; color: #a5b4fc; }
-  .card-sea .card-accent { background: linear-gradient(90deg, #6366F1, #818cf8); }
-  .card-sea .card-title { color: #a5b4fc; }
-  .sea-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .sea-country-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
-  .sea-country-flag { font-size: 20px; line-height: 1; }
-  .sea-country-name { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: white; }
-  .sea-country-sub { font-size: 10px; color: var(--text-dim); margin-left: auto; }
-  .card-fmcg .card-accent { background: linear-gradient(90deg, #E8192C, #ff6b6b); } .card-fmcg .card-title { color: #ff6b6b; }
-  .card-tiktok .card-accent { background: linear-gradient(90deg, #000, #69C9D0); } .card-tiktok .card-title { color: #69C9D0; }
-  .card-china .card-accent { background: linear-gradient(90deg, #E8192C, #ff4d4d); } .card-china .card-title { color: #ff6b6b; }
-  .card-digitaling .card-accent { background: linear-gradient(90deg, #F97316, #fbbf24); } .card-digitaling .card-title { color: #fbbf24; }
-  .card-jing .card-accent { background: linear-gradient(90deg, #14B8A6, #06b6d4); } .card-jing .card-title { color: #2dd4bf; }
-  .card-aotw .card-accent { background: linear-gradient(90deg, #22C55E, #86efac); } .card-aotw .card-title { color: #4ade80; }
-  .card-pack .card-accent { background: linear-gradient(90deg, #6366F1, #a78bfa); } .card-pack .card-title { color: #a78bfa; }
-  .card-watch .card-accent { background: linear-gradient(90deg, #FFD000, #f59e0b); } .card-watch .card-title { color: #FFD000; }
-  .footer { padding: 20px 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: var(--muted); }
-  ::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-track { background: var(--dark); } ::-webkit-scrollbar-thumb { background: var(--dark4); border-radius: 3px; }
-  @media (max-width: 1100px) {
-    .grid { grid-template-columns: repeat(2, 1fr); }
-    .grid-wide { grid-column: span 2; }
-    .news-grid { grid-template-columns: repeat(2, 1fr); }
-    .cd-ideas-grid { grid-template-columns: repeat(2, 1fr); }
-    .watchlist-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 700px) {
-    .grid { grid-template-columns: 1fr; padding: 12px 16px; gap: 12px; }
-    .grid-wide { grid-column: span 1; }
-    .header { padding: 14px 16px; flex-wrap: wrap; gap: 10px; }
-    .header-sub { display: none; }
-    .hero { margin: 16px 16px 0; padding: 20px 18px; }
-    .hero-title { font-size: 16px; }
-    .card { padding: 18px 16px; }
-    .news-grid { grid-template-columns: 1fr; }
-    .cd-ideas-grid { grid-template-columns: 1fr; }
-    .watchlist-grid { grid-template-columns: 1fr; }
-    .sea-grid { grid-template-columns: 1fr; gap: 12px; }
-    .footer { padding: 16px; flex-direction: column; gap: 6px; text-align: center; }
-  }
-  @media (max-width: 390px) {
-    .hero { padding: 16px 14px; margin: 12px 12px 0; }
-    .card { padding: 14px 12px; }
-    .grid { padding: 10px 12px; }
-  }
+  .card-fmcg .card-accent { background: linear-gradient(90deg, #f97316, #fb923c); }
+  .card-fmcg .card-title { color: #fb923c; }
+  .card-tiktok .card-accent { background: linear-gradient(90deg, #ec4899, #f472b6); }
+  .card-tiktok .card-title { color: #f472b6; }
+  .card-xhs .card-accent { background: linear-gradient(90deg, #ef4444, #f87171); }
+  .card-xhs .card-title { color: #f87171; }
+  .card-sea .card-accent { background: linear-gradient(90deg, #14b8a6, #2dd4bf); }
+  .card-sea .card-title { color: #2dd4bf; }
+  .card-creative .card-accent { background: linear-gradient(90deg, #a855f7, #c084fc); }
+  .card-creative .card-title { color: #c084fc; }
+  .card-industry .card-accent { background: linear-gradient(90deg, #6366f1, #818cf8); }
+  .card-industry .card-title { color: #818cf8; }
+  .card-talent .card-accent { background: linear-gradient(90deg, #22c55e, #4ade80); }
+  .card-talent .card-title { color: #4ade80; }
+  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
+  .stat-box { padding: 14px 16px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 10px; text-align: center; }
+  .stat-value { font-size: 22px; font-weight: 800; color: white; line-height: 1; margin-bottom: 4px; }
+  .stat-label { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.6px; }
+  .alert-banner { margin: 0 32px 0; background: rgba(234,179,8,0.08); border: 1px solid rgba(234,179,8,0.25); border-radius: 12px; padding: 14px 20px; display: flex; align-items: center; gap: 12px; margin-top: 16px; }
+  .alert-icon { font-size: 20px; }
+  .alert-text { font-size: 12.5px; color: #fde68a; line-height: 1.5; }
+  .alert-text strong { color: #fbbf24; }
+  .footer { margin: 8px 32px 32px; padding: 16px 24px; background: var(--dark2); border: 1px solid var(--border); border-radius: 12px; display: flex; align-items: center; justify-content: space-between; }
+  .footer-text { font-size: 11px; color: var(--muted); }
+  .footer-brand { font-size: 11px; font-weight: 700; color: var(--red); }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 100px; font-size: 10px; font-weight: 600; margin-right: 4px; margin-bottom: 4px; }
+  .tag-red { background: rgba(232,25,44,0.15); color: #ff4d5e; }
+  .tag-blue { background: rgba(59,130,246,0.15); color: #93c5fd; }
+  .tag-green { background: rgba(34,197,94,0.15); color: #4ade80; }
+  .tag-orange { background: rgba(249,115,22,0.15); color: #fb923c; }
+  .tag-purple { background: rgba(168,85,247,0.15); color: #c084fc; }
+  .tag-yellow { background: rgba(234,179,8,0.15); color: #fbbf24; }
 </style>
 </head>
 <body>
@@ -135,440 +105,246 @@
     <div class="logo-mark">M</div>
     <div>
       <div class="header-title">Mamee Intelligence Brief</div>
-      <div class="header-sub">Daily intelligence dashboard for the Mamee Double Decker team</div>
+      <div class="header-sub">Creative Director Morning Stack — Malaysia &amp; SEA</div>
     </div>
   </div>
   <div class="header-right">
-    <div class="date-badge">🇲🇾 Sunday, 26 April 2026</div>
+    <div class="date-badge">🇲🇾 Monday, 27 April 2026</div>
     <div class="live-dot">Live</div>
   </div>
 </div>
 
 <div class="hero">
-  <div class="hero-label">🔥 Top Signal of the Day</div>
-  <div class="hero-title">Malaysia's Q1 2026 GDP Hits 5.3% Despite Global Headwinds — Consumer Spending Holds Firm</div>
-  <div class="hero-body">Malaysia's economy expanded 5.3% in Q1 2026, above most analyst forecasts, with services growing 5.4% and manufacturing staying resilient on AI and semiconductor demand. For Mamee, this is green light territory: consumer purchasing power remains robust, making this a critical window to defend shelf space and push premium SKUs before the 618 digital sale season activates cross-border competitive pressure from Chinese snack brands going global.</div>
-  <div class="hero-source"><span class="pub-time">📅 25 April 2026</span> Source: <a href="https://www.businesstoday.com.my/2026/04/18/higher-q1-gdp-estimates-could-see-malaysia-reaching-5-for-2026/" target="_blank">BusinessToday — Higher Q1 GDP Estimates Could See Malaysia Reaching 5% For 2026</a></div>
+  <div class="hero-label">🏆 Top Signal — Economy</div>
+  <div class="hero-title">IMF Lifts Malaysia's 2026 GDP Forecast to 4.7% — Strongest Upgrade in ASEAN, But US Section 301 Hearing Looms Tomorrow</div>
+  <div class="hero-body">
+    The International Monetary Fund raised Malaysia's real GDP growth forecast to 4.7% for 2026 (up from its earlier 4.4% projection), citing resilient domestic consumption and strong labour market conditions. The World Bank also revised its outlook upward to 4.4%. Both upgrades position Malaysia as one of ASEAN's most resilient economies heading into mid-year. However, a critical risk event arrives tomorrow: the US will hold a public hearing on 28 April for its Section 301 investigation, which names Malaysia alongside 15 other economies including China, India, and Vietnam. The outcome could reshape tariff exposure for Malaysian exporters across E&E and FMCG categories. For Mamee, strong domestic demand is a near-term tailwind — but watch the 28 April hearing closely for any signals on food and snack sector exposure.
+  </div>
+  <div class="hero-source">
+    <span class="pub-time">📅 14–15 Apr 2026</span>
+    <a href="https://www.freemalaysiatoday.com/category/nation/2026/04/14/imf-raises-malaysias-gdp-forecast-to-4-7-for-2026/" target="_blank">↗ FMT</a> &nbsp;·&nbsp;
+    <a href="https://www.thestar.com.my/business/2026/04/15/imf-raises-malaysia039s-real-gdp-growth-forecast-to-47-for-2026-43-in-2027" target="_blank">↗ The Star</a> &nbsp;·&nbsp;
+    <a href="https://www.cassidylevy.com/news/the-us-malaysia-agreement-framework-implementation-and-impact/" target="_blank">↗ Cassidy Levy Kent</a>
+  </div>
+</div>
+
+<div class="alert-banner">
+  <div class="alert-icon">⚠️</div>
+  <div class="alert-text"><strong>ACTION ALERT — Tomorrow 28 April:</strong> US Section 301 public hearing includes Malaysia. This could affect tariff exposure on food exports. Monitor MITI and The Edge for real-time updates.</div>
 </div>
 
 <div class="grid">
 
-<div class="card card-mynews grid-wide">
-  <div class="card-accent"></div>
-  <div class="card-header"><span class="card-icon">🇲🇾</span><span class="card-title">Malaysia Top News Today</span><span class="card-count">6 stories</span></div>
-  <div class="news-grid">
-
-    <div class="news-item">
-      <div class="news-category">Defence &amp; Geopolitics</div>
-      <div class="news-headline">China Dominates DSA 2026 With 192 Firms, But Malaysia Inks Deals With the West</div>
-      <div class="news-summary">Chinese companies led the Defence Services Asia 2026 exhibition with the largest national contingent, yet Malaysia's actual procurement agreements and MOUs at the event favoured Western and non-Chinese partners. The signal: Malaysia is balancing strategic hedging at the highest level.</div>
-      <div class="news-flag">Mamee angle: Supply chain and raw material sourcing from China remains under soft political scrutiny — worth monitoring for packaging input costs.</div>
-      <div class="news-source"><span class="pub-time">📅 26 Apr 2026</span> <a href="https://www.freemalaysiatoday.com/category/nation/2026/04/26/china-dominant-at-dsa-but-still-not-malaysias-preferred-defence-partner" target="_blank">Free Malaysia Today</a></div>
+  <div class="card card-mynews grid-wide">
+    <div class="card-accent"></div>
+    <div class="card-header">
+      <div class="card-icon">🇲🇾</div>
+      <div class="card-title">Malaysia Now</div>
+      <div class="card-count">3 stories</div>
     </div>
-
-    <div class="news-item">
-      <div class="news-category">Economy</div>
-      <div class="news-headline">Malaysia Economically Resilient Amid Global Supply Crisis Second Wave, Says Deputy Minister</div>
-      <div class="news-summary">Malaysia's deputy minister reaffirmed the country's economic buffers are holding firm against a renewed wave of global supply disruption, citing diversified trade ties and domestic demand as key cushions. GDP growth of 5.3% in Q1 backs this narrative.</div>
-      <div class="news-flag">Mamee angle: Stable consumer spending environment supports in-store promotion investment and new product launches in the near term.</div>
-      <div class="news-source"><span class="pub-time">📅 25 Apr 2026</span> <a href="https://www.thestar.com.my/news/nation/2026/04/25/malaysia-still-economically-resilient-during-global-supply-crisis-second-wave-says-deputy-minister" target="_blank">The Star</a></div>
-    </div>
-
-    <div class="news-item">
-      <div class="news-category">Food &amp; Consumer</div>
-      <div class="news-headline">Malaysians Stockpile Food Amid Rising Price Fears, Not Actual Shortages</div>
-      <div class="news-summary">Households are buying extra rice, cooking oil, and snack staples — not because shelves are empty, but because price anxiety is driving pre-emptive hoarding. The behaviour is being shaped by social media-amplified fear rather than real scarcity signals.</div>
-      <div class="news-flag">Mamee angle: Impulse-buy snack formats and multi-pack value bundles could ride this wave — shoppers are stocking up, not trading down.</div>
-      <div class="news-source"><span class="pub-time">📅 26 Apr 2026</span> <a href="https://thesun.my/news/malaysia-news/people-issues/malaysians-stockpile-food-amid-fears-of-rising-prices-not-shortages/" target="_blank">The Sun</a></div>
-    </div>
-
-    <div class="news-item">
-      <div class="news-category">Tourism &amp; Events</div>
-      <div class="news-headline">Visit Malaysia Campaign Extended to 2027 to Counter Middle East Tourism Drag</div>
-      <div class="news-summary">The government has extended VMY 2026 into 2027, acknowledging that the ongoing Middle East conflict has suppressed global tourism recovery timelines. Domestic and intra-ASEAN tourism are expected to be the primary beneficiaries of the extended push.</div>
-      <div class="news-flag">Mamee angle: Airport, travel retail and tourism-facing snack formats gain extended runway — consider travel-exclusive packaging editions.</div>
-      <div class="news-source"><span class="pub-time">📅 21 Apr 2026</span> <a href="https://www.freemalaysiatoday.com/category/nation/2026/04/21/govt-extends-visit-malaysia-campaign-to-2027" target="_blank">Free Malaysia Today</a></div>
-    </div>
-
-    <div class="news-item">
-      <div class="news-category">Food Expo</div>
-      <div class="news-headline">SIFEX 2026 Closes Today: 400+ F&amp;B Booths From Sabah, ASEAN &amp; Taiwan</div>
-      <div class="news-summary">The Sabah International Food Expo 2026 wraps up today (Sunday 26 April) after showcasing over 400 food and beverage exhibitors spanning Sabah, Sarawak, Peninsula Malaysia, Indonesia, the Philippines and Taiwan. The event spotlighted East Malaysian produce and cross-border F&amp;B opportunities.</div>
-      <div class="news-flag">Mamee angle: East Malaysian distribution and localised product variants are a growth whitespace worth exploring post-event.</div>
-      <div class="news-source"><span class="pub-time">📅 26 Apr 2026</span> <a href="https://www.buro247.my/lifestyle/food-drink/new-restaurants-cafes-bars-kl-pj-april-2026.html" target="_blank">Buro 247 Malaysia</a></div>
-    </div>
-
-    <div class="news-item">
-      <div class="news-category">F&amp;B Retail</div>
-      <div class="news-headline">Chinese &amp; Homegrown Brands Shake Up Malaysian F&amp;B Retail, Displacing Western Giants</div>
-      <div class="news-summary">A new wave of Chinese and homegrown food and beverage brands is disrupting Malaysia's retail shelves, taking share from Western incumbents that once dominated grocery aisles. The trend is accelerating across convenience and hypermarket formats, especially in snacks and RTD beverages.</div>
-      <div class="news-flag">Mamee angle: As the homegrown incumbent, Mamee is well-positioned — but must sharpen brand storytelling to stand out against the flood of new local and Chinese challenger brands.</div>
-      <div class="news-source"><span class="pub-time">📅 26 Apr 2026</span> <a href="https://theedgemalaysia.com/node/775713" target="_blank">The Edge Malaysia — F&amp;B Battle for Malaysian Taste Buds</a></div>
-    </div>
-
-  </div>
-</div>
-
-<div class="card card-sea grid-wide">
-  <div class="card-accent"></div>
-  <div class="card-header"><span class="card-icon">🌏</span><span class="card-title">SEA Regional Pulse — Singapore &amp; Thailand</span><span class="card-count">6 signals</span></div>
-  <div class="sea-grid">
-    <div>
-      <div class="sea-country-header"><span class="sea-country-flag">🇸🇬</span><span class="sea-country-name">Singapore</span><span class="sea-country-sub">26 Apr 2026</span></div>
-      <div class="signal-list">
-
-        <div class="signal-item">
-          <div class="signal-headline">Food &amp; Hospitality Asia 2026 Closes as Biggest FHA in a Decade — 2,750 Exhibitors, 800K+ Innovations</div>
-          <div class="signal-body">FHA 2026 at Singapore Expo wrapped last week (21–24 April), bringing together F&amp;B, HoReCa, Prowine Singapore and IndusFood Asia under one roof. Over 50 countries participated, showcasing the broadest range of food innovation seen at the show in 10 years.</div>
-          <div class="signal-implication">Mamee implication: Competitors are actively debuting innovation in Singapore — worth monitoring what snack launches came out of FHA to anticipate regional competitive moves.</div>
-          <div class="signal-source"><span class="pub-time">📅 21–24 Apr 2026</span> <a href="https://www.prnewswire.com/apac/news-releases/food--hospitality-asia-2026-returns-as-the-biggest-event-in-a-decade-302710778.html" target="_blank">PR Newswire — FHA 2026</a></div>
-        </div>
-
-        <div class="signal-item">
-          <div class="signal-headline">Singapore Blocks 6 Fake News Websites Run by Foreign Actors — Misinformation Crackdown Intensifies</div>
-          <div class="signal-body">The Ministry of Home Affairs and IMDA jointly identified and blocked six deceptive websites operated by foreign entities, citing hostile information campaigns targeting Singapore's public. The move signals a tightening of digital content governance across the region.</div>
-          <div class="signal-implication">Mamee implication: Brand safety on paid media across SEA needs ongoing review — especially for performance campaigns running in Singapore's digital ecosystem.</div>
-          <div class="signal-source"><span class="pub-time">📅 23 Apr 2026</span> <a href="https://mothership.sg/2026/04/mha-imda-6-fake-news-websites-blocked/" target="_blank">Mothership SG — Fake News Websites Blocked</a></div>
-        </div>
-
-        <div class="signal-item">
-          <div class="signal-headline">Singapore Grocery Retail Power Concentrated in Few Hands as Digital &amp; Local Brands Reshape Aisles</div>
-          <div class="signal-body">Affordability pressures and the rise of regional and local brands are reshaping FMCG dynamics in Singapore, as a small group of grocery operators control shelf access, import flows, and private label development. New local entrants are gaining traction with value-for-money propositions.</div>
-          <div class="signal-implication">Mamee implication: Shelf listing negotiation in Singapore requires stronger brand equity investment — private label and local upstarts are squeezing mid-tier imported snacks.</div>
-          <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://www.grocerytradenews.com/singapore-supermarkets-ranking-2026/" target="_blank">Grocery Trade News — Singapore Supermarkets 2026</a></div>
-        </div>
-
+    <div class="news-grid">
+      <div class="news-item">
+        <div class="news-category">Markets</div>
+        <div class="news-headline">Bursa Malaysia Forecast to Trade Sideways 1,700–1,730 This Week Amid Global Uncertainty</div>
+        <div class="signal-body">Rakuten Trade projects the KLCI holding within a tight band this week. Investor sentiment cautious ahead of the US Section 301 hearing on 28 April. E&amp;E and export-heavy counters are the ones to watch.</div>
+        <div class="news-source"><span class="pub-time">📅 26 Apr 2026</span> <a href="https://www.thestar.com.my/aseanplus/aseanplus-news/2026/04/26/bursa-malaysia-likely-to-trade-sideways-between-1700-and-1730-from-monday-april-27" target="_blank">↗ The Star</a></div>
       </div>
-    </div>
-    <div>
-      <div class="sea-country-header"><span class="sea-country-flag">🇹🇭</span><span class="sea-country-name">Thailand</span><span class="sea-country-sub">26 Apr 2026</span></div>
-      <div class="signal-list">
-
-        <div class="signal-item">
-          <div class="signal-headline">Thailand Consumer Confidence Crashes -10.9 Points to 45.5 — Biggest Monthly Drop Globally</div>
-          <div class="signal-body">Thailand recorded the largest monthly consumer confidence decline of any of the 30 countries surveyed in April 2026, with the index falling to 45.5. 56% of Thais now believe the country is on the wrong track, a 15-point surge from March 2026 alone.</div>
-          <div class="signal-implication">Mamee implication: Thailand distribution strategy should focus on value-pack formats and affordable price points; premium launches should be deferred until confidence recovers.</div>
-          <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://www.ipsos.com/en-th/what-worries-thailand-april-2026" target="_blank">Ipsos — What Worries Thailand April 2026</a></div>
-        </div>
-
-        <div class="signal-item">
-          <div class="signal-headline">People's Party Annual Congress Signals New Leadership — Thaksin Parole Due May 11</div>
-          <div class="signal-body">Thailand's People's Party concluded its annual congress on 24–26 April with a leadership shake-up and plans to launch a shadow cabinet. Thaksin Shinawatra's parole final review is scheduled for April 29, with release expected on May 11, adding political uncertainty to an already fragile sentiment environment.</div>
-          <div class="signal-implication">Mamee implication: Political transition periods in Thailand historically create advertising spend freezes among local FMCG competitors — potential window to gain shelf presence.</div>
-          <div class="signal-source"><span class="pub-time">📅 26 Apr 2026</span> <a href="https://www.nationthailand.com/" target="_blank">Nation Thailand</a></div>
-        </div>
-
-        <div class="signal-item">
-          <div class="signal-headline">Thailand's 118 Hot Springs Earmarked for Global Wellness Tourism Push</div>
-          <div class="signal-body">Thailand's Tourism Authority is positioning the country's extensive hot spring network as a premium wellness tourism asset to attract high-value international visitors. The push aligns with the global post-pandemic appetite for experiential and wellness travel.</div>
-          <div class="signal-implication">Mamee implication: Wellness-positioned snack variants (low-sodium, functional ingredients, clean label) could tap into the lifestyle shift driving Thai consumer aspirations in 2026.</div>
-          <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://www.tatnews.org/2026/04/april-2026-festivals-and-events-in-thailand/" target="_blank">TAT Newsroom — Thailand Tourism Events April 2026</a></div>
-        </div>
-
+      <div class="news-item">
+        <div class="news-category">Trade Risk</div>
+        <div class="news-headline">US Initiates Section 301 Investigation Naming Malaysia — Public Hearing Set for 28 April 2026</div>
+        <div class="signal-body">The USTR filed a Federal Register notice on 11 April 2026 opening Section 301 investigations covering Malaysia, China, India, Indonesia, Vietnam and 11 other economies. A 10% uniform tariff is currently applied to all partners post-February Supreme Court ruling. The 28 April hearing is the next key milestone.</div>
+        <div class="news-source"><span class="pub-time">📅 19 Apr 2026</span> <a href="https://www.tradecomplianceresourcehub.com/2026/04/19/trump-2-0-tariff-tracker/" target="_blank">↗ Trade Compliance Hub</a></div>
+      </div>
+      <div class="news-item">
+        <div class="news-category">Growth</div>
+        <div class="news-headline">World Bank Raises Malaysia 2026 Growth to 4.4%; IMF Goes Higher at 4.7% on Strong Domestic Demand</div>
+        <div class="signal-body">Two back-to-back upgrades in April signal confidence in Malaysia's domestic fundamentals. Private consumption, wage gains, and government income support are the key drivers. BNM's own band is 4–5%, aligning with both international projections. For FMCG, robust consumer spending = sustained basket size.</div>
+        <div class="news-source"><span class="pub-time">📅 9–15 Apr 2026</span> <a href="https://bernama.com/en/region/news.php/news.php?id=2542822" target="_blank">↗ Bernama</a> &nbsp;·&nbsp; <a href="https://theedgemalaysia.com/node/799181" target="_blank">↗ The Edge</a></div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="card card-fmcg">
-  <div class="card-accent"></div>
-  <div class="card-header"><span class="card-icon">📦</span><span class="card-title">FMCG Pulse — Malaysia</span><span class="card-count">3 signals</span></div>
-  <div class="signal-list">
-
-    <div class="signal-item">
-      <div class="signal-headline">Malaysia Snack Food Market to Grow 5.3% by Volume in 2026 — Functional &amp; Halal Claims Lead</div>
-      <div class="signal-body">Statista forecasts Malaysia's snack food market growing 5.3% in volume terms in 2026, driven by consumers seeking naturally healthy snacks with halal certification, reduced-negative-nutrient claims, and functional ingredients like seeds, whole grains, and plant proteins.</div>
-      <div class="signal-implication">Mamee implication: Existing ranges should be reviewed for halal front-of-pack visibility; new SKU development should lead with functional and clean-label positioning.</div>
-      <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://www.statista.com/outlook/cmo/food/confectionery-snacks/snack-food/malaysia" target="_blank">Statista — Malaysia Snack Food Market 2026</a></div>
+  <div class="card card-fmcg">
+    <div class="card-accent"></div>
+    <div class="card-header">
+      <div class="card-icon">🛒</div>
+      <div class="card-title">FMCG Intel</div>
+      <div class="card-count">3 signals</div>
     </div>
-
-    <div class="signal-item">
-      <div class="signal-headline">Food Prices Remain No. 1 Consumer Anxiety in Malaysia — 86% of Households Feeling the Squeeze</div>
-      <div class="signal-body">A Rakuten Insight survey found that food prices surpassed even petrol costs as the top financial anxiety for Malaysian households. Chicken, cooking oil, rice and nasi lemak packets are the most cited pressure points, reshaping how consumers allocate their grocery budgets.</div>
-      <div class="signal-implication">Mamee implication: Affordable single-serve and multi-pack value formats are non-negotiable range pillars — messaging around value-for-money should be amplified in ATL and digital creative.</div>
-      <div class="signal-source"><span class="pub-time">📅 1 Apr 2026</span> <a href="https://soyacincau.com/2026/04/01/rakuten-insight-not-petrol-malaysians-biggest-fear-right-now-is-food-prices/" target="_blank">SoyaCincau — Malaysians' Biggest Fear is Food Prices</a></div>
-    </div>
-
-    <div class="signal-item">
-      <div class="signal-headline">Lay's Malaysia Runs FIFA World Cup 2026 Promotion — Spend RM6 to Win a Trip</div>
-      <div class="signal-body">Lay's Malaysia has launched a month-long (April 2026) consumer promotion tied to the FIFA World Cup 2026, requiring only a RM6 spend on Frito-Lay products for entry. The promotion is designed to drive impulse purchase and basket top-up at point of sale across Malaysia.</div>
-      <div class="signal-implication">Mamee implication: Lay's is activating around a major global event at a low entry threshold — Mamee should consider a competing World Cup activation before the tournament begins in summer 2026.</div>
-      <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://www.everydayonsales.com/909752/1-30-april-2026-lays-malaysia-fan-contest-promotion-spend-rm6-stand-a-chance-to-win-a-fifa-world-cup-2026-trip" target="_blank">EverydayOnSales — Lay's Malaysia Fan Contest</a></div>
-    </div>
-
-  </div>
-</div>
-
-<div class="card card-tiktok">
-  <div class="card-accent"></div>
-  <div class="card-header"><span class="card-icon">🎵</span><span class="card-title">TikTok Malaysia</span><span class="card-count">3 signals</span></div>
-  <div class="signal-list">
-
-    <div class="signal-item">
-      <div class="signal-headline">Mochi Cheesecake Goes Viral — Hybrid Texture Formats Dominating Malaysian Food TikTok</div>
-      <div class="signal-body">Mochi cheesecake — a mashup of chewy mochi dough and creamy cheesecake — is one of the highest-engagement food formats on TikTok Malaysia in April 2026. The trend reflects a broader Gen Z appetite for texture-forward, visually unique, shareable food experiences.</div>
-      <div class="signal-implication">Mamee implication: A limited-edition snack with a dual-texture (e.g. crunchy outside, soft filling) or a snack X dessert crossover format could generate organic TikTok traction.</div>
-      <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://www.tiktok.com/discover/snack-malaysia-viral" target="_blank">TikTok — Snack Malaysia Viral</a></div>
-    </div>
-
-    <div class="signal-item">
-      <div class="signal-headline">Matcha Domination Continues — From Lattes to Brownies, Matcha Spreads Across All F&amp;B Categories</div>
-      <div class="signal-body">Matcha is sustaining its TikTok presence in Malaysia with a wider category reach in April 2026 — appearing across beverages, mochi, tiramisu, and brownies. The flavour profile has become a premium cue that resonates strongly with 18–30-year-old urban consumers.</div>
-      <div class="signal-implication">Mamee implication: A matcha-flavoured edition of a core Mamee snack product (e.g. Monster or Munch range) could tap into this high-affinity flavour trend with low product development risk.</div>
-      <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://www.accio.com/business/tiktok-food-trends" target="_blank">Accio — TikTok Food Trends 2026</a></div>
-    </div>
-
-    <div class="signal-item">
-      <div class="signal-headline">Popiah Big Mac Stunt &amp; Crispy Spicy Chicken Tenders Lead Malaysia Street Food Virality in April</div>
-      <div class="signal-body">The "Popiah Big Mac" — a spring roll stuffed with beef patty fillings — and crispy spicy chicken tenders are generating high engagement on TikTok Malaysia. These mash-up formats signal that audiences reward creativity, irreverence and flavour remixing in snack content.</div>
-      <div class="signal-implication">Mamee implication: Brand content that hacks or remixes existing snack products (e.g. "Mamee noodle pizza" or "Mamee Monster nachos") has viral potential — this is a low-budget, high-reach UGC activation opportunity.</div>
-      <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://www.therakyatpost.com/living/2025/06/18/5-must-try-viral-foods-in-malaysia-right-now/" target="_blank">The Rakyat Post — Viral Foods Malaysia</a></div>
-    </div>
-
-  </div>
-</div>
-
-<div class="card card-china">
-  <div class="card-accent"></div>
-  <div class="card-header"><span class="card-icon">🔴</span><span class="card-title">Xiaohongshu / RedNote</span><span class="card-count">3 signals</span></div>
-  <div class="signal-list">
-
-    <div class="signal-item">
-      <div class="signal-headline">XHS Malaysia Now Reaches 3.5M+ Active Users — 40% of Ethnic Chinese Population on Platform</div>
-      <div class="signal-body">Malaysia's Xiaohongshu user base has crossed 3.5 million active users, capturing approximately 40% of the ethnic Chinese population plus a growing non-Chinese urban segment using translation tools. Combined with Singapore, the platform claims 4.3 million SEA users, making it a critical discovery channel in the region.</div>
-      <div class="signal-implication">Mamee implication: Xiaohongshu is no longer optional for Malaysian brand strategy — it is the primary product discovery platform for the highest-spending urban Chinese consumer segment.</div>
-      <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://hashmeta.com/blog/xiaohongshu-malaysia-guide-how-malaysians-use-rednote-little-red-book-to-find-products-places/" target="_blank">Hashmeta — Xiaohongshu Malaysia Guide</a></div>
-    </div>
-
-    <div class="signal-item">
-      <div class="signal-headline">"Lo-Fi" Smartphone Content Converts 4x Better Than Celebrity Endorsements on XHS in 2026</div>
-      <div class="signal-body">The highest-converting posts on Xiaohongshu in 2026 are unfiltered, smartphone-shot "peer review" style content by Key Opinion Consumers (KOCs) with 1K–10K followers. Users interpret glossy influencer posts as paid ads, but KOC content as genuine recommendations — driving purchase intent 4x more effectively.</div>
-      <div class="signal-implication">Mamee implication: Mamee's XHS strategy should prioritise seeding product with authentic Malaysian KOCs over premium influencer placements — allocate budget toward micro-creator communities, not macro names.</div>
-      <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://hashmeta.com/blog/xiaohongshu-trends-malaysia-whats-hot-on-red-for-malaysian-brands/" target="_blank">Hashmeta — XHS Trends Malaysia 2026</a></div>
-    </div>
-
-    <div class="signal-item">
-      <div class="signal-headline">XHS 2026 "Top 10 Buzzwords" Signal Lifestyle Aesthetic Shift Toward Slow, Authentic, Localised Identity</div>
-      <div class="signal-body">Xiaohongshu's curated 2026 trending buzzwords point to a platform-wide cultural shift toward slower living, authentic self-expression, and pride in local roots. Users are gravitating toward content celebrating everyday rituals, local hawker culture, and unpretentious comfort — over aspirational luxury lifestyles.</div>
-      <div class="signal-implication">Mamee implication: "Mamee as part of everyday Malaysian life" nostalgic positioning aligns perfectly with XHS's current cultural moment — archive photography, school canteen memories, and generational stories could perform strongly.</div>
-      <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://chinaskinny.com/blog/xiaohongshu-rednote-2026-lifestyle-trends" target="_blank">China Skinny — XHS 2026 Buzzwords &amp; Lifestyle Trends</a></div>
-    </div>
-
-  </div>
-</div>
-
-<div class="card card-digitaling">
-  <div class="card-accent"></div>
-  <div class="card-header"><span class="card-icon">🏆</span><span class="card-title">Digitaling — China Creative</span><span class="card-count">3 signals</span></div>
-  <div class="signal-list">
-
-    <div class="signal-item">
-      <div class="signal-headline">China Pre-618 Creative Wave: Brands Flooding Douyin With Short Video to Build Algorithm Momentum</div>
-      <div class="signal-body">With early-bird 618 applications to platforms due in late April to mid-May, Chinese brands are in full pre-sale creative production mode — flooding Douyin with short-video content designed to build algorithmic equity before the sale window opens. This is the most competitive digital advertising period in China's calendar.</div>
-      <div class="signal-implication">Mamee implication: Chinese snack challengers entering Malaysia via TikTok Shop and Shopee will be spending heavily on digital in the next 6 weeks — defensive shelf promotion and local pricing strategy need to be locked in now.</div>
-      <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://www.shanghaijungle.com/blog/china-marketing-calendar-full-year" target="_blank">Shanghai Jungle — China Marketing Calendar 2026</a></div>
-    </div>
-
-    <div class="signal-item">
-      <div class="signal-headline">China Advertising Regulator Launches 6-Month Crackdown on Superlative Claims &amp; Misleading Copy</div>
-      <div class="signal-body">China's State Administration for Market Regulation launched a nationwide enforcement campaign in March 2026 targeting misleading advertising language — including superlative claims ("No. 1"), unverifiable citations, and missing warning disclosures. The campaign runs for 6 months and is affecting how brands write creative copy across digital platforms.</div>
-      <div class="signal-implication">Mamee implication: If Mamee runs any China-facing digital ads or cross-border e-commerce listings, copy must be reviewed against these new compliance standards before 618 season.</div>
-      <div class="signal-source"><span class="pub-time">📅 Mar 2026</span> <a href="https://www.dlapiper.com/en-us/insights/publications/2026/03/china-launches-six-month-enforcement-campaign-targeting-advertising-cautionary-statements" target="_blank">DLA Piper — China Advertising Enforcement Campaign</a></div>
-    </div>
-
-    <div class="signal-item">
-      <div class="signal-headline">Guochao 3.0 Redefines Chinese FMCG Branding — TCM Ingredients &amp; Dynasty Aesthetics Drive Gen Z Loyalty</div>
-      <div class="signal-body">A Xinhua report published April 1 confirms Gen Z-fuelled Guochao is entering its third evolution: "modern craftsmanship meets ancient aesthetics." Brands are embedding TCM (Traditional Chinese Medicine) ingredients in snacks and skincare, and using Song/Tang Dynasty visual palettes to build emotional resonance with younger buyers. The Guochao market is projected to exceed 3 trillion yuan by 2028.</div>
-      <div class="signal-implication">Mamee implication: Guochao aesthetics inspire a playable creative territory for Mamee — Malay heritage, traditional motifs (batik, wayang kulit), and locally-sourced ingredient storytelling are the Malaysian equivalent of this powerful trend.</div>
-      <div class="signal-source"><span class="pub-time">📅 1 Apr 2026</span> <a href="https://english.news.cn/20260331/603e7b3e29cb4c1fa0ef2f09bdf36bd7/c.html" target="_blank">Xinhua — Gen Z-fuelled Guochao Trend April 2026</a></div>
-    </div>
-
-  </div>
-</div>
-
-<div class="card card-jing">
-  <div class="card-accent"></div>
-  <div class="card-header"><span class="card-icon">🇨🇳</span><span class="card-title">Jing Daily — China Brand Intel</span><span class="card-count">3 signals</span></div>
-  <div class="signal-list">
-
-    <div class="signal-item">
-      <div class="signal-headline">"Buy Expensive, But Don't Overpay" — China's New Consumer Mantra Reshapes FMCG Premium Strategy</div>
-      <div class="signal-body">Jing Daily's 2026 consumer trends analysis reveals a fundamental shift: Chinese consumers are willing to pay a premium, but only when justified by ingredient transparency, clinical data, or superior service experience. Over 72% of urban consumers now check product credentials before purchase, demanding proof not promise.</div>
-      <div class="signal-implication">Mamee implication: Premium SKU launches must lead with ingredient provenance and product credential storytelling — vague "premium" labelling will be ignored by the increasingly discerning Malaysian consumer who follows the same trajectory.</div>
-      <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://jingdaily.com/posts/top-12-chinese-consumer-trends-to-watch-in-2026" target="_blank">Jing Daily — Top 12 China Consumer Trends 2026</a></div>
-    </div>
-
-    <div class="signal-item">
-      <div class="signal-headline">China's Hotpot and Bubble Tea Brands Accelerate Global Expansion in 2026 — SEA Is Priority Market</div>
-      <div class="signal-body">Chinese F&amp;B chains, particularly hotpot and bubble tea brands, are accelerating their global footprint with Southeast Asia named as a priority expansion region in 2026. Malaysia and Singapore are early targets, with local partnerships and franchise models driving speed of entry.</div>
-      <div class="signal-implication">Mamee implication: The rise of Chinese F&amp;B physical formats in Malaysia will intensify competition for snacking occasions — in-restaurant snack tie-ins and co-branded promotions with popular Chinese F&amp;B chains could be an unexpected growth lever.</div>
-      <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://theenglishchronicle.com/News/21049/" target="_blank">The English Chronicle — China Hotpot &amp; Bubble Tea Brands Go Global 2026</a></div>
-    </div>
-
-    <div class="signal-item">
-      <div class="signal-headline">Deferred Desire: Chinese Consumers Deliberately Delay Purchases as "Identity Filtration" Exercise</div>
-      <div class="signal-body">New consumer research cited by Jing Daily shows tier-1 and tier-2 city consumers in China are intentionally holding items in digital wish lists for months — not due to financial constraint, but as a form of identity curation. The behaviour signals that impulse buying is losing cultural cachet among aspirational urban consumers.</div>
-      <div class="signal-implication">Mamee implication: For Mamee's premium and limited-edition products, creating "desire" through scarcity, pre-launch teaser campaigns, and waitlist mechanics could unlock higher perceived value and conversion among Malaysian urbanites.</div>
-      <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://jingdaily.com/posts/six-consumer-shifts-shaping-china-s-luxury-future" target="_blank">Jing Daily — Six Consumer Shifts in China 2026</a></div>
-    </div>
-
-  </div>
-</div>
-
-<div class="card card-aotw">
-  <div class="card-accent"></div>
-  <div class="card-header"><span class="card-icon">🎬</span><span class="card-title">Global Campaigns — Ads of the World</span><span class="card-count">3 picks</span></div>
-  <div class="signal-list">
-
-    <div class="signal-item">
-      <div class="signal-headline">Seneca App: "Let the Money Do the Talking" — Finance Brand Turns Numeric Data Into Cinematic Storytelling</div>
-      <div class="signal-body">Toy agency's campaign for fintech app Seneca (Spain/UAE/US) flips conventional finance advertising by making money itself the protagonist — with numbers, growth charts and data points dramatised through film grammar. The campaign runs across 360, digital and film channels in April 2026, winning early attention for its non-category visual language.</div>
-      <div class="signal-implication">Mamee implication: The "product as hero" approach — letting the snack itself tell the story through texture, colour and flavour cues rather than spokesperson-led messaging — is an under-exploited creative territory for Mamee.</div>
-      <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://www.adsoftheworld.com/campaigns/let-the-money-do-the-talking" target="_blank">Ads of the World — Seneca App Campaign</a></div>
-    </div>
-
-    <div class="signal-item">
-      <div class="signal-headline">FIFA World Cup 2026 Early Advertiser Wave: Brands Using Sports Fandom to Reframe Product Utility</div>
-      <div class="signal-body">With the FIFA World Cup 2026 approaching, early brand advertising is using football fandom not just for awareness but to reframe everyday products as "part of the match experience." FMCG brands are pioneering occasion-based messaging that positions snacks, beverages and household goods as essential to the viewing ritual.</div>
-      <div class="signal-implication">Mamee implication: Mamee snacks positioned as the "official match-watching snack" of Malaysian football fans is a credible and ownable creative territory — especially as Lay's is already activating with a World Cup promo at RM6.</div>
-      <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://www.xr.global/blog/2026-fifa-world-cup-early-advertising-trends-strategies" target="_blank">XR Global — FIFA World Cup 2026 Advertising Trends</a></div>
-    </div>
-
-    <div class="signal-item">
-      <div class="signal-headline">World Creative Rankings 2026: Purpose-Driven &amp; Culturally Specific Campaigns Lead Most-Awarded List</div>
-      <div class="signal-body">The Drum's 2026 World Creative Rankings reveal that the most awarded advertising campaigns globally are those combining cultural specificity with a clear brand purpose — work that could only have come from that brand, in that place, at that moment. Universal "global" campaigns are falling in the rankings as juries reward local authenticity.</div>
-      <div class="signal-implication">Mamee implication: Double down on "proudly Malaysian" as a strategic brand positioning — work rooted in Malaysian culture, language and lived experience will outperform generic regional campaign templates on both effectiveness and awards.</div>
-      <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://www.thedrum.com/news/world-creative-rankings-2026-the-most-awarded-campaigns-by-sector" target="_blank">The Drum — World Creative Rankings 2026</a></div>
-    </div>
-
-  </div>
-</div>
-
-<div class="card card-pack grid-wide">
-  <div class="card-accent"></div>
-  <div class="card-header"><span class="card-icon">📐</span><span class="card-title">Packaging &amp; Design Trends</span><span class="card-count">3 directions</span></div>
-  <div class="news-grid">
-
-    <div class="news-item">
-      <div class="news-category">Sustainability</div>
-      <div class="news-headline">Mono-Material &amp; Paper-Based Snack Packaging Accelerates — Flat Pouches Up 50% as Sustainability Pressure Bites</div>
-      <div class="news-summary">The 2026 packaging landscape is defined by a rapid shift to mono-material engineering, water-based inks and paper-based alternatives. Flat pouches have grown over 50% as brand owners seek recyclable formats that satisfy both retailer sustainability mandates and Gen Z consumer preference for eco-conscious purchasing.</div>
-      <div class="news-flag">Mamee angle: A phased pilot of paper-based or mono-material packaging on a single SKU (with visible sustainability callouts) would generate earned media and align with retailer ESG requirements heading into 2027.</div>
-      <div class="news-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://www.bakeryandsnacks.com/Article/2026/01/16/snack-packaging-trends-that-will-define-2026/" target="_blank">Bakery &amp; Snacks — Snack Packaging Trends 2026</a></div>
-    </div>
-
-    <div class="news-item">
-      <div class="news-category">Digital Engagement</div>
-      <div class="news-headline">QR &amp; AR Packaging Becomes Mainstream in 2026 — Snack Brands Embedding Digital Product Passports</div>
-      <div class="news-summary">Digital-enhanced packaging is moving from novelty to expectation in 2026, with snack brands embedding QR codes linked to augmented reality experiences, origin stories, and ingredient transparency portals. Digital product passports offering full lifecycle data are being piloted by FMCG leaders in Asia-Pacific and Europe.</div>
-      <div class="news-flag">Mamee angle: A QR code on pack linking to a "how it's made" factory tour video or a gamified AR experience could differentiate Mamee on shelf and drive repeat purchase among digital-native consumers.</div>
-      <div class="news-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://www.printpack.com/2026-packaging-trends/" target="_blank">Printpack — 2026 Packaging Trends</a></div>
-    </div>
-
-    <div class="news-item">
-      <div class="news-category">Minimalist Design</div>
-      <div class="news-headline">Minimalist &amp; Transparent Label Design Displaces Busy Pack Artwork as Gen Z Prioritises "Honest" Products</div>
-      <div class="news-summary">Clean packaging aesthetics are now commercially validated in 2026: minimalist design reduces print complexity while signalling quality and transparency. Brands showcasing clean ingredient lists, certifications and ethical sourcing directly on-pack are outperforming visually complex legacy designs with younger shoppers aged 18–30.</div>
-      <div class="news-flag">Mamee angle: A premium sub-line of Mamee products with a stripped-back, minimalist pack design and prominent clean-label claims could serve as a high-margin, shelf-differentiated offering at convenience and premium grocery channels.</div>
-      <div class="news-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://www.designerpeople.com/blog/packaging-design-trends-2026/" target="_blank">Designer People — Packaging Design Trends 2026</a></div>
-    </div>
-
-  </div>
-</div>
-
-<div class="card cd-card grid-wide">
-  <div class="card-accent"></div>
-  <div class="card-header"><span class="card-icon">💡</span><span class="card-title">Today's Inspiration Sparks</span></div>
-  <div class="cd-ideas-grid">
-
-    <div class="cd-idea">
-      <div class="cd-number">1</div>
-      <div>
-        <div class="cd-idea-title">Mamee x Malaysian Heritage: The "Guochao Equivalent" Campaign</div>
-        <div class="cd-idea-body">China's Guochao 3.0 is winning Gen Z by weaving ancient aesthetics into modern snack branding. Malaysia has the same raw material — batik patterns, wayang kulit motifs, Jawi typography, and kampung food stories. A Mamee limited-edition "Warisan" (Heritage) pack series with artist-designed traditional Malaysian artwork could go viral on XHS, TikTok and earn international press — the Malaysian snack that looks like a museum piece and tastes like home.</div>
-        <div class="cd-idea-source">Inspired by: <a href="https://english.news.cn/20260331/603e7b3e29cb4c1fa0ef2f09bdf36bd7/c.html" target="_blank">Xinhua Guochao 3.0 Report</a> + <a href="https://chinaskinny.com/blog/xiaohongshu-rednote-2026-lifestyle-trends" target="_blank">XHS 2026 Slow Living Trend</a></div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <div class="signal-headline">Malaysian Consumer Enters "Smart Pragmatism" Mode — Smaller Packs, Same Trusted Brands</div>
+        <div class="signal-body">The 2026 consumer is not trading down — they're trading smart. Shoppers are buying smaller or value packs, sticking with trusted brands, and using digital platforms to hunt deals. They trade down on everyday staples but trade up on meaningful indulgences.</div>
+        <div class="signal-implication">→ Mamee play: emphasise pack-size versatility and value signalling in-store and on social. The "trusted brand" equity is a genuine moat right now.</div>
+        <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://marketingmagazine.com.my/from-froth-to-fundamentals-decoding-malaysias-fmcg-reality/" target="_blank">↗ Marketing Magazine MY</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-headline">Chinese Export Diversion: 75% of Chinese Brands Targeting Malaysia as US Export Alternative</div>
+        <div class="signal-body">With US-China tariffs still elevated, 75% of Chinese exporters say they are pivoting to expand into third markets — with Malaysia a primary target. This is already hitting shelves: a new wave of Chinese and homegrown F&amp;B brands is disrupting categories once dominated by Western names.</div>
+        <div class="signal-implication">→ Price pressure from Chinese brands in snacks and instant noodles will intensify H2 2026. Mamee's local identity and halal positioning are strategic differentiators.</div>
+        <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://theedgemalaysia.com/node/775713" target="_blank">↗ The Edge Malaysia</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-headline">Malaysia Foodservice Market Valued at USD 16.67 Billion in 2026 — Growing at 13% CAGR to 2031</div>
+        <div class="signal-body">The Malaysia foodservice market is on a steep growth trajectory, from USD 14.75B in 2025 to a projected USD 30.74B by 2031. Convenience, out-of-home dining, and quick-service formats are leading growth categories.</div>
+        <div class="signal-implication">→ Foodservice channel is an underpenetrated growth opportunity for Mamee ingredients and bulk supply formats.</div>
+        <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://the-shiv.com/malaysias-food-and-beverage-industry/" target="_blank">↗ The Shiv</a></div>
       </div>
     </div>
-
-    <div class="cd-idea">
-      <div class="cd-number">2</div>
-      <div>
-        <div class="cd-idea-title">"Mamee Match Day" — World Cup Snacking Ritual Campaign</div>
-        <div class="cd-idea-body">With FIFA World Cup 2026 approaching and Lay's already running a RM6 promo, Mamee has a window to own the "Malaysian match-watching snack" territory more authentically. A campaign built around the ritual of Malaysian football watching — mamak table, teh tarik, lepak with friends — positions Mamee not as a prize mechanic but as an emotional co-star of every match. Short-form TikTok content, limited "squad pack" bundle formats, and UGC activation could drive organic reach throughout the tournament.</div>
-        <div class="cd-idea-source">Inspired by: <a href="https://www.everydayonsales.com/909752/1-30-april-2026-lays-malaysia-fan-contest-promotion-spend-rm6-stand-a-chance-to-win-a-fifa-world-cup-2026-trip" target="_blank">Lay's World Cup Promo</a> + <a href="https://www.xr.global/blog/2026-fifa-world-cup-early-advertising-trends-strategies" target="_blank">FIFA 2026 Ad Trends</a></div>
-      </div>
-    </div>
-
-    <div class="cd-idea">
-      <div class="cd-number">3</div>
-      <div>
-        <div class="cd-idea-title">Mamee "Hack Pack" — UGC-First TikTok Recipe Remix Campaign</div>
-        <div class="cd-idea-body">The viral success of Popiah Big Mac, mochi cheesecake and texture-mashup formats on TikTok Malaysia signals that audiences love brand products being creatively "hacked." Mamee can own this space with a "Hack Pack" campaign — seeding 5–10 creators with Mamee products and a challenge to create the most unexpected recipe remix (Mamee Monster nachos, Mamee noodle pizza, Monster ice cream float). Low budget, high-reach, fully native to TikTok's creative culture, and generates months of organic content shelf life through community participation.</div>
-        <div class="cd-idea-source">Inspired by: <a href="https://www.accio.com/business/tiktok-food-trends" target="_blank">TikTok Food Trends 2026</a> + <a href="https://www.tiktok.com/discover/snack-malaysia-viral" target="_blank">TikTok Snack Malaysia Viral</a></div>
-      </div>
-    </div>
-
   </div>
-</div>
 
-<div class="card card-watch grid-wide">
-  <div class="card-accent"></div>
-  <div class="card-header"><span class="card-icon">👁</span><span class="card-title">Brand &amp; Competitor Watch</span><span class="card-count">5 brands</span></div>
-  <div class="watchlist-grid">
-
-    <div class="watchlist-item">
-      <div class="watch-dot"></div>
-      <div>
-        <div class="watchlist-title">Lay's Malaysia — FIFA World Cup RM6 Promo Active All April</div>
-        <div class="watchlist-body">Lay's is running a high-visibility consumer promotion all month, requiring just RM6 spend for entry into a World Cup trip draw. The low entry threshold maximises basket conversion at convenience and petrol station channels. This is a direct impulse-purchase battleground with Mamee snack formats.</div>
-        <div class="watchlist-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://www.everydayonsales.com/909752/1-30-april-2026-lays-malaysia-fan-contest-promotion-spend-rm6-stand-a-chance-to-win-a-fifa-world-cup-2026-trip" target="_blank">EverydayOnSales — Lay's Promo</a></div>
+  <div class="card card-tiktok">
+    <div class="card-accent"></div>
+    <div class="card-header">
+      <div class="card-icon">🎵</div>
+      <div class="card-title">TikTok Watch</div>
+      <div class="card-count">3 signals</div>
+    </div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <div class="signal-headline">British Tourist's 28kg Malaysian Snack Haul Goes Viral — 400K+ Views and Counting</div>
+        <div class="signal-body">Leila Purchase (@lifeofleils), a British tourist who studied in KL, returned and filled an entire extra bag — 28kg — with Malaysian snacks only, zero clothes. The video hit 400K+ views. Malaysians are cheering and calling her an "honorary citizen." The snack pride angle is real and organic.</div>
+        <div class="signal-implication">→ Immediate opportunity: jump on this trend. A Mamee response video or UGC repost campaign while the virality is hot could drive massive organic reach. "Approved by the world" messaging.</div>
+        <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://www.tiktok.com/@saysdotcom/video/7476008513911770386" target="_blank">↗ SAYS / TikTok</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-headline">TikTok Shop Malaysia GMV Hit USD 2.8B — 225% CAGR Since 2022, Now 24% of E-Commerce</div>
+        <div class="signal-body">TikTok Shop has grown from USD 0.3B GMV in 2022 to USD 2.8B in 2024, a 225% CAGR. It now accounts for approximately 24% of Malaysia's total e-commerce share. The platform has evolved from discovery to a complete consumer journey: find → evaluate → buy — all in one session.</div>
+        <div class="signal-implication">→ TikTok is no longer optional for FMCG sales. Mamee's TikTok shop presence needs to be an active revenue channel, not just brand awareness.</div>
+        <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://marketingmagazine.com.my/from-froth-to-fundamentals-decoding-malaysias-fmcg-reality/" target="_blank">↗ Marketing Magazine MY</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-headline">Top-Performing Food Content on Malaysian TikTok: Taste Reactions, Texture Checks, Spice-Level Tests</div>
+        <div class="signal-body">According to platform data, the highest-performing food content formats in Malaysia are: first-impression taste reactions, texture and crunch checks, spice-level challenges, and portion comparisons. Simple, authentic, low-production formats outperform polished ads.</div>
+        <div class="signal-implication">→ Mamee creative brief: commission micro-creators to do honest taste-reaction content on new SKUs. Keep it raw. The audience trusts peers, not production value.</div>
+        <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://wargabiz.com.my/2026/01/15/tiktok-trends-in-malaysia-2026-15-ideas-that-actually-work-for-businesses/" target="_blank">↗ Wargabiz</a></div>
       </div>
     </div>
-
-    <div class="watchlist-item">
-      <div class="watch-dot"></div>
-      <div>
-        <div class="watchlist-title">Mister Potato — Dentsu Creative Malaysia Kung Fu Cinema CNY Campaign Still in Market</div>
-        <div class="watchlist-body">Mister Potato's "HORSE-H LIAO DRAMA" CNY 2026 campaign by Dentsu Creative Malaysia blended nostalgia, humour and limited-edition product to generate strong earned media. The campaign's kung fu cinema aesthetic demonstrates Mister Potato's willingness to invest in culturally resonant, entertainment-grade creative — raising the bar for snack brand communications in Malaysia.</div>
-        <div class="watchlist-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://marketech-apac.com/mister-potato-blends-nostalgic-kung-fu-films-with-limited-snack-product-launch-in-new-cny-campaign/" target="_blank">Marketech APAC — Mister Potato CNY Campaign</a></div>
-      </div>
-    </div>
-
-    <div class="watchlist-item">
-      <div class="watch-dot"></div>
-      <div>
-        <div class="watchlist-title">Chinese F&amp;B Brands — Hotpot &amp; Bubble Tea Chains Accelerating SEA Entry, Malaysia a Priority Market</div>
-        <div class="watchlist-body">Multiple Chinese F&amp;B chains are entering Malaysia and Singapore in 2026 via franchise and local partnership models. While primarily food service, they carry snack and RTD product lines that compete directly with FMCG shelf brands — and their marketing budgets are substantial, leveraging China's 618-level digital spend playbooks in the SEA market.</div>
-        <div class="watchlist-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://theenglishchronicle.com/News/21049/" target="_blank">The English Chronicle — China F&amp;B Brands Go Global</a></div>
-      </div>
-    </div>
-
-    <div class="watchlist-item">
-      <div class="watch-dot"></div>
-      <div>
-        <div class="watchlist-title">Mondelez Malaysia — Oreo, Cadbury &amp; Chips Ahoy Defending Premium Snack Shelf Space</div>
-        <div class="watchlist-body">Mondelez Malaysia continues to anchor the premium snack and biscuit segment with its power brands. In a market where consumers are stockpiling and price-anxious, Mondelez's brand equity acts as a trust buffer — but their price premium is under pressure from private label and local challenger brands gaining shelf inches across hypermarkets.</div>
-        <div class="watchlist-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://onpresscapital.co.uk/fmcg-company-malaysia/" target="_blank">Onpress Capital — FMCG Companies Malaysia 2026</a></div>
-      </div>
-    </div>
-
-    <div class="watchlist-item">
-      <div class="watch-dot"></div>
-      <div>
-        <div class="watchlist-title">Oishi &amp; Homegrown Challengers — New Local Wave Disrupting Western FMCG Incumbents on Malaysian Shelves</div>
-        <div class="watchlist-body">The Edge Malaysia's F&amp;B battle report confirms that homegrown and Asian challenger snack brands are taking material share from Western FMCG incumbents in Malaysian grocery retail. Thai brand Oishi and new Chinese-origin snack entrants are gaining distribution and visibility across convenience formats — where Mamee must defend its category leadership most aggressively.</div>
-        <div class="watchlist-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://theedgemalaysia.com/node/775713" target="_blank">The Edge Malaysia — F&amp;B Battle for Malaysian Taste Buds</a></div>
-      </div>
-    </div>
-
   </div>
-</div>
+
+  <div class="card card-xhs">
+    <div class="card-accent"></div>
+    <div class="card-header">
+      <div class="card-icon">📕</div>
+      <div class="card-title">Xiaohongshu / RedNote</div>
+      <div class="card-count">2 signals</div>
+    </div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <div class="signal-headline">4.3 Million Urban Chinese-Speaking Consumers in MY + SG Reachable via Xiaohongshu</div>
+        <div class="signal-body">Xiaohongshu's addressable audience in Malaysia and Singapore combined is estimated at 4.3 million urban Chinese-speaking users — a premium, high-purchasing-power demographic. The platform functions as Instagram + Pinterest + peer review, and is the go-to discovery platform for Gen Z and millennial Chinese consumers in the region.</div>
+        <div class="signal-implication">→ XHS is the right channel to reach KL's urban Chinese consumer for premium Mamee SKUs. Start with KOC (Key Opinion Consumer) seeding, not paid ads — authenticity drives trust on XHS.</div>
+        <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://hashmeta.com/blog/xiaohongshu-malaysia-guide-how-malaysians-use-rednote-little-red-book-to-find-products-places/" target="_blank">↗ Hashmeta</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-headline">XHS Food Discovery: Peer Reviews and "Honest Opinion" Posts Drive Purchase Intent More Than Ads</div>
+        <div class="signal-body">On Xiaohongshu, food brands that rely on peer-generated "honest review" content — first tastes, ingredient deep-dives, cooking hacks — outperform traditional paid placements. Malaysian food brands are increasingly using XHS for discovery, particularly for products with a local or heritage story to tell.</div>
+        <div class="signal-implication">→ Mamee's Malaysian heritage narrative plays extremely well on XHS. Consider a "Made in Malaysia" XHS content series targeting MY-SG Chinese consumers — snack heritage, production process, nostalgia angles.</div>
+        <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://www.ajinomotofoodbizpartner.com.my/biztalks/xhs-rednote-marketing-food-business/" target="_blank">↗ Ajinomoto Food Biz Partner</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-sea">
+    <div class="card-accent"></div>
+    <div class="card-header">
+      <div class="card-icon">🌏</div>
+      <div class="card-title">SEA Pulse</div>
+      <div class="card-count">3 signals</div>
+    </div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <div class="signal-headline">Thailand Consumer Confidence Crashes 10.9 Points to 45.5 — Largest Monthly Drop Globally in April 2026</div>
+        <div class="signal-body">Thailand's consumer confidence index fell by 10.9 points in April 2026 to settle at 45.5 — the steepest single-month decline across all 30 countries surveyed globally. 56% of Thais now believe the country is on the wrong track (up 15 points from March). Only 36% expect their finances to improve in the next 6 months, down from 50% in March. Key drivers: corruption, inequality, and inflation fears.</div>
+        <div class="signal-implication">→ Thai market is entering a value-seeking phase. Mamee exports to Thailand should emphasise price-per-portion value and trusted brand equity over premiumisation.</div>
+        <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://www.ipsos.com/en-th/what-worries-thailand-april-2026" target="_blank">↗ Ipsos Thailand</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-headline">Indonesia Consumer Confidence Slides to 59.2 in March — Third Consecutive Monthly Decline</div>
+        <div class="signal-body">Indonesia's Ipsos consumer confidence index dropped to 59.2 in March 2026 (from 62.4 in February, 62.6 in January). Still above the 50-point optimism threshold, but the trend is downward. Concerns centre on future economic conditions and employment stability.</div>
+        <div class="signal-implication">→ Indonesia remains net-positive but is softening. Maintain current pricing strategy; resist pushing premium tiers until confidence stabilises in Q3.</div>
+        <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://www.ipsos.com/en-id/press-release-ipsos-survey-indonesias-consumer-confidence-declines-march-2026-driven-concerns-over" target="_blank">↗ Ipsos Indonesia</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-headline">Singapore FDI Inflow Rises to SGD 58.6 Billion in Q4 2025 — Investment Commitments Up 5.3%</div>
+        <div class="signal-body">Singapore's FDI net inflow hit SGD 58.6 billion in Q4 2025, with fixed asset investment commitments rising 5.3% year-on-year. The city-state continues to attract regional HQs and food-tech investment, making it a critical B2B and foodservice market for Mamee's premium range.</div>
+        <div class="signal-implication">→ Singapore is a bright spot in a softening regional landscape. Premium and health-positioned Mamee SKUs have a clear channel here via upscale grocery and foodservice.</div>
+        <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://think.ing.com/articles/asia-2026-six-big-questions-shaping-the-outlook/" target="_blank">↗ ING Think</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-creative">
+    <div class="card-accent"></div>
+    <div class="card-header">
+      <div class="card-icon">🎨</div>
+      <div class="card-title">Creative Watch</div>
+      <div class="card-count">2 signals</div>
+    </div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <div class="signal-headline">MARKETECH APAC Launches Inaugural Advertising Awards Asia Pacific 2026 — Entries Open Now</div>
+        <div class="signal-body">MARKETECH APAC has launched its first-ever Advertising Awards Asia Pacific 2026, themed "Championing Advertising Innovation Across Asia Pacific." Categories include creative campaigns, AdTech-powered campaigns, and platform-based advertising. Work from 1 January 2024 to 28 February 2026 qualifies for submission.</div>
+        <div class="signal-implication">→ Entry opportunity for Mamee's recent campaigns. A regional APAC award win would significantly boost brand credibility with retail buyers and media partners.</div>
+        <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://marketech-apac.com/awards/advertising-asia-pacific-2026/" target="_blank">↗ MARKETECH APAC</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-headline">Campaign Asia-Pacific Launches Media Awards 2026 — Regional Recognition for Innovative Media Strategies</div>
+        <div class="signal-body">Campaign Asia-Pacific has opened its 2026 Media Awards, recognising the best in media strategy, channel innovation, and data-driven targeting across the APAC region. Awards span digital, OOH, social, and integrated campaigns.</div>
+        <div class="signal-implication">→ Mamee's TikTok and omnichannel media approach could be award-entry-worthy. Consider nominating the best-performing 2025–2026 campaign now while it's fresh.</div>
+        <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://www.campaignasia.com/awards" target="_blank">↗ Campaign Asia</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-industry grid-wide">
+    <div class="card-accent"></div>
+    <div class="card-header">
+      <div class="card-icon">📊</div>
+      <div class="card-title">Industry Radar</div>
+      <div class="card-count">3 signals</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-box">
+        <div class="stat-value" style="color:#4ade80;">13%</div>
+        <div class="stat-label">Malaysia online shopping growth momentum (2026)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value" style="color:#fb923c;">80%</div>
+        <div class="stat-label">Malaysian e-shoppers who bought F&amp;B online</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value" style="color:#818cf8;">67%</div>
+        <div class="stat-label">Malaysian consumers prefer sustainable brands (YouGov 2026)</div>
+      </div>
+    </div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <div class="signal-headline">Online Grocery is Malaysia's Fastest-Growing E-Commerce Category — Led by GrabMart, Pandamart, Jaya Grocer Online</div>
+        <div class="signal-body">Malaysia's e-commerce sector is accelerating at 13% growth momentum in 2026. Groceries are the fastest-growing online category, with over 80% of Malaysian e-shoppers having purchased F&amp;B online. GrabMart, Pandamart, Jaya Grocer Online, and Tesco Online lead platform adoption. However, groceries still dominate offline at 84% — the omnichannel shopper is the primary battleground.</div>
+        <div class="signal-implication">→ Mamee must maintain strong physical shelf presence while building out its online DTC and marketplace presence. The shopper increasingly researches online, buys wherever is most convenient.</div>
+        <div class="signal-source"><span class="pub-time">📅 20 Apr 2026</span> <a href="https://worldef.com/2026/04/20/online-shopping-malaysia-growth-boom/" target="_blank">↗ WORLDEF</a> &nbsp;·&nbsp; <a href="https://sellercraft.co/malaysia-digital-retail-outlook-2025-2026/" target="_blank">↗ Sellercraft</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-headline">Malaysian Shoppers More Open to Brand Switching on Promotions — Loyalty is Conditional, Not Blind</div>
+        <div class="signal-body">NIQ and McKinsey data confirm Malaysian shoppers are increasingly open to switching brands when promotions are on offer. Omnichannel behaviour is rising — more visits to both online stores and hyper/supermarkets. The "promotion-triggered switch" is a real competitive risk for established brands and an opportunity for challengers.</div>
+        <div class="signal-implication">→ Mamee's promotional calendar and loyalty mechanics need to be sharp. A well-timed promotion is now a brand retention tool, not just a sales driver. Consider Mamee Club or loyalty points mechanic.</div>
+        <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://nielseniq.com/global/en/insights/analysis/2024/shopper-trends-2024-how-shoppers-in-asia-are-redefining-grocery-shopping/" target="_blank">↗ NIQ</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-headline">67% of Malaysian Consumers Prefer Sustainable Brands — Health-Linked Sustainability Resonates Most</div>
+        <div class="signal-body">A YouGov Malaysia study finds 67% of consumers prefer sustainable brands, and over half will pay a premium for low/no-sugar beverages and safe/hygienic products. Importantly, Malaysians interpret "sustainability" through a self-care lens — nutrition, cleanliness, and safety — rather than broad ESG. This makes health-positioned sustainability the most commercially viable angle.</div>
+        <div class="signal-implication">→ Mamee's healthier snack range (lower sodium, no MSG variants) should lead sustainability messaging. Frame it as "better for you" rather than "better for the planet" — that's the language Malaysian consumers respond to.</div>
+        <div class="signal-source"><span class="pub-time">📅 Apr 2026</span> <a href="https://www.accio.com/business/consumer-trends-in-malaysia" target="_blank">↗ Accio</a></div>
+      </div>
+    </div>
+  </div>
 
 </div>
 
 <div class="footer">
-  <div style="display:flex;align-items:center;gap:8px;font-weight:600;color:var(--text-dim)"><span>🍜</span> Mamee Intelligence Brief</div>
-  <div>Compiled 7:00 AM MYT · Sources: Free Malaysia Today, The Star, The Sun, BusinessToday, The Edge Malaysia, SoyaCincau, Buro 247, Mothership SG, Grocery Trade News, PR Newswire, Nation Thailand, Ipsos, TAT Newsroom, Statista, EverydayOnSales, Accio, The Rakyat Post, Hashmeta, China Skinny, Shanghai Jungle, DLA Piper, Xinhua, Jing Daily, The English Chronicle, Ads of the World, XR Global, The Drum, Bakery &amp; Snacks, Printpack, Designer People, Marketech APAC, Onpress Capital</div>
+  <div class="footer-text">Mamee Intelligence Brief · Auto-generated daily · For internal Creative Director use only · 27 April 2026</div>
+  <div class="footer-brand">MAMEE DOUBLE DECKER</div>
 </div>
 
 </body>
