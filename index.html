@@ -124,6 +124,15 @@
   .value-stat-box { padding: 12px 14px; background: rgba(20,184,166,0.06); border: 1px solid rgba(20,184,166,0.2); border-radius: 10px; text-align: center; }
   .value-stat-num { font-size: 26px; font-weight: 900; color: #2dd4bf; line-height: 1; margin-bottom: 4px; }
   .value-stat-label { font-size: 10px; color: var(--text-dim); line-height: 1.4; }
+  .my-value-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 16px; }
+  .my-value-box { padding: 10px 12px; background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.2); border-radius: 9px; text-align: center; }
+  .my-value-num { font-size: 22px; font-weight: 900; color: #93c5fd; line-height: 1; margin-bottom: 3px; }
+  .my-value-label { font-size: 9.5px; color: var(--text-dim); line-height: 1.4; }
+  .creative-region-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .creative-region-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+  .creative-region-label.global { color: #c084fc; }
+  .creative-region-label.asia { color: #f472b6; }
+  .creative-region-label.sea { color: #fb923c; }
   .card-creative .card-accent { background: linear-gradient(90deg, #a855f7, #6366f1); }
   .card-creative .card-title { color: #c084fc; }
   .card-competitor .card-accent { background: linear-gradient(90deg, #E8192C, #f97316); }
@@ -251,30 +260,55 @@
     <div class="card-accent"></div>
     <div class="card-header">
       <div class="card-icon">&#x1F1F2;&#x1F1FE;</div>
-      <div class="card-title">Malaysia Now</div>
-      <div class="card-count">3 stories</div>
+      <div class="card-title">Malaysia Now — News, Value &amp; Finance</div>
+      <div class="card-count">4 stories</div>
     </div>
-    <div class="news-grid">
+    <div class="my-value-stats">
+      <div class="my-value-box">
+        <div class="my-value-num">1.7%</div>
+        <div class="my-value-label">CPI Inflation Mar 2026 — highest since Jan 2025. Food basket = 30% weight.</div>
+      </div>
+      <div class="my-value-box">
+        <div class="my-value-num">9M</div>
+        <div class="my-value-label">Malaysians receiving STR cash aid in 2026 (Sumbangan Tunai Rahmah)</div>
+      </div>
+      <div class="my-value-box">
+        <div class="my-value-num">4.7%</div>
+        <div class="my-value-label">GDP growth forecast (IMF) — strongest in ASEAN, driven by private consumption</div>
+      </div>
+      <div class="my-value-box">
+        <div class="my-value-num">RM390K</div>
+        <div class="my-value-label">EPF basic savings benchmark — many M40 Malaysians fall short, driving value-first spending</div>
+      </div>
+    </div>
+    <div class="news-grid" style="grid-template-columns: repeat(4,1fr);">
       <div class="news-item">
         <div class="news-category">Policy</div>
         <div class="urgency act">Act Now</div>
         <div class="news-headline">Under-16 Social Media Ban Advancing — Digital Ministry Building Political Momentum</div>
-        <div class="news-body">Malaysia's Digital Ministry is moving forward with social media age restrictions. Cross-party support is growing around the youth safety argument. Brand safety teams should begin platform contingency planning immediately — the timeline could be shorter than expected.</div>
+        <div class="news-body">Malaysia's Digital Ministry is moving forward with social media age restrictions. Cross-party support is growing. Brand safety teams should begin platform contingency planning immediately — the timeline could be shorter than expected.</div>
         <div class="news-source"><span class="pub-time">28 Apr 2026</span> <a href="https://www.freemalaysiatoday.com" target="_blank">FMT</a></div>
       </div>
       <div class="news-item">
         <div class="news-category">Consumer</div>
         <div class="urgency act">Act Now</div>
         <div class="news-headline">Malaysian Snack Market Polarising — Premium Indulgence vs. Budget Survival</div>
-        <div class="news-body">A clear split is forming on the MY snack shelf: affluent consumers seek premium, health-forward options while cost-constrained shoppers stick to the cheapest trusted brand. Middle-market SKUs are being squeezed from both ends simultaneously — this bifurcation is accelerating in 2026.</div>
+        <div class="news-body">A clear split is forming on the MY snack shelf: affluent consumers seek premium, health-forward options while cost-constrained shoppers stick to the cheapest trusted brand. Middle-market SKUs are squeezed from both ends simultaneously.</div>
         <div class="news-source"><span class="pub-time">Apr 2026</span> <a href="https://marketingmagazine.com.my/from-froth-to-fundamentals-decoding-malaysias-fmcg-reality/" target="_blank">Marketing Magazine MY</a></div>
       </div>
       <div class="news-item">
-        <div class="news-category">Market Size</div>
+        <div class="news-category">Finance &amp; Value</div>
+        <div class="urgency watch">Watch</div>
+        <div class="news-headline">Food Inflation at 1.7% in March — M40 Household Budgets Under Pressure as EPF Savings Gap Widens</div>
+        <div class="news-body">Malaysia's CPI hit 1.7% in March 2026 — the highest since January 2025 — with food and non-alcoholic beverages carrying 30% of the consumer basket. The EPF basic savings benchmark is RM390K but many M40 households fall well short, forcing them into a value-first spending mindset. The STR program supports 9 million recipients but pressure on middle-income wallets is real.</div>
+        <div class="news-source"><span class="pub-time">Mar–Apr 2026</span> <a href="https://open.dosm.gov.my/dashboard/consumer-prices" target="_blank">OpenDOSM</a> &nbsp;|&nbsp; <a href="https://www.kwsp.gov.my/en/w/epf-releases-belanjawanku-2024/" target="_blank">EPF Malaysia</a></div>
+      </div>
+      <div class="news-item">
+        <div class="news-category">Gig Economy</div>
         <div class="urgency fyi">FYI</div>
-        <div class="news-headline">Malaysia Extruded Snacks Market to Hit USD 89.6B by 2031 at 7.4% CAGR</div>
-        <div class="news-body">The extruded snack segment — corn puffs, cheese rings, and similar formats — grows from USD 58.3B in 2026 to USD 89.6B by 2031. This is Mamee's core product territory and the structural growth tailwind is underpinned by young demographics, urbanisation, and snacking-as-meal-replacement behaviour.</div>
-        <div class="news-source"><span class="pub-time">Apr 2026</span> <a href="https://the-shiv.com/malaysias-food-and-beverage-industry/" target="_blank">The Shiv</a></div>
+        <div class="news-headline">EPF i-Saraan Plus Launched for Gig Workers — Government Matching Up to RM600/Year as Informal Workforce Grows</div>
+        <div class="news-body">Budget 2026 introduced i-Saraan Plus, a voluntary EPF contribution scheme for gig workers — e-hailing drivers, food couriers, freelancers — with government matching up to RM600/year. The gig workforce is a growing, underpenetrated consumer segment with irregular income but strong snacking frequency. A high-value target for Mamee's on-the-go and single-serve formats.</div>
+        <div class="news-source"><span class="pub-time">2026</span> <a href="https://www.kwsp.gov.my/en/w/article/belanjawan-2026-epf-benefits" target="_blank">EPF Malaysia</a></div>
       </div>
     </div>
   </div>
@@ -457,35 +491,90 @@
     </div>
   </div>
 
-  <div class="card card-creative">
+  <div class="card card-creative grid-wide">
     <div class="card-accent"></div>
     <div class="card-header">
       <div class="card-icon">&#x1F3A8;</div>
       <div class="card-title">Creative and Industry</div>
-      <div class="card-count">3 signals</div>
+      <div class="card-count">8 signals — Global | Asia | SEA</div>
     </div>
-    <div class="signal-list">
-      <div class="signal-item">
-        <div class="urgency watch">Watch</div>
-        <div class="signal-headline">Coca-Cola FIFA 2026 Anthem: Van Halen's "Jump" Reimagined — Nostalgia + Music + Sport Formula</div>
-        <div class="signal-body">Coca-Cola unveiled its FIFA World Cup 2026 anthem: a bold reimagination of Van Halen's "Jump" featuring J Balvin, Amber Mark, and Travis Barker. The formula — iconic nostalgia hook plus multicultural remix plus sporting occasion — sets the creative benchmark for the entire World Cup period through July.</div>
-        <div class="signal-implication">Mamee's World Cup window: a bold Malaysian-rooted music angle with local artists could own the Southeast Asian snacking moment of the tournament authentically.</div>
-        <div class="signal-source"><span class="pub-time">Apr 2026</span> <a href="https://www.adage.com" target="_blank">Ad Age</a></div>
+    <div class="creative-region-grid">
+
+      <div>
+        <div class="creative-region-label global">&#x1F310; Global</div>
+        <div class="signal-item">
+          <div class="urgency act">Act Now</div>
+          <div class="signal-headline">AXA "Three Words" — WARC Creative 100 #1 Work of 2026</div>
+          <div class="signal-body">AXA's "Three Words" — where customers share the three words they would say to loved ones after an accident — claimed the #1 spot on the WARC Creative 100, dethroning perennial winners. The campaign achieved zero media spend in its first month by engineering a genuine emotional activation that spread organically across Instagram and WhatsApp. Insurance category. Zero entertainment value on paper. The best creative work of the year. The lesson: emotional utility at the right cultural moment beats production value every time.</div>
+          <div class="signal-implication">Mamee has a shelf full of emotional memory triggers — family meals, childhood snacks, shared moments. A zero-spend activation built around a real human prompt could outperform any paid campaign this quarter.</div>
+          <div class="signal-source"><span class="pub-time">Apr 2026</span> <a href="https://www.warc.com/rankings/creative100" target="_blank">WARC Creative 100</a></div>
+        </div>
+        <div class="signal-item">
+          <div class="urgency watch">Watch</div>
+          <div class="signal-headline">Spotify "Spreadbeats" — WARC #2: A Media Buy Turned Into Cannes Grand Prix Creative</div>
+          <div class="signal-body">Spotify's "Spreadbeats" turned a standard Excel media plan deck into a fully playable music track — sending it to media buyers as their actual Q3 proposal. The stunt earned coverage across every trade publication simultaneously, with zero paid distribution. WARC ranked it #2 globally for creative effectiveness. The insight: the format of your communication IS the campaign.</div>
+          <div class="signal-implication">Every Mamee trade presentation, brand deck, and brief is an untapped creative canvas. The next retailer pitch could be the campaign itself.</div>
+          <div class="signal-source"><span class="pub-time">Apr 2026</span> <a href="https://www.warc.com/rankings/creative100" target="_blank">WARC Creative 100</a></div>
+        </div>
+        <div class="signal-item">
+          <div class="urgency watch">Watch</div>
+          <div class="signal-headline">Oreo Twist Challenge — 1 Billion TikTok Views, Zero Celebrity Budget</div>
+          <div class="signal-body">Oreo's "Twist Challenge" — asking users to film their unique way of separating an Oreo — accumulated over 1 billion TikTok views globally without a single paid celebrity endorsement. The mechanic is pure participation: the ritual IS the content. Every FMCG brand now studying this playbook for their own product interaction rituals.</div>
+          <div class="signal-implication">Mamee noodles have an inherent preparation ritual — the tear, the squeeze, the fold. A participation challenge built around how Malaysians eat Mamee Monster in school could be the next billion-view moment sitting untapped.</div>
+          <div class="signal-source"><span class="pub-time">Apr 2026</span> <a href="https://www.tiktok.com" target="_blank">TikTok / AdWeek</a></div>
+        </div>
       </div>
-      <div class="signal-item">
-        <div class="urgency watch">Watch</div>
-        <div class="signal-headline">Heytea x Pop Mart "Twinkle Twinkle" Drives 25% Daily Active User Surge — Collectible Mechanic Proven</div>
-        <div class="signal-body">Heytea's collaboration with Pop Mart combined a modestly priced beverage with a collectible character keychain, driving a 25% spike in daily active users. The mechanic converts a single purchase into a collecting behaviour where repeat visits become habitual. This formula is now spreading across SEA food and beverage brands rapidly.</div>
-        <div class="signal-implication">A Mamee Monster x Malaysian IP collectible mechanic — local animation, heritage character — could drive the same repeat-purchase habit. The investment is in the IP partnership, not media spend.</div>
-        <div class="signal-source"><span class="pub-time">Apr 2026</span> <a href="https://www.marketing-interactive.com" target="_blank">Marketing Interactive</a></div>
+
+      <div>
+        <div class="creative-region-label asia">&#x1F30F; Asia</div>
+        <div class="signal-item">
+          <div class="urgency act">Act Now</div>
+          <div class="signal-headline">Vaseline "Verified" by Ogilvy Singapore — 12 Clio Gold Statues, Asia's Most Decorated Work of 2026</div>
+          <div class="signal-body">Ogilvy Singapore's "Vaseline Verified" campaign — which used AI skin analysis to verify genuine skin transformation stories from real consumers — swept the 2026 Clio Awards with 12 Gold statues, making it Asia's most decorated campaign of the year. The campaign turned a product claim into a democratised verification system anyone could access. Proof, not promise. The creative industry in Asia is watching this as the new benchmark for how technology earns trust.</div>
+          <div class="signal-implication">Mamee's quality and Malaysian heritage claims could be "verified" through a similar consumer-proof architecture — user-generated quality moments, verified by real community endorsement. Trust as creative output, not just messaging.</div>
+          <div class="signal-source"><span class="pub-time">Apr 2026</span> <a href="https://www.clioawards.com" target="_blank">Clio Awards 2026</a></div>
+        </div>
+        <div class="signal-item">
+          <div class="urgency watch">Watch</div>
+          <div class="signal-headline">Honda BeAT x Kobo Kanaeru (VTuber) — 10M YouTube Views via Gamer Livestream Hijack</div>
+          <div class="signal-body">Honda Indonesia partnered with VTuber Kobo Kanaeru for a BeAT motorcycle launch, hijacking a regular gaming livestream with a "surprise" reveal mid-session. 10M YouTube views. The creative insight: the audience was already there — Honda didn't need to build one. Gen Z gaming culture in Southeast Asia is now the most efficient media channel for youth brands, with audiences who distrust traditional advertising but fully trust their favourite creators.</div>
+          <div class="signal-implication">Mamee Double Decker's youth snack portfolio belongs inside gaming streams, not alongside them. A partnership with a Malaysian or regional gaming creator — in-stream, not pre-roll — could deliver youth reach that paid media cannot.</div>
+          <div class="signal-source"><span class="pub-time">Apr 2026</span> <a href="https://www.youtube.com" target="_blank">YouTube / Marketing Interactive</a></div>
+        </div>
+        <div class="signal-item">
+          <div class="urgency fyi">FYI</div>
+          <div class="signal-headline">McDonald's Malaysia 50th Anniversary Documentary — Creator "Mill MILK" Drives 610K Views, 4x Engagement</div>
+          <div class="signal-body">McDonald's Malaysia commissioned filmmaker and creator Mill MILK to produce a short documentary on the brand's 50-year Malaysia journey. The piece — unscripted, personal, and historically grounded — drove 610K views and 4x the engagement of any McDonald's paid post in 2026. The format signals a structural shift: brands commissioning long-form creator documentaries as the primary content vehicle for heritage storytelling.</div>
+          <div class="signal-implication">Mamee has 50+ years of Malaysian snacking history. A commissioned creator documentary — finding the factory workers, the schoolkids who grew up on Monster, the mamak stall owners — could be the heritage brand storytelling asset that doesn't exist yet.</div>
+          <div class="signal-source"><span class="pub-time">Apr 2026</span> <a href="https://www.instagram.com" target="_blank">Instagram / Campaign Brief Asia</a></div>
+        </div>
       </div>
-      <div class="signal-item">
-        <div class="urgency fyi">FYI</div>
-        <div class="signal-headline">Birkenstock Ramadan "A Journey Through Tradition" — Culture-First Creative Beats Product-First</div>
-        <div class="signal-body">Birkenstock's Ramadan campaign led with lived cultural experience rather than product features, creating a storytelling narrative that resonated deeply with Muslim consumers across SEA. The campaign outperformed product-focused alternatives on brand recall and sentiment scores in every measured market.</div>
-        <div class="signal-implication">Mamee's Hari Raya and Ramadan campaigns should lead with authentic Malaysian Muslim cultural storytelling. Product is secondary — the cultural story is the entry point that earns attention.</div>
-        <div class="signal-source"><span class="pub-time">Apr 2026</span> <a href="https://www.campaignasia.com" target="_blank">Campaign Asia</a></div>
+
+      <div>
+        <div class="creative-region-label sea">&#x1F30A; SEA Industry</div>
+        <div class="signal-item">
+          <div class="urgency act">Act Now</div>
+          <div class="signal-headline">&#x1F534; YouTube Works Awards SEA 2026 — Entry Deadline: 30 April 2026 (THIS WEDNESDAY)</div>
+          <div class="signal-body">YouTube Works Awards Southeast Asia 2026 entries close this Wednesday 30 April. The awards recognise the most effective YouTube-led campaigns in the region, with categories spanning brand building, direct response, and creator collaboration. Winning work receives regional press coverage across Campaign Asia, Marketing Interactive, MARKETECH APAC, and all major trade publications simultaneously. The previous two Mamee YouTube activations were not entered.</div>
+          <div class="signal-implication">Deadline is 48 hours away. If there is any 2025-2026 YouTube work that drove measurable results, it must be submitted this week. Two days to compile the case — do not miss the window.</div>
+          <div class="signal-source"><span class="pub-time">Apr 2026</span> <a href="https://www.youtube.com/works" target="_blank">YouTube Works SEA</a></div>
+        </div>
+        <div class="signal-item">
+          <div class="urgency watch">Watch</div>
+          <div class="signal-headline">MARKETECH APAC Advertising Awards 2026 — Entries Now Open, Malaysia Category Included</div>
+          <div class="signal-body">MARKETECH APAC's annual advertising awards have opened entries for 2026, with a dedicated Malaysia market category alongside broader APAC and SEA divisions. The awards have grown significantly in trade credibility over the past two years and now attract judges from Publicis, Ogilvy, and WPP networks. Entry fees are modest relative to the regional visibility and trade PR value generated by a win or shortlist.</div>
+          <div class="signal-implication">Mamee should identify the strongest 2025 campaign work and submit across the Malaysia consumer goods and FMCG categories before the entry window closes.</div>
+          <div class="signal-source"><span class="pub-time">Apr 2026</span> <a href="https://marketechapac.com/awards" target="_blank">MARKETECH APAC</a></div>
+        </div>
+        <div class="signal-item">
+          <div class="urgency fyi">FYI</div>
+          <div class="signal-headline">Birkenstock Ramadan "A Journey Through Tradition" — Culture-First Creative Beats Product-First in SEA</div>
+          <div class="signal-body">Birkenstock's Ramadan campaign led with lived cultural experience rather than product features, creating a storytelling narrative that resonated deeply with Muslim consumers across SEA. The campaign outperformed product-focused alternatives on brand recall and sentiment scores in every measured market. It is now held up as the gold standard for how non-endemic brands enter Muslim-majority markets respectfully and effectively.</div>
+          <div class="signal-implication">Mamee's Hari Raya and Ramadan campaigns should lead with authentic Malaysian Muslim cultural storytelling. Product is secondary — the cultural story is the entry point that earns attention and earns permission.</div>
+          <div class="signal-source"><span class="pub-time">Apr 2026</span> <a href="https://www.campaignasia.com" target="_blank">Campaign Asia</a></div>
+        </div>
       </div>
+
     </div>
   </div>
 
