@@ -115,6 +115,15 @@
   .card-xhs .card-title { color: #f87171; }
   .card-sea .card-accent { background: linear-gradient(90deg, #14b8a6, #2dd4bf); }
   .card-sea .card-title { color: #2dd4bf; }
+  .sea-country-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .sea-col-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+  .sea-col-label.sg { color: #f472b6; }
+  .sea-col-label.th { color: #fb923c; }
+  .sea-col-label.val { color: #2dd4bf; }
+  .value-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 18px; }
+  .value-stat-box { padding: 12px 14px; background: rgba(20,184,166,0.06); border: 1px solid rgba(20,184,166,0.2); border-radius: 10px; text-align: center; }
+  .value-stat-num { font-size: 26px; font-weight: 900; color: #2dd4bf; line-height: 1; margin-bottom: 4px; }
+  .value-stat-label { font-size: 10px; color: var(--text-dim); line-height: 1.4; }
   .card-creative .card-accent { background: linear-gradient(90deg, #a855f7, #6366f1); }
   .card-creative .card-title { color: #c084fc; }
   .card-competitor .card-accent { background: linear-gradient(90deg, #E8192C, #f97316); }
@@ -366,34 +375,84 @@
     </div>
   </div>
 
-  <div class="card card-sea grid-span2">
+  <div class="card card-sea grid-wide">
     <div class="card-accent"></div>
     <div class="card-header">
       <div class="card-icon">&#x1F30F;</div>
-      <div class="card-title">SEA Pulse</div>
-      <div class="card-count">3 signals</div>
+      <div class="card-title">SEA Pulse — Singapore / Thailand / Value</div>
+      <div class="card-count">7 signals</div>
     </div>
-    <div class="signal-list">
-      <div class="signal-item">
-        <div class="urgency watch">Watch</div>
-        <div class="signal-headline">Singapore Foodservice Market Projected at USD 34B in 2026 — Delivery Channels Growing at 20% CAGR</div>
-        <div class="signal-body">Singapore's foodservice market is set to hit USD 34.24 billion in 2026, with delivery channels growing fastest at a 20.1% CAGR. This positions Singapore as the right proof-of-concept market for Mamee's healthier snack reformulations before regional rollout — learnings here are fast and transferable.</div>
-        <div class="signal-implication">Validate Mamee's premium and functional SKUs in Singapore first, then scale to Malaysia and Indonesia. The Singapore consumer is demanding and sets the quality benchmark for the region.</div>
-        <div class="signal-source"><span class="pub-time">Apr 2026</span> <a href="https://the-shiv.com/malaysias-food-and-beverage-industry/" target="_blank">The Shiv</a></div>
+    <div class="value-stats">
+      <div class="value-stat-box">
+        <div class="value-stat-num">43%</div>
+        <div class="value-stat-label">of SEA consumers cutting non-essential spending (Bain 2026)</div>
       </div>
-      <div class="signal-item">
-        <div class="urgency act">Act Now</div>
-        <div class="signal-headline">PM Anutin's "Thai Help Thai" Cuts Prices on 3,000 Essentials — Thai FMCG Under Government Scrutiny</div>
-        <div class="signal-body">Thailand's PM launched a nationwide price-reduction initiative covering 3,000 everyday essentials to ease cost-of-living pressure. This signals the Thai government is actively intervening in FMCG pricing. Any Mamee pricing or promotional strategy for the Thai market must account for this political context in H2 2026.</div>
-        <div class="signal-implication">Thai market: hold or reduce pricing on core SKUs. Government scrutiny makes price hikes politically risky. Lead with value-per-gram messaging for Thai consumers.</div>
-        <div class="signal-source"><span class="pub-time">Apr 2026</span> <a href="https://www.bangkokpost.com" target="_blank">Bangkok Post</a></div>
+      <div class="value-stat-box">
+        <div class="value-stat-num">42%</div>
+        <div class="value-stat-label">seeking same products at lower prices (NIQ APAC 2026)</div>
       </div>
-      <div class="signal-item">
-        <div class="urgency fyi">FYI</div>
-        <div class="signal-headline">Bangkok 2030 Youth Olympics Bid — IOC Working Group On-Site Visit 27-30 April</div>
-        <div class="signal-body">Bangkok is actively bidding for the 2030 Youth Olympics, with an IOC working group conducting an official site visit this week (27-30 April). If successful, this would be the biggest youth sports marketing platform in Southeast Asia through 2030 — a four-year brand activation window for youth-skewing FMCG brands.</div>
-        <div class="signal-implication">Monitor the bid outcome closely. A Bangkok 2030 win creates a youth marketing platform Mamee should plan for now — sports, snacking, and youth culture collide.</div>
-        <div class="signal-source"><span class="pub-time">Apr 2026</span> <a href="https://www.bangkokpost.com" target="_blank">Bangkok Post</a></div>
+      <div class="value-stat-box">
+        <div class="value-stat-num">25%</div>
+        <div class="value-stat-label">switching brands purely for better value (NIQ APAC 2026)</div>
+      </div>
+    </div>
+    <div class="sea-country-grid">
+      <div>
+        <div class="sea-col-label sg">&#x1F1F8;&#x1F1EC; Singapore</div>
+        <div class="signal-list">
+          <div class="signal-item">
+            <div class="urgency watch">Watch</div>
+            <div class="signal-headline">SG Retail Up 8.3% YoY in Feb; F&amp;B Services +5.5% — Government SGD 1B Support Package in Effect</div>
+            <div class="signal-body">Singapore's retail sales rose 8.3% year-on-year in February 2026 (partly driven by CNY timing), with F&amp;B services up 5.5%. The government rolled out a nearly SGD 1 billion support package for citizens to cushion cost-of-living pressure. OCBC forecasts 2–3% retail sales growth for full-year 2026. Middle East tensions remain the key downside risk to consumer and hiring sentiment.</div>
+            <div class="signal-implication">Singapore consumer is spending but selectively. Premium, health-forward Mamee SKUs with clear value justification — not just premium pricing — will win in this market.</div>
+            <div class="signal-source"><span class="pub-time">Apr 2026</span> <a href="https://www.singstat.gov.sg/news/monthly-retail-sales-index-and-food-beverage-services-index-feb2026" target="_blank">SingStat</a> &nbsp;|&nbsp; <a href="https://english.news.cn/asiapacific/20260409/8b591718f14e4ae4b4ccfef645f2fa91/c.html" target="_blank">Xinhua</a></div>
+          </div>
+          <div class="signal-item">
+            <div class="urgency watch">Watch</div>
+            <div class="signal-headline">FHA Food &amp; Hospitality Asia 2026 Wrapped — 2,750 Exhibitors, 80K+ Visitors, Specialty F&amp;B Dominant Theme</div>
+            <div class="signal-body">Food &amp; Hospitality Asia 2026 (FHA-FnB) concluded at Singapore EXPO on 21–24 April, with 2,750+ exhibitors from 115 countries and 80,000+ trade visitors — the largest food industry gathering in SEA this year. Specialty coffee and premium snack formats dominated the floor. Luckin Coffee, Tim Hortons, and Kopi Kenangan all expanded Singapore presence, signalling premiumisation of the city-state's F&amp;B scene is accelerating.</div>
+            <div class="signal-implication">FHA sets the regional product benchmarks. The premium snack and specialty formats showcased here will be on Singapore shelves within 6–12 months. Mamee needs a premium product story that can compete in this environment.</div>
+            <div class="signal-source"><span class="pub-time">21–24 Apr 2026</span> <a href="https://www.ifbaworld.com/fha-food-beverage-2026/" target="_blank">IFBA / FHA 2026</a></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="sea-col-label th">&#x1F1F9;&#x1F1ED; Thailand</div>
+        <div class="signal-list">
+          <div class="signal-item">
+            <div class="urgency act">Act Now</div>
+            <div class="signal-headline">"Thai Help Thai" Cuts 3,000 Essential Prices — 71% of Thais Say Economy is "Bad", Retail Growth Only 2%</div>
+            <div class="signal-body">PM Anutin's nationwide price-reduction campaign covers 3,000 everyday essentials. 71% of Thais describe the current economic situation as "bad" and 62% say they are less comfortable making major purchases. Thai retail is forecast to grow only ~2% in 2026 versus GDP of 1.6–2.0% — consumers are delaying all non-essential spending. Households are focused entirely on basic staples.</div>
+            <div class="signal-implication">Thai market: freeze or reduce pricing on core Mamee SKUs. Price hikes are politically and commercially dangerous right now. Lead with value-per-gram and trusted brand messaging. Staple snack positioning over premium.</div>
+            <div class="signal-source"><span class="pub-time">Apr 2026</span> <a href="https://www.ipsos.com/en-th/what-worries-thailand-april-2026" target="_blank">Ipsos Thailand</a> &nbsp;|&nbsp; <a href="https://www.nationthailand.com/business/economy/40064586" target="_blank">Nation Thailand</a></div>
+          </div>
+          <div class="signal-item">
+            <div class="urgency watch">Watch</div>
+            <div class="signal-headline">Local Brands Outperforming Multinationals in Thai FMCG — Provision Stores Lead as Value Channel</div>
+            <div class="signal-body">Thai local and regional manufacturers are winning share from multinationals in food and beverages, leveraging price, familiarity, and distribution reach in provision stores — the leading FMCG channel in Thailand. Online FMCG is growing but subscribe-and-save bundles and multi-pack formats with freshness transparency are what converts. Bangkok 2030 Youth Olympics bid IOC site visit concluded this week — result expected within weeks.</div>
+            <div class="signal-implication">Mamee needs strong provision store placement and visible value pricing in Thailand, not just modern trade. The local brand trust dynamic works in Mamee's favour as a regional brand with Malaysian heritage — not a Western multinational.</div>
+            <div class="signal-source"><span class="pub-time">Apr 2026</span> <a href="https://www.nationthailand.com/business/economy/40065471" target="_blank">Nation Thailand</a> &nbsp;|&nbsp; <a href="https://sellercraft.co/thailands-digital-retail-outlook-2025-2026/" target="_blank">Sellercraft</a></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="sea-col-label val">&#x1F30F; SEA — Consumer Value</div>
+        <div class="signal-list">
+          <div class="signal-item">
+            <div class="urgency act">Act Now</div>
+            <div class="signal-headline">NIQ APAC 2026: Consumers Redefining Value Beyond Price — Reliability, Transparency, and Relevance Now Drive Purchase</div>
+            <div class="signal-body">NIQ's Asia Pacific 2026 report confirms that "value" in FMCG no longer means cheapest price. Consumers now define value as: reliability (product does what it promises), transparency (honest ingredients and claims), availability (can find it when needed), and relevance (fits my lifestyle). 42% want the same product at a lower price, but 25% are willing to pay more for a brand that meets these new value criteria. FMCG value grew 4% in APAC — 2.8% volume + 1.2% price.</div>
+            <div class="signal-implication">Mamee's value play in 2026 is not discounting — it is strengthening reliability, ingredient transparency, and emotional relevance. The brief on pack, the claim on social, the honest review on TikTok — these define value now more than the price tag.</div>
+            <div class="signal-source"><span class="pub-time">Apr 2026</span> <a href="https://nielseniq.com/global/en/news-center/2026/niq-insights-asia-pacific-consumers-redefine-value-amid-ongoing-uncertainty/" target="_blank">NIQ APAC 2026</a></div>
+          </div>
+          <div class="signal-item">
+            <div class="urgency watch">Watch</div>
+            <div class="signal-headline">Local and Regional Brands Now Command 50%+ of SEA FMCG Value — Multinationals Losing Ground</div>
+            <div class="signal-body">Local and regional manufacturers command over 50% of FMCG market value across Southeast Asia, especially in Indonesia, Thailand, and Vietnam (Bain &amp; Company 2026). Social commerce now accounts for ~20% of total SEA e-commerce, driven by TikTok Shop. 85% of SEA shoppers already use or plan to use AI tools for product discovery and purchase decisions — the search behaviour is shifting fundamentally.</div>
+            <div class="signal-implication">Mamee is positioned on the right side of this trend as a regional brand — not a Western multinational. The local brand premium is real and growing. Double down on the "ours" narrative — Malaysian-made, regionally trusted, halal-certified. This is the moat that multinationals cannot replicate.</div>
+            <div class="signal-source"><span class="pub-time">Apr 2026</span> <a href="https://www.bain.com/about/media-center/press-releases/sea/SEA-consumer-products-report-2025/" target="_blank">Bain and Company</a> &nbsp;|&nbsp; <a href="https://nielseniq.com/global/en/news-center/2025/southeast-asias-consumers-are-redefining-value-amidst-headwinds-powering-a-5-trillion-consumption-future-by-2035/" target="_blank">NIQ SEA</a></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
