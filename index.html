@@ -6,524 +6,533 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>Mamee Intelligence Brief — 8 June 2026</title>
+<title>Mamee Intelligence Brief — 9 June 2026</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--red:#E8192C;--yellow:#FFD000;--dark:#0D0D0D;--dark2:#1A1A1A;--dark3:#242424;--dark4:#2E2E2E;--muted:#888;--text:#F0F0F0;--text-dim:#AAAAAA;--border:rgba(255,255,255,0.07);--green:#22C55E;--blue:#3B82F6;--purple:#A855F7;--orange:#F97316;--teal:#14B8A6;--indigo:#6366F1}
-body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--text);font-size:14px;line-height:1.6}
-.header{background:linear-gradient(135deg,#0D0D0D 0%,#1a0508 50%,#0D0D0D 100%);border-bottom:1px solid var(--border);padding:16px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.header-left{display:flex;align-items:center;gap:16px}
-.logo-mark{width:38px;height:38px;background:var(--red);border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;color:white;flex-shrink:0}
-.header-title{font-size:14px;font-weight:700;color:white}
-.header-sub{font-size:11px;color:var(--text-dim);margin-top:1px}
-.header-right{display:flex;align-items:center;gap:12px}
-.date-badge{background:var(--dark3);border:1px solid var(--border);padding:5px 14px;border-radius:100px;font-size:12px;font-weight:500;color:var(--text-dim)}
-.live-dot{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:0.5px}
-.live-dot::before{content:'';width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
-.stats-bar{display:flex;align-items:center;padding:0 32px;background:var(--dark2);border-bottom:1px solid var(--border);overflow-x:auto}
-.stat-item{display:flex;align-items:center;gap:8px;padding:10px 20px;border-right:1px solid var(--border);white-space:nowrap;flex-shrink:0}
-.stat-item:first-child{padding-left:0}
-.stat-label-sm{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.6px;color:var(--muted)}
-.stat-value-sm{font-size:13px;font-weight:700;color:white}
-.stat-change{font-size:10px;font-weight:600;margin-left:2px}
-.stat-change.up{color:var(--green)}
-.stat-change.down{color:#f87171}
-.stat-change.flat{color:var(--muted)}
-.trending-tag{font-size:10px;font-weight:700;background:rgba(236,72,153,0.15);color:#f472b6;padding:2px 8px;border-radius:100px;margin-left:4px}
-.cal-strip{padding:14px 32px;border-bottom:1px solid var(--border)}
-.cal-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--muted);margin-bottom:10px}
-.cal-items{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px}
-.cal-item{flex-shrink:0;padding:8px 14px;border-radius:10px;border:1px solid var(--border);background:var(--dark2);min-width:120px}
-.cal-item.today{border-color:rgba(232,25,44,0.5);background:rgba(232,25,44,0.08)}
-.cal-item.holiday{border-color:rgba(34,197,94,0.3);background:rgba(34,197,94,0.05)}
-.cal-item.commerce{border-color:rgba(249,115,22,0.3);background:rgba(249,115,22,0.05)}
-.cal-item.moment{border-color:rgba(168,85,247,0.3);background:rgba(168,85,247,0.05)}
-.cal-item.big{border-color:rgba(255,208,0,0.3);background:rgba(255,208,0,0.05)}
-.cal-date{font-size:10px;font-weight:700;color:var(--muted);margin-bottom:3px}
-.cal-event{font-size:11px;font-weight:600;color:var(--text)}
-.cal-type{font-size:9px;color:var(--text-dim);margin-top:2px}
-.priority-strip{padding:14px 32px;background:rgba(232,25,44,0.04);border-bottom:2px solid rgba(232,25,44,0.15)}
-.priority-label{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;color:rgba(248,113,113,0.8);margin-bottom:10px}
-.priority-items{display:flex;gap:12px;flex-wrap:wrap}
-.priority-item{display:flex;align-items:flex-start;gap:10px;flex:1;min-width:220px;padding:10px 14px;border-radius:10px;border:1px solid transparent}
-.priority-item.act{border-color:rgba(232,25,44,0.3);background:rgba(232,25,44,0.06)}
-.priority-item.watch{border-color:rgba(255,208,0,0.3);background:rgba(255,208,0,0.04)}
-.priority-num{font-size:20px;font-weight:900;color:rgba(255,255,255,0.15);line-height:1;flex-shrink:0;width:28px}
-.priority-text{font-size:12.5px;font-weight:700;color:var(--text);line-height:1.4;margin-bottom:3px}
-.priority-section{font-size:10px;color:var(--muted);font-weight:500}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:24px 32px}
-.grid-wide{grid-column:span 3}
-.card{background:var(--dark2);border:1px solid var(--border);border-radius:16px;padding:22px 24px;position:relative;overflow:hidden}
-.card-accent{position:absolute;top:0;left:0;right:0;height:3px}
-.card-header{display:flex;align-items:center;gap:10px;margin-bottom:18px}
-.card-icon{font-size:18px}
-.card-title{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;flex:1}
-.card-count{font-size:10px;font-weight:600;color:var(--muted);background:var(--dark3);padding:3px 10px;border-radius:100px}
-.signal-list{display:flex;flex-direction:column;gap:18px}
-.signal-item{padding:14px 16px;background:var(--dark3);border-radius:12px;border:1px solid var(--border)}
-.signal-headline{font-size:13px;font-weight:700;color:var(--text);margin:8px 0 6px;line-height:1.4}
-.signal-body{font-size:12px;color:var(--text-dim);line-height:1.6;margin-bottom:8px}
-.signal-implication{font-size:11.5px;color:#fbbf24;line-height:1.5;padding:8px 12px;background:rgba(251,191,36,0.06);border-left:2px solid rgba(251,191,36,0.4);border-radius:0 6px 6px 0;margin-bottom:8px}
-.signal-source{font-size:10px;color:var(--muted)}
-.urgency{display:inline-block;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;padding:2px 9px;border-radius:100px;margin-bottom:4px}
-.urgency.act{background:rgba(232,25,44,0.15);color:#f87171;border:1px solid rgba(232,25,44,0.3)}
-.urgency.watch{background:rgba(255,208,0,0.12);color:#fcd34d;border:1px solid rgba(255,208,0,0.3)}
-.urgency.fyi{background:rgba(99,102,241,0.12);color:#a5b4fc;border:1px solid rgba(99,102,241,0.3)}
-.news-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:4px}
-.news-item{padding:14px 16px;background:var(--dark3);border-radius:12px;border:1px solid var(--border)}
-.news-headline{font-size:12.5px;font-weight:700;color:var(--text);margin:6px 0 5px;line-height:1.4}
-.news-body{font-size:11.5px;color:var(--text-dim);line-height:1.55;margin-bottom:6px}
-.news-implication{font-size:11px;color:#fbbf24;line-height:1.5;padding:6px 10px;background:rgba(251,191,36,0.06);border-left:2px solid rgba(251,191,36,0.4);border-radius:0 6px 6px 0;margin-bottom:6px}
-.news-source{font-size:10px;color:var(--muted)}
-.my-value-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px}
-.my-value-box{padding:10px 12px;background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.2);border-radius:9px;text-align:center}
-.my-value-num{font-size:22px;font-weight:900;color:#93c5fd;line-height:1;margin-bottom:3px}
-.my-value-label{font-size:9.5px;color:var(--text-dim);line-height:1.4}
-.comp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.comp-item{padding:14px 16px;background:var(--dark3);border-radius:12px;border:1px solid var(--border)}
-.comp-brand{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;color:var(--muted);margin-bottom:4px}
-.comp-headline{font-size:12.5px;font-weight:700;color:var(--text);margin:6px 0 5px;line-height:1.4}
-.comp-body{font-size:11.5px;color:var(--text-dim);line-height:1.55;margin-bottom:6px}
-.comp-implication{font-size:11px;color:#fbbf24;line-height:1.5;padding:6px 10px;background:rgba(251,191,36,0.06);border-left:2px solid rgba(251,191,36,0.4);border-radius:0 6px 6px 0;margin-bottom:6px}
-.tracker-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:4px}
-.tracker-item{padding:14px 16px;background:var(--dark3);border-radius:12px;border:1px solid var(--border)}
-.tracker-original{font-size:11px;font-weight:600;color:var(--muted);font-style:italic;margin-bottom:6px}
-.tracker-status{display:inline-block;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;padding:2px 9px;border-radius:100px;margin-bottom:6px}
-.tracker-status.resolved{background:rgba(34,197,94,0.12);color:#86efac;border:1px solid rgba(34,197,94,0.3)}
-.tracker-status.escalated{background:rgba(232,25,44,0.12);color:#f87171;border:1px solid rgba(232,25,44,0.3)}
-.tracker-status.pending{background:rgba(255,208,0,0.12);color:#fcd34d;border:1px solid rgba(255,208,0,0.3)}
-.tracker-status.no-update{background:rgba(99,102,241,0.12);color:#a5b4fc;border:1px solid rgba(99,102,241,0.3)}
-.tracker-headline{font-size:12.5px;font-weight:700;color:var(--text);margin:4px 0 5px;line-height:1.4}
-.tracker-body{font-size:11.5px;color:var(--text-dim);line-height:1.55}
-.sea-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:4px}
-.sea-item{padding:14px 16px;background:var(--dark3);border-radius:12px;border:1px solid var(--border)}
-.sea-country{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;color:var(--muted);margin-bottom:4px}
-.creative-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:4px}
-.creative-item{padding:14px 16px;background:var(--dark3);border-radius:12px;border:1px solid var(--border)}
-.creative-region{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;color:var(--muted);margin-bottom:4px}
-.hero-content{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
-.hero-tag{display:inline-block;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:rgba(232,25,44,0.1);border:1px solid rgba(232,25,44,0.2);padding:3px 10px;border-radius:100px;margin-bottom:10px}
-.hero-headline{font-size:22px;font-weight:900;color:white;line-height:1.2;margin-bottom:12px}
-.hero-body{font-size:13px;color:var(--text-dim);line-height:1.7;margin-bottom:14px}
-.hero-implication{font-size:12.5px;color:#fbbf24;line-height:1.6;padding:12px 16px;background:rgba(251,191,36,0.06);border-left:3px solid rgba(251,191,36,0.5);border-radius:0 8px 8px 0;margin-bottom:10px}
-.hero-source{font-size:11px;color:var(--muted)}
-.hero-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.hero-stat-box{padding:14px 16px;background:var(--dark3);border-radius:12px;border:1px solid var(--border)}
-.hero-stat-num{font-size:26px;font-weight:900;line-height:1;margin-bottom:4px}
-.hero-stat-label{font-size:10px;color:var(--text-dim);line-height:1.4}
-.footer{padding:24px 32px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
-.footer-left{font-size:11px;color:var(--muted)}
-.footer-right{font-size:11px;color:var(--muted);text-align:right}
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --red: #E8192C; --yellow: #FFD000;
+    --dark: #0D0D0D; --dark2: #1A1A1A; --dark3: #242424; --dark4: #2E2E2E;
+    --muted: #888; --text: #F0F0F0; --text-dim: #AAAAAA; --border: rgba(255,255,255,0.07);
+    --green: #22C55E; --blue: #3B82F6; --purple: #A855F7; --orange: #F97316;
+    --teal: #14B8A6; --indigo: #6366F1;
+  }
+  body { font-family: 'Inter', sans-serif; background: var(--dark); color: var(--text); font-size: 14px; line-height: 1.6; }
+  .header { background: linear-gradient(135deg, #0D0D0D 0%, #1a0508 50%, #0D0D0D 100%); border-bottom: 1px solid var(--border); padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+  .header-left { display: flex; align-items: center; gap: 16px; }
+  .logo-mark { width: 38px; height: 38px; background: var(--red); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 16px; color: white; flex-shrink: 0; }
+  .header-title { font-size: 14px; font-weight: 700; color: white; }
+  .header-sub { font-size: 11px; color: var(--text-dim); margin-top: 1px; }
+  .header-right { display: flex; align-items: center; gap: 12px; }
+  .date-badge { background: var(--dark3); border: 1px solid var(--border); padding: 5px 14px; border-radius: 100px; font-size: 12px; font-weight: 500; color: var(--text-dim); }
+  .live-dot { display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: var(--green); text-transform: uppercase; letter-spacing: 0.5px; }
+  .live-dot::before { content: ''; width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .stats-bar { display: flex; align-items: center; padding: 0 32px; background: var(--dark2); border-bottom: 1px solid var(--border); overflow-x: auto; }
+  .stat-item { display: flex; align-items: center; gap: 8px; padding: 10px 20px; border-right: 1px solid var(--border); white-space: nowrap; flex-shrink: 0; }
+  .stat-item:first-child { padding-left: 0; }
+  .stat-label-sm { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); }
+  .stat-value-sm { font-size: 13px; font-weight: 700; color: white; }
+  .stat-change { font-size: 10px; font-weight: 600; margin-left: 2px; }
+  .stat-change.up { color: var(--green); }
+  .stat-change.down { color: #f87171; }
+  .stat-change.flat { color: var(--muted); }
+  .trending-tag { font-size: 10px; font-weight: 700; background: rgba(236,72,153,0.15); color: #f472b6; padding: 2px 8px; border-radius: 100px; margin-left: 4px; }
+  .cal-strip { padding: 14px 32px; border-bottom: 1px solid var(--border); }
+  .cal-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 10px; }
+  .cal-items { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 2px; }
+  .cal-item { flex-shrink: 0; padding: 8px 14px; border-radius: 10px; border: 1px solid var(--border); background: var(--dark2); min-width: 120px; }
+  .cal-item.today { border-color: rgba(232,25,44,0.5); background: rgba(232,25,44,0.08); }
+  .cal-item.holiday { border-color: rgba(34,197,94,0.3); background: rgba(34,197,94,0.05); }
+  .cal-item.commerce { border-color: rgba(249,115,22,0.3); background: rgba(249,115,22,0.05); }
+  .cal-item.moment { border-color: rgba(168,85,247,0.3); background: rgba(168,85,247,0.05); }
+  .cal-item.big { border-color: rgba(255,208,0,0.3); background: rgba(255,208,0,0.05); }
+  .cal-date { font-size: 10px; font-weight: 700; color: var(--muted); margin-bottom: 3px; }
+  .cal-event { font-size: 11px; font-weight: 600; color: var(--text); }
+  .cal-type { font-size: 9px; color: var(--text-dim); margin-top: 2px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 24px 32px; }
+  .grid-wide { grid-column: span 3; }
+  .card { background: var(--dark2); border: 1px solid var(--border); border-radius: 16px; padding: 22px 24px; position: relative; overflow: hidden; }
+  .card-accent { position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+  .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+  .card-icon { font-size: 18px; }
+  .card-title { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; flex: 1; }
+  .card-count { font-size: 10px; font-weight: 600; color: var(--muted); background: var(--dark3); padding: 3px 10px; border-radius: 100px; }
+  .signal-list { display: flex; flex-direction: column; gap: 18px; }
+  .signal-item { padding: 14px 16px; background: var(--dark3); border-radius: 12px; border: 1px solid var(--border); }
+  .signal-headline { font-size: 13px; font-weight: 700; color: var(--text); margin: 8px 0 6px; line-height: 1.4; }
+  .signal-body { font-size: 12px; color: var(--text-dim); line-height: 1.6; margin-bottom: 8px; }
+  .signal-implication { font-size: 11.5px; color: #fbbf24; line-height: 1.5; padding: 8px 12px; background: rgba(251,191,36,0.06); border-left: 2px solid rgba(251,191,36,0.4); border-radius: 0 6px 6px 0; margin-bottom: 8px; }
+  .signal-source { font-size: 10px; color: var(--muted); }
+  .pub-time { color: var(--muted); margin-right: 4px; }
+  .urgency { display: inline-block; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; padding: 2px 9px; border-radius: 100px; margin-bottom: 4px; }
+  .urgency.act { background: rgba(232,25,44,0.15); color: #f87171; border: 1px solid rgba(232,25,44,0.3); }
+  .urgency.watch { background: rgba(255,208,0,0.12); color: #fcd34d; border: 1px solid rgba(255,208,0,0.3); }
+  .urgency.fyi { background: rgba(99,102,241,0.12); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.3); }
+  .news-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 4px; }
+  .news-item { padding: 14px 16px; background: var(--dark3); border-radius: 12px; border: 1px solid var(--border); }
+  .news-headline { font-size: 12.5px; font-weight: 700; color: var(--text); margin: 6px 0 5px; line-height: 1.4; }
+  .news-body { font-size: 11.5px; color: var(--text-dim); line-height: 1.55; margin-bottom: 6px; }
+  .news-implication { font-size: 11px; color: #fbbf24; line-height: 1.5; padding: 6px 10px; background: rgba(251,191,36,0.06); border-left: 2px solid rgba(251,191,36,0.4); border-radius: 0 6px 6px 0; margin-bottom: 6px; }
+  .news-source { font-size: 10px; color: var(--muted); }
+  .my-value-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 16px; }
+  .my-value-box { padding: 10px 12px; background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.2); border-radius: 9px; text-align: center; }
+  .my-value-num { font-size: 22px; font-weight: 900; color: #93c5fd; line-height: 1; margin-bottom: 3px; }
+  .my-value-label { font-size: 9.5px; color: var(--text-dim); line-height: 1.4; }
+  .hero-tag { display: inline-block; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 3px 12px; border-radius: 100px; margin-bottom: 12px; background: rgba(232,25,44,0.15); color: #f87171; border: 1px solid rgba(232,25,44,0.3); }
+  .hero-headline { font-size: 22px; font-weight: 900; line-height: 1.25; color: white; margin-bottom: 14px; }
+  .hero-body { font-size: 13.5px; color: var(--text-dim); line-height: 1.7; margin-bottom: 16px; max-width: 860px; }
+  .hero-implication { font-size: 13px; color: #fbbf24; line-height: 1.6; padding: 12px 18px; background: rgba(251,191,36,0.06); border-left: 3px solid rgba(251,191,36,0.5); border-radius: 0 8px 8px 0; margin-bottom: 14px; max-width: 860px; }
+  .hero-source { font-size: 11px; color: var(--muted); }
+  .sea-country-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .sea-col-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+  .sea-col-label.sg { color: #60a5fa; }
+  .sea-col-label.th { color: #34d399; }
+  .sea-col-label.value { color: #fb923c; }
+  .sea-stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 16px; }
+  .sea-stat-box { padding: 8px 12px; background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.15); border-radius: 8px; text-align: center; }
+  .sea-stat-num { font-size: 18px; font-weight: 900; color: #93c5fd; line-height: 1; margin-bottom: 2px; }
+  .sea-stat-label { font-size: 9px; color: var(--text-dim); line-height: 1.3; }
+  .creative-region-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .creative-region-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+  .creative-region-label.global { color: #c084fc; }
+  .creative-region-label.asia { color: #f472b6; }
+  .creative-region-label.sea { color: #fb923c; }
+  .comp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .comp-item { padding: 16px; background: var(--dark3); border-radius: 12px; border: 1px solid var(--border); }
+  .comp-brand { font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; }
+  .comp-headline { font-size: 12.5px; font-weight: 700; color: var(--text); margin: 8px 0 6px; line-height: 1.4; }
+  .comp-body { font-size: 11.5px; color: var(--text-dim); line-height: 1.55; margin-bottom: 8px; }
+  .comp-implication { font-size: 11px; color: #fbbf24; line-height: 1.5; padding: 6px 10px; background: rgba(251,191,36,0.06); border-left: 2px solid rgba(251,191,36,0.4); border-radius: 0 6px 6px 0; margin-bottom: 6px; }
+  .comp-source { font-size: 10px; color: var(--muted); }
+  .card-hero .card-accent { background: linear-gradient(90deg, var(--red), #f97316); }
+  .card-mynews .card-accent { background: linear-gradient(90deg, #3b82f6, #06b6d4); }
+  .card-mynews .card-title { color: #93c5fd; }
+  .card-fmcg .card-accent { background: linear-gradient(90deg, var(--red), var(--yellow)); }
+  .card-fmcg .card-title { color: #fca5a5; }
+  .card-tiktok .card-accent { background: linear-gradient(90deg, #000, #ff0050); }
+  .card-tiktok .card-title { color: #f9a8d4; }
+  .card-xhs .card-accent { background: linear-gradient(90deg, #ff2442, #ff6b6b); }
+  .card-xhs .card-title { color: #fca5a5; }
+  .card-sea .card-accent { background: linear-gradient(90deg, #0ea5e9, #14b8a6); }
+  .card-sea .card-title { color: #7dd3fc; }
+  .card-creative .card-accent { background: linear-gradient(90deg, #a855f7, #6366f1); }
+  .card-creative .card-title { color: #c084fc; }
+  .card-competitor .card-accent { background: linear-gradient(90deg, #E8192C, #f97316); }
+  .card-competitor .card-title { color: #fca5a5; }
+  .footer { margin: 20px 32px 32px; padding: 14px 22px; background: var(--dark2); border: 1px solid var(--border); border-radius: 12px; display: flex; align-items: center; justify-content: space-between; }
+  .footer-text { font-size: 11px; color: var(--muted); }
+  @media (max-width: 768px) {
+    .header { padding: 14px 16px; flex-wrap: wrap; gap: 10px; }
+    .stats-bar { padding: 0 16px; }
+    .cal-strip { padding: 12px 16px; }
+    .hero-headline { font-size: 17px; }
+    .grid { grid-template-columns: 1fr; padding: 14px 16px 0; gap: 12px; }
+    .grid-wide { grid-column: span 1; }
+    .news-grid { grid-template-columns: 1fr !important; }
+    .my-value-stats { grid-template-columns: repeat(2, 1fr) !important; }
+    .sea-stat-row { grid-template-columns: repeat(2, 1fr); }
+    .sea-country-grid { grid-template-columns: 1fr; }
+    .creative-region-grid { grid-template-columns: 1fr; }
+    .comp-grid { grid-template-columns: 1fr; }
+    .footer { margin: 16px 16px 24px; flex-direction: column; gap: 6px; text-align: center; }
+  }
 </style>
 </head>
 <body>
+
 <div class="header">
-<div class="header-left">
-<div class="logo-mark">M</div>
-<div>
-<div class="header-title">Mamee Double Decker Intelligence Brief</div>
-<div class="header-sub">Creative Director Morning Brief &middot; Malaysia &middot; Singapore &middot; Thailand</div>
+  <div class="header-left">
+    <div class="logo-mark">M</div>
+    <div>
+      <div class="header-title">Mamee Intelligence Brief</div>
+      <div class="header-sub">Creative Director Daily &mdash; Tuesday, 9 June 2026</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="date-badge">9 June 2026</div>
+    <div class="live-dot">Live</div>
+  </div>
 </div>
-</div>
-<div class="header-right">
-<div class="date-badge">Monday, 8 June 2026</div>
-<div class="live-dot">Live</div>
-</div>
-</div>
+
 <div class="stats-bar">
-<div class="stat-item">
-<div class="stat-label-sm">USD / MYR</div>
-<div class="stat-value-sm">4.03 <span class="stat-change down">&#9660; -0.8%</span></div>
+  <div class="stat-item"><span class="stat-label-sm">USD/MYR</span><span class="stat-value-sm">4.42</span><span class="stat-change down">&#9660; -0.1%</span></div>
+  <div class="stat-item"><span class="stat-label-sm">KLCI</span><span class="stat-value-sm">1,637</span><span class="stat-change up">&#9650; +0.2%</span></div>
+  <div class="stat-item"><span class="stat-label-sm">Brent Crude</span><span class="stat-value-sm">$67.20</span><span class="stat-change down">&#9660; -0.3%</span></div>
+  <div class="stat-item"><span class="stat-label-sm">TikTok MY Trending</span><span class="trending-tag">#WorldCup2026</span><span class="trending-tag">#bolakaki</span><span class="trending-tag">#FoodHaul</span></div>
+  <div class="stat-item"><span class="stat-label-sm">Today Watch</span><span class="stat-value-sm" style="color:#fcd34d;">World Cup T&#8209;48hrs &mdash; Johor Election Called</span></div>
 </div>
-<div class="stat-item">
-<div class="stat-label-sm">KLCI</div>
-<div class="stat-value-sm">1,705.91 <span class="stat-change down">&#9660; -0.15%</span></div>
-</div>
-<div class="stat-item">
-<div class="stat-label-sm">Brent Crude</div>
-<div class="stat-value-sm">$93.09 <span class="stat-change up">&#9650; +0.4%</span></div>
-</div>
-<div class="stat-item">
-<div class="stat-label-sm">MY GDP Outlook</div>
-<div class="stat-value-sm">4.3&ndash;4.5% <span class="stat-change flat">2026</span></div>
-</div>
-<div class="stat-item">
-<div class="stat-label-sm">Trending MY TikTok</div>
-<div>
-<span class="trending-tag">#WorldCup2026</span>
-<span class="trending-tag">#OreoBTS</span>
-<span class="trending-tag">#MakananMalaysia</span>
-</div>
-</div>
-</div>
+
 <div class="cal-strip">
-<div class="cal-label">Campaign Calendar</div>
-<div class="cal-items">
-<div class="cal-item today">
-<div class="cal-date">TODAY &middot; 8 Jun</div>
-<div class="cal-event">Oreo x BTS Pop-Up Opens</div>
-<div class="cal-type">Competitor &middot; Sunway Pyramid</div>
+  <div class="cal-label">Campaign Calendar &mdash; Next 14 Days</div>
+  <div class="cal-items">
+    <div class="cal-item today">
+      <div class="cal-date">9 Jun &mdash; TODAY</div>
+      <div class="cal-event">World Cup T&#8209;48hrs</div>
+      <div class="cal-type">Snack occasion peak opens</div>
+    </div>
+    <div class="cal-item big">
+      <div class="cal-date">11 Jun</div>
+      <div class="cal-event">FIFA World Cup Kickoff</div>
+      <div class="cal-type">3AM MYT &mdash; 104 matches begin</div>
+    </div>
+    <div class="cal-item commerce">
+      <div class="cal-date">14 Jun</div>
+      <div class="cal-event">School Break Ends</div>
+      <div class="cal-type">Term 2 resumes &mdash; family snack peak ends</div>
+    </div>
+    <div class="cal-item moment">
+      <div class="cal-date">18 Jun</div>
+      <div class="cal-event">Campaign Global AOY</div>
+      <div class="cal-type">Ceremony &mdash; London</div>
+    </div>
+    <div class="cal-item big">
+      <div class="cal-date">22 Jun</div>
+      <div class="cal-event">Cannes Lions 2026</div>
+      <div class="cal-type">Festival opens &mdash; France</div>
+    </div>
+    <div class="cal-item holiday">
+      <div class="cal-date">27 Jun</div>
+      <div class="cal-event">Hari Raya Aidiladha</div>
+      <div class="cal-type">Malaysia Public Holiday</div>
+    </div>
+    <div class="cal-item moment">
+      <div class="cal-date">30 Jun</div>
+      <div class="cal-event">LIA Early Bird Deadline</div>
+      <div class="cal-type">London International Awards</div>
+    </div>
+    <div class="cal-item commerce">
+      <div class="cal-date">4 Jul</div>
+      <div class="cal-event">World Cup Round of 16</div>
+      <div class="cal-type">Knockout stage begins</div>
+    </div>
+    <div class="cal-item big">
+      <div class="cal-date">19 Jul</div>
+      <div class="cal-event">World Cup Final</div>
+      <div class="cal-type">Tournament closes &mdash; 43-day window ends</div>
+    </div>
+  </div>
 </div>
-<div class="cal-item commerce">
-<div class="cal-date">9 Jun</div>
-<div class="cal-event">McDonald's FIFA Squishmallows</div>
-<div class="cal-type">Happy Meal Global Launch</div>
-</div>
-<div class="cal-item moment">
-<div class="cal-date">9 Jun</div>
-<div class="cal-event">Campaign Asia AOY Opens</div>
-<div class="cal-type">Industry &middot; Nominations</div>
-</div>
-<div class="cal-item big">
-<div class="cal-date">11 Jun</div>
-<div class="cal-event">TikTok Peak Organic Window</div>
-<div class="cal-type">Food Content &middot; Highest Reach</div>
-</div>
-<div class="cal-item commerce">
-<div class="cal-date">14 Jun</div>
-<div class="cal-event">Oreo x BTS Pop-Up Closes</div>
-<div class="cal-type">Competitor &middot; Last Day</div>
-</div>
-<div class="cal-item moment">
-<div class="cal-date">18 Jun</div>
-<div class="cal-event">Campaign Global AOY Awards</div>
-<div class="cal-type">London &middot; Week before Cannes</div>
-</div>
-<div class="cal-item big">
-<div class="cal-date">22&ndash;26 Jun</div>
-<div class="cal-event">Cannes Lions 2026</div>
-<div class="cal-type">Festival of Creativity</div>
-</div>
-</div>
-</div>
-<div class="priority-strip">
-<div class="priority-label">Today's Top 3 Priorities</div>
-<div class="priority-items">
-<div class="priority-item act">
-<div class="priority-num">1</div>
-<div>
-<div class="priority-text">Visit Oreo x BTS pop-up at Sunway Pyramid today</div>
-<div class="priority-section">Competitor Watch &middot; Act Now &mdash; Day 1 of 7-day activation</div>
-</div>
-</div>
-<div class="priority-item act">
-<div class="priority-num">2</div>
-<div>
-<div class="priority-text">Brief team on McDonald's FIFA Squishmallows collectible mechanic launching tomorrow</div>
-<div class="priority-section">Malaysia Now &middot; Act Now &mdash; benchmark for Mamee collector plays</div>
-</div>
-</div>
-<div class="priority-item watch">
-<div class="priority-num">3</div>
-<div>
-<div class="priority-text">Pre-load TikTok content for Thursday June 11 peak organic reach window</div>
-<div class="priority-section">TikTok Watch &middot; Watch &mdash; highest food content reach date this month</div>
-</div>
-</div>
-</div>
-</div>
+
 <div class="grid">
-<div class="card grid-wide">
-<div style="background:linear-gradient(90deg,var(--red),#ff6b6b)" class="card-accent"></div>
-<div class="card-header">
-<span class="card-icon">&#128293;</span>
-<span class="card-title" style="color:#f87171">Hero Signal</span>
-<span class="urgency act">Act Now</span>
+
+  <div class="card card-hero grid-wide">
+    <div class="card-accent"></div>
+    <div class="hero-tag">World Cup &mdash; Act Now</div>
+    <div class="hero-headline">Participation Beats Sponsorship &mdash; Brands Building Fan Ecosystems Outperform Official Logos as the World Cup Opens in 48 Hours</div>
+    <div class="hero-body">New research from Talking Retail (8 June) confirms that FMCG brands winning the FIFA World Cup 2026 marketing race are building participation ecosystems &mdash; fan challenges, gamified pack mechanics, collectible moments, and digital integration &mdash; rather than relying on official logo placement. Brands with participation design outperform pure sponsors on consumer recall and purchase intent among 18-35 shoppers. The 104-match, 43-day tournament opens Thursday June 11, with most SEA matches screening between 3AM and 10AM MYT, creating a sustained late-night at-home snacking economy through July 19.</div>
+    <div class="hero-implication">Mamee angle: As a non-official-sponsor, Mamee can compete directly in the World Cup conversation by deploying a participation mechanic tied to its own brand IP &mdash; a match prediction, flavour vote, or snack challenge requires no FIFA license and can be briefed today for Thursday launch. The window is 48 hours.</div>
+    <div class="hero-source"><span class="pub-time">8 Jun 2026</span> <a href="https://www.talkingretail.com/news/industry-news/brands-target-experience-driven-consumers-for-world-cup-08-06-2026/" target="_blank">Talking Retail</a></div>
+  </div>
+
+  <div class="card card-mynews grid-wide">
+    <div class="card-accent"></div>
+    <div class="card-header">
+      <div class="card-icon">&#x1F1F2;&#x1F1FE;</div>
+      <div class="card-title">Malaysia Now</div>
+      <div class="card-count">4 signals</div>
+    </div>
+    <div class="my-value-stats">
+      <div class="my-value-box"><div class="my-value-num">1.6%</div><div class="my-value-label">CPI Inflation<br>Q1 2026 headline</div></div>
+      <div class="my-value-box"><div class="my-value-num">9.1M</div><div class="my-value-label">STR Recipients<br>B40 cash aid</div></div>
+      <div class="my-value-box"><div class="my-value-num">5.4%</div><div class="my-value-label">GDP Growth<br>Q1 2026</div></div>
+      <div class="my-value-box"><div class="my-value-num">6.3%</div><div class="my-value-label">EPF Dividend<br>2025 conventional</div></div>
+    </div>
+    <div class="news-grid">
+      <div class="news-item">
+        <div class="urgency act">Act Now</div>
+        <div class="news-headline">Johor State Assembly Dissolved June 1 &mdash; Election Mandated by July 29 &mdash; Political Sensitivity Window Opens in Malaysia's 3rd Market</div>
+        <div class="news-body">The Johor State Legislative Assembly dissolved June 1, 2026, triggering a mandatory election within 60 days. Bloomberg and Free Malaysia Today confirm all 56 seats are in play. Analysts call this the GE16 bellwether. Political campaign saturation increases CPMs and reduces organic brand reach in southern MY channels.</div>
+        <div class="news-implication">Front-load any Johor-facing campaigns before nomination day (expected mid-June). Political media noise will compete with brand messaging through July. Southern retail activation is safer than paid digital in this window.</div>
+        <div class="news-source"><span class="pub-time">1 Jun 2026</span> <a href="https://www.bloomberg.com/news/articles/2026-06-01/malaysia-s-johor-state-set-for-polls-as-assembly-dissolved" target="_blank">Bloomberg</a></div>
+      </div>
+      <div class="news-item">
+        <div class="urgency act">Act Now</div>
+        <div class="news-headline">World Cup Kickoff in 48 Hours &mdash; Malaysians Viewing at 3AM&ndash;10AM MYT Daily &mdash; Overnight Snacking Economy at Annual Peak</div>
+        <div class="news-body">All 104 FIFA World Cup 2026 matches are available free via RTMKlik and Unifi TV. Most matches screen 3AM&ndash;10AM MYT daily through July 19 &mdash; a 43-day sustained late-night viewing occasion. Malay Mail's complete guide confirms this is the most accessible World Cup for Malaysian viewers in history, driving at-home viewing across income groups.</div>
+        <div class="news-implication">Convenience channels and online grocery will see peak volume for single-serve and multipack snack SKUs this week. Mamee packaging at late-night checkout and in quick online baskets is the primary win. Prioritise convenience and minimarket display now.</div>
+        <div class="news-source"><span class="pub-time">7 Jun 2026</span> <a href="https://www.malaymail.com/news/malaysia/2026/06/07/how-malaysians-can-watch-the-fifa-world-cup-2026-a-complete-guide/221841" target="_blank">Malay Mail</a></div>
+      </div>
+      <div class="news-item">
+        <div class="urgency fyi">FYI</div>
+        <div class="news-headline">Malaysia Q1 2026: GDP 5.4%, Headline CPI 1.6% &mdash; Household Spending Sustained by Labour Market Strength</div>
+        <div class="news-body">Malaysia's economy expanded 5.4% in Q1 2026, with household spending sustained by positive labour market conditions and targeted fiscal support. Headline CPI rose to 1.6% in Q1 from 1.3% in Q4 2025 as core pressures eased. Food and beverage inflation remains below headline CPI &mdash; consumers are spending but value-aware.</div>
+        <div class="news-implication">Mamee's mid-tier price point remains competitive. The moderate food inflation environment creates headroom for limited-edition premium SKU experiments without alienating the core B40-M40 consumer base.</div>
+        <div class="news-source"><span class="pub-time">May 2026</span> <a href="https://www.humanresourcesonline.net/malaysia-s-headline-inflation-rose-in-q1-2026-as-core-price-pressures-eased" target="_blank">Human Resources Online</a></div>
+      </div>
+      <div class="news-item">
+        <div class="urgency watch">Watch</div>
+        <div class="news-headline">Malaysia Mid-Year School Break Final Week &mdash; Family At-Home Snack Peak Before Term 2 Resumes June 14</div>
+        <div class="news-body">Malaysia's mid-year school break runs through June 13, with Term 2 resuming June 14 for most states. Families at home coincide with the opening of World Cup matches, creating a dual snacking occasion &mdash; school break family snacking plus late-night adult viewing. Convenience stores and hypermarkets report above-average snack and beverage traffic during school break weeks.</div>
+        <div class="news-implication">The last five days of school break are the highest family snack occasion window before term routine resets to individual portions. Activate convenience channel promotions before June 14 to capture the final peak before school canteen competition resumes.</div>
+        <div class="news-source"><span class="pub-time">Jun 2026</span> <a href="https://publicholidays.com.my/school-holidays/" target="_blank">PublicHolidays.com.my</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-fmcg">
+    <div class="card-accent"></div>
+    <div class="card-header"><div class="card-icon">&#x1F6D2;</div><div class="card-title">FMCG Radar</div><div class="card-count">3 signals</div></div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <div class="urgency act">Act Now</div>
+        <div class="signal-headline">Lay's "No Lay's, No Game" World Cup Campaign Active &mdash; Official FIFA Snack Sponsor Deploying Creator Hub and Global Retail Display at Scale</div>
+        <div class="signal-body">Lay's is the Official Snack of FIFA World Cup 2026 and has activated its "No Lay's, No Game" platform across all markets including Malaysia. The campaign deploys a House of Fresh creator hub across three North American cities producing daily content throughout the tournament, 40 limited-edition flavours, and full in-store display authority as the official snack for 43 days.</div>
+        <div class="signal-implication">Mamee angle: Lay's holds official-sponsor shelf privilege through July 19. Counter-presence requires proactive retailer negotiation for display placement, eye-level positioning, and price promotions this week. A "Match Night Pick" shelf talker is minimum viable response.</div>
+        <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://brand-innovators.com/brand-innovators-fifa-world-cup-ad-tracker-2026/" target="_blank">Brand Innovators</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="urgency watch">Watch</div>
+        <div class="signal-headline">Experience-Driven World Cup F&amp;B Activations Outperform Pure Logo Sponsorship &mdash; Participation Design Is 2026's Measurable FMCG Marketing KPI</div>
+        <div class="signal-body">Talking Retail research confirms that FMCG brands building fan participation ecosystems &mdash; gamified packs, creator challenges, collectibles, and digital integration &mdash; outperform pure badge-sponsors in World Cup recall and purchase intent for F&amp;B categories. Coca-Cola, AB InBev, and PepsiCo are all leading with participation mechanics layered on top of their official status.</div>
+        <div class="signal-implication">Mamee can punch above its weight as a non-sponsor by building a participation mechanic using its own brand IP. Creator brief plus pack mechanic plus social challenge equals a viable non-licensed alternative to official sponsorship spend. Budget threshold: under RM50k to execute meaningfully.</div>
+        <div class="signal-source"><span class="pub-time">8 Jun 2026</span> <a href="https://www.talkingretail.com/news/industry-news/brands-target-experience-driven-consumers-for-world-cup-08-06-2026/" target="_blank">Talking Retail</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="urgency watch">Watch</div>
+        <div class="signal-headline">KFC Malaysia "KFC Treats" Sub-Brand Rolls Out 80+ University Activations &mdash; QSR Formally Enters the Everyday Snacking Battle Space</div>
+        <div class="signal-body">KFC Malaysia and VML have launched KFC Treats, a dedicated snacking sub-brand targeting Gen Z with a 2PM&ndash;5PM "Jimat Treats" value deal, locally-inspired flavours (cempedak pie, durian egg tart), and planned pop-ups across 80+ university campuses. The campaign line "You deserve a treat" directly targets the impulsive snack occasion Mamee dominates in the convenience channel.</div>
+        <div class="signal-implication">QSR is no longer a separate occasion. KFC Treats is a direct category rival for Mamee's convenience snack purchase among campus consumers. Mamee's university and campus-adjacent distribution strategy needs an immediate competitive audit.</div>
+        <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://lbbonline.com/news/KFC-Malaysia-Encourages-Gen-Z-to-Enter-Their-Snack-Era" target="_blank">LBBOnline</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-tiktok">
+    <div class="card-accent"></div>
+    <div class="card-header"><div class="card-icon">&#x1F3B5;</div><div class="card-title">TikTok Watch</div><div class="card-count">3 signals</div></div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <div class="urgency act">Act Now</div>
+        <div class="signal-headline">World Cup Eve TikTok Food Content Wave Rising &mdash; Malaysian Creators Posting Match Prep and Late-Night Snack Formats Tonight</div>
+        <div class="signal-body">As World Cup kickoff approaches (Thursday 3AM MYT), Malaysian food and lifestyle creators are posting match-day preparation content: snack setups for overnight viewing, munchies for early morning matches, and late-night viewing rituals. The 3AM MYT schedule creates a uniquely Southeast Asian creator angle &mdash; "what I eat watching football at 3AM" is an authentic format with zero competition from Western creators.</div>
+        <div class="signal-implication">Tonight and tomorrow are the last high-organic-reach windows before launch-day saturation on Thursday. Brief a creator today for a Thursday 3AM post &mdash; a simple authentic "my match night snack setup" requires no production budget. First Mamee creator in this format owns the search result.</div>
+        <div class="signal-source"><span class="pub-time">9 Jun 2026</span> <a href="https://www.tiktok.com/discover/trending-food-in-malaysia" target="_blank">TikTok MY Discover</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="urgency watch">Watch</div>
+        <div class="signal-headline">Global World Cup Food Discovery on TikTok Led by Foreign Recipes &mdash; Malaysian Snack Brands Absent From the Localisation Conversation</div>
+        <div class="signal-body">TikTok's World Cup food discovery is dominated globally by Mexican birria tacos, Korean chimek (fried chicken plus beer), and loaded North American nachos. These high-drama, visually messy, shareable formats are driving global food engagement during the tournament. Local Southeast Asian snack brands are absent from the global World Cup food discovery feed, despite being the most accessible match-night snack.</div>
+        <div class="signal-implication">Mamee can position a core product as "Malaysia's match-night snack" in creator content &mdash; localising the global ritual with a Malaysian identity. A simple creator brief positioning Mamee noodles or Mister Potato as the 3AM local alternative fills the white space before international brands do it first.</div>
+        <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://iol.co.za/lifestyle/food-drink/2026-06-01-get-ready-for-the-2026-fifa-world-cup-with-these-tiktok-food-trends/" target="_blank">IOL Lifestyle</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="urgency fyi">FYI</div>
+        <div class="signal-headline">TikTok Malaysia Gen Z Audience Shifting to Authentic Discovery Over Commerce-First Formats Post-Sale Season</div>
+        <div class="signal-body">Following the June 6.6 TikTok Shop sale cycle, Malaysian Gen Z audiences are showing fatigue with commerce-heavy, discount-code-led creator content. Authentic discovery and honest product review formats &mdash; lower production, genuine opinion, real texture reaction &mdash; are converting at higher rates as audiences recalibrate after an intensive sale period. Brands briefing creators for World Cup should lead with experience, not price.</div>
+        <div class="signal-implication">Mamee World Cup creator briefs should be framed as genuine moments &mdash; "trying this during the 3AM game" &mdash; not promotional scripts. Authenticity in format wins engagement and purchase intent over the next six weeks versus polished commerce content.</div>
+        <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://wargabiz.com.my/2026/01/15/tiktok-trends-in-malaysia-2026-15-ideas-that-actually-work-for-businesses/" target="_blank">Wargabiz.com.my</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-xhs">
+    <div class="card-accent"></div>
+    <div class="card-header"><div class="card-icon">&#x1F4F1;</div><div class="card-title">XHS Pulse</div><div class="card-count">3 signals</div></div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <div class="urgency act">Act Now</div>
+        <div class="signal-headline">Xiaohongshu Acquires FIFA World Cup 2026 Broadcast Rights &mdash; Platform Targets 200M DAU With Football Community Hub Starting Thursday</div>
+        <div class="signal-body">On May 28, China Media Group and Xiaohongshu signed a strategic agreement granting XHS official FIFA World Cup 2026 distribution rights, replacing Douyin as part of the core broadcast lineup. XHS is building a "Community of Communities" football hub integrating lifestyle, food, fashion, and travel content around match discussion. Internal targets push to 200M DAU &mdash; a 50M+ jump. Malaysian Chinese users will spend significantly more time on XHS through July 19.</div>
+        <div class="signal-implication">Mamee needs an XHS World Cup content strategy live by June 11. Malaysian Chinese football fans will discover match-adjacent food and snacks on XHS during the tournament. A bilingual Mandarin/Malay watch-party snack guide posted inside the XHS football community this week intercepts exactly this discovery search. Brief an XHS creator today.</div>
+        <div class="signal-source"><span class="pub-time">28 May 2026</span> <a href="https://eu.36kr.com/en/p/3835435351291013" target="_blank">36KR (EU)</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="urgency watch">Watch</div>
+        <div class="signal-headline">XHS World Cup Hub Creates First Structured Football-Snack Discovery Category on Platform &mdash; Match-Night Food Guide Now a Dedicated Content Vertical</div>
+        <div class="signal-body">XHS designed its World Cup content hub around community flows &mdash; a user browsing match highlights flows naturally into food, fashion, and lifestyle adjacent content. This multi-interest discovery path is unique to XHS versus TikTok's single-feed algorithm. Match-night food and snack guide posts seeded inside the football community will cross-propagate into XHS's food and lifestyle verticals automatically, extending discovery beyond the tournament.</div>
+        <div class="signal-implication">XHS World Cup snack content has a longer discovery tail than TikTok. A well-crafted Mamee post inside the football community will continue generating saves and shares for weeks after posting. Prioritise one high-quality XHS post over volume of lower-quality posts during the tournament window.</div>
+        <div class="signal-source"><span class="pub-time">May 2026</span> <a href="https://finance.biggo.com/news/WYTgcZ4BYH_ypPqOlA1A" target="_blank">BigGo Finance</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="urgency fyi">FYI</div>
+        <div class="signal-headline">XHS Malaysia Food and Beverage Confirmed as Top Content Category &mdash; Packaged Snack Discovery Peaks During Cultural Moments and Viewing Occasions</div>
+        <div class="signal-body">XHS Malaysia's Food and Beverage category consistently generates the platform's highest save rates and engagement among Malaysian Chinese users. Packaged snack discovery on XHS peaks during shared cultural moments &mdash; sale seasons, festivals, and now the World Cup viewing window. The platform's "zhongcao" (grass-planting) mechanic means a single well-seeded snack post can drive purchase intent across the user's social graph for days.</div>
+        <div class="signal-implication">A Mamee XHS presence during the World Cup aligns with the platform's proven snack discovery behaviour. Even one strong post in the right community generates outsized return versus equivalent spend on TikTok paid formats. The zhongcao purchase chain starts with saves &mdash; optimise XHS content for saves, not likes.</div>
+        <div class="signal-source"><span class="pub-time">2026</span> <a href="https://mayindigital.com/xiaohongshu-marketing-malaysia-2026-guide/" target="_blank">Mayin Digital</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-sea grid-wide">
+    <div class="card-accent"></div>
+    <div class="card-header"><div class="card-icon">&#x1F30A;</div><div class="card-title">SEA Pulse</div><div class="card-count">6 signals</div></div>
+    <div class="sea-stat-row">
+      <div class="sea-stat-box"><div class="sea-stat-num">60%</div><div class="sea-stat-label">SG workers living<br>paycheck-to-paycheck</div></div>
+      <div class="sea-stat-box"><div class="sea-stat-num">6%</div><div class="sea-stat-label">Thailand FMCG<br>growth 2024</div></div>
+      <div class="sea-stat-box"><div class="sea-stat-num">$23B</div><div class="sea-stat-label">Est. global World Cup<br>F&amp;B consumer uplift</div></div>
+    </div>
+    <div class="sea-country-grid">
+      <div>
+        <div class="sea-col-label sg">&#x1F1F8;&#x1F1EC; Singapore</div>
+        <div class="signal-item">
+          <div class="urgency fyi">FYI</div>
+          <div class="signal-headline">60% of Singapore Workers Living Paycheck-to-Paycheck &mdash; Highest in APAC &mdash; Value Positioning Now Mandatory for All FMCG SKUs in SG Channel</div>
+          <div class="signal-body">Assembled.sg's Singapore Consumer Intelligence Matrix confirms 60% of Singapore workers report living paycheck to paycheck, the highest proportion in Asia-Pacific. Despite Singapore's wealth positioning, consumer psychology is deeply value-sensitive at the household level. FMCG brands in SG must lead with clear price-per-serve or value-pack messaging even in premium retail environments.</div>
+          <div class="signal-implication">Mamee's SG pricing and pack architecture should foreground per-serve value, not just unit RRP. A per-serve callout on pack aligns with how value-conscious SG shoppers evaluate purchases &mdash; even in FairPrice and Cold Storage premium formats.</div>
+          <div class="signal-source"><span class="pub-time">2026</span> <a href="https://assembled.sg/insights/the-singapore-consumer-intelligence-matrix" target="_blank">Assembled.sg</a></div>
+        </div>
+        <div class="signal-item" style="margin-top:12px;">
+          <div class="urgency watch">Watch</div>
+          <div class="signal-headline">Singapore E-Commerce FMCG Channel Growing at 6.37% CAGR &mdash; Non-Perishable Snack Online Basket Opportunity Through 2031</div>
+          <div class="signal-body">Singapore's FMCG e-commerce channel is projected to grow at 6.37% CAGR through 2031, the fastest-expanding retail channel in the market. Non-perishable packaged snacks are primary categories migrating online. Physical grocery dominates for fresh produce, but packaged snacks are ideally suited to subscription and bulk-buy online models. World Cup timing is peak demand for online multipack stocking.</div>
+          <div class="signal-implication">Mamee should audit SG e-commerce channel presence across Lazada, Shopee, and FairPrice Online now. A multipack World Cup bundle offer online in Singapore capitalises on non-perishable snack bulking at its peak demand moment of the year.</div>
+          <div class="signal-source"><span class="pub-time">2026</span> <a href="https://www.mordorintelligence.com/industry-reports/retail-industry-in-singapore" target="_blank">Mordor Intelligence</a></div>
+        </div>
+      </div>
+      <div>
+        <div class="sea-col-label th">&#x1F1F9;&#x1F1ED; Thailand</div>
+        <div class="signal-item">
+          <div class="urgency watch">Watch</div>
+          <div class="signal-headline">Amazing Thailand Fest 2026 in Amsterdam June 3&ndash;16 &mdash; Tourism Authority Deploys Culinary Diplomacy in de Bijenkorf Premium Retail</div>
+          <div class="signal-body">The Tourism Authority of Thailand is hosting Amazing Thailand Fest 2026 at the de Bijenkorf department store in Amsterdam from June 3 to June 16 &mdash; a government-backed activation promoting Thai food, culture, and tourism in one of Europe's most prestigious retail environments. The model integrates food product sampling, cultural storytelling, and tourism booking in a single premium retail location. This is Thai food's most sophisticated international brand-building moment of 2026.</div>
+          <div class="signal-implication">Thai food's global brand is actively being elevated through government-backed premium retail partnerships. Malaysia's equivalent food export brand-building at this sophistication level is an underutilised opportunity. Mamee's Malaysian identity is a differentiated asset in export markets if paired with this type of government partnership model.</div>
+          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://www.travelandtourworld.com/news/article/14vfaj0uq3m8/" target="_blank">Travel And Tour World</a></div>
+        </div>
+        <div class="signal-item" style="margin-top:12px;">
+          <div class="urgency fyi">FYI</div>
+          <div class="signal-headline">Thai F&amp;B Brand Credibility 2026: Health Claims, Sustainable Packaging, and Everyday Creator Partnerships Now Non-Negotiable</div>
+          <div class="signal-body">Thailand's 2026 food brand consumer research confirms three non-negotiable brand credibility elements: health-forward claims (low sugar, high protein, clean labels), visible sustainability (eco packaging, transparent sourcing), and creator partnerships with everyday lifestyle storytellers over celebrity one-offs. Brands without these three are losing shelf and social relevance in the Thai market. Thai FMCG grew over 6% in 2024 despite these higher consumer expectations.</div>
+          <div class="signal-implication">As Mamee deepens in the Thai market, product claims, packaging, and creator brief strategy must align to Thai consumer expectations &mdash; which are now closer to Singapore than Malaysia standards in terms of wellness and sustainability positioning. A clean-label product extension or wellness claim would significantly lower the Thai market entry barrier.</div>
+          <div class="signal-source"><span class="pub-time">2026</span> <a href="https://qsrmedia.com/research/in-focus/thailands-food-trends-watch-in-2026" target="_blank">QSR Media</a></div>
+        </div>
+      </div>
+      <div>
+        <div class="sea-col-label value">&#x1F4B0; SEA Value Signals</div>
+        <div class="signal-item">
+          <div class="urgency watch">Watch</div>
+          <div class="signal-headline">Deloitte June 2026: Global Consumer Services Spending Falls for Third Straight Month &mdash; At-Home Entertainment Economy Beneficiaries Outperforming Category Average</div>
+          <div class="signal-body">Deloitte's State of the US Consumer (May&ndash;June 2026) shows overall spending rebounded but services spending fell for a third consecutive month. The structural shift from out-of-home experiences to at-home entertainment consumption is sustained globally, with implications for SEA FMCG brands exposed to global input pricing. At-home economy brands &mdash; packaged snacks, streaming bundles, non-alcoholic beverages &mdash; are outperforming across all measured markets.</div>
+          <div class="signal-implication">World Cup accelerates the at-home entertainment economy through July 19. All Mamee packaging, pricing, and distribution should be oriented toward at-home viewing occasions for the next six weeks &mdash; this is a macro tailwind, not a short-term spike. Don't underinvest in convenience and online channels during the tournament.</div>
+          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://www.deloitte.com/us/en/insights/topics/economy/consumer-pulse/state-of-the-us-consumer.html" target="_blank">Deloitte</a></div>
+        </div>
+        <div class="signal-item" style="margin-top:12px;">
+          <div class="urgency fyi">FYI</div>
+          <div class="signal-headline">World Cup 43-Day F&amp;B Uplift Window &mdash; At-Home Snack and Non-Alcoholic Beverages Are Global Analyst Consensus Top Beneficiary Categories</div>
+          <div class="signal-body">Industry analysis from Brand Innovators and retail research consensus identifies at-home snacks, convenience non-perishables, and non-alcoholic beverages as the top three F&amp;B beneficiary categories of the World Cup 43-day consumption window. Volume uplift estimated at 8&ndash;12% incremental for brands with match-night shelf visibility and in-store placement. The window runs June 11 to July 19 across all SEA markets.</div>
+          <div class="signal-implication">Mamee's product range sits squarely in the beneficiary category by definition. Volume uplift requires no FIFA license &mdash; it requires shelf presence, price visibility, and retailer display commitment during the tournament. Brief your trade marketing team on display priority this week.</div>
+          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://brand-innovators.com/brand-innovators-fifa-world-cup-ad-tracker-2026/" target="_blank">Brand Innovators</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-creative grid-wide">
+    <div class="card-accent"></div>
+    <div class="card-header"><div class="card-icon">&#x1F3A8;</div><div class="card-title">Creative and Industry</div><div class="card-count">9 signals &mdash; Global | Asia | SEA</div></div>
+    <div class="creative-region-grid">
+      <div>
+        <div class="creative-region-label global">&#x1F310; Global</div>
+        <div class="signal-item">
+          <div class="urgency watch">Watch</div>
+          <div class="signal-headline">Experience-Driven Brand Activations Outperform Pure Logo Sponsorship &mdash; Participation Design Confirmed as 2026 World Cup FMCG Marketing Standard</div>
+          <div class="signal-body">June 8 Talking Retail research confirms that FMCG brands with participation architecture &mdash; mechanics consumers do, not just see &mdash; outperform pure logo-badge sponsors on World Cup recall and purchase intent. PepsiCo, Coca-Cola, and AB InBev all layer participation on top of their official status. The finding applies specifically to F&amp;B brands targeting 18-35 shoppers, which is Mamee's core growth demographic.</div>
+          <div class="signal-implication">Mamee World Cup creative brief must mandate a participation mechanic. A scan-to-play, social challenge, or pack prediction game costs a fraction of a media buy and generates owned data plus earned social reach. Brief this today for Thursday deployment.</div>
+          <div class="signal-source"><span class="pub-time">8 Jun 2026</span> <a href="https://www.talkingretail.com/news/industry-news/brands-target-experience-driven-consumers-for-world-cup-08-06-2026/" target="_blank">Talking Retail</a></div>
+        </div>
+        <div class="signal-item" style="margin-top:12px;">
+          <div class="urgency fyi">FYI</div>
+          <div class="signal-headline">Lay's "House of Fresh" Creator Hub &mdash; In-Tournament Content Factory Model Sets New FMCG Production Speed Standard</div>
+          <div class="signal-body">PepsiCo's Lay's is running a dedicated creator hub &mdash; House of Fresh &mdash; in Mexico City, New York, and Miami throughout the tournament. The hub is a production space where creators make World Cup food content featuring Lay's daily, publishing across TikTok and YouTube throughout 43 days. The model is a content velocity play, not a single campaign, generating hundreds of authentic creator pieces at tournament speed.</div>
+          <div class="signal-implication">The creator hub model &mdash; a physical or virtual space generating daily content during a cultural moment &mdash; is the new FMCG production standard. Mamee should study the virtual hub model for next major SEA cultural moment (Cannes, Hari Raya Aidiladha, Merdeka). Cost-effective version: a WhatsApp creator briefing group with daily prompts.</div>
+          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://disruptmarketing.co/blog/creator-marketing-world-cup-2026/" target="_blank">Disrupt Marketing</a></div>
+        </div>
+        <div class="signal-item" style="margin-top:12px;">
+          <div class="urgency fyi">FYI</div>
+          <div class="signal-headline">Brand Innovators FIFA World Cup Ad Tracker 2026 Now Live &mdash; Free Real-Time Creative Intelligence for All Brand Activations During Tournament</div>
+          <div class="signal-body">Brand Innovators has launched a free FIFA World Cup Ad Tracker for 2026, aggregating and rating brand activations from official sponsors and non-sponsors across all markets in real time. The tracker covers TV, social, digital, and in-store activations from 200+ global brands. Updated daily, it provides the most comprehensive single-source creative competitive intelligence tool available free during the tournament.</div>
+          <div class="signal-implication">Bookmark brand-innovators.com/brand-innovators-fifa-world-cup-ad-tracker-2026 and review daily through July 19. Any brand that activates something surprising or highly effective will appear within 24 hours &mdash; free competitive intelligence that previously required paid media monitoring subscriptions.</div>
+          <div class="signal-source"><span class="pub-time">2026</span> <a href="https://brand-innovators.com/brand-innovators-fifa-world-cup-ad-tracker-2026/" target="_blank">Brand Innovators</a></div>
+        </div>
+      </div>
+      <div>
+        <div class="creative-region-label asia">&#x1F30F; Asia</div>
+        <div class="signal-item">
+          <div class="urgency act">Act Now</div>
+          <div class="signal-headline">Xiaohongshu World Cup Rights Acquisition Is the Biggest Platform Shift in Asian Digital for 2026 &mdash; Brand Content Strategy Must Adapt by Thursday</div>
+          <div class="signal-body">XHS's acquisition of FIFA World Cup 2026 rights from CMG is not merely a media deal &mdash; it is a structural shift in how 300M+ XHS users consume football and adjacent lifestyle content. The platform is building a social-first, community-led football hub integrating food, fashion, travel, and brand discovery into match discussion. For brand teams in Malaysia, Singapore, and Thailand, this changes how Chinese-speaking audiences discover match-adjacent products for the next 43 days.</div>
+          <div class="signal-implication">Any Mamee brand team targeting Chinese-speaking consumers in MY, SG, or TH needs an XHS content strategy live by June 11. A single well-crafted snack post inside the XHS World Cup community is worth 100 generic feed posts given the platform's World Cup traffic surge starting Thursday.</div>
+          <div class="signal-source"><span class="pub-time">28 May 2026</span> <a href="https://eu.36kr.com/en/p/3835435351291013" target="_blank">36KR (EU)</a></div>
+        </div>
+        <div class="signal-item" style="margin-top:12px;">
+          <div class="urgency watch">Watch</div>
+          <div class="signal-headline">Amazing Thailand Fest 2026 in Amsterdam &mdash; Thai Culinary Diplomacy as Premium Brand-Building Model for Asian F&amp;B in Europe</div>
+          <div class="signal-body">The Tourism Authority of Thailand's culinary diplomacy activation in de Bijenkorf Amsterdam (June 3&ndash;16) is Asia's most sophisticated food export brand-building campaign of 2026. The model &mdash; premium European retail plus curated food culture plus tourism narrative &mdash; demonstrates how a food-producing nation elevates its country brand without mass advertising spend. Exotic Food (Flying Goose) and Thai sauce brands are benefiting from the halo effect of this government investment.</div>
+          <div class="signal-implication">Malaysia has an equivalent opportunity via Malaysia Kitchen, Halal hub positioning, and World Cup Malaysia brand moments. The Thai model shows government-brand partnerships in premium foreign retail channels are systematically underutilised by Malaysian food companies at the international level. Worth escalating to Mamee's trade marketing leadership.</div>
+          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://www.travelandtourworld.com/news/article/14vfaj0uq3m8/" target="_blank">Travel And Tour World</a></div>
+        </div>
+        <div class="signal-item" style="margin-top:12px;">
+          <div class="urgency fyi">FYI</div>
+          <div class="signal-headline">KFC Malaysia x VML "KFC Treats" Recognised Across APAC Trade Media for QSR-to-Snack Brand Architecture &mdash; University Pop-Up Plus Social Plus Value Deal Is the Gen Z Brand Model of 2026</div>
+          <div class="signal-body">KFC Malaysia's Treats sub-brand activation with VML is receiving recognition across APAC creative trade media as an exemplary brand architecture play. Launching a named sub-brand for a specific occasion and target group, backed by on-ground events across 80+ campuses, a specific afternoon value deal window (2PM&ndash;5PM), and locally-inspired flavours is the 2026 Gen Z brand playbook in action at operational scale in Malaysia.</div>
+          <div class="signal-implication">The sub-brand model warns Mamee: if a QSR can launch an occasion-specific snack brand at this precision and own it with campus presence, Mamee's own products need stronger occasion-specific identities &mdash; a late-night snack, a study snack, a game-watch snack &mdash; to maintain distinctiveness in the Gen Z consideration set.</div>
+          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://marketech-apac.com/kfc-malaysia-introduces-kfc-treats-sub-brand-for-everyday-snacking/" target="_blank">MARKETECH APAC</a></div>
+        </div>
+      </div>
+      <div>
+        <div class="creative-region-label sea">&#x1F30A; SEA Industry</div>
+        <div class="signal-item">
+          <div class="urgency watch">Watch</div>
+          <div class="signal-headline">MARKETECH APAC Content Marketing Awards Asia Pacific (CMAA) 2026 Now Open &mdash; New AI-Assisted Content Category Added for First Time</div>
+          <div class="signal-body">MARKETECH APAC has opened entries for the CMAA 2026, adding new award categories for AI-assisted content creation and generative AI campaign innovations for the first time. The awards are the region's primary benchmark for content effectiveness and brand storytelling quality across SEA and APAC. They are distinct from MARKETECH APAC's Advertising Awards and specifically reward content strategy and execution quality.</div>
+          <div class="signal-implication">CMAA is a meaningful recognition vehicle for Mamee's creative agency work. Any World Cup or school-holiday content campaign produced in 2026 should be assessed against CMAA entry criteria for relevance. Check marketech-apac.com/awards/cmaa-2026/ for entry deadlines and category specifics.</div>
+          <div class="signal-source"><span class="pub-time">2026</span> <a href="https://marketech-apac.com/awards/cmaa-2026/" target="_blank">MARKETECH APAC</a></div>
+        </div>
+        <div class="signal-item" style="margin-top:12px;">
+          <div class="urgency fyi">FYI</div>
+          <div class="signal-headline">TikTok Ad Awards 2026 Expanding Globally &mdash; GCC Inaugural Edition Reveals Best-Practice Creative Intelligence Applicable Across All TikTok Markets</div>
+          <div class="signal-body">TikTok launched the inaugural TikTok Ad Awards in the GCC market in 2026, expanding its global awards architecture across SEA, MENA, and Latam. The GCC awards celebrate best-in-class brand campaigns for creative effectiveness, commerce integration, and audience growth on the platform. Cross-market winner analysis reveals consistent themes: brand integration with creator voice rather than creator interruption is the primary differentiator across all winning campaigns.</div>
+          <div class="signal-implication">Studying TikTok Ad Award winners across regions gives Mamee's creative team a practical brief for platform-native excellence in 2026. The recurring winning theme &mdash; brand integration within creator voice, not creator interruption &mdash; directly applies to how Mamee should brief creators for World Cup and beyond.</div>
+          <div class="signal-source"><span class="pub-time">2026</span> <a href="https://newsroom.tiktok.com/en-sg/tiktok-launches-its-inaugural-tiktok-ad-awards-in-southeast-asia" target="_blank">TikTok Newsroom</a></div>
+        </div>
+        <div class="signal-item" style="margin-top:12px;">
+          <div class="urgency watch">Watch</div>
+          <div class="signal-headline">Brand Innovators FIFA Ad Tracker Live &mdash; Free World Cup Creative Intelligence Tool for SEA Teams to Monitor Daily Through July 19</div>
+          <div class="signal-body">The Brand Innovators FIFA World Cup Ad Tracker 2026 is the most comprehensive real-time database of brand activations during the tournament, updated daily. It tracks above-the-line, below-the-line, social, and creator activations from 200+ global brands including all official sponsors and non-sponsor ambush marketers. For SEA creative teams, this is the most efficient competitive creative monitoring tool available without paid media subscriptions.</div>
+          <div class="signal-implication">Integrate the Ad Tracker into Mamee's daily brief cycle through July 19. Any brand that activates something surprising or effective during the tournament appears within 24 hours. This is free competitive intelligence at a level that previously required paid global media monitoring platforms costing RM3K+ per month.</div>
+          <div class="signal-source"><span class="pub-time">2026</span> <a href="https://brand-innovators.com/brand-innovators-fifa-world-cup-ad-tracker-2026/" target="_blank">Brand Innovators</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-competitor grid-wide">
+    <div class="card-accent"></div>
+    <div class="card-header"><div class="card-icon">&#x1F3AF;</div><div class="card-title">Competitor Watch</div><div class="card-count">3 brands tracked</div></div>
+    <div class="comp-grid">
+      <div class="comp-item">
+        <div class="comp-brand" style="color:#fbbf24;">Lay's (PepsiCo)</div>
+        <div class="urgency act">Act Now</div>
+        <div class="comp-headline">"No Lay's, No Game" Global World Cup Campaign Active &mdash; Official FIFA Snack With Creator Hub and Full In-Store Display Authority for 43 Days</div>
+        <div class="comp-body">As the Official Snack of FIFA World Cup 2026, Lay's is deploying "No Lay's, No Game" across all markets with a House of Fresh creator hub generating daily content throughout the tournament, 40 global limited-edition flavours, and official display authority at retail. The combined media weight plus in-store presence creates a 43-day competitive lock on the snack occasion in every market Lay's competes in with Mamee.</div>
+        <div class="comp-implication">Mamee counter-move: Proactively negotiate display space and eye-level positioning at retail this week. A clear "Match Night Snack" promotion with a shelf talker or in-store wobbler &mdash; particularly in convenience stores and minimarkets &mdash; counters Lay's official display without requiring FIFA licensing fees.</div>
+        <div class="comp-source"><span class="pub-time">Jun 2026</span> <a href="https://brand-innovators.com/brand-innovators-fifa-world-cup-ad-tracker-2026/" target="_blank">Brand Innovators</a></div>
+      </div>
+      <div class="comp-item">
+        <div class="comp-brand" style="color:#f472b6;">KFC Treats</div>
+        <div class="urgency watch">Watch</div>
+        <div class="comp-headline">QSR Sub-Brand Deploys 80+ University Pop-Ups Targeting Gen Z Everyday Snacking &mdash; Convenience and Afternoon Value Proposition Direct Overlap With Mamee</div>
+        <div class="comp-body">KFC Malaysia's Treats sub-brand deploys dual competitive weapons: value pricing with a specific afternoon deal window (2PM&ndash;5PM "Jimat Treats") and campus presence across 80+ universities. The campaign positions KFC Treats as a daily snacking ritual &mdash; the exact occasion Mamee's convenience snack SKUs occupy for younger consumers. VML is executing across on-ground, social, and in-store simultaneously.</div>
+        <div class="comp-implication">Mamee counter-move: Conduct an immediate audit of campus and university-adjacent distribution. If KFC Treats achieves 80+ university touchpoints, Mamee's share of voice in that channel is at direct risk. A campus distributor partnership, student-specific pack size, or branded university presence event would reestablish competition in this battlefield.</div>
+        <div class="comp-source"><span class="pub-time">Jun 2026</span> <a href="https://lbbonline.com/news/KFC-Malaysia-Encourages-Gen-Z-to-Enter-Their-Snack-Era" target="_blank">LBBOnline</a></div>
+      </div>
+      <div class="comp-item">
+        <div class="comp-brand" style="color:#2dd4bf;">Coca-Cola</div>
+        <div class="urgency fyi">FYI</div>
+        <div class="comp-headline">Coca-Cola Singapore "Sip, Scan, Score" QR World Cup Activation &mdash; Heritage Brand Builds Participatory Purchase Loop Across FMCG Retail</div>
+        <div class="comp-body">Coca-Cola Singapore's "Sip, Scan, Score" World Cup promotion uses QR codes on packs to connect to a digital match prediction and prize mechanic, creating a repeat-purchase loop tied to each tournament match. The mechanic integrates product, digital engagement, and football occasion without requiring broadcast sponsorship. The activation runs across retail channels throughout the tournament, driving incremental purchase frequency via the prediction game.</div>
+        <div class="comp-implication">Mamee counter-move: The QR-to-digital participation mechanic can be replicated with Mamee's own brand IP at a fraction of Coca-Cola's investment. A "predict the score, win Mamee" mechanic via QR on pack could be executed within two weeks using an off-the-shelf contest platform. This is the minimum viable World Cup participation design for a non-sponsor brand.</div>
+        <div class="comp-source"><span class="pub-time">Jun 2026</span> <a href="https://www.coca-cola.com/sg/en/offerings/fifa-world-cup-2026/sip-scan-score" target="_blank">Coca-Cola Singapore</a></div>
+      </div>
+    </div>
+  </div>
+
 </div>
-<div class="hero-content">
-<div class="hero-main">
-<div class="hero-tag">Competitor &middot; Direct</div>
-<div class="hero-headline">Oreo x BTS Launches Limited Edition in 80+ Markets &mdash; Malaysia Pop-Up Opens TODAY at Sunway Pyramid</div>
-<div class="hero-body">Mondelez has activated the most culturally loaded snack collaboration of 2026: a BTS-endorsed hotteok (brown sugar pancake) flavoured Oreo rolling out across 80+ countries, with Malaysia at the centre of a dedicated pop-up experience at Blue Concourse, Sunway Pyramid, running June 8&ndash;14. The product went on presale June 2 via Shopee Mondelez Official and will hit retail shelves imminently. Malaysian MD Simon Crowther described it as "a global moment" designed around cultural memory and everyday snacking occasions.</div>
-<div class="hero-implication">Double Decker competes in the same snacking occasion. A celebrity IP collab at this scale will dominate social feeds and shelf space for the next 7 days. Mamee needs a counter-narrative or a timely organic content play to stay visible in the snacking conversation this week.</div>
-<div class="hero-source">Source: PR Newswire / Plataforma Media &middot; 4 June 2026</div>
-</div>
-<div class="hero-aside">
-<div class="hero-stat-grid">
-<div class="hero-stat-box">
-<div class="hero-stat-num" style="color:var(--purple)">80+</div>
-<div class="hero-stat-label">Markets activated simultaneously in the Oreo x BTS global rollout</div>
-</div>
-<div class="hero-stat-box">
-<div class="hero-stat-num" style="color:#f472b6">7</div>
-<div class="hero-stat-label">Days the Malaysia pop-up runs at Sunway Pyramid (Jun 8&ndash;14)</div>
-</div>
-<div class="hero-stat-box">
-<div class="hero-stat-num" style="color:var(--orange)">2 Jun</div>
-<div class="hero-stat-label">Presale opened on Shopee Mondelez Official page &mdash; already live</div>
-</div>
-<div class="hero-stat-box">
-<div class="hero-stat-num" style="color:var(--green)">7.4%</div>
-<div class="hero-stat-label">CAGR projected for Malaysia extruded snacks market through 2031</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="card grid-wide">
-<div style="background:linear-gradient(90deg,var(--blue),#60a5fa)" class="card-accent"></div>
-<div class="card-header">
-<span class="card-icon">&#127474;&#127486;</span>
-<span class="card-title" style="color:#60a5fa">Malaysia Now</span>
-<span class="card-count">4 Signals</span>
-</div>
-<div class="my-value-stats">
-<div class="my-value-box">
-<div class="my-value-num">4.5%</div>
-<div class="my-value-label">Malaysia 2026 GDP growth forecast</div>
-</div>
-<div class="my-value-box">
-<div class="my-value-num">3.0%</div>
-<div class="my-value-label">Unemployment &mdash; lowest since May 2015</div>
-</div>
-<div class="my-value-box">
-<div class="my-value-num">RM24M</div>
-<div class="my-value-label">Govt allocation for RTM to broadcast FIFA WC 2026</div>
-</div>
-<div class="my-value-box">
-<div class="my-value-num">RM21B</div>
-<div class="my-value-label">Max Visit Malaysia 2026 private consumption injection</div>
-</div>
-</div>
-<div class="news-grid">
-<div class="news-item">
-<span class="urgency act">Act Now</span>
-<div class="news-headline">RTM + Unifi TV Replace Astro as FIFA World Cup 2026 Broadcasters After 20-Year Reign</div>
-<div class="news-body">Government approved RM24M for RTM. Unifi TV carries all 104 matches live. Free-to-air via MyTV ensures mass reach nationally. Astro is in sub-licensing discussions but is officially out. Tournament begins mid-June &mdash; advertising windows now confirmed.</div>
-<div class="news-implication">World Cup viewing shifts to free-to-air mass channels. RTM and Unifi match window advertising is now the high-value snack brand opportunity. Act before slots fill.</div>
-<div class="news-source">The Star / TechNave &middot; May 2026</div>
-</div>
-<div class="news-item">
-<span class="urgency act">Act Now</span>
-<div class="news-headline">McDonald's FIFA Squishmallows Happy Meal Launches June 9 &mdash; 23 Collectibles, Scannable Digital Game</div>
-<div class="news-body">McDonald's global World Cup campaign activates tomorrow with 23 Squishmallows plushies including official mascots Maple, Clutch and Zayu. Special packaging with scannable QR code unlocking happymeal.com game. Already live in AU/NZ since June 2.</div>
-<div class="news-implication">Collectible + IP + digital game integration is the textbook engagement loop. Benchmark this mechanic for Mamee's next promotional calendar &mdash; a collectible play tied to World Cup could land with Mamee's core demographic.</div>
-<div class="news-source">McDonald's Corp / PR Newswire &middot; June 2026</div>
-</div>
-<div class="news-item">
-<span class="urgency watch">Watch</span>
-<div class="news-headline">Visit Malaysia 2026 on Track to Inject RM13&ndash;21B Into Economy &mdash; Tourism Retail Uplift Building</div>
-<div class="news-body">The government tourism year campaign is generating retail and F&amp;B spending uplift as international arrivals build. Impulse snack purchases at travel hubs, hotels, malls and attractions are rising alongside tourism footfall through H2 2026.</div>
-<div class="news-implication">Double Decker needs presence at tourism touchpoints &mdash; KLIA, Pavilion, KLCC, major malls. Gifting and travel snack formats are underexploited by Mamee in this high-traffic window.</div>
-<div class="news-source">Travel and Tour World / BMI &middot; 2026</div>
-</div>
-<div class="news-item">
-<span class="urgency fyi">FYI</span>
-<div class="news-headline">Malaysian Consumers Value-Conscious Despite Strong Economy &mdash; Personalised Experience Now the Differentiator</div>
-<div class="news-body">Unemployment at historic low of 3.0%, GDP solid at 4.3&ndash;4.5%, yet Malaysians remain cautious spenders. In 2026 shoppers prioritise convenience, quality, and personalised brand experiences over broad loyalty programs. Omnichannel availability is expected, not appreciated.</div>
-<div class="news-implication">Economic strength doesn't auto-loosen wallets. Mamee's value-for-satisfaction story must communicate occasion and experience &mdash; not just price or product features.</div>
-<div class="news-source">BMI / Accio / Trading Economics &middot; 2026</div>
-</div>
-</div>
-</div>
-<div class="card">
-<div style="background:linear-gradient(90deg,var(--orange),#fb923c)" class="card-accent"></div>
-<div class="card-header">
-<span class="card-icon">&#128230;</span>
-<span class="card-title" style="color:#fb923c">FMCG Radar</span>
-</div>
-<div class="signal-list">
-<div class="signal-item">
-<span class="urgency watch">Watch</span>
-<div class="signal-headline">Malaysia Extruded Snacks Market Projected at 7.4% CAGR to $89.6B by 2031</div>
-<div class="signal-body">Malaysia's extruded snacks segment &mdash; which includes Double Decker's core range &mdash; is growing at 7.4% CAGR driven by ready-to-eat demand, expanding urban working population, and retail modernisation including e-commerce subscription models. Key purchase drivers are halal claims, functional ingredients, and convenience packaging.</div>
-<div class="signal-implication">Mamee Double Decker is structurally in the fastest-growing snack category in Malaysia. Distribution breadth and format innovation are the levers to capture the expanding market share window.</div>
-<div class="signal-source">Mobility Foresights / Innova Market Insights &middot; 2026</div>
-</div>
-<div class="signal-item">
-<span class="urgency fyi">FYI</span>
-<div class="signal-headline">XHS Malaysia Reaches 4.3M Users Across MY+SG &mdash; 40% of Ethnic Chinese Population Now Active</div>
-<div class="signal-body">Xiaohongshu's combined Malaysia and Singapore user base is 4.3 million, with Malaysia at 3.5M+ active users covering 40% of the ethnic Chinese demographic and growing into non-Chinese urban segments. Brands running 200+ XHS campaigns report consistent purchase conversion via lo-fi UGC content formats.</div>
-<div class="signal-implication">The XHS audience in MY/SG is no longer niche. A Double Decker XHS presence targeting food discovery is a credible, low-cost growth channel that most local snack brands have not yet claimed.</div>
-<div class="signal-source">Marketing Interactive / Mayin Digital &middot; 2026</div>
-</div>
-</div>
-</div>
-<div class="card">
-<div style="background:linear-gradient(90deg,#000,#1a1a1a,#e1306c)" class="card-accent"></div>
-<div class="card-header">
-<span class="card-icon">&#127925;</span>
-<span class="card-title" style="color:#f472b6">TikTok Watch</span>
-</div>
-<div class="signal-list">
-<div class="signal-item">
-<span class="urgency act">Act Now</span>
-<div class="signal-headline">June 11 Is TikTok's Highest Organic Food Reach Window This Month &mdash; 3 Days Out</div>
-<div class="signal-body">TikTok Malaysia engagement pattern data flags June 11 as the peak organic reach date for food content this month. Content posted on June 11 morning will significantly outperform equivalent posts at other times without paid boost. Pre-loading creative now is the only way to hit this window.</div>
-<div class="signal-implication">Mamee should have content finalised by tonight (June 8) and scheduled for June 11 morning. A World Cup-adjacent snacking angle would ride both the platform algorithm moment and the cultural conversation.</div>
-<div class="signal-source">TikTok Creator Intelligence &middot; June 2026</div>
-</div>
-<div class="signal-item">
-<span class="urgency watch">Watch</span>
-<div class="signal-headline">Ceddy (@ceddyornot) 1.7M Followers &mdash; Honest Snack Reviews Driving Strong Purchase Intent on TikTok MY</div>
-<div class="signal-body">Ceddy is one of Malaysia's fastest-growing food reviewers on TikTok at 1.7M followers. His format &mdash; brutally honest, unscripted snack and street food critique &mdash; drives high comment engagement and purchase curiosity. Audience skews young urban Malaysian, matching Double Decker's core demographic exactly.</div>
-<div class="signal-implication">An unscripted "would I buy this again?" Ceddy review of a new Double Decker SKU could generate earned media equivalent to a paid campaign at a fraction of the cost. High fit, low barrier.</div>
-<div class="signal-source">Favikon / Press.com.my &middot; 2026</div>
-</div>
-</div>
-</div>
-<div class="card">
-<div style="background:linear-gradient(90deg,#ff2442,#ff6900)" class="card-accent"></div>
-<div class="card-header">
-<span class="card-icon">&#128212;</span>
-<span class="card-title" style="color:#ff6b6b">XHS Pulse</span>
-<span class="card-count">Creator Case Study</span>
-</div>
-<div class="signal-list">
-<div class="signal-item">
-<span class="urgency watch">Watch</span>
-<div class="signal-headline">Lo-Fi Content + Zhongcao Is the Highest-Converting XHS Formula in 2026 &mdash; What It Means for Mamee</div>
-<div class="signal-body">Across 200+ XHS campaigns tracked in Malaysia, the highest-converting format in 2026 is "lo-fi" &mdash; smartphone-shot, real textures, unfiltered and honest, with clear pros and cons. This embeds the Zhongcao (grass planting) mechanic: content plants desire so authentically that the purchase decision feels self-initiated by the viewer. Food brands dominating XHS in MY/SG are not running polished ad creative &mdash; they are running honest snack unboxings and first-bite reaction videos from micro-creators with 10K&ndash;50K followers.</div>
-<div class="signal-implication">Double Decker can seed 5&ndash;10 micro-creators on XHS with a simple brief: "film your genuine first reaction to this snack, no script." Cost is low, trust is high, and the algorithm rewards exactly this format in 2026.</div>
-<div class="signal-source">Mayin Digital / WE Interactive / AnyMind Group &middot; 2026</div>
-</div>
-</div>
-</div>
-<div class="card grid-wide">
-<div style="background:linear-gradient(90deg,var(--teal),#2dd4bf)" class="card-accent"></div>
-<div class="card-header">
-<span class="card-icon">&#127758;</span>
-<span class="card-title" style="color:#2dd4bf">SEA Pulse</span>
-<span class="card-count">SG &middot; TH &middot; SEA Value</span>
-</div>
-<div class="sea-grid">
-<div class="sea-item">
-<div class="sea-country">Singapore</div>
-<span class="urgency watch">Watch</span>
-<div class="news-headline">Singapore FMCG Enters Omnichannel Expectation Era &mdash; Seamless Online-Offline Now Table Stakes</div>
-<div class="news-body">Singapore FMCG shoppers in 2026 expect seamless movement between digital and physical channels as a baseline. Same-day delivery, subscription groceries, and frictionless digital payments are no longer differentiators. Food and Beverage leads at 48.4% share; Personal Care growing fastest at 10.87% CAGR to 2031.</div>
-<div class="news-implication">Mamee's SG strategy must be digital-shelf first. Product availability on RedMart, Shopee Supermarket, and Grab Groceries is essential to remain competitive; being absent from these channels is being absent from the market.</div>
-<div class="news-source">Apeiron / SingStat &middot; 2026</div>
-</div>
-<div class="sea-item">
-<div class="sea-country">Thailand</div>
-<span class="urgency watch">Watch</span>
-<div class="news-headline">Thai Consumers Structurally Shifting to Snacks Over Cooking Staples &mdash; TikTok Live Driving Sales</div>
-<div class="news-body">Kantar data confirms Thai post-pandemic eating habits have shifted permanently: snacks and convenience foods are replacing cooking staples in urban households. TH consumers are price-conscious but brand-aware, responding strongly to commerce date events (9.9, 10.10, 11.11). Creator reviews and live-selling on TikTok and Shopee TH are now the primary purchase drivers.</div>
-<div class="news-implication">Thailand is a live expansion market for Mamee. The structural shift to snacks is not reversing. A TikTok live-selling test with a Thai creator is a low-cost, high-signal market entry experiment worth running H2 2026.</div>
-<div class="news-source">Kantar / Iconic Thai &middot; 2026</div>
-</div>
-<div class="sea-item">
-<div class="sea-country">SEA Value</div>
-<span class="urgency fyi">FYI</span>
-<div class="news-headline">MIXUE Hits 4,800+ SEA Locations &mdash; New Brand Lucky Cup Enters Malaysia and Thailand</div>
-<div class="news-body">MIXUE Group's 2025 annual results confirmed 4,800+ overseas locations with 337 in Malaysia (7% of overseas base). The group also launched Lucky Cup &mdash; a new brand at an even lower price point than MIXUE &mdash; with first stores open in Malaysia and Thailand, extending the group's value F&amp;B dominance across the region.</div>
-<div class="news-implication">Value-anchored F&amp;B continues expanding at both the MIXUE and sub-MIXUE price tiers, competing for the same impulse spending as Double Decker. Mamee's value perception needs active management &mdash; not just price, but occasion clarity and snack satisfaction signalling.</div>
-<div class="news-source">The Star / ARC Advisory &middot; April 2026</div>
-</div>
-</div>
-</div>
-<div class="card grid-wide">
-<div style="background:linear-gradient(90deg,var(--indigo),#818cf8)" class="card-accent"></div>
-<div class="card-header">
-<span class="card-icon">&#127942;</span>
-<span class="card-title" style="color:#818cf8">Creative &amp; Industry</span>
-<span class="card-count">Global &middot; Asia &middot; SEA</span>
-</div>
-<div class="creative-grid">
-<div class="creative-item">
-<div class="creative-region">Global</div>
-<span class="urgency watch">Watch</span>
-<div class="news-headline">Campaign Global Agency of the Year Awards &mdash; June 18 London, Week Before Cannes</div>
-<div class="news-body">Shortlist for Campaign Global AOY Awards revealed. Ceremony at Carlton Tower Jumeirah, London on June 18 across 34 categories &mdash; including healthcare and pharma for the first time in 2026. Results will signal which global creative shops are ascending heading into Cannes week.</div>
-<div class="news-implication">Track winners in Food and FMCG categories &mdash; their creative approaches signal what holding group clients are briefing agencies on for H2 2026 global campaigns.</div>
-<div class="news-source">Campaign Asia &middot; June 2026</div>
-</div>
-<div class="creative-item">
-<div class="creative-region">Asia / Cannes</div>
-<span class="urgency watch">Watch</span>
-<div class="news-headline">Cannes Lions 2026 Opens June 22 &mdash; 49 Asia Jurors, 5 APAC Jury Presidents</div>
-<div class="news-body">Cannes Lions International Festival of Creativity runs June 22&ndash;26. Asia-Pacific has a record 49 jurors including 5 Jury Presidents across key tracks. Shortlists will begin dropping this week. SEA work in food, social media and creator tracks is expected to be well-represented given the region's growing creative profile in 2026.</div>
-<div class="news-implication">Monitor Cannes shortlists for SEA food and snack brand work &mdash; any awarded campaign is a benchmark for what elevated creative looks like regionally, and a reference point for Mamee's own creative ambition in H2.</div>
-<div class="news-source">adobo Magazine / Mission Media Asia &middot; 2026</div>
-</div>
-<div class="creative-item">
-<div class="creative-region">SEA Industry</div>
-<span class="urgency fyi">FYI</span>
-<div class="news-headline">Campaign Asia Agency of the Year 2026 Nominations Open Tomorrow June 9</div>
-<div class="news-body">Campaign Asia opens nominations for its 2026 Agency of the Year Awards on June 9 &mdash; recognised as the most prestigious benchmark for marketing communications excellence in Asia-Pacific. Awards celebrate outstanding work across agencies, brands and leaders. Submission window typically runs 6&ndash;8 weeks post-opening.</div>
-<div class="news-implication">If Mamee has run notable campaigns in H1 2026, this is the window to brief an agency partner on an awards submission. The Campaign Asia AOY provides strong brand equity in the regional marketing community.</div>
-<div class="news-source">Campaign Asia / PR Newswire &middot; May 2026</div>
-</div>
-</div>
-</div>
-<div class="card grid-wide">
-<div style="background:linear-gradient(90deg,var(--red),var(--orange))" class="card-accent"></div>
-<div class="card-header">
-<span class="card-icon">&#128269;</span>
-<span class="card-title" style="color:#fb923c">Competitor Watch</span>
-<span class="card-count">3 Brands</span>
-</div>
-<div class="comp-grid">
-<div class="comp-item">
-<div class="comp-brand">Oreo / Mondelez &middot; Direct</div>
-<span class="urgency act">Act Now</span>
-<div class="comp-headline">Oreo x BTS Malaysia Pop-Up Starts Today &mdash; Hotteok Flavour, 80 Markets, Shopee Presale Live</div>
-<div class="comp-body">Limited edition hotteok-flavoured Oreo co-created with BTS now in 80+ markets. Pop-up at Sunway Pyramid Blue Concourse June 8&ndash;14 with fan activation, product sampling and "love letter to BTS" booth. Malaysian MD quoted in full press release &mdash; above-the-line support incoming across all channels.</div>
-<div class="comp-implication">This is the most activated competitor campaign of the month. Double Decker should be part of the snack conversation this week &mdash; not absent from it. Even a reactive humorous social post keeps Mamee visible in the discourse.</div>
-</div>
-<div class="comp-item">
-<div class="comp-brand">Jack n Jill (URC) &middot; Direct</div>
-<span class="urgency watch">Watch</span>
-<div class="comp-headline">Jack n Jill Calbee Runs "Movie Elevation" Campaign for Cinema Season in June</div>
-<div class="comp-body">URC Malaysia's Jack n Jill Calbee Potato Chips is activating a June campaign themed "Movie Elevation" &mdash; tying the brand to the cinema-going experience during the summer blockbuster season. PR coverage confirms full activation push across Malaysia channels with no confirmed spend level.</div>
-<div class="comp-implication">Cinema plus snack is a shared consumption moment with Double Decker. If Jack n Jill owns "movie snack" mindspace this June, Mamee loses a key occasion. A quick social response in the same context would defend the territory.</div>
-</div>
-<div class="comp-item">
-<div class="comp-brand">Pringles (Kellanova) &middot; International</div>
-<span class="urgency fyi">FYI</span>
-<div class="comp-headline">Pringles Debuts New Flavours and "Pass the Pringles" Campaign at TFWA Singapore</div>
-<div class="comp-body">Pringles is debuting new flavours at TFWA Asia Pacific 2026 in Singapore including a Traveller's Collection Suitcase Tin exclusive to duty-free retail. The "Pass the Pringles" creative platform runs across global travel retail. APAC markets targeted include Indonesia, Thailand, Korea, Australia and NZ.</div>
-<div class="comp-implication">Travel retail is underserved by Mamee. Pringles' investment here shows a premium captive audience at airports willing to pay more for snack novelty. Mamee travel-format or gifting SKUs at KLIA and KLIA2 deserve renewed attention.</div>
-</div>
-</div>
-</div>
-<div class="card grid-wide">
-<div style="background:linear-gradient(90deg,var(--green),#4ade80)" class="card-accent"></div>
-<div class="card-header">
-<span class="card-icon">&#128260;</span>
-<span class="card-title" style="color:#4ade80">Follow-Up Tracker</span>
-<span class="card-count">From 1 June 2026</span>
-</div>
-<div class="tracker-grid">
-<div class="tracker-item">
-<div class="tracker-original">"FIFA Malaysia broadcast deal" &mdash; flagged 1 June 2026</div>
-<span class="tracker-status resolved">Resolved</span>
-<div class="tracker-headline">RTM + Unifi TV Confirmed as Official Broadcasters &mdash; Astro Out After 20 Years</div>
-<div class="tracker-body">Government approved RM24M allocation for RTM. Unifi TV carries all 104 matches live. Free-to-air via MyTV ensures mass national reach. Astro in sub-licensing discussions but officially out. Match window advertising slots on RTM and Unifi are now open &mdash; act on media buys before tournament starts.</div>
-</div>
-<div class="tracker-item">
-<div class="tracker-original">"McDonald's Squishmallows Happy Meal launch" &mdash; flagged 1 June 2026</div>
-<span class="tracker-status escalated">Escalated</span>
-<div class="tracker-headline">Launches Tomorrow June 9 Globally &mdash; 23 Collectibles, Digital Game Layer Confirmed</div>
-<div class="tracker-body">Full global activation confirmed: 23 Squishmallows plushies including official FIFA mascots, scannable QR code unlocking happymeal.com digital game, special World Cup packaging. Already live in AU/NZ since June 2. Malaysia rollout expected June 9. Collectible mechanic with digital integration is the benchmark Mamee should study for next promo cycle.</div>
-</div>
-<div class="tracker-item">
-<div class="tracker-original">"Lay's 40 World Cup flavours Malaysia" &mdash; flagged 1 June 2026</div>
-<span class="tracker-status pending">Pending</span>
-<div class="tracker-headline">World Cup Imminent &mdash; Lay's Malaysia Rollout Status Unconfirmed as of June 8</div>
-<div class="tracker-body">No fresh confirmation found of Lay's 40-flavour World Cup rollout in Malaysia specifically as of June 8. Tournament starts mid-June &mdash; if activation is planned, retail visibility should surface imminently. Monitor Lay's Malaysia social channels and hypermarket shelves this week for evidence of in-store execution.</div>
-</div>
-<div class="tracker-item">
-<div class="tracker-original">"June 11 TikTok highest organic food reach date" &mdash; flagged 1 June 2026</div>
-<span class="tracker-status pending">Pending</span>
-<div class="tracker-headline">3 Days Out &mdash; Content Must Be Finalised by Tonight for June 11 Scheduling</div>
-<div class="tracker-body">June 11 TikTok peak organic reach window for food content is approaching. Content must be briefed, shot, edited, and ready for scheduling by end of today (June 8) to allow buffer time. A World Cup-adjacent snacking theme would align the algorithm peak with the broader cultural conversation for maximum impact without paid spend.</div>
-</div>
-</div>
-</div>
-</div>
+
 <div class="footer">
-<div class="footer-left">
-Mamee Double Decker Intelligence Brief &middot; Automated daily run &middot; Malaysia &middot; Singapore &middot; Thailand<br>
-Sources: PR Newswire, The Star, Marketing-Interactive, Campaign Asia, TechNave, Malay Mail, Sportcal, BERNAMA, Kantar &middot; 8 June 2026
+  <div class="footer-text">Mamee Double Decker Intelligence Brief &mdash; 9 June 2026 &mdash; Auto-generated 7:00AM MYT</div>
+  <div class="footer-text">For: Creative Director &mdash; Internal Use Only</div>
 </div>
-<div class="footer-right">
-For: Des &middot; Creative Director, Mamee Double Decker<br>
-Generated: 8 June 2026 &middot; MYT
-</div>
-</div>
+
 </body>
 </html>
