@@ -50,6 +50,15 @@
   .cal-date { font-size: 10px; font-weight: 700; color: var(--muted); margin-bottom: 3px; }
   .cal-event { font-size: 11px; font-weight: 600; color: var(--text); }
   .cal-type { font-size: 9px; color: var(--text-dim); margin-top: 2px; }
+  .priority-strip { padding: 14px 32px; background: rgba(232,25,44,0.04); border-bottom: 2px solid rgba(232,25,44,0.15); }
+  .priority-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: rgba(248,113,113,0.8); margin-bottom: 10px; }
+  .priority-items { display: flex; gap: 12px; flex-wrap: wrap; }
+  .priority-item { display: flex; align-items: flex-start; gap: 10px; flex: 1; min-width: 220px; padding: 10px 14px; border-radius: 10px; border: 1px solid transparent; }
+  .priority-item.act { border-color: rgba(232,25,44,0.3); background: rgba(232,25,44,0.06); }
+  .priority-item.watch { border-color: rgba(255,208,0,0.3); background: rgba(255,208,0,0.04); }
+  .priority-num { font-size: 20px; font-weight: 900; color: rgba(255,255,255,0.15); line-height: 1; flex-shrink: 0; width: 28px; }
+  .priority-text { font-size: 12.5px; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: 3px; }
+  .priority-section { font-size: 10px; color: var(--muted); font-weight: 500; }
   .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 24px 32px; }
   .grid-wide { grid-column: span 3; }
   .grid-span2 { grid-column: span 2; }
@@ -106,6 +115,34 @@
   .comp-body { font-size: 11.5px; color: var(--text-dim); line-height: 1.55; margin-bottom: 8px; }
   .comp-implication { font-size: 11px; color: #fbbf24; line-height: 1.5; padding: 6px 10px; background: rgba(251,191,36,0.06); border-left: 2px solid rgba(251,191,36,0.4); border-radius: 0 6px 6px 0; margin-bottom: 6px; }
   .comp-source { font-size: 10px; color: var(--muted); }
+  .card-wc .card-accent { background: linear-gradient(90deg, #16a34a, #ca8a04); }
+  .card-wc .card-title { color: #86efac; }
+  .wc-layout { display: grid; grid-template-columns: 300px 1fr; gap: 24px; }
+  .wc-section-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+  .wc-section-label.matches { color: #86efac; }
+  .wc-section-label.trends { color: #fcd34d; }
+  .match-list { display: flex; flex-direction: column; gap: 7px; }
+  .match-day-header { font-size: 9.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); margin: 10px 0 5px; }
+  .match-day-header:first-child { margin-top: 0; }
+  .match-item { padding: 9px 13px; background: var(--dark3); border-radius: 9px; border: 1px solid var(--border); }
+  .match-item.today { border-color: rgba(22,163,74,0.4); background: rgba(22,163,74,0.06); }
+  .match-item.result { border-color: rgba(99,102,241,0.3); background: rgba(99,102,241,0.05); }
+  .match-teams { font-size: 12px; font-weight: 700; color: var(--text); line-height: 1.3; }
+  .match-vs { color: var(--muted); font-weight: 400; margin: 0 4px; }
+  .match-score { color: #86efac; font-weight: 800; margin: 0 4px; }
+  .match-time { font-size: 10.5px; color: #86efac; font-weight: 600; margin-top: 3px; }
+  .match-time.done { color: #a5b4fc; }
+  .match-meta { font-size: 10px; color: var(--muted); margin-top: 1px; }
+  .followup-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .followup-item { padding: 14px 16px; background: var(--dark3); border-radius: 12px; border: 1px solid var(--border); }
+  .followup-original { font-size: 12px; font-weight: 700; color: var(--text-dim); margin-bottom: 8px; line-height: 1.4; }
+  .followup-original::before { content: '7d ago: '; font-size: 9px; font-weight: 800; text-transform: uppercase; color: var(--muted); }
+  .followup-status { display: inline-block; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; padding: 2px 9px; border-radius: 100px; margin-bottom: 8px; }
+  .followup-status.resolved { background: rgba(34,197,94,0.12); color: #86efac; border: 1px solid rgba(34,197,94,0.3); }
+  .followup-status.escalated { background: rgba(232,25,44,0.12); color: #f87171; border: 1px solid rgba(232,25,44,0.3); }
+  .followup-status.pending { background: rgba(255,208,0,0.12); color: #fcd34d; border: 1px solid rgba(255,208,0,0.3); }
+  .followup-status.no-update { background: rgba(99,102,241,0.12); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.3); }
+  .followup-update { font-size: 11.5px; color: var(--text-dim); line-height: 1.55; }
   .card-hero .card-accent { background: linear-gradient(90deg, var(--red), #f97316); }
   .card-mynews .card-accent { background: linear-gradient(90deg, #3b82f6, #06b6d4); }
   .card-mynews .card-title { color: #93c5fd; }
@@ -121,49 +158,31 @@
   .card-creative .card-title { color: #c084fc; }
   .card-competitor .card-accent { background: linear-gradient(90deg, #E8192C, #f97316); }
   .card-competitor .card-title { color: #fca5a5; }
-  .card-wc .card-accent { background: linear-gradient(90deg, #16a34a, #ca8a04); }
-  .card-wc .card-title { color: #86efac; }
-  .wc-layout { display: grid; grid-template-columns: 300px 1fr; gap: 24px; }
-  .wc-section-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
-  .wc-section-label.matches { color: #86efac; }
-  .wc-section-label.trends { color: #fcd34d; }
-  .match-list { display: flex; flex-direction: column; gap: 7px; }
-  .match-day-header { font-size: 9.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); margin: 10px 0 5px; }
-  .match-day-header:first-child { margin-top: 0; }
-  .match-item { padding: 9px 13px; background: var(--dark3); border-radius: 9px; border: 1px solid var(--border); }
-  .match-item.today { border-color: rgba(22,163,74,0.4); background: rgba(22,163,74,0.06); }
-  .match-teams { font-size: 12px; font-weight: 700; color: var(--text); line-height: 1.3; }
-  .match-vs { color: var(--muted); font-weight: 400; margin: 0 4px; }
-  .match-time { font-size: 10.5px; color: #86efac; font-weight: 600; margin-top: 3px; }
-  .match-meta { font-size: 10px; color: var(--muted); margin-top: 1px; }
+  .card-followup .card-accent { background: linear-gradient(90deg, #6366f1, #14b8a6); }
+  .card-followup .card-title { color: #a5b4fc; }
   .footer { margin: 20px 32px 32px; padding: 14px 22px; background: var(--dark2); border: 1px solid var(--border); border-radius: 12px; display: flex; align-items: center; justify-content: space-between; }
   .footer-text { font-size: 11px; color: var(--muted); }
   @media (max-width: 768px) {
-    .header { padding: 14px 16px; flex-wrap: wrap; gap: 10px; }
-    .stats-bar { padding: 0 16px; }
-    .cal-strip { padding: 12px 16px; }
-    .hero-headline { font-size: 17px; }
-    .grid { grid-template-columns: 1fr; padding: 14px 16px 0; gap: 12px; }
-    .grid-wide { grid-column: span 1; }
-    .grid-span2 { grid-column: span 1; }
-    .news-grid { grid-template-columns: 1fr !important; }
-    .my-value-stats { grid-template-columns: repeat(2, 1fr) !important; }
-    .sea-stat-row { grid-template-columns: repeat(2, 1fr); }
-    .sea-country-grid { grid-template-columns: 1fr; }
-    .creative-region-grid { grid-template-columns: 1fr; }
-    .comp-grid { grid-template-columns: 1fr; }
+    .header { padding: 12px 16px; flex-wrap: wrap; gap: 8px; }
+    .stats-bar, .cal-strip, .priority-strip { padding-left: 16px; padding-right: 16px; }
+    .grid { grid-template-columns: 1fr; padding: 12px 16px 0; gap: 12px; }
+    .grid-wide, .grid-span2 { grid-column: span 1; }
+    .news-grid, .comp-grid { grid-template-columns: 1fr; }
+    .my-value-stats { grid-template-columns: repeat(2, 1fr); }
+    .sea-country-grid, .creative-region-grid, .followup-grid { grid-template-columns: 1fr; }
+    .wc-layout { grid-template-columns: 1fr; }
+    .hero-headline { font-size: 18px; }
     .footer { margin: 16px 16px 24px; flex-direction: column; gap: 6px; text-align: center; }
   }
 </style>
 </head>
 <body>
-
 <div class="header">
   <div class="header-left">
     <div class="logo-mark">M</div>
     <div>
       <div class="header-title">Mamee Intelligence Brief</div>
-      <div class="header-sub">Creative Director Daily &#x2014; Saturday, 13 June 2026</div>
+      <div class="header-sub">Creative Director Daily &mdash; Saturday, 13 June 2026</div>
     </div>
   </div>
   <div class="header-right">
@@ -171,470 +190,491 @@
     <div class="live-dot">Live</div>
   </div>
 </div>
-
 <div class="stats-bar">
-  <div class="stat-item"><span class="stat-label-sm">USD/MYR</span><span class="stat-value-sm">4.07</span><span class="stat-change up">&#x25B2; +0.2%</span></div>
-  <div class="stat-item"><span class="stat-label-sm">KLCI</span><span class="stat-value-sm">1,622</span><span class="stat-change down">&#x25BC; -0.3%</span></div>
-  <div class="stat-item"><span class="stat-label-sm">Brent Crude</span><span class="stat-value-sm">$91.40</span><span class="stat-change down">&#x25BC; -0.5%</span></div>
-  <div class="stat-item"><span class="stat-label-sm">TikTok MY Trending</span><span class="trending-tag">#WorldCup2026</span><span class="trending-tag">#SabtuBola</span><span class="trending-tag">#MakanBola</span></div>
-  <div class="stat-item"><span class="stat-label-sm">Today Watch</span><span class="stat-value-sm" style="color:#fcd34d;">Johor Campaign Period Live &#x2014; Nomination Day June 27</span></div>
+  <div class="stat-item"><span class="stat-label-sm">USD/MYR</span><span class="stat-value-sm">4.07</span><span class="stat-change flat">&#9644; flat</span></div>
+  <div class="stat-item"><span class="stat-label-sm">KLCI</span><span class="stat-value-sm">1,612.29</span><span class="stat-change down">&#9660;3.8% wk</span></div>
+  <div class="stat-item"><span class="stat-label-sm">Brent Crude</span><span class="stat-value-sm">$89.38</span><span class="stat-change down">&#9660;below $90</span></div>
+  <div class="stat-item"><span class="stat-label-sm">WC Day 3</span><span class="stat-value-sm" style="color:#86efac;">USA 4&#x2013;1 PAR &bull; CAN 1&#x2013;1 BiH</span></div>
+  <div class="stat-item"><span class="stat-label-sm">TikTok MY Trending</span><span class="trending-tag">#Golazo2026</span><span class="trending-tag">#CanadaFC</span><span class="trending-tag">#RedShop</span></div>
 </div>
-
 <div class="cal-strip">
-  <div class="cal-label">Campaign Calendar &#x2014; Next 14 Days</div>
+  <div class="cal-label">Campaign Calendar &mdash; Next 14 Days</div>
   <div class="cal-items">
-    <div class="cal-item today">
-      <div class="cal-date">Sat 13 Jun</div>
-      <div class="cal-event">WC Day 3 &#x2014; No MYT Matches</div>
-      <div class="cal-type">Next kick-off 3:00 AM Sun MYT</div>
+    <div class="cal-item today"><div class="cal-date">Jun 13 &mdash; TODAY</div><div class="cal-event">&#x26BD; World Cup Day 3</div><div class="cal-type">Aus vs T&uuml;rkiye noon MYT</div></div>
+    <div class="cal-item big"><div class="cal-date">Jun 14</div><div class="cal-event">Germany vs Cura&ccedil;ao</div><div class="cal-type">1 AM MYT &bull; Group H opener</div></div>
+    <div class="cal-item big"><div class="cal-date">Jun 15</div><div class="cal-event">Spain vs Cape Verde</div><div class="cal-type">Midnight MYT Jun 16</div></div>
+    <div class="cal-item moment"><div class="cal-date">Jun 16</div><div class="cal-event">Campaign Asia Media Awards</div><div class="cal-type">SEA agency effectiveness benchmark</div></div>
+    <div class="cal-item holiday"><div class="cal-date">Jun 21</div><div class="cal-event">Eid al-Adha</div><div class="cal-type">MY + SG public holiday</div></div>
+    <div class="cal-item big"><div class="cal-date">Jun 22</div><div class="cal-event">Cannes Lions Opens</div><div class="cal-type">9 days away</div></div>
+    <div class="cal-item moment"><div class="cal-date">Jun 27</div><div class="cal-event">Johor Nomination Day</div><div class="cal-type">Election sensitivity window opens</div></div>
+    <div class="cal-item moment"><div class="cal-date">Jul 11</div><div class="cal-event">Johor Polling Day</div><div class="cal-type">Aug 1 = Negeri Sembilan polls</div></div>
+  </div>
+</div>
+<div class="priority-strip">
+  <div class="priority-label">&#x26A1; Today's Priority Actions</div>
+  <div class="priority-items">
+    <div class="priority-item act">
+      <div class="priority-num">01</div>
+      <div>
+        <div class="priority-text">Post Australia vs T&uuml;rkiye noon MYT snack setup &mdash; the most accessible Saturday slot this week</div>
+        <div class="priority-section">World Cup Pulse</div>
+      </div>
     </div>
-    <div class="cal-item moment">
-      <div class="cal-date">Sun 14 Jun</div>
-      <div class="cal-event">First Noon MYT Kick-off</div>
-      <div class="cal-type">Australia vs T&#xFC;rkiye 12 PM MYT</div>
+    <div class="priority-item act">
+      <div class="priority-num">02</div>
+      <div>
+        <div class="priority-text">Register as Redshop merchant before competitor snack brands claim the XHS commerce category</div>
+        <div class="priority-section">XHS Pulse &mdash; Redshop Launch</div>
+      </div>
     </div>
-    <div class="cal-item commerce">
-      <div class="cal-date">Tue 16 Jun</div>
-      <div class="cal-event">Campaign Asia Media Awards</div>
-      <div class="cal-type">Winners Revealed &#x2014; APAC Inaugural</div>
-    </div>
-    <div class="cal-item commerce">
-      <div class="cal-date">Sun 21 Jun</div>
-      <div class="cal-event">Father&#x2019;s Day</div>
-      <div class="cal-type">Family snack gifting occasion</div>
-    </div>
-    <div class="cal-item big">
-      <div class="cal-date">Sun 22 Jun</div>
-      <div class="cal-event">Cannes Lions 2026 Opens</div>
-      <div class="cal-type">Festival 22&#x2013;26 Jun &#x2014; Daily shortlists</div>
-    </div>
-    <div class="cal-item moment">
-      <div class="cal-date">Sat 27 Jun</div>
-      <div class="cal-event">Johor Nomination Day</div>
-      <div class="cal-type">14-day campaign window opens</div>
-    </div>
-    <div class="cal-item big">
-      <div class="cal-date">Fri 3 Jul</div>
-      <div class="cal-event">WC Round of 32 Ends</div>
-      <div class="cal-type">Group stage final results</div>
-    </div>
-    <div class="cal-item moment">
-      <div class="cal-date">Fri 11 Jul</div>
-      <div class="cal-event">Johor Polling Day</div>
-      <div class="cal-type">2.7M voters &#x2014; election day sensitivity</div>
-    </div>
-    <div class="cal-item big">
-      <div class="cal-date">Sun 19 Jul</div>
-      <div class="cal-event">FIFA World Cup Final</div>
-      <div class="cal-type">Tournament Peak &#x2014; 43-day close</div>
-    </div>
-    <div class="cal-item moment">
-      <div class="cal-date">Sat 1 Aug</div>
-      <div class="cal-event">Negeri Sembilan Polling Day</div>
-      <div class="cal-type">Dual-state election season ends</div>
+    <div class="priority-item watch">
+      <div class="priority-num">03</div>
+      <div>
+        <div class="priority-text">Review H2 pack pricing &mdash; Malaysia Q1 retail missed forecast, 54% of consumers actively seeking discounts</div>
+        <div class="priority-section">Hero &mdash; Malaysia Retail</div>
+      </div>
     </div>
   </div>
 </div>
-
 <div class="grid">
 
-  <div class="card card-hero grid-wide">
-    <div class="card-accent"></div>
-    <div class="hero-tag">WC MARKETING SHIFT</div>
-    <div class="hero-headline">The Daytime World Cup Rewrites Malaysia&#x2019;s Snack Brief &#x2014; Noon Kick-off Tomorrow Is the First Lunch-Hour Group Stage Match in Tournament History for Malaysian Fans</div>
-    <div class="hero-body">Australia vs T&#xFC;rkiye at 12:00 PM MYT this Sunday marks the first FIFA World Cup 2026 Group Stage match to fall squarely in Malaysian lunch hour &#x2014; an occasion that has never existed in any previous tournament. With North American venues spread across multiple time zones, the 2026 schedule delivers a genuinely new MYT pattern: matches at 3 AM, 6 AM, 9 AM and noon, replacing the traditional 2&#x2013;4 AM only window. Korea Times analysis published this week confirms brands are scrambling to rewrite playbooks originally built for late-night watch-party occasions, pivoting toward daytime family and workplace viewing formats. The shift creates entirely new FMCG consumption windows that snack brands with overnight-only strategies are wholly unprepared for.</div>
-    <div class="hero-implication">Mamee angle: Sunday&#x2019;s noon kick-off is a brief that writes itself &#x2014; &#x201C;Lunch-hour football snack&#x201D; positions Mamee Monster and Double Decker as the working Malaysian&#x2019;s midday match fuel. Brief a TikTok creator today for a &#x201C;12PM Kick-off Lunch Spread&#x201D; post tomorrow before Australia vs T&#xFC;rkiye. No competitor is owning this window yet. School canteen and office desk occasions are now live football-viewing occasions for the first time.</div>
-    <div class="hero-source"><span class="pub-time">11 Jun 2026</span> <a href="https://www.koreatimes.co.kr/amp/lifestyle/20260611/daytime-world-cup-sparks-new-marketing-playbook" target="_blank">The Korea Times</a></div>
+<div class="card card-hero grid-wide">
+  <div class="card-accent"></div>
+  <div class="hero-tag">MALAYSIA RETAIL</div>
+  <div class="hero-headline">Malaysia Q1 2026 Retail Misses Forecast &mdash; 3.7% vs 4.4% Expected &mdash; RGM Cuts Full-Year Outlook &mdash; Three in Five Malaysians Trimmed Non-Essential Spending</div>
+  <div class="hero-body">Malaysia's Q1 2026 retail sales grew 3.7% year-on-year, missing Retail Group Malaysia's forecast of 4.4% by 70 basis points. RGM revised its full-year 2026 outlook from 4.0% to 3.8%, citing soaring fuel prices and rising living costs. The belt-tightening is acute: three in five Malaysians reduced non-essential spending, 54% actively sought discounts, and 37% cut utility usage. The KLCI reflected the same pressure, falling to 1,612 from 1,675 last week as dual-state election uncertainty and weak consumer data weighed simultaneously. Q3 is now projected at only 2.9% &mdash; the weakest quarter of the year, coinciding with World Cup month and both state elections.</div>
+  <div class="hero-implication">Mamee angle: The 54% discount-seeking stat is Mamee's primary activation audience for World Cup month. Price-visible multi-packs, Shopee Flash Sales, and TikTok Shop bundle offers timed to match nights are the direct response. The consumer that is budget-constrained but emotionally engaged in the World Cup will trade up to a value pack, not a premium SKU.</div>
+  <div class="hero-source"><span class="pub-time">13 Jun 2026</span> <a href="https://english.news.cn/asiapacific/20260613/70921cd538ce4741924512720aee3cfe/c.html" target="_blank">Xinhua / Retail Group Malaysia</a></div>
+</div>
+
+<div class="card card-wc grid-wide">
+  <div class="card-accent"></div>
+  <div class="card-header">
+    <div class="card-icon">&#x26BD;</div>
+    <div class="card-title">World Cup Pulse</div>
+    <div class="card-count">FIFA 2026 &mdash; Day 3 Results + Weekend Schedule</div>
   </div>
-
-  <div class="card card-wc grid-wide">
-    <div class="card-accent"></div>
-    <div class="card-header">
-      <div class="card-icon">&#x26BD;</div>
-      <div class="card-title">World Cup Pulse</div>
-      <div class="card-count">FIFA 2026 &#x2014; Match Schedule + Activation Intel</div>
-    </div>
-    <div class="wc-layout">
-      <div>
-        <div class="wc-section-label matches">&#x1F4C5; Upcoming Matches &#x2014; MYT</div>
-        <div class="match-list">
-          <div class="match-day-header">No Matches Today &#x2014; Sat 13 Jun MYT</div>
-
-          <div class="match-day-header">Sun 14 Jun MYT (overnight Sat/Sun)</div>
-          <div class="match-item">
-            <div class="match-teams">Qatar <span class="match-vs">vs</span> Switzerland</div>
-            <div class="match-time">3:00 AM MYT &#xB7; Group A</div>
-            <div class="match-meta">Santa Clara, California</div>
-          </div>
-          <div class="match-item">
-            <div class="match-teams">Brazil <span class="match-vs">vs</span> Morocco</div>
-            <div class="match-time">6:00 AM MYT &#xB7; Group C</div>
-            <div class="match-meta">East Rutherford, New Jersey</div>
-          </div>
-          <div class="match-item">
-            <div class="match-teams">Haiti <span class="match-vs">vs</span> Scotland</div>
-            <div class="match-time">9:00 AM MYT &#xB7; Group B</div>
-            <div class="match-meta">Foxborough, Massachusetts</div>
-          </div>
-          <div class="match-item today">
-            <div class="match-teams">Australia <span class="match-vs">vs</span> T&#xFC;rkiye</div>
-            <div class="match-time">12:00 PM MYT &#xB7; Group D &#x2605; NOON</div>
-            <div class="match-meta">Vancouver, Canada &#x2014; First Lunch-Hour Match</div>
-          </div>
-
-          <div class="match-day-header">Mon 15 Jun MYT</div>
-          <div class="match-item">
-            <div class="match-teams">Germany <span class="match-vs">vs</span> Cura&#xE7;ao</div>
-            <div class="match-time">1:00 AM MYT &#xB7; Group E</div>
-            <div class="match-meta">Houston, Texas</div>
-          </div>
-          <div class="match-item">
-            <div class="match-teams">Netherlands <span class="match-vs">vs</span> Japan</div>
-            <div class="match-time">4:00 AM MYT &#xB7; Group C</div>
-            <div class="match-meta">Arlington, Texas</div>
-          </div>
-          <div class="match-item">
-            <div class="match-teams">Ivory Coast <span class="match-vs">vs</span> Ecuador</div>
-            <div class="match-time">7:00 AM MYT &#xB7; Group F</div>
-            <div class="match-meta">Philadelphia, Pennsylvania</div>
-          </div>
-          <div class="match-item">
-            <div class="match-teams">Sweden <span class="match-vs">vs</span> Tunisia</div>
-            <div class="match-time">10:00 AM MYT &#xB7; Group G</div>
-            <div class="match-meta">Guadalajara, Mexico</div>
-          </div>
+  <div class="wc-layout">
+    <div>
+      <div class="wc-section-label matches">&#x1F4C5; Match Schedule &mdash; MYT</div>
+      <div class="match-list">
+        <div class="match-day-header">DAY 2 RESULTS (Played)</div>
+        <div class="match-item result">
+          <div class="match-teams">USA <span class="match-score">4 &ndash; 1</span> Paraguay</div>
+          <div class="match-time done">Full Time &middot; Group D</div>
+          <div class="match-meta">Tournament's highest-scoring match &mdash; USA dominant</div>
+        </div>
+        <div class="match-item result">
+          <div class="match-teams">Canada <span class="match-score">1 &ndash; 1</span> Bosnia-Herz.</div>
+          <div class="match-time done">Full Time &middot; Group B &mdash; Historic</div>
+          <div class="match-meta">Canada's first ever World Cup point (Larin 78')</div>
+        </div>
+        <div class="match-day-header">TONIGHT &mdash; DAY 3 (MYT Jun 14 early AM)</div>
+        <div class="match-item today">
+          <div class="match-teams">Qatar <span class="match-vs">vs</span> Switzerland</div>
+          <div class="match-time">3:00 AM MYT Jun 14 &middot; Group C</div>
+          <div class="match-meta">MetLife Stadium, New Jersey</div>
+        </div>
+        <div class="match-item today">
+          <div class="match-teams">Haiti <span class="match-vs">vs</span> Scotland</div>
+          <div class="match-time">9:00 AM MYT Jun 14 &middot; Group F</div>
+          <div class="match-meta">AT&amp;T Stadium, Dallas</div>
+        </div>
+        <div class="match-item today" style="border-color:rgba(251,191,36,0.5);background:rgba(251,191,36,0.05);">
+          <div class="match-teams">Australia <span class="match-vs">vs</span> T&uuml;rkiye</div>
+          <div class="match-time" style="color:#fcd34d;">12:00 PM MYT Jun 14 &middot; &#x2B50; Best weekend slot</div>
+          <div class="match-meta">Hard Rock Stadium, Miami &middot; Group G</div>
+        </div>
+        <div class="match-day-header">JUN 14&ndash;15 UPCOMING</div>
+        <div class="match-item">
+          <div class="match-teams">Germany <span class="match-vs">vs</span> Cura&ccedil;ao</div>
+          <div class="match-time">1:00 AM MYT Jun 15 &middot; Group H</div>
+          <div class="match-meta">AT&amp;T Stadium, Dallas</div>
+        </div>
+        <div class="match-item">
+          <div class="match-teams">Sweden <span class="match-vs">vs</span> Tunisia</div>
+          <div class="match-time">10:00 AM MYT Jun 15 &middot; Group I</div>
+          <div class="match-meta">SoFi Stadium, Inglewood</div>
+        </div>
+        <div class="match-item">
+          <div class="match-teams">Spain <span class="match-vs">vs</span> Cape Verde</div>
+          <div class="match-time">12:00 AM MYT Jun 16 &middot; Group J</div>
+          <div class="match-meta">MetLife Stadium, New Jersey</div>
         </div>
       </div>
-      <div>
-        <div class="wc-section-label trends">&#x1F525; Activation Intel for Mamee</div>
-        <div class="signal-list">
-          <div class="signal-item">
-            <span class="urgency act">Act Now</span>
-            <div class="signal-headline">Australia vs T&#xFC;rkiye at Noon MYT Tomorrow &#x2014; Malaysia&#x2019;s First Live Football Lunch Break &#x2014; Zero Snack Brands Have Claimed This Window</div>
-            <div class="signal-body">Sunday June 14 at 12:00 PM MYT is genuinely unprecedented: a live World Cup Group Stage match in Malaysian lunchtime. TikTok search volume for &#x201C;#NoonKickoff&#x201D; and &#x201C;#LunchBola&#x201D; is building overnight. No Malaysian FMCG snack brand has posted a &#x201C;lunch-hour football snack&#x201D; piece of content yet. The window closes at kick-off tomorrow &#x2014; brief or gift a creator tonight. The angle of daytime football snacking is entirely unclaimed creative territory.</div>
-            <div class="signal-implication">Mamee activation: Brief Ceddy or a food creator tonight to post a &#x201C;My 12PM Kick-off Snack Spread&#x201D; Sunday morning before noon. Feature Mamee Monster or Mamee Noodle Snack as the &#x201C;Daytime Match Fuel&#x201D;. Tag #WorldCup2026 and #LunchBola. Post time: Sunday 10&#x2013;11 AM MYT to capture pre-match traffic.</div>
-            <div class="signal-source"><span class="pub-time">13 Jun 2026</span> <a href="https://www.espn.com/soccer/story/_/id/49019692/fifa-world-cup-2026-australia-vs-turkiye-kickoff-how-watch-stats-team-news" target="_blank">ESPN / FIFA Schedule</a></div>
-          </div>
-          <div class="signal-item">
-            <span class="urgency act">Act Now</span>
-            <div class="signal-headline">Haiti vs Scotland at 9 AM MYT Sunday &#x2014; Weekend Morning Football Breakfast Window Opening &#x2014; &#x201C;Sarapan + Soccer&#x201D; Is the Untapped Malaysian Creator Format</div>
-            <div class="signal-body">Before the noon match, Haiti vs Scotland kicks off at 9 AM MYT on Sunday &#x2014; a morning family viewing occasion. Malaysian content creators have not yet pivoted from overnight &#x201C;4AM haul&#x201D; formats to morning family football content. The &#x201C;Sarapan + Soccer&#x201D; (breakfast + football) format is emerging organically on Malaysian TikTok with creators posting weekend morning setups. Posting a &#x201C;WC Breakfast Board&#x201D; at 8:30 AM MYT Sunday beats mid-morning competition.</div>
-            <div class="signal-implication">Mamee activation: Post a Mamee Monster or Mamee Double Decker breakfast snack flat-lay at 8:30 AM MYT Sunday. Caption: &#x201C;Pagi Sabtu ke? Aku dah ready je&#x201D; with #WorldCup2026 + #SabtuBola. Simple, authentic, zero production budget. The format naturally cross-posts to XHS as a weekend food aesthetic.</div>
-            <div class="signal-source"><span class="pub-time">13 Jun 2026</span> <a href="https://says.com/my/sports/heres-the-fifa-world-cup-2026-schedule-in-malaysian-time" target="_blank">SAYS.com MY / World Cup MYT Schedule</a></div>
-          </div>
+    </div>
+    <div>
+      <div class="wc-section-label trends">&#x1F525; Activation Intel &mdash; Day 3 Opportunities</div>
+      <div class="signal-list">
+        <div class="signal-item">
+          <div class="urgency act">Act Now</div>
+          <div class="signal-headline">Australia vs T&uuml;rkiye at 12 PM MYT Is the Most Accessible Match of Week 1 &mdash; Saturday Noon Watch Party Content Gap Is Empty Right Now</div>
+          <div class="signal-body">Of the 12 matches in the tournament's first three days, the noon MYT Saturday slot for Australia vs T&uuml;rkiye is the single most accessible viewing time for Malaysian fans. Unlike 3 AM or midnight slots, noon Saturday is a comfortable home viewing occasion with a snack spread and weekend leisure mindset. Australian communities in Malaysia are active and engaged. T&uuml;rkiye has a significant Muslim-identity fan base in Malaysia. No local snack brand has yet posted a "Saturday noon watch party" setup for this fixture.</div>
+          <div class="signal-implication">Post a "Saturday noon match setup" now &mdash; Mamee or Mister Potato products around a screen showing the AUS vs TUR preview. 20 seconds, no voiceover. Tags: #AUSvTUR #WeAre26 #WorldCup2026 #SaturdaySnack. This is the last accessible-hours slot until at least June 15.</div>
+          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://www.cbssports.com/soccer/news/world-cup-2026-schedule-times-dates/" target="_blank">CBS Sports / FIFA 2026</a></div>
+        </div>
+        <div class="signal-item">
+          <div class="urgency watch">Watch</div>
+          <div class="signal-headline">Canada's First-Ever World Cup Point Creates a Global Underdog Sentiment Wave &mdash; "Snacking with the Underdogs" Is This Week's Organic Content Theme</div>
+          <div class="signal-body">Canada's 1&ndash;1 draw (Cyle Larin equalising in the 78th minute for Canada's first ever World Cup point after two previous tournament appearances with zero points) has generated one of the biggest organic fan sentiment moments of the tournament. Canada's diaspora community in Malaysia and Singapore is visible and engaged. The "underdog finally scores" narrative is universally resonant and continues to circulate well past the final whistle.</div>
+          <div class="signal-implication">Brief a creator or brand social post on "snacking with the underdogs" &mdash; Mamee as the snack for fans who believe in unlikely victories. A post connecting Canada's historic moment with Mamee earns cultural relevance without an official sponsorship. This content window is open through today.</div>
+          <div class="signal-source"><span class="pub-time">13 Jun 2026</span> <a href="https://www.sbs.com.au/news/fifa-world-cup-2026/article/fifa-world-cup-2026-results-june-13/vcv3xxpnf" target="_blank">SBS Australia</a></div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="card card-mynews grid-wide">
-    <div class="card-accent"></div>
-    <div class="card-header">
-      <div class="card-icon">&#x1F1F2;&#x1F1FE;</div>
-      <div class="card-title">Malaysia Now</div>
-      <div class="card-count">4 signals</div>
+<div class="card card-mynews grid-wide">
+  <div class="card-accent"></div>
+  <div class="card-header"><div class="card-icon">&#x1F1F2;&#x1F1FE;</div><div class="card-title">Malaysia Now</div><div class="card-count">4 signals</div></div>
+  <div class="my-value-stats">
+    <div class="my-value-box"><div class="my-value-num">3.7%</div><div class="my-value-label">Q1 Retail Growth<br>Missed 4.4% forecast</div></div>
+    <div class="my-value-box"><div class="my-value-num">3.8%</div><div class="my-value-label">RGM Full-Year Outlook<br>Revised down from 4.0%</div></div>
+    <div class="my-value-box"><div class="my-value-num">54%</div><div class="my-value-label">Malaysians Seeking<br>Discounts Actively</div></div>
+    <div class="my-value-box"><div class="my-value-num">Jun 27</div><div class="my-value-label">Johor Nomination Day<br>14 days away</div></div>
+  </div>
+  <div class="news-grid">
+    <div class="news-item">
+      <div class="urgency watch">Watch</div>
+      <div class="news-headline">Q1 Retail +3.7% Misses 4.4% Forecast &mdash; Q3 Projected at Only 2.9% &mdash; Weakest Consumer Quarter Coincides with World Cup and State Elections</div>
+      <div class="news-body">Retail Group Malaysia revised its full-year 2026 forecast from 4.0% to 3.8% after Q1 missed by 70bps. The Q3 projection of 2.9% is the weakest of the year &mdash; the same quarter as World Cup Month (Jun 11&ndash;Jul 19), Johor polls (Jul 11), and NS polls (Aug 1). The consumer environment during Mamee's most important activation quarter is the most constrained in three years.</div>
+      <div class="news-implication">Build every World Cup campaign around a value hook. "More snack for your ringgit during the World Cup" outperforms pure occasion-themed messaging when 3 in 5 consumers have cut non-essentials.</div>
+      <div class="news-source"><span class="pub-time">13 Jun 2026</span> <a href="https://english.news.cn/asiapacific/20260613/70921cd538ce4741924512720aee3cfe/c.html" target="_blank">Xinhua / RGM</a></div>
     </div>
-    <div class="my-value-stats">
-      <div class="my-value-box"><div class="my-value-num">4.07</div><div class="my-value-label">USD/MYR<br>Jun 2026 rate</div></div>
-      <div class="my-value-box"><div class="my-value-num">5.4%</div><div class="my-value-label">GDP Growth<br>Q1 2026</div></div>
-      <div class="my-value-box"><div class="my-value-num">2.7M</div><div class="my-value-label">Johor Voters<br>Polling Jul 11</div></div>
-      <div class="my-value-box"><div class="my-value-num">RM975B</div><div class="my-value-label">MY Household<br>Spending 2026E</div></div>
+    <div class="news-item">
+      <div class="urgency act">Act Now</div>
+      <div class="news-headline">Johor Nomination Day June 27 &mdash; 14 Days Away &mdash; All Campaign Content Must Clear Election Sensitivity Review This Week</div>
+      <div class="news-body">EC confirmed: Johor polls July 11 (nominations June 27, early voting July 7) and Negeri Sembilan polls August 1 (nominations July 18). June 27 triggers strict political advertising rules. Any Johor content with unity messaging, national themes, or government-adjacent imagery needs election clearance within 5 working days &mdash; before nomination day.</div>
+      <div class="news-implication">Flag all scheduled Johor and NS agency briefs now. The two-state election sensitivity window runs June 27&ndash;August 1. Brief legal/comms team on a five-week sensitivity protocol covering both manufacturing states.</div>
+      <div class="news-source"><span class="pub-time">12 Jun 2026</span> <a href="https://www.freemalaysiatoday.com/category/nation/2026/06/12/johor-polls-on-july-11-negeri-sembilan-polls-on-aug-1/" target="_blank">Free Malaysia Today</a></div>
     </div>
-    <div class="news-grid">
-      <div class="news-item">
-        <span class="urgency act">Act Now</span>
-        <div class="news-headline">Johor July 11 + Negeri Sembilan Aug 1 Confirmed &#x2014; 49-Day Dual-State Campaign Window Opens Today With Nomination Day June 27</div>
-        <div class="news-body">The Election Commission confirmed July 11 as Johor polling day and August 1 for Negeri Sembilan, officially opening the longest overlapping state election window in Mamee&#x2019;s manufacturing history. Nomination Day is June 27 &#x2014; exactly two weeks away. Campaign spending and media sensitivity are now active in both states for 49 consecutive days through August 1.</div>
-        <div class="news-implication">Mamee must audit all planned Johor and NS branded communications for political neutrality through August 1. Election periods traditionally depress mass media spend &#x2014; but hyperlocal community formats (pasar malam sampling, hawker tie-ins) tend to over-index. Plan a canteen-level grassroots brand presence for Johor voters during campaign fortnight.</div>
-        <div class="news-source"><span class="pub-time">12 Jun 2026</span> <a href="https://www.thestar.com.my/news/nation/2026/06/12/state-polls-ec-sets-july-11-for-johor-polling-day-aug-1-for-negri-polling-day" target="_blank">The Star</a></div>
-      </div>
-      <div class="news-item">
-        <span class="urgency watch">Watch</span>
-        <div class="news-headline">World Cup Turns Malaysian Life &#x201C;Upside Down&#x201D; for 43 Days &#x2014; Sleep Disruption, Mamak Overflow and Household Viewing Economy All Peak Simultaneously</div>
-        <div class="news-body">New Straits Times analysis confirms Malaysia&#x2019;s social fabric is fundamentally disrupted for the World Cup duration: mamak restaurants staying open past midnight, household grocery runs skewing toward snacks and drinks, workplaces reporting early starts to catch morning matches. The daytime schedule amplifies this further &#x2014; for the first time, afternoon workplace viewing is normalized at Malaysian offices and schools.</div>
-        <div class="news-implication">Mamee&#x2019;s distribution strategy should prioritise the convenience channel (7-Eleven, 99 Speedmart) over hypermarkets during this 43-day window &#x2014; impulse purchases at mamak and convenience stores are at tournament peak. Ensure sufficient facing and stock at mamak wholesale accounts this weekend.</div>
-        <div class="news-source"><span class="pub-time">11 Jun 2026</span> <a href="https://www.nst.com.my/amp/sports/football/2026/06/1459199/world-cup-will-turn-malaysian-life-upside-down-one-month" target="_blank">New Straits Times</a></div>
-      </div>
-      <div class="news-item">
-        <span class="urgency watch">Watch</span>
-        <div class="news-headline">Malaysia Q1 2026 GDP 5.4% Steady &#x2014; But Household Debt at 69.5% of GDP Caps Consumer Upside and Reinforces Value-Pack Priority at Retail</div>
-        <div class="news-body">Malaysia&#x2019;s Q1 2026 growth of 5.4% is sustained by labour market strength, but household debt-to-GDP at 69.5% (BMI data) means consumers have limited margin for discretionary upgrades. BMI forecasts 2026 household spending at RM975 billion (+4.1% YoY), but this growth will disproportionately flow to essential categories. Premium price tiers are at risk; RM1&#x2013;3 price-point snacks are the sweet spot.</div>
-        <div class="news-implication">Mamee Double Decker&#x2019;s sub-RM2 SKUs are structurally aligned with the consumer reality. Reinforce this positioning with &#x201C;value for the whole family&#x201D; framing in any World Cup content. Avoid premiumizing the core range in Johor/NS during the election sensitivity period &#x2014; consumers in those markets are especially price-sensitive right now.</div>
-        <div class="news-source"><span class="pub-time">Jun 2026</span> <a href="https://onpresscapital.co.uk/fmcg-company-malaysia/" target="_blank">BMI / OnPress Capital Analysis</a></div>
-      </div>
-      <div class="news-item">
-        <span class="urgency fyi">FYI</span>
-        <div class="news-headline">Malaysia&#x2019;s 2026 EPF i-Saraan Plus Gig Worker Coverage Reaches 5M Informal Economy Workers &#x2014; New Safety-Net Cohort Now Has Disposable Snack Budget</div>
-        <div class="news-body">Budget 2026&#x2019;s enhanced i-Saraan Plus scheme, which matches gig worker EPF contributions up to RM600 per year, is now active for Malaysia&#x2019;s estimated 5 million informal economy workers &#x2014; food delivery riders, e-commerce sellers, and freelancers. This cohort&#x2019;s disposable income has marginally increased, and their snack consumption profile (high convenience, high impulse, convenience-channel heavy) directly maps to Mamee&#x2019;s strongest SKUs.</div>
-        <div class="news-implication">Food delivery riders and freelancers are a high-frequency Mamee consumer segment. A TikTok creator brief targeting &#x201C;gig worker snack haul&#x201D; or &#x201C;rider break snack&#x201D; content has authentic reach into this audience &#x2014; 5M potential consumers who are digitally active and value-conscious.</div>
-        <div class="news-source"><span class="pub-time">Jun 2026</span> <a href="https://www.cleartax.com/my/en/malaysia-budget-2026" target="_blank">ClearTax MY / Budget 2026 Analysis</a></div>
-      </div>
+    <div class="news-item">
+      <div class="urgency watch">Watch</div>
+      <div class="news-headline">KLCI Falls to 1,612 &mdash; Down 3.8% in Three Trading Days &mdash; Election Risk and Weak Consumer Data Hitting Market Confidence</div>
+      <div class="news-body">The KLCI closed the week at 1,612.29, down from 1,675.50 on June 10 &mdash; a 63-point drop in three sessions. The dual-state election announcement, Q1 retail miss, and global crude price pressure combined to push Malaysia's benchmark index to an 8-week low. Consumer discretionary and retail sector stocks led the decline. A falling KLCI typically signals consumer caution for the following 4&ndash;6 weeks.</div>
+      <div class="news-implication">Mamee's trade team should complete retail buyer negotiations (shelf space, promotional programs, Q3 fill rates) in Johor and NS chains before election sensitivity peaks. Buyers become risk-averse near polling day and defer decisions.</div>
+      <div class="news-source"><span class="pub-time">13 Jun 2026</span> <a href="https://www.bursamalaysia.com" target="_blank">Bursa Malaysia</a></div>
+    </div>
+    <div class="news-item">
+      <div class="urgency fyi">FYI</div>
+      <div class="news-headline">NS August 1 Extends Two-State Election Sensitivity to Nearly Three Months &mdash; World Cup + Dual Elections = Most Complex Q3 Campaign Window in Years</div>
+      <div class="news-body">Negeri Sembilan polls on August 1 (nominations July 18) extend Mamee's brand sensitivity window through the entire June&ndash;August period. The campaign environment now stacks: World Cup content (Jun 11&ndash;Jul 19) overlapping Johor election sensitivity (Jun 27&ndash;Jul 11) overlapping NS election sensitivity (Jul 18&ndash;Aug 1). The only clean national-reach windows are the current two weeks (before June 27) and post-August 1.</div>
+      <div class="news-implication">Brief the creative team on a Q3 sensitivity map now. Use the current pre-June 27 window aggressively for any planned campaign launches. Everything scheduled for July must be election-sensitive by design.</div>
+      <div class="news-source"><span class="pub-time">12 Jun 2026</span> <a href="https://www.thestar.com.my/news/nation/2026/06/12/state-polls-ec-sets-july-11-for-johor-polling-day-aug-1-for-negri-polling-day" target="_blank">The Star Malaysia</a></div>
     </div>
   </div>
+</div>
 
-  <div class="card card-fmcg">
-    <div class="card-accent"></div>
-    <div class="card-header"><div class="card-icon">&#x1F6D2;</div><div class="card-title">FMCG Radar</div><div class="card-count">3 signals</div></div>
-    <div class="signal-list">
-      <div class="signal-item">
-        <span class="urgency act">Act Now</span>
-        <div class="signal-headline">Fast-Moving Fandom: World Cup 2026 Drives First Wave of Custom Fan Packaging Across Global Snack Brands &#x2014; Mamee Has 3-Week Window Before Shelf Saturation</div>
-        <div class="signal-body">A new Food and Drink Technology analysis tracks how snack brands globally are racing to deploy World Cup limited-edition packs, fan-variant flavours, and game-day co-branded SKUs in the first two weeks of the tournament. Brands with custom packaging in-market by Week 2 (this weekend) are achieving 30&#x2013;40% shelf standout uplift over standard SKUs. Week 3 onward, the shelf becomes crowded and differentiation collapses. Mamee currently has no confirmed WC limited-edition pack in-market.</div>
-        <div class="signal-implication">Emergency brief: A simple sleeve or sticker World Cup fan-pack for Mamee Monster or Double Decker can be executed digitally and sold exclusively via TikTok Shop as a collector item. Even a 5,000-unit limited run creates social buzz and trade PR. Three weeks remain before the shelf becomes overcrowded. Raise with the product team Monday.</div>
-        <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://www.foodanddrinktechnology.com/news/67773/fast-moving-fandom-how-brands-are-customising-products-packaging-and-services-for-world-cup-2026/" target="_blank">Food and Drink Technology</a></div>
-      </div>
-      <div class="signal-item">
-        <span class="urgency watch">Watch</span>
-        <div class="signal-headline">World Cup 2026 Sparks Global Marketing Race as Brands Chase Football Fans &#x2014; Non-Sponsor Brands Doubling Paid Media Budgets Around Match Windows</div>
-        <div class="signal-body">The Nation Thailand reports that the World Cup has triggered an unprecedented global marketing race, with non-sponsor FMCG brands deploying performance media and creator campaigns specifically timed to the 15-minute pre-match, half-time, and post-match windows. Brands without official FIFA rights are activating on creator content, social commerce, and in-store POS &#x2014; formats that do not require IP licensing. Malaysia&#x2019;s non-sponsor brands are reportedly 2&#x2013;3 days behind the curve vs. Singapore counterparts.</div>
-        <div class="signal-implication">Mamee should brief the media team on match-window boosting: allocate a daily RM500&#x2013;2,000 performance budget on TikTok and Meta to boost any World Cup-adjacent content within 30 minutes of scheduled kick-offs. This is affordable and disproportionately effective during high-intent browsing windows.</div>
-        <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://www.nationthailand.com/business/corporate/40067220" target="_blank">The Nation Thailand</a></div>
-      </div>
-      <div class="signal-item">
-        <span class="urgency fyi">FYI</span>
-        <div class="signal-headline">Malaysia Extruded Snacks Market Projected at USD 89.6B by 2031 at 7.4% CAGR &#x2014; Online and Convenience Channels Growing Fastest</div>
-        <div class="signal-body">Mobility Foresights&#x2019; 2026 forecast for Malaysia&#x2019;s extruded snack market projects growth from current levels to USD 89.6 billion by 2031, driven primarily by modern retail expansion, online delivery models, and e-commerce direct-to-consumer. Supermarkets and hypermarkets are increasing shelf space, while e-commerce channels are enabling snack brands to build subscription and bundle models that were previously impossible at shelf level.</div>
-        <div class="signal-implication">Mamee&#x2019;s TikTok Shop strategy should be positioned as a long-term channel investment, not just a World Cup promotion. Building a strong TikTok Shop storefront now &#x2014; with product pages, bundles and live-selling cadence &#x2014; creates structural e-commerce advantage in the 7.4% CAGR growth window through 2031.</div>
-        <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://mobilityforesights.com/product/malaysia-extruded-snacks-market" target="_blank">Mobility Foresights</a></div>
-      </div>
+<div class="card card-fmcg">
+  <div class="card-accent"></div>
+  <div class="card-header"><div class="card-icon">&#x1F6D2;</div><div class="card-title">FMCG Radar</div><div class="card-count">3 signals</div></div>
+  <div class="signal-list">
+    <div class="signal-item">
+      <div class="urgency act">Act Now</div>
+      <div class="signal-headline">Jack 'n Jill Malaysia Appoints DDB International &mdash; Direct Competitor Brand Refresh Now Fully Resourced &mdash; 6-Month Window Before New Work Hits Market</div>
+      <div class="signal-body">Universal Robina Corporation Malaysia has appointed DDB International as creative agency for Jack 'n Jill across snacks and biscuits. DDB brings full-service capabilities to Mamee's closest direct competitor in the savoury snack aisle. Agency appointments typically precede campaign launches by 6&ndash;9 months &mdash; meaning new Jack 'n Jill creative will appear around Q4 2026 or Q1 2027. Jack 'n Jill competes directly with Mister Potato and Double Decker across convenience and modern trade formats.</div>
+      <div class="signal-implication">The next 6 months are Mamee's creative window before a refreshed JnJ lands. Brief and produce Mamee's next major creative platform now, so the brand is established before Jack 'n Jill's new positioning arrives. Don't let the competitor set the category conversation.</div>
+      <div class="signal-source"><span class="pub-time">Feb 2026</span> <a href="https://www.campaignasia.com/article/malaysian-snack-firm-taps-ddb-for-jack-n-jill-brand/191025" target="_blank">Campaign Asia</a></div>
+    </div>
+    <div class="signal-item">
+      <div class="urgency watch">Watch</div>
+      <div class="signal-headline">Lay's "No Lay's, No Game" &mdash; 40 FIFA Flavours Across 90 Markets, Messi + Beckham + WhatsApp Channel &mdash; Official Snack Running Full-Scale Sprint</div>
+      <div class="signal-body">PepsiCo's Lay's World Cup campaign runs across 90 global markets with Messi, Beckham, Putellas, Thierry Henry and Steve Carell, a 40-flavour FIFA programme (one per participating nation's cuisine), and a WhatsApp channel with live celebrity reactions. It is one of the largest tournament-linked FMCG activations in history. Lay's is occupying all major Malaysian retail chains simultaneously under the "No Lay's, No Game" platform. Week 3 (Jun 28&ndash;Jul 4) is the predicted peak fatigue window when activation frequency is most likely to drop &mdash; Mamee's counter-push target.</div>
+      <div class="signal-implication">Plan a targeted creator burst and TikTok Shop promotional push in the June 28&ndash;July 4 window specifically. When Lay's thins out, Mamee fills the void at below-average CPM. Mamee's local origin and halal authenticity is the differentiation money cannot buy against a 90-market global campaign.</div>
+      <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://www.fastcompany.com/91535830/the-unique-marketing-strategy-behind-lays-fifa-world-cup-2026-campaigns" target="_blank">Fast Company</a></div>
+    </div>
+    <div class="signal-item">
+      <div class="urgency fyi">FYI</div>
+      <div class="signal-headline">Pringles, Cheez-It and Pop-Tarts (Kellanova) Activate Together at World Cup &mdash; Portfolio Breadth Crowds Snack Category Across Sub-Categories</div>
+      <div class="signal-body">Kellanova is running a multi-brand World Cup push with Pringles leading alongside Cheez-It, Pop-Tarts, and Rice Krispies Treats. The portfolio approach occupies multiple snack sub-categories simultaneously in modern trade display space. In Malaysia, supporting brands (Cheez-It, Pop-Tarts) have low local brand awareness compared to Mamee's native recognition &mdash; a structural weakness in Kellanova's portfolio breadth strategy.</div>
+      <div class="signal-implication">Counter with Mamee's portfolio depth: a unified "Mamee Family World Cup Pack" display featuring Mamee Monster + Mister Potato + Double Decker as a co-branded Malaysian snack family outperforms an imported portfolio scatter-shot display on the key driver of local familiarity and halal trust.</div>
+      <div class="signal-source"><span class="pub-time">3 Jun 2026</span> <a href="https://www.foodnavigator-asia.com/Article/2026/06/03/world-cup-2026-why-pepsico-mondelez-and-kellanova-are-betting-big/" target="_blank">FoodNavigator Asia</a></div>
     </div>
   </div>
+</div>
 
-  <div class="card card-tiktok">
-    <div class="card-accent"></div>
-    <div class="card-header"><div class="card-icon">&#x1F3B5;</div><div class="card-title">TikTok Watch</div><div class="card-count">3 signals</div></div>
-    <div class="signal-list">
-      <div class="signal-item">
-        <span class="urgency act">Act Now</span>
-        <div class="signal-headline">&#x201C;Neo-Traditional Food Flex&#x201D; Trend Accelerating on Malaysian TikTok &#x2014; Split-Screen Grandma vs Gen Z Food Format Achieving 10&#x2013;15x Average Views</div>
-        <div class="signal-body">Tastewise 2026 viral food trend research confirms &#x201C;Neo-Traditional Food Flex&#x201D; &#x2014; creators using split-screen comparisons of traditional cooking methods vs. Gen Z gadget/hack methods &#x2014; as the highest-performing format in Malaysian food TikTok. The format earns 10&#x2013;15x average video views and triggers high comment velocity (debate between camps). Malaysian creators are using it for everything from roti canai to kuih to instant noodles.</div>
-        <div class="signal-implication">Mamee Monster and Double Decker are perfectly positioned for the &#x201C;how Mama eats it vs. how I eat it&#x201D; split-screen format: old-school bowl + milk vs. dry out of the pack; traditional spicy vs. Gen Z extreme-chilli hack. Brief a creator for a Mamee Neo-Traditional split-screen &#x2014; this format does not require World Cup tie-in and has sustained platform life beyond the tournament window.</div>
-        <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://tastewise.io/blog/viral-food-trends" target="_blank">Tastewise 2026 Viral Food Trend Report</a></div>
-      </div>
-      <div class="signal-item">
-        <span class="urgency act">Act Now</span>
-        <div class="signal-headline">TikTok Malaysia World Cup Day 3: &#x201C;Taste-While-Watching&#x201D; Food Reaction Videos Outperforming Setup/Haul Videos 2:1 in Engagement &#x2014; Format Shift Is Here</div>
-        <div class="signal-body">By World Cup Day 3 (Saturday), TikTok Malaysia&#x2019;s football-food content pattern is shifting: early-tournament &#x201C;snack haul&#x201D; and &#x201C;watch party setup&#x201D; formats are plateauing, while real-time &#x201C;eating a snack and reacting to match moments&#x201D; content &#x2014; posted during or immediately after games &#x2014; is climbing. The wargabiz.com.my TikTok 2026 trends report flags &#x201C;authentic in-moment reaction&#x201D; as the dominant Malaysian Gen Z content preference over curated lifestyle staging.</div>
-        <div class="signal-implication">Mamee should shift from &#x201C;pre-match setup&#x201D; content briefs to &#x201C;in-match reaction&#x201D; content briefs from today onward: a creator eating Mamee Double Decker while watching a match, reacting to a goal or red card, is now the higher-performing format. Brief creators for Sunday&#x2019;s matches with a reaction-based content angle rather than a flat-lay setup.</div>
-        <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://wargabiz.com.my/2026/01/15/tiktok-trends-in-malaysia-2026-15-ideas-that-actually-work-for-businesses/" target="_blank">Wargabiz.com.my &#x2014; TikTok Malaysia 2026</a></div>
-      </div>
-      <div class="signal-item">
-        <span class="urgency watch">Watch</span>
-        <div class="signal-headline">TikTok Asia 2026 Trend Forecast: Food Snack Discovery in Asia Shifting to &#x201C;Cultural Occasion Anchoring&#x201D; &#x2014; Products That Own a Specific Moment Beat Products That Own a Category</div>
-        <div class="signal-body">TokPortal&#x2019;s 2026 regional TikTok trend forecast for Asia identifies &#x201C;cultural occasion anchoring&#x201D; as the dominant food discovery mechanism &#x2014; snack brands that specifically own a recognisable occasion (night market, school recess, mamak session) outperform brands that try to own broad &#x201C;snack time&#x201D; positioning. The World Cup is the largest &#x201C;occasion anchor&#x201D; of 2026, but brands that build occasion equity beyond football will sustain platform velocity after July 19.</div>
-        <div class="signal-implication">Mamee&#x2019;s long-term TikTok strategy should map products to distinct Malaysian occasions: Double Decker = mamak snack; Mamee Monster = school recess; Mister Potato = World Cup watch party. Building occasion-specific content series (not just seasonal posts) creates the platform anchor that drives sustainable discovery beyond any single tournament.</div>
-        <div class="signal-source"><span class="pub-time">Jan 2026</span> <a href="https://www.tokportal.com/post/2026-regional-trend-forecast-what-will-go-viral-on-tiktok-in-asia-europe-the-americas" target="_blank">TokPortal &#x2014; 2026 TikTok Asia Trend Forecast</a></div>
-      </div>
+<div class="card card-tiktok">
+  <div class="card-accent"></div>
+  <div class="card-header"><div class="card-icon">&#x1F3B5;</div><div class="card-title">TikTok Watch</div><div class="card-count">3 signals</div></div>
+  <div class="signal-list">
+    <div class="signal-item">
+      <div class="urgency act">Act Now</div>
+      <div class="signal-headline">TikTok Data: Fans 42% More Likely to Watch Live Matches After Seeing Sports Content on Platform &mdash; Pre-Match Push Content Is the Direct Brief</div>
+      <div class="signal-body">TikTok's internal data released with the World Cup Hub launch shows fans who engage with sports content on TikTok are 42% more likely to tune in to live matches. This creates a clear daily content formula: post "match preview + snack" content 2&ndash;4 hours before each kick-off to capture the engagement spike as fans decide whether to watch. The Australia vs T&uuml;rkiye noon MYT slot today is the ideal test &mdash; a 10 AM post hits the 42% uplift window perfectly for a noon kick-off.</div>
+      <div class="signal-implication">Build a repeatable pre-match content template: 20-second TikTok with product visible, match preview text, MYT kick-off time. Post 2&ndash;3 hours before every accessible match. Assign to social team today &mdash; this is low-production, high-impact, and runs for 40 more days.</div>
+      <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://newsroom.tiktok.com/tiktok-and-fifa-introduce-the-fifa-world-cup-2026-creator-correspondents" target="_blank">TikTok Newsroom</a></div>
+    </div>
+    <div class="signal-item">
+      <div class="urgency watch">Watch</div>
+      <div class="signal-headline">"Reaction Content" Outperforming Pre-Planned Brand Content in First 48 Hours &mdash; USA 4&ndash;1 Paraguay Driving Highest Fan Clip Volume of Tournament</div>
+      <div class="signal-body">Real-time reaction content is outperforming pre-planned creative in the tournament's first 48 hours across all platforms. USA's dominant 4&ndash;1 win over Paraguay produced the highest single-match clip volume to date, with surprise and celebration reactions dominating the trending tab. Brands that can post within 15 minutes of a major match moment are capturing outsized organic reach relative to their investment.</div>
+      <div class="signal-implication">Set up a "15-minute reaction" protocol: pre-approve 10 reaction templates (win, shock, equaliser, final whistle) so the social team can post immediately without design lead time. A Mamee product in-frame + reactive caption within 15 minutes of any major moment earns more reach than a planned post with 5x the production value.</div>
+      <div class="signal-source"><span class="pub-time">13 Jun 2026</span> <a href="https://www.espn.com/soccer/scoreboard/_/league/fifa.world/date/20260613" target="_blank">ESPN / Social Media Today</a></div>
+    </div>
+    <div class="signal-item">
+      <div class="urgency fyi">FYI</div>
+      <div class="signal-headline">TikTok Shop MY Live Commerce Snack Sales Spike 3&ndash;5x During Match Windows &mdash; Schedule Lives to Coincide with Kick-Off Times</div>
+      <div class="signal-body">TikTok Shop MY data shows snack and beverage live-stream sales spike 3&ndash;5x in the 30 minutes before and during major match windows, as viewers planning to watch matches use TikTok to impulse-purchase match-night supplies. The pre-match TikTok session is also the pre-match shopping session. Brands with live sessions timed to match kick-offs capture this commerce spike.</div>
+      <div class="signal-implication">Schedule TikTok Shop MY live sessions starting 30&ndash;45 minutes before every major match through July 19. A 30-minute product loop with a discount code captures impulse purchases without requiring a live host for every session. Start with tonight's matches.</div>
+      <div class="signal-source"><span class="pub-time">2026</span> <a href="https://digitalinasia.com/sea-ecommerce-hub/" target="_blank">Digital in Asia</a></div>
     </div>
   </div>
+</div>
 
-  <div class="card card-xhs">
-    <div class="card-accent"></div>
-    <div class="card-header"><div class="card-icon">&#x1F4F1;</div><div class="card-title">XHS Pulse</div><div class="card-count">3 signals</div></div>
-    <div class="signal-list">
-      <div class="signal-item">
-        <span class="urgency act">Act Now</span>
-        <div class="signal-headline">XHS World Cup Day 3 Viewing Diaries Gaining High Save Rates &#x2014; &#x201C;My Match Night Food Spread&#x201D; Aesthetic Posts Now a Top Malaysian Chinese Viewer Format</div>
-        <div class="signal-body">By Day 3 of the tournament, a distinct content format has emerged on XHS Malaysia: &#x201C;viewing diary&#x201D; posts featuring home setups with team flags, snack spreads, and match commentary screenshots &#x2014; achieving save rates 3&#x2013;4x above normal food content. Malaysian Chinese fans are documenting their World Cup experience on XHS as a diary rather than as a brand campaign, making the platform the authentic record of match-night consumer behaviour. Branded snacks appearing in these organic posts are getting free discovery.</div>
-        <div class="signal-implication">Brief Mamee&#x2019;s XHS account to post a &#x201C;World Cup Snack Diary Entry&#x201D; &#x2014; not a polished brand post but a lo-fi, handwritten-feeling caption with Mamee products as part of a real match-night spread. Target save-rate content: products laid out on a coffee table, match on TV in background, Mandarin caption. Post today for the overnight matches. No celebrity KOL required &#x2014; KOC reach is more trusted for this format.</div>
-        <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://mysense.com.my/xiaohongshu-marketing-malaysia-2026-ultimate-guide/" target="_blank">MySense &#x2014; XHS Marketing Malaysia 2026</a></div>
-      </div>
-      <div class="signal-item">
-        <span class="urgency watch">Watch</span>
-        <div class="signal-headline">XHS Malaysia&#x2019;s Bubble Tea and Snack Crossover Content Performing Disproportionately Well &#x2014; F&amp;B Pairing Posts (Drink + Snack) Achieving Platform&#x2019;s Highest Food Save Rates in June</div>
-        <div class="signal-body">Hashmeta&#x2019;s XHS Malaysia analysis confirms that the platform&#x2019;s highest-performing food content in 2026 combines two complementary F&amp;B items in a single post &#x2014; most commonly a premium drink (bubble tea, iced coffee) paired with a snack. Posts featuring a recognisable snack brand alongside a trending drink earn higher save rates than single-product posts. The format is rising ahead of the World Cup, as match-night pairings attract both food and football audiences simultaneously.</div>
-        <div class="signal-implication">Mamee should explore XHS co-content with a Malaysian bubble tea brand (Tealive, ZUS Coffee or Gong Cha) &#x2014; a &#x201C;World Cup Snack + Drink&#x201D; paired post. Tealive already has 430k XHS followers and World Cup themed drinks in-market. A joint post costs minimal spend and reaches both brands&#x2019; audiences simultaneously on the platform&#x2019;s highest-performing content format.</div>
-        <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://hashmeta.com/xiaohongshu-malaysia/" target="_blank">Hashmeta &#x2014; Xiaohongshu Malaysia Guide</a></div>
-      </div>
-      <div class="signal-item">
-        <span class="urgency fyi">FYI</span>
-        <div class="signal-headline">XHS Malaysia KOC Strategy: Brands Using Key Opinion Consumers (Real Buyers) Are Outperforming Celebrity KOL Posts by 2&#x2013;3x in Conversion Rate in 2026</div>
-        <div class="signal-body">Mayin Digital&#x2019;s 2026 XHS Malaysia guide confirms a structural platform shift: Key Opinion Consumer (KOC) posts &#x2014; from real users with 1,000&#x2013;50,000 followers &#x2014; are converting at 2&#x2013;3x the rate of celebrity KOL posts on XHS Malaysia. The platform&#x2019;s algorithm now rewards authenticity signals over follower count. This makes a portfolio of 10&#x2013;20 KOC seedings (gifted product + open brief) more cost-effective than a single KOL campaign for Mamee&#x2019;s XHS market entry.</div>
-        <div class="signal-implication">Mamee should build an XHS KOC programme: identify 15&#x2013;20 Malaysian Chinese food enthusiasts with 5k&#x2013;30k followers, gift product, and let them post authentically. Budget: approximately RM3,000&#x2013;5,000 in product gifting achieves broader reach and higher conversion than a single RM20,000 KOL post. The World Cup window makes now the ideal seeding moment.</div>
-        <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://mayindigital.com/xiaohongshu-marketing-malaysia-2026-guide/" target="_blank">Mayin Digital &#x2014; XHS Malaysia 2026</a></div>
-      </div>
+<div class="card card-xhs">
+  <div class="card-accent"></div>
+  <div class="card-header">
+    <div class="card-icon">&#x1F4F1;</div>
+    <div class="card-title">XHS Pulse</div>
+    <div class="card-count">Platform Intelligence &mdash; Odd Day</div>
+  </div>
+  <div class="signal-list">
+    <div class="signal-item">
+      <div class="urgency act">Act Now</div>
+      <div class="signal-headline">Xiaohongshu Launches Redshop in June &mdash; Malaysia Is One of 8 Initial Markets &mdash; Cross-Border Commerce Merchant Registration Open Now</div>
+      <div class="signal-body">Xiaohongshu has launched Redshop, its cross-border e-commerce platform, in June 2026 with Malaysia and Singapore among only 8 launch markets (alongside HK, Macau, US, UK, Australia, Canada). Redshop directly connects XHS content discovery to consumer purchase for Malaysia's 3.5M ethnic Chinese XHS users. Seed merchant recruitment is active now, prioritising culturally authentic products &mdash; precisely the category Mamee's heritage snacks occupy. The first 50 seed merchants in each category will have early platform advantage and review history before later entrants.</div>
+      <div class="signal-implication">Register as a Redshop merchant this week. Mamee Monster and Mister Potato qualify exactly for Redshop's "authentic cultural product" priority category. Go to kr-asia.com/pulses/161138 for the merchant contact pathway. Being a seed merchant vs a later applicant is a 6-month first-mover advantage in XHS e-commerce ranking.</div>
+      <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://pandaily.com/xiaohongshu-to-launch-cross-border-e-commerce-platform-redshop-in-june" target="_blank">Pandaily / KR Asia</a></div>
+    </div>
+    <div class="signal-item">
+      <div class="urgency watch">Watch</div>
+      <div class="signal-headline">XHS 2026 Algorithm: Follows Worth 8x Likes, Shares Worth 4x &mdash; Content Must Be Built to Convert Follows, Not Just Views</div>
+      <div class="signal-body">Xiaohongshu's 2026 CES scoring system: Likes = 1pt, Saves = 1pt, Comments = 4pts, Shares = 4pts, Follows = 8pts. A post earning 100 follows is algorithmically equivalent to 800 likes. Content built as a series ("Mamee World Cup Snack Pairings: Match 1 of 104") earns more follows than standalone posts, and follow-driven content receives disproportionate platform distribution. This is a structural shift from the previous algorithm.</div>
+      <div class="signal-implication">Restructure every XHS post as part of a named series and add a "follow for more" CTA. A single serialised post earns more algorithmic distribution than 5 standalone posts with identical engagement counts. Brief the XHS content team this week.</div>
+      <div class="signal-source"><span class="pub-time">2026</span> <a href="https://www.wsdsocial.com/en-us/article/2026-xiaohongshu-algorithm-explained" target="_blank">WSD Social / Influchina</a></div>
+    </div>
+    <div class="signal-item">
+      <div class="urgency fyi">FYI</div>
+      <div class="signal-headline">65% of XHS Discovery Is Search-Driven &mdash; 600M Daily Searches &mdash; Platform Behaves Like Google &mdash; Mandarin Keywords in Captions Are Now a Rankings Factor</div>
+      <div class="signal-body">Xiaohongshu's search infrastructure drives 65% of all content discovery, with daily search volume at 600M (doubled in 18 months). The platform's NLP reads semantic meaning in captions, comments, and in-image text. XHS captions function more like SEO page titles than Instagram captions &mdash; keyword-dense, specific, and discoverable for months after posting. A caption including "Mister Potato Spicy Mala &x4e16;&x754c;&x676f;&x770b;&x7403;&x96f6;&x98df; 2026" will be found by users searching any combination of those terms long after posting.</div>
+      <div class="signal-implication">Audit all Mamee XHS captions for search-optimised Mandarin keywords: product name + flavour + occasion + emotion. Posts with keyword-rich Mandarin captions have a 3&ndash;6 month discovery tail. 70%+ of MY/SG XHS search is in Chinese &mdash; Mandarin captions are not optional.</div>
+      <div class="signal-source"><span class="pub-time">2026</span> <a href="https://influchina.com/xiaohongshu-algorithm-2026-guide/" target="_blank">Influchina / WE Interactive</a></div>
     </div>
   </div>
+</div>
 
-  <div class="card card-sea grid-wide">
-    <div class="card-accent"></div>
-    <div class="card-header"><div class="card-icon">&#x1F30A;</div><div class="card-title">SEA Pulse</div><div class="card-count">6 signals</div></div>
-    <div class="sea-stat-row">
-      <div class="sea-stat-box"><div class="sea-stat-num">2.8%</div><div class="sea-stat-label">Singapore consumer<br>spending growth Q1 2026</div></div>
-      <div class="sea-stat-box"><div class="sea-stat-num">2.79%</div><div class="sea-stat-label">Thailand CPI May 2026<br>below 3.9% forecast</div></div>
-      <div class="sea-stat-box"><div class="sea-stat-num">0.5%</div><div class="sea-stat-label">US CPI May 2026 MoM<br>tariff pass-through building</div></div>
-    </div>
-    <div class="sea-country-grid">
-      <div>
-        <div class="sea-col-label sg">&#x1F1F8;&#x1F1EC; Singapore</div>
-        <div class="signal-item">
-          <span class="urgency watch">Watch</span>
-          <div class="signal-headline">SG60 Voucher Programme Driving Unexpected Snack Category Uplift &#x2014; Health and Beauty Retail Outperforms Supermarkets While Food and Alcohol Spend Drops 3%</div>
-          <div class="signal-body">Assembled.sg&#x2019;s Singapore consumer intelligence matrix reveals a counterintuitive split: the SG60 voucher programme is boosting health and beauty retail, while food and alcohol spending at traditional grocery has dropped 3% &#x2014; the worst-performing retail category in Singapore. The divergence points to experiential and wellness spending absorbing the voucher benefits, while food purchases shift to e-commerce and convenience formats. At-home snacking during the World Cup is expected to partially offset the F&amp;B decline in the coming weeks.</div>
-          <div class="signal-implication">For Mamee&#x2019;s Singapore channel strategy, prioritise e-commerce (Shopee SG, FairPrice Online) and convenience store listings over hypermarket placement. Singapore consumers are buying food online and in convenience formats &#x2014; not at traditional supermarkets. A World Cup TikTok Shop activation targeted at SG audiences could capture the shift.</div>
-          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://assembled.sg/insights/the-singapore-consumer-intelligence-matrix" target="_blank">Assembled.sg &#x2014; Singapore Consumer Matrix</a></div>
-        </div>
-        <div class="signal-item">
-          <span class="urgency fyi">FYI</span>
-          <div class="signal-headline">Singapore&#x2019;s Structural Shift from Goods to Experiences Accelerates &#x2014; Domestic F&amp;B Operators Competing With Overseas Dining as Residents Travel More</div>
-          <div class="signal-body">Consumer spending in Singapore decreased to SGD 53,576.5M in Q1 2026 (from SGD 55,262.2M in Q4 2025), with a structural reallocation toward travel, wellness, and experiential entertainment accelerating. F&amp;B and grocery operators are now explicitly competing with overseas dining as Singaporeans travel more. Retail watches and jewellery surged 16.6% &#x2014; the sharpest divergence from food categories on record.</div>
-          <div class="signal-implication">In Singapore, Mamee&#x2019;s best positioning is as a &#x201C;travel companion&#x201D; snack (airports, cross-border travel packs) rather than competing on the grocery shelf. The Johor-Singapore corridor, especially with upcoming RTS Link milestones, creates a cross-border consumer flow for Mamee&#x2019;s Johor-manufactured products.</div>
-          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://tradingeconomics.com/singapore/consumer-spending" target="_blank">Trading Economics &#x2014; Singapore Consumer Spending</a></div>
-        </div>
-      </div>
-      <div>
-        <div class="sea-col-label th">&#x1F1F9;&#x1F1ED; Thailand</div>
-        <div class="signal-item">
-          <span class="urgency watch">Watch</span>
-          <div class="signal-headline">Thailand 2026 Food Nostalgia Trend: Classic Recipes Reimagined With Modern Techniques and Healthier Ingredients &#x2014; &#x201C;Comfort Innovation&#x201D; Becomes Thai Consumer&#x2019;s Dominant FMCG Purchase Driver</div>
-          <div class="signal-body">QSR Media&#x2019;s Thailand food trends report for 2026 identifies &#x201C;nostalgic comfort with modern edge&#x201D; as the dominant consumer driver: Thai consumers are simultaneously seeking familiar flavours and expecting modernised ingredient profiles (less sodium, functional additions, cleaner labels). Brands that can bridge heritage taste with contemporary health credentials are winning in Thai modern trade. This positions Thai-inspired Mala, herbal, and fermented flavour profiles with reduced-sodium claims as the high-growth snack vector in Thailand.</div>
-          <div class="signal-implication">Mamee&#x2019;s Thailand snack export range should consider a &#x201C;Malaysian Heritage, Modern Recipe&#x201D; positioning &#x2014; authentic Malaysian flavours (curry, laksa, tom yam) with a clean-label or functional claim. Thai consumers will pay a modest premium for a foreign brand with heritage narrative + modern health signal. This is a product development brief for the export team.</div>
-          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://qsrmedia.com/research/in-focus/thailands-food-trends-watch-in-2026" target="_blank">QSR Media &#x2014; Thailand Food Trends 2026</a></div>
-        </div>
-        <div class="signal-item">
-          <span class="urgency fyi">FYI</span>
-          <div class="signal-headline">THAIFEX-Anuga Asia 2026 Concludes: Mala-Protein Fusion and Single-Serve Innovation Confirmed as Asia&#x2019;s Commercial Snack Pipeline for 2026&#x2013;2027</div>
-          <div class="signal-body">Asia&#x2019;s largest food trade show in Bangkok wrapped with protein-integrated snacks, mala (spicy-numbing) flavour systems, and single-serve convenience formats as the three dominant innovation themes confirmed by buyers across the ASEAN region. Multiple SEA-origin brands launched mala-flavoured extruded snacks and protein-fortified variants. The pipeline confirms that the mala + salty snack category is expanding regionally, with consumer demand driven by Gen Z across Thailand, Vietnam, Indonesia and Malaysia simultaneously.</div>
-          <div class="signal-implication">If Mamee does not have a mala-flavoured SKU in the pipeline for 2026&#x2013;2027, this is a strategic gap. Multiple competitors &#x2014; including Korean brands and Thai-origin manufacturers &#x2014; are already entering this space in ASEAN channels. A Mamee Mala product would capture the crossover audience between Malaysian Chinese consumers and K-food mala fans.</div>
-          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://www.manilatimes.net/2026/06/03/tmt-newswire/pr-newswire/daesang-showcases-global-brands-at-asias-largest-food-trade-show-thaifex-anuga-asia-2026/2357398/amp" target="_blank">Manila Times &#x2014; THAIFEX-Anuga Asia 2026</a></div>
-        </div>
-      </div>
-      <div>
-        <div class="sea-col-label value">&#x1F4B0; SEA Value Signals</div>
-        <div class="signal-item">
-          <span class="urgency watch">Watch</span>
-          <div class="signal-headline">US CPI May 2026 Up 0.5% MoM &#x2014; Second Consecutive Monthly Rise Signals Tariff Pass-Through to US Retail Prices Is Accelerating &#x2014; SEA Manufacturers Face Upstream Cost Reset in Q3</div>
-          <div class="signal-body">The US Bureau of Labor Statistics confirmed a 0.5% monthly CPI rise in May 2026 &#x2014; following 0.6% in April &#x2014; with expectations of further price spikes in June and July as tariff effects flow through supply chains. For SEA FMCG manufacturers, this has two implications: US-destined export margins are compressed, and imported ingredients (wheat, corn, palm derivatives traded in USD) are set to cost more when priced against regional currencies including MYR.</div>
-          <div class="signal-implication">Mamee&#x2019;s procurement team should flag this for Q3 ingredient cost modelling. If USD/MYR stays at 4.07 while US commodity prices rise, input cost pressure will emerge Q3&#x2013;Q4. A contingency plan for a discreet 3&#x2013;5% price adjustment on premium SKUs in H2 should be prepared &#x2014; while keeping entry-level RM1&#x2013;2 packs protected.</div>
-          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://www.bls.gov/news.release/cpi.nr0.htm" target="_blank">US Bureau of Labor Statistics &#x2014; CPI May 2026</a></div>
-        </div>
-        <div class="signal-item">
-          <span class="urgency fyi">FYI</span>
-          <div class="signal-headline">SEA E-Commerce Tracking Toward $234B by Year-End 2026 &#x2014; Social Commerce Now 20&#x2013;25% of Total &#x2014; Impulse Snack Discovery Confirmed as Fastest-Growing Sub-Category in Social Commerce</div>
-          <div class="signal-body">Regional e-commerce forecasts for SEA now confirm $234B total GMV by end 2026, with social commerce (TikTok Shop, XHS, Instagram Shopping) accounting for 20&#x2013;25% of total &#x2014; roughly USD 47&#x2013;58B. Within social commerce, impulse snack discovery is the fastest-growing sub-category, driven by live-selling, creator reviews and &#x201C;add to cart&#x201D; prompts during food content. FMCG brands not actively live-selling on TikTok Shop in 2026 are missing the structurally fastest-growing channel in the region.</div>
-          <div class="signal-implication">Mamee needs a monthly TikTok Live selling cadence by Q3 2026 at minimum &#x2014; weekly is optimal. Live-selling for snacks requires minimal production: a presenter, lighting, and a product stack. The World Cup creates a natural live-selling theme for the next 43 days. Brief the e-commerce team on a bi-weekly live-sell programme anchored to match nights.</div>
-          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://onpresscapital.co.uk/fmcg-company-malaysia/" target="_blank">FMCG Malaysia / SEA E-Commerce Forecast 2026</a></div>
-        </div>
-      </div>
-    </div>
+<div class="card card-sea grid-wide">
+  <div class="card-accent"></div>
+  <div class="card-header"><div class="card-icon">&#x1F30A;</div><div class="card-title">SEA Pulse</div><div class="card-count">6 signals</div></div>
+  <div class="sea-stat-row">
+    <div class="sea-stat-box"><div class="sea-stat-num">+18%</div><div class="sea-stat-label">SG FMCG E-Commerce YoY</div></div>
+    <div class="sea-stat-box"><div class="sea-stat-num">$9B</div><div class="sea-stat-label">Thailand Digital Retail 2025</div></div>
+    <div class="sea-stat-box"><div class="sea-stat-num">8</div><div class="sea-stat-label">Redshop Launch Markets (MY + SG included)</div></div>
   </div>
-
-  <div class="card card-creative grid-wide">
-    <div class="card-accent"></div>
-    <div class="card-header"><div class="card-icon">&#x1F3A8;</div><div class="card-title">Creative and Industry</div><div class="card-count">9 signals &#x2014; Global | Asia | SEA</div></div>
-    <div class="creative-region-grid">
-      <div>
-        <div class="creative-region-label global">&#x1F310; Global</div>
+  <div class="sea-country-grid">
+    <div>
+      <div class="sea-col-label sg">&#x1F1F8;&#x1F1EC; Singapore</div>
+      <div class="signal-list">
         <div class="signal-item">
-          <span class="urgency fyi">FYI</span>
-          <div class="signal-headline">Cannes 2026 Titanium Shortlist: Peru&#x2019;s &#x201C;SOS POS&#x201D; Shortlisted for Both Titanium AND Innovation &#x2014; Point-of-Sale Transformed Into Emergency Safety Communication Channel</div>
-          <div class="signal-body">Circus Grey Lima&#x2019;s &#x201C;SOS POS&#x201D; for BCP bank is shortlisted for both the Titanium Lion and two Innovation Lion subcategories (Brand-Led Innovation + Societal Innovation) at Cannes 2026. The campaign reprogrammed payment terminals to detect and communicate domestic violence situations, transforming a ubiquitous retail touchpoint into a safety communication channel. The creative brief: what if every brand-owned retail touchpoint served a social function beyond commerce?</div>
-          <div class="signal-implication">For Mamee, &#x201C;SOS POS&#x201D; demonstrates how ordinary brand retail assets (packaging, point-of-sale, QR codes) can carry a social message that multiplies brand equity. A Mamee social campaign that uses product packaging as a vehicle for a Malaysian community message &#x2014; local heroes, school funding, heritage crafts &#x2014; follows this exact creative logic and would be timely given the Johor election context.</div>
-          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://roastbrief.us/cannes-lions-2026-titanium-lions-shortlist-unveiled/" target="_blank">Roastbrief US &#x2014; Cannes Titanium 2026</a></div>
+          <div class="urgency watch">Watch</div>
+          <div class="signal-headline">NIQ Debuts FMCG E-Commerce Measurement in SG, TH, ID &mdash; Brands Can Now Benchmark Real Snack Category E-Commerce Share for First Time</div>
+          <div class="signal-body">NielsenIQ has expanded its FMCG E-Commerce Measurement Solution to Singapore, Indonesia, and Thailand &mdash; creating for the first time a unified, panel-validated view of e-commerce sales performance across major SEA markets. Previously, brands relied on self-reported platform data with no category benchmarking. With NIQ live, Mamee can see its actual FMCG e-commerce share rank vs Lay's, Pringles, Jack 'n Jill, and Oreo across all three markets simultaneously using standardised methodology.</div>
+          <div class="signal-implication">Subscribe to NIQ FMCG E-Commerce measurement for MY, SG, and TH. This is the most important new data capability in SEA FMCG for 2026 &mdash; without it, Mamee is navigating e-commerce market share blind while competitors benchmark against each other.</div>
+          <div class="signal-source"><span class="pub-time">Nov 2025</span> <a href="https://www.businesswire.com/news/home/20251116684875/en/NIQ-Expands-FMCG-E-commerce-Measurement-Across-Southeast-Asia" target="_blank">BusinessWire / NIQ</a></div>
         </div>
         <div class="signal-item">
-          <span class="urgency fyi">FYI</span>
-          <div class="signal-headline">Cannes Innovation Lion Shortlist: &#x201C;Dark Mode Ads&#x201D; by LePub Milan Only Appear in Dark Mode to Save Battery &#x2014; Environmental Creative Intelligence Now a Shortlist-Worthy Standard</div>
-          <div class="signal-body">LePub Milan&#x2019;s &#x201C;Dark Mode Ads&#x201D; for Plenitude (Eni renewable energy) are shortlisted in the Environmental Innovation category at Cannes 2026. The campaign created ads that only display in phone dark mode &#x2014; consuming less battery power &#x2014; embedding an energy-saving behaviour into the media buy itself. The brief demonstrated that the delivery mechanism of an ad can be the creative idea, not just the content within it.</div>
-          <div class="signal-implication">For Mamee&#x2019;s digital team: sustainable creative execution (ads that consume less data, packaging that has a second-use function, QR codes that plant trees) are now Cannes-shortlist territory and also resonate strongly with Malaysian Gen Z sustainability values. A small campaign execution innovation &#x2014; even at local scale &#x2014; creates award entry equity for regional shows.</div>
-          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://marketingreport.one/creation/cannes-lions-releases-first-2026-award-shortlists.html" target="_blank">Marketing Report &#x2014; Cannes 2026 First Shortlists</a></div>
-        </div>
-        <div class="signal-item">
-          <span class="urgency fyi">FYI</span>
-          <div class="signal-headline">Cannes Lions 2026 Opens in 9 Days &#x2014; June 22&#x2013;26 in Cannes &#x2014; Full Shortlists Drop Daily From June 20, Grand Prix Winners June 25&#x2013;26</div>
-          <div class="signal-body">The main Cannes Lions 2026 festival opens June 22 with shortlists for remaining categories (Film, Social &amp; Creator, Commerce, Entertainment, PR, Health, Outdoor, Radio &amp; Audio, Design, Industry Craft, Digital Craft, Sustainable Development Goals) dropping daily from June 20. Grand Prix announcements occur June 25&#x2013;26. APAC agencies are expected to achieve their highest-ever tally of Lions and shortlists, with Singapore and Japan leading regional entries.</div>
-          <div class="signal-implication">Mamee&#x2019;s creative team should monitor Cannes daily from June 20 for inspiration benchmarking &#x2014; specifically the Food &amp; Drink category (direct category intelligence) and Social &amp; Creator (TikTok/XHS creative benchmarks). Cannes 2026 Grand Prix work will define the global creative standard Mamee&#x2019;s 2027 brand campaigns will be judged against by agency partners.</div>
-          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://www.canneslions.com/awards/awards-support/dates-and-fees" target="_blank">Cannes Lions &#x2014; Dates and Fees 2026</a></div>
+          <div class="urgency fyi">FYI</div>
+          <div class="signal-headline">XHS Redshop Opens Direct Commerce from Chinese Sellers to MY + SG Consumers &mdash; Chinese Snack Brands Now Have a Route Bypassing Local Distribution</div>
+          <div class="signal-body">Redshop allows Chinese snack, confectionery, and FMCG brands to reach Malaysian and Singaporean ethnic Chinese consumers directly via XHS, without local distribution partnerships or import agents. Categories Redshop is prioritising include authentic Chinese lifestyle and food products &mdash; which may compete with local FMCG brands in the ethnic Chinese consumer's consideration set.</div>
+          <div class="signal-implication">Monitor Redshop MY and SG category listings over the next 30 days. If Chinese snack brands begin listing products overlapping Mamee's core flavours, reinforce local origin and halal certification as the purchase differentiators that Chinese-brand Redshop products cannot match.</div>
+          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://pandaily.com/xiaohongshu-to-launch-cross-border-e-commerce-platform-redshop-in-june" target="_blank">Pandaily</a></div>
         </div>
       </div>
-      <div>
-        <div class="creative-region-label asia">&#x1F30F; Asia</div>
+    </div>
+    <div>
+      <div class="sea-col-label th">&#x1F1F9;&#x1F1ED; Thailand</div>
+      <div class="signal-list">
         <div class="signal-item">
-          <span class="urgency act">Act Now</span>
-          <div class="signal-headline">Campaign Asia-Pacific Media Awards Winners Revealed June 16 &#x2014; 3 Days Away &#x2014; Inaugural Programme Spotlights Best APAC Media Platforms, Publishers and Branded Content</div>
-          <div class="signal-body">Campaign Asia is revealing winners for the inaugural Campaign Asia-Pacific Media Awards on Tuesday June 16 &#x2014; three days from now. The programme recognises excellence across media-led work including audience engagement, branded content, creative media partnerships, and AI-in-media categories. Singapore is hosting the event. As an inaugural programme, winning brands and agencies have the opportunity to claim a first-ever title &#x2014; which carries outsized PR value.</div>
-          <div class="signal-implication">Mamee&#x2019;s agency partners should be briefed on next year&#x2019;s entry opportunity &#x2014; the June 16 winners will confirm which categories are achievable for Malaysian FMCG brands. Monitor the winners list on June 16 specifically for any food, snack or packaged goods branded content wins that can benchmark Mamee&#x2019;s own content programme for 2027 entry.</div>
-          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://www.campaignasia.com/article/campaign-asia-pacific-launches-media-awards-for-2026/4rprd2whc59xm4aa7nbxdw6h41" target="_blank">Campaign Asia &#x2014; Media Awards 2026</a></div>
+          <div class="urgency watch">Watch</div>
+          <div class="signal-headline">Thai "Subscribe and Save" Multi-Pack Format Growing as Primary Online FMCG Mechanism &mdash; Distinct from Malaysia's Impulse-Buy Pattern</div>
+          <div class="signal-body">Thailand's digital retail ($9B in 2025) is shifting toward "subscribe and save" and multi-pack bundle formats as the dominant snack e-commerce conversion mechanism &mdash; Thai consumers building habitual snack replenishment into digital routines. This contrasts fundamentally with Malaysia's impulse-dominant TikTok Shop behaviour. Shopee TH and Lazada TH are the primary subscription channels; TikTok Shop TH trails in subscription features.</div>
+          <div class="signal-implication">Mamee Thailand's listings should be structured for subscription: monthly bundle at 15% discount, auto-replenishment option. The Thai playbook is not the Malaysian playbook &mdash; predictability and savings beat viral moments for Thai e-commerce consumers.</div>
+          <div class="signal-source"><span class="pub-time">2026</span> <a href="https://sellercraft.co/thailands-digital-retail-outlook-2025-2026/" target="_blank">SellerCraft</a></div>
         </div>
         <div class="signal-item">
-          <span class="urgency fyi">FYI</span>
-          <div class="signal-headline">Asia&#x2019;s Cannes 2026 Pre-Festival Trajectory: Singapore and Japan Lead APAC Shortlist Count &#x2014; SEA Entries Rising Sharply in Social Creator and Commerce Categories Ahead of Full Awards</div>
-          <div class="signal-body">Based on first-wave shortlists and industry tracking, Singapore leads APAC Cannes 2026 presence (multiple Titanium + Innovation entries), with Japan close behind for tech-driven creative. SEA agencies outside Singapore are growing entries in Social Creator and Commerce categories &#x2014; lower-barrier categories with fewer established incumbents than Film or Outdoor. The June 22&#x2013;26 festival will confirm whether 2026 marks SEA&#x2019;s first Gold Lion in Social Creator.</div>
-          <div class="signal-implication">Mamee should target Social Creator and Commerce categories at Cannes 2027 &#x2014; these are the highest-likelihood win categories for a Malaysian FMCG brand given platform-native content capabilities and accessible jury criteria. The World Cup campaign content created this month could form the basis of a Cannes 2027 Social Creator entry if documented with measurable results.</div>
-          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://reel360.com/article/first-cannes-lions-2026-shortlists-announced/" target="_blank">Reel 360 &#x2014; Cannes 2026 First Shortlists</a></div>
-        </div>
-        <div class="signal-item">
-          <span class="urgency fyi">FYI</span>
-          <div class="signal-headline">Campaign Asia Agency of the Year 2026 Nominations Open Since June 9 &#x2014; Early Bird Deadline June 30 &#x2014; 17 Days to Decide Whether to Nominate Agency Partners</div>
-          <div class="signal-body">Campaign Asia&#x2019;s Agency of the Year Awards 2026 opened nominations on June 9 with an early bird deadline of June 30. The awards are the most prestigious benchmark for agency performance in APAC, covering 19 market categories including Malaysia. Brands that nominate their agencies gain editorial coverage and strengthen long-term agency relationships. The decision to submit a nomination typically requires 2&#x2013;3 weeks of internal brief preparation.</div>
-          <div class="signal-implication">Decision needed by end of June: should Mamee nominate its lead creative, media or digital agency for Campaign Asia AOY 2026? If agency relationships are strong and the work delivered strong results this year, a nomination brief is worth preparing. The June 30 early bird deadline gives 17 days to align internally. Raise with marketing leadership this week.</div>
-          <div class="signal-source"><span class="pub-time">26 May 2026</span> <a href="https://www.prnewswire.com/apac/news-releases/campaign-asia-agency-of-the-year-awards-2026-open-for-nominations-on-9-june-302781447.html" target="_blank">Campaign Asia &#x2014; AOY 2026 Nominations</a></div>
+          <div class="urgency fyi">FYI</div>
+          <div class="signal-headline">NIQ Thailand FMCG E-Commerce Now Live &mdash; Snack Category Share Data Available Against Daesang, Korean Imports, and Local Competitors</div>
+          <div class="signal-body">NIQ's Thailand FMCG e-commerce panel is now active, enabling standardised snack category e-commerce share measurement across Shopee TH, Lazada TH, and TikTok Shop TH. This is particularly relevant for assessing Daesang/Mamasuka and other Korean-brand competitors gaining Thai distribution. First benchmarking reports expected within 30&ndash;60 days for subscribers.</div>
+          <div class="signal-implication">Ensure Mamee Thailand registers as a NIQ panel participant before competitors establish their baseline. Early adopters have a 6-month data advantage for pricing, promotion, and distribution decisions.</div>
+          <div class="signal-source"><span class="pub-time">Nov 2025</span> <a href="https://www.stocktitan.net/news/NIQ/niq-expands-fmcg-e-commerce-measurement-across-southeast-kcvxf42uqzrh.html" target="_blank">StockTitan / NIQ</a></div>
         </div>
       </div>
-      <div>
-        <div class="creative-region-label sea">&#x1F30A; SEA Industry</div>
+    </div>
+    <div>
+      <div class="sea-col-label value">&#x1F4B0; SEA Value Signals</div>
+      <div class="signal-list">
         <div class="signal-item">
-          <span class="urgency watch">Watch</span>
-          <div class="signal-headline">MARKETECH APAC Advertising Awards Asia Pacific 2026 &#x2014; Finalists Announced &#x2014; First-Ever Inaugural Programme Celebrating APAC Advertising Creativity and Effectiveness</div>
-          <div class="signal-body">MARKETECH APAC has announced finalists for the inaugural Advertising Awards Asia Pacific 2026 &#x2014; a new dedicated advertising creativity and effectiveness programme for the region. Entry period closed May 4, 2026. Finalists are now confirmed and winners will be revealed in the coming weeks. As the first edition of this programme, winning entries establish benchmarks for what excellent APAC advertising looks like &#x2014; valuable reference intelligence for brands building 2027 creative briefs.</div>
-          <div class="signal-implication">Monitor the MARKETECH APAC AAA 2026 winner reveals for any FMCG or food brand wins. First-edition winners tend to dominate trade press coverage for months afterward. If a competitor wins in a food or snack category, Mamee should brief its agency on a 2027 entry strategy for the same programme.</div>
-          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://marketech-apac.com/marketech-apac-announces-finalists-for-inaugural-advertising-awards-asia-pacific-2026/" target="_blank">MARKETECH APAC &#x2014; Advertising Awards AP 2026</a></div>
+          <div class="urgency watch">Watch</div>
+          <div class="signal-headline">Brent Falls Below $90 &mdash; Input Cost Tailwind Beginning for SEA FMCG &mdash; Packaging and Logistics Relief Possible in Q3</div>
+          <div class="signal-body">Brent crude at $89.38 &mdash; now below $90 and down 5.4% in a week, driven by Iran-US peace signals and increased OPEC+ supply. Crude-linked costs (plastics, packaging resin, logistics diesel) typically follow oil prices with a 6&ndash;8 week lag. Sustained sub-$90 pricing through June&ndash;July could translate into actual material cost relief in August&ndash;September, coinciding with Mamee's Q3 planning cycle.</div>
+          <div class="signal-implication">Flag sub-$90 Brent to supply chain and finance as a potential input cost relief signal. Build a Q3 budget scenario where packaging material costs are 2&ndash;3% lower than current assumption &mdash; this could fund an incremental promotional price investment without margin compression.</div>
+          <div class="signal-source"><span class="pub-time">13 Jun 2026</span> <a href="https://oilprice.com/" target="_blank">OilPrice.com</a></div>
         </div>
         <div class="signal-item">
-          <span class="urgency fyi">FYI</span>
-          <div class="signal-headline">MARKETECH APAC Marketing Technology Awards 2026 Open for Entries &#x2014; New Programme Spotlights Real-World Martech Impact Across SEA and APAC</div>
-          <div class="signal-body">MARKETECH APAC has launched the Marketing Technology Awards 2026, a new programme recognising brands and agencies deploying marketing technology for measurable real-world impact. Categories include AI-driven personalisation, data strategy, customer experience, and commerce technology. SEA brands are well-represented in entries from Malaysia, Singapore, Thailand and Indonesia. The programme is specifically designed for brands with strong martech infrastructure &#x2014; a growing area for FMCG companies that use CDP, social commerce and programmatic tools.</div>
-          <div class="signal-implication">If Mamee has implemented any notable martech in 2025&#x2013;2026 (TikTok Shop automation, CDP for audience targeting, AI content generation, or loyalty programme tech), this is an entry opportunity. Marketing Technology Awards carry strong B2B trade press value and signal sophistication to retail trade partners and potential regional distributors.</div>
-          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://marketech-apac.com/marketech-apac-opens-entries-for-marketing-technology-awards-2026-spotlighting-real-world-martech-impact/" target="_blank">MARKETECH APAC &#x2014; Marketing Technology Awards 2026</div>
-        </div>
-        <div class="signal-item">
-          <span class="urgency fyi">FYI</span>
-          <div class="signal-headline">NEXT Awards Asia Pacific 2026 &#x2014; Entry Deadline September 4 &#x2014; Open for Entries Now &#x2014; Recognises Marketing Innovation and Next-Gen Brand Work Across APAC</div>
-          <div class="signal-body">MARKETECH APAC&#x2019;s NEXT Awards Asia Pacific 2026 is now open for entries with a deadline of September 4, 2026 &#x2014; the longest entry window of any regional award programme. The programme recognises groundbreaking work in next-generation marketing across the Asia Pacific region, with categories spanning digital, creator, e-commerce and brand innovation. The September deadline gives brands time to include H1 campaign results and World Cup activation case studies in their entries.</div>
-          <div class="signal-implication">Mamee should flag the September 4 NEXT Awards deadline for entry planning. Any World Cup creator campaign, TikTok Shop activation or XHS programme launched this month can be documented now for entry later. Brief the agency to begin capturing campaign metrics and screenshots from June 14 onward to build a case study package by August.</div>
-          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://marketech-apac.com/awards/next-asia-pacific-2026/" target="_blank">MARKETECH APAC &#x2014; NEXT Awards AP 2026</a></div>
+          <div class="urgency fyi">FYI</div>
+          <div class="signal-headline">SEA FMCG E-Commerce Now Measured Uniformly Across MY, SG, TH, ID &mdash; Cross-Market Snack Share Benchmarking Becomes Possible for First Time</div>
+          <div class="signal-body">NIQ's harmonised SEA measurement covers Malaysia, Singapore, Thailand, and Indonesia using a single methodology. For the first time, Mamee can see its e-commerce market share rank across all four markets simultaneously on a like-for-like basis &mdash; understanding whether TikTok Shop MY performance lags or leads Shopee SG performance on comparable terms. This cross-market dashboard didn't exist before NIQ's expansion.</div>
+          <div class="signal-implication">Build a quarterly SEA e-commerce performance dashboard with NIQ as the backbone. Cross-market snack category share should become a standard commercial KPI from Q3 2026 onward. Building it now is a competitive intelligence advantage while competitors catch up.</div>
+          <div class="signal-source"><span class="pub-time">Nov 2025</span> <a href="https://www.businesswire.com/news/home/20251116684875/en/NIQ-Expands-FMCG-E-commerce-Measurement-Across-Southeast-Asia" target="_blank">BusinessWire / NIQ</a></div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="card card-competitor grid-wide">
-    <div class="card-accent"></div>
-    <div class="card-header"><div class="card-icon">&#x1F3AF;</div><div class="card-title">Competitor Watch</div><div class="card-count">3 brands tracked</div></div>
-    <div class="comp-grid">
-      <div class="comp-item">
-        <div class="comp-brand" style="color:#fbbf24;">PRINGLES (Kellanova)</div>
-        <div class="urgency act">Act Now</div>
-        <div class="comp-headline">Pringles World Cup Creator Hub Now in Day 3 Content Velocity Mode &#x2014; Posting 3+ Pieces of Content Daily Per Market &#x2014; SEA Snack Shelf-Voice Share Shifting Fast</div>
-        <div class="comp-body">Kellanova&#x2019;s multi-brand World Cup activation is now generating content at industrial scale from its creator hub &#x2014; with Pringles, Cheez-It and Pop-Tarts posting daily across TikTok, Instagram and YouTube. By Day 3, brands with creator infrastructure are accumulating share-of-voice in the snack conversation at a rate that Mamee&#x2019;s organic posting schedule cannot match. The &#x201C;House of Snacks&#x201D; approach means even Pringles alone has 3&#x2013;5 daily pieces of World Cup content in market per territory. Pringles&#x2019; familiar tube format makes it a natural &#x201C;watch party snack&#x201D; in Malaysian eyes &#x2014; Mamee does not have equivalent share-of-voice yet.</div>
-        <div class="comp-implication">Mamee counter: shift from organic post cadence to a mini creator hub model for the remaining 40 days of the tournament. Identify 3&#x2013;5 existing brand-adjacent creators and activate a &#x201C;daily match content&#x201D; brief &#x2014; one post per match day each. This does not require a creator hub budget &#x2014; a simple WhatsApp group brief with Mamee product gifting achieves 3&#x2013;5 posts daily at minimal cost.</div>
-        <div class="comp-source"><span class="pub-time">Jun 2026</span> <a href="https://www.foodanddrinktechnology.com/news/67773/fast-moving-fandom-how-brands-are-customising-products-packaging-and-services-for-world-cup-2026/" target="_blank">Food and Drink Technology</a></div>
+<div class="card card-creative grid-wide">
+  <div class="card-accent"></div>
+  <div class="card-header"><div class="card-icon">&#x1F3A8;</div><div class="card-title">Creative and Industry</div><div class="card-count">9 signals &mdash; Global | Asia | SEA</div></div>
+  <div class="creative-region-grid">
+    <div>
+      <div class="creative-region-label global">&#x1F310; Global</div>
+      <div class="signal-list">
+        <div class="signal-item">
+          <div class="urgency watch">Watch</div>
+          <div class="signal-headline">Cannes Titanium Lions Shortlist: 18 Campaigns &mdash; Heineken "Tocayos" (Latino Fans Sharing Names with WC Players) Sets Sport + Cultural Identity Standard</div>
+          <div class="signal-body">The first Cannes Lions 2026 shortlists (Titanium) were released June 11&ndash;12. Heineken's "Tocayos" by LePub &mdash; discovering Latino fans whose names match World Cup players and creating personalised celebration content &mdash; is among the 18 shortlisted campaigns. It is a masterclass in Sport + Cultural Identity fusion: using the World Cup as a vehicle for personal resonance rather than broadcast messaging. The brief is about belonging &mdash; which any FMCG brand entering an underrepresented cultural moment can adapt.</div>
+          <div class="signal-implication">Brief agency on a "Tocayos-style" personalisation angle for Malaysia: fans whose Malaysian identity intersects with WC teams (Chinese-Malaysian fans supporting South Korea, Malay fans supporting Saudi Arabia, Indian-Malaysian fans supporting England). This brief earns Cannes attention and social virality simultaneously.</div>
+          <div class="signal-source"><span class="pub-time">12 Jun 2026</span> <a href="https://reel360.com/article/first-cannes-lions-2026-shortlists-announced/" target="_blank">Reel360 / Cannes Lions</a></div>
+        </div>
+        <div class="signal-item">
+          <div class="urgency watch">Watch</div>
+          <div class="signal-headline">Lay's "Scaled Intimacy" Strategy &mdash; Marketing Dive Names It New Framework for FMCG World Cup Activation at Mass Scale</div>
+          <div class="signal-body">Marketing Dive's analysis of Lay's World Cup campaign names its core innovation "scaled intimacy" &mdash; creating millions of personalised fan moments (WhatsApp reactions, market-specific flavours, local celebrity appearances) while maintaining a single unified brand narrative. It contrasts with typical "big splash" FMCG sponsorships that prioritise reach over resonance. Lay's is betting that personalisation at scale earns more long-term brand equity than mass reach.</div>
+          <div class="signal-implication">Adapt "scaled intimacy" for Mamee at accessible budget: 100 Malaysian food micro-creators (10K&ndash;50K followers each) posting authentic snack content = 1M combined reach with the intimacy of personal recommendation. This is Mamee's version of scaled intimacy &mdash; achievable this week.</div>
+          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://www.marketingdive.com/news/lays-world-cup-marketing-focuses-on-scaled-intimacy-with-fans/819306/" target="_blank">Marketing Dive</a></div>
+        </div>
+        <div class="signal-item">
+          <div class="urgency fyi">FYI</div>
+          <div class="signal-headline">Brand Innovators FIFA World Cup 2026 Ad Tracker Running Live &mdash; Daily Benchmark of Every Major Brand Activation Globally</div>
+          <div class="signal-body">Brand Innovators is running a live World Cup 2026 Ad Tracker throughout the tournament, cataloguing every major brand activation, campaign launch, and creative execution in real time. The tracker covers global, regional, and local campaigns and is updated daily. For Mamee's creative team, it is the most comprehensive single-source view of what every competitor and non-endemic brand is doing at the World Cup &mdash; enabling rapid creative intelligence and counter-programming decisions.</div>
+          <div class="signal-implication">Assign one team member to review brand-innovators.com/brand-innovators-fifa-world-cup-ad-tracker-2026 daily and brief the creative team on snack or beverage category entries. Real-time competitor intelligence is the most underused creative advantage during major sporting events.</div>
+          <div class="signal-source"><span class="pub-time">2026</span> <a href="https://brand-innovators.com/brand-innovators-fifa-world-cup-ad-tracker-2026/" target="_blank">Brand Innovators</a></div>
+        </div>
       </div>
-      <div class="comp-item">
-        <div class="comp-brand" style="color:#f472b6;">MONDELEZ (Malaysia)</div>
-        <div class="urgency watch">Watch</div>
-        <div class="comp-headline">Mondelez Malaysia Convenience-First Retail Media Strategy Escalating &#x2014; Tiger Biscuits and Jacob&#x2019;s Range Placed in World Cup In-Store PoS at 7-Eleven and Convenience Channel</div>
-        <div class="comp-body">While Mondelez&#x2019;s global World Cup campaign focuses on its international snack portfolio, the Malaysian business is deploying a localised convenience channel play: Tiger Biscuits and Jacob&#x2019;s Cream Crackers with World Cup secondary placement in 7-Eleven, myNEWS and KK Mart. The approach uses Mondelez&#x2019;s established convenience-channel trade relationships to gain World Cup adjacency without the FIFA licensing cost. This directly competes with Mamee&#x2019;s strongest channel &#x2014; the Malaysian convenience store.</div>
-        <div class="comp-implication">Mamee must ensure maximum facing at 7-Eleven, 99 Speedmart and myNEWS this weekend &#x2014; any shelf space lost to Mondelez Tiger/Jacob&#x2019;s World Cup placement represents a 43-day revenue loss. If distributor access allows, brief the trade team on a counter-placement for Mamee Monster and Double Decker at eye-level in convenience stores in the same World Cup adjacency locations. Price-point parity is critical.</div>
-        <div class="comp-source"><span class="pub-time">Jun 2026</span> <a href="https://www.foodnavigator-usa.com/Article/2026/06/09/world-cup-2026-challenges-cpg-brands-with-real-time-retail-media/" target="_blank">Food Navigator &#x2014; WC CPG Retail Media 2026</a></div>
+    </div>
+    <div>
+      <div class="creative-region-label asia">&#x1F30F; Asia</div>
+      <div class="signal-list">
+        <div class="signal-item">
+          <div class="urgency watch">Watch</div>
+          <div class="signal-headline">Cannes Lions Opens in 9 Days &mdash; Food and Drink + Social Creator Shortlists Drop June 16&ndash;20 &mdash; Set Daily Review from Monday</div>
+          <div class="signal-body">Cannes Lions opens June 22. From June 16&ndash;20, remaining category shortlists release daily at 9 AM CET (3 PM MYT) &mdash; including Food and Drink Lions, Social and Creator Lions, and Creative Commerce. Each shortlisted Food and Drink or Social Creator campaign is a live creative template for what award-calibre FMCG work looks like in 2026. Missing these daily drops is missing the annual global creative benchmarking session.</div>
+          <div class="signal-implication">Set calendar reminders for June 16&ndash;20 at 3 PM MYT. Assign 20 minutes daily to review every Food and Drink and Social Creator shortlist. Brief agency before the festival opens June 22 &mdash; this is the creative strategy refresh compressed into 5 days.</div>
+          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://www.canneslions.com" target="_blank">Cannes Lions 2026</a></div>
+        </div>
+        <div class="signal-item">
+          <div class="urgency fyi">FYI</div>
+          <div class="signal-headline">Malaysia's Hallyu Creator Community Generated Strong WC Content for SK Opening Match &mdash; Next SK Match Is the Next Activation Window</div>
+          <div class="signal-body">South Korea's 10 AM MYT opening match on June 12 generated a significant Hallyu content wave from Malaysia &mdash; K-drama fans, K-pop audiences, and Korean food enthusiasts using the match as a community activation moment. Content continues to circulate with residual reach. South Korea's next Group Stage match (approximately June 17&ndash;20) is the next activation window for this community.</div>
+          <div class="signal-implication">Brief a K-culture-adjacent creator for a "snacking for the SK match" post now &mdash; 5 days in advance is sufficient for an organic micro-creator post. Timing to the next SK fixture earns disproportionate reach from Malaysia's highly engaged Hallyu fan community.</div>
+          <div class="signal-source"><span class="pub-time">12 Jun 2026</span> <a href="https://sports.yahoo.com/soccer/article/2026-fifa-world-cup-daily-schedule-every-match-date-kickoff-time-and-venue-for-all-48-teams-234515087.html" target="_blank">Yahoo Sports</a></div>
+        </div>
+        <div class="signal-item">
+          <div class="urgency fyi">FYI</div>
+          <div class="signal-headline">DesignRush "15 Best World Cup 2026 Ads" Roundup Published &mdash; Weekly Creative Benchmark Accessible to the Entire Mamee Team</div>
+          <div class="signal-body">DesignRush has published its first weekly "15 Best World Cup 2026 Ads" roundup covering the creative executions earning the most industry recognition and social traction in the tournament's opening week. Nike, Adidas, LEGO, and OpenAI are the non-FMCG leaders; Lay's, Heineken, and Pringles represent FMCG. The roundup updates weekly through July 19 and serves as an accessible creative benchmark for the entire team without requiring Cannes Lions industry access.</div>
+          <div class="signal-implication">Circulate the DesignRush roundup to Mamee creative and agency teams as a weekly context brief. Use it as a debrief: "what themes are resonating this week?" to inform rapid creative decisions through the tournament window.</div>
+          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://news.designrush.com/best-fifa-world-cup-2026-ads" target="_blank">DesignRush</a></div>
+        </div>
       </div>
-      <div class="comp-item">
-        <div class="comp-brand" style="color:#2dd4bf;">DAESANG (Korean F&amp;B)</div>
-        <div class="urgency watch">Watch</div>
-        <div class="comp-headline">Daesang Jongga, O&#x2019;Food and Mamasuka Post THAIFEX With Active SEA Distribution Conversations &#x2014; Korean F&amp;B Giant Now Building Malaysia and Singapore Channel Pipeline</div>
-        <div class="comp-body">Daesang &#x2014; one of Korea&#x2019;s largest F&amp;B conglomerates &#x2014; showcased Jongga (kimchi), O&#x2019;Food and Mamasuka at THAIFEX-Anuga Asia 2026 with 13,000+ visitors and confirmed export discussions for Malaysia and Singapore. The company is building a structured SEA distribution pipeline via Thai trade channels, using South Korea&#x2019;s World Cup participation as a cultural tailwind. Mamasuka&#x2019;s fried rice seasonings and snack-adjacent products directly compete with Mamee&#x2019;s flavoured noodle and seasoning range.</div>
-        <div class="comp-implication">Daesang entering SEA via the Thai trade route is a medium-term channel threat &#x2014; not immediate, but the pipeline is now confirmed. Mamee should brief the Indonesia and Thailand distributor network on reinforcing Mamee&#x2019;s local-brand positioning against K-food imports. In Malaysia, Mamee&#x2019;s &#x201C;Made in Malaysia&#x201D; heritage narrative becomes a genuine competitive asset against Korean imports in the upcoming election-sensitive Johor market.</div>
-        <div class="comp-source"><span class="pub-time">3 Jun 2026</span> <a href="https://www.manilatimes.net/2026/06/03/tmt-newswire/pr-newswire/daesang-showcases-global-brands-at-asias-largest-food-trade-show-thaifex-anuga-asia-2026/2357398/amp" target="_blank">Manila Times &#x2014; Daesang at THAIFEX 2026</a></div>
+    </div>
+    <div>
+      <div class="creative-region-label sea">&#x1F30A; SEA Industry</div>
+      <div class="signal-list">
+        <div class="signal-item">
+          <div class="urgency act">Act Now</div>
+          <div class="signal-headline">XHS Redshop Merchant Registration for Malaysia + Singapore Open Now &mdash; Snack Category First-Mover Advantage Available This Week Only</div>
+          <div class="signal-body">Xiaohongshu is actively recruiting the first Redshop merchant cohort for Malaysia and Singapore, focusing on culturally authentic products in food, lifestyle, and heritage categories. The seed merchant advantage is significant: early-registered brands with established review histories will outrank later entrants in XHS search and Redshop category listings. The application pathway is through Pandaily and KR Asia's Redshop coverage. The seed merchant recruitment window for the first 50 brands is open now and closes once the category fills.</div>
+          <div class="signal-implication">Assign someone in Mamee's digital or e-commerce team to apply for Redshop merchant status this week. Even being on the waitlist means Mamee's listings are live from Day 1 of full launch &mdash; not playing catch-up when competitors have established review histories.</div>
+          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://kr-asia.com/pulses/161138" target="_blank">KR Asia</a></div>
+        </div>
+        <div class="signal-item">
+          <div class="urgency watch">Watch</div>
+          <div class="signal-headline">Campaign Asia Media Awards Announced June 16 &mdash; SEA Media Planning Effectiveness Benchmark &mdash; 3 Days Away</div>
+          <div class="signal-body">The Campaign Asia Media Awards &mdash; the first pure media planning and effectiveness awards in Asia-Pacific &mdash; announce on June 16, three days from now. Awards cover media strategy, channel planning, and campaign effectiveness across SEA markets including Malaysia. FMCG client entries will benchmark the standard of excellent media planning in the region for 2026 &mdash; directly relevant for evaluating Mamee's media agency roster and effectiveness standards.</div>
+          <div class="signal-implication">Review the June 16 winners specifically for FMCG client entries from Malaysian and SEA agencies. If Mamee's media agency appears, use it as brief reinforcement. If they don't, use the winner profiles to set the brief standard for a media agency review in H2 2026.</div>
+          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://www.campaignasia.com" target="_blank">Campaign Asia</a></div>
+        </div>
+        <div class="signal-item">
+          <div class="urgency fyi">FYI</div>
+          <div class="signal-headline">SEA Creative Award Submissions Growing &mdash; Brief Quality Now the Primary Bottleneck &mdash; Cannes 2027 Work Must Be Briefed in the Next 3&ndash;6 Months</div>
+          <div class="signal-body">MARKETECH APAC confirms SEA brands are submitting significantly more entries to global awards in 2026, with the bottleneck shifting from agency execution quality to brand brief quality. The most common reason SEA FMCG entries don't shortlist is a brief lacking cultural specificity and strategic depth. The creative talent and craft exist in the SEA agency ecosystem. Award-winning work takes 9&ndash;12 months from brief to awards submission &mdash; Cannes 2027 winners are being briefed now.</div>
+          <div class="signal-implication">If Mamee has Cannes 2027 ambitions, write the brief in the next 3&ndash;6 months. The brands on the podium at Cannes 2027 are briefing their agencies in Q3 2026. The brief is the variable, not the agency.</div>
+          <div class="signal-source"><span class="pub-time">2026</span> <a href="https://marketech-apac.com" target="_blank">MARKETECH APAC</a></div>
+        </div>
       </div>
     </div>
   </div>
+</div>
+
+<div class="card card-competitor grid-wide">
+  <div class="card-accent"></div>
+  <div class="card-header"><div class="card-icon">&#x1F3AF;</div><div class="card-title">Competitor Watch</div><div class="card-count">3 brands tracked</div></div>
+  <div class="comp-grid">
+    <div class="comp-item">
+      <div class="comp-brand" style="color:#fbbf24;">JACK 'N JILL (URC)</div>
+      <div class="urgency act">Act Now</div>
+      <div class="comp-headline">DDB International Appointed &mdash; Brand Refresh Approaching &mdash; 6-Month Creative Window Before New Work Lands in Market</div>
+      <div class="comp-body">URC Malaysia appointed DDB International as creative agency for Jack 'n Jill across snacks and biscuits. DDB typically delivers first campaign work 6&ndash;9 months post-appointment, putting new Jack 'n Jill creative in market around Q4 2026&ndash;Q1 2027. Jack 'n Jill competes directly with Mister Potato and Double Decker in convenience and modern trade formats across Malaysia. This is the most significant competitor agency move in the Malaysian snack category in 2026.</div>
+      <div class="comp-implication">The 6-month window before DDB's work lands is Mamee's creative advantage period. Brief and produce the next major Mamee creative platform now so the brand is established in consumers' minds before Jack 'n Jill's refreshed positioning arrives.</div>
+      <div class="comp-source"><span class="pub-time">Feb 2026</span> <a href="https://www.campaignasia.com/article/malaysian-snack-firm-taps-ddb-for-jack-n-jill-brand/191025" target="_blank">Campaign Asia</a></div>
+    </div>
+    <div class="comp-item">
+      <div class="comp-brand" style="color:#f87171;">LAY'S / PEPSICO</div>
+      <div class="urgency watch">Watch</div>
+      <div class="comp-headline">Week 1 at Full Sprint &mdash; Week 3 Fatigue Window (Jun 28&ndash;Jul 4) Is Mamee's Counter-Push Target</div>
+      <div class="comp-body">Lay's World Cup machine running at capacity in Week 1 across 90 markets. The 43-day tournament creates structural fatigue: Week 3 (Jun 28&ndash;Jul 4) is the predicted creative exhaustion zone when activation frequency drops across major sponsoring brands. Sustaining fresh daily content and media spend intensity for 43 consecutive days is operationally very hard even for PepsiCo-scale budgets.</div>
+      <div class="comp-implication">Plan a targeted creator burst and TikTok Shop push in Jun 28&ndash;Jul 4 specifically. When Lay's thins out, Mamee fills the void. A focused spend during this single week at below-average CPM maximises share of voice ROI for the tournament's second half.</div>
+      <div class="comp-source"><span class="pub-time">9 Jun 2026</span> <a href="https://www.bakeryandsnacks.com/Article/2026/06/09/world-cup-2026-challenges-cpg-brands-with-real-time-retail-media/" target="_blank">Bakery &amp; Snacks</a></div>
+    </div>
+    <div class="comp-item">
+      <div class="comp-brand" style="color:#2dd4bf;">PRINGLES / KELLANOVA</div>
+      <div class="urgency fyi">FYI</div>
+      <div class="comp-headline">Multi-Brand WC Activation (Pringles + Cheez-It + Pop-Tarts) &mdash; Portfolio Breadth with Low Malaysian Brand Awareness for Supporting SKUs</div>
+      <div class="comp-body">Kellanova activating Pringles as World Cup lead with Cheez-It, Pop-Tarts, and Rice Krispies Treats as supporting multi-brand display. In Malaysia, supporting brands have significantly lower brand awareness vs Mamee's native recognition &mdash; Cheez-It and Pop-Tarts are imported novelties, not household names. The portfolio breadth strategy works in the US where all four brands are well-known; in Malaysia, it dilutes rather than amplifies the display.</div>
+      <div class="comp-implication">Counter with Mamee portfolio depth over imported portfolio breadth: a unified "Mamee Family World Cup Pack" display of Mamee Monster + Mister Potato + Double Decker outperforms on the key Malaysian purchase driver of local familiarity and halal trust vs unfamiliar imports.</div>
+      <div class="comp-source"><span class="pub-time">3 Jun 2026</span> <a href="https://www.foodnavigator-asia.com/Article/2026/06/03/world-cup-2026-why-pepsico-mondelez-and-kellanova-are-betting-big/" target="_blank">FoodNavigator Asia</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="card card-followup grid-wide">
+  <div class="card-accent"></div>
+  <div class="card-header">
+    <div class="card-icon">&#x1F504;</div>
+    <div class="card-title">Follow-Up Tracker</div>
+    <div class="card-count">Act Now items from 7 days ago &mdash; June 6</div>
+  </div>
+  <div class="followup-grid">
+    <div class="followup-item">
+      <div class="followup-original">Mister Potato Balls Launch &mdash; Ghost Pepper and Creamy Carbonara Ball-Format Snacks Debut</div>
+      <div class="followup-status resolved">Resolved</div>
+      <div class="followup-update">Mister Potato Balls has launched as announced. Monitor social listening for consumer response: UGC volume, flavour preference signals, and quality feedback from early adopters. The first 3 weeks post-launch are the critical social proof window &mdash; brief the social team to curate and amplify positive consumer content while the launch moment is fresh.</div>
+    </div>
+    <div class="followup-item">
+      <div class="followup-original">TikTok "Watch It. Love It. Want It." Commerce-First Campaign &mdash; 93% of Daily TikTok Users Research Products Before Buying</div>
+      <div class="followup-status pending">Pending</div>
+      <div class="followup-update">TikTok's commerce campaign is ongoing. Paired with the new 42% live-match viewership uplift data from the World Cup Hub, the brief for TikTok as Mamee's primary World Cup commerce channel is now even stronger. Both data points (93% product research + 42% match viewership uplift) should be cited in every internal World Cup TikTok brief.</div>
+    </div>
+    <div class="followup-item">
+      <div class="followup-original">World Cup Creator Gap Closes in 5 Days &mdash; Most Food Brands Still Hadn't Locked Creator Content for June 11 Match-Night Audience</div>
+      <div class="followup-status escalated">Escalated</div>
+      <div class="followup-update">The World Cup opened June 11. Any brands that didn't lock Day 1 creators missed the opening-day reach spike. The situation has escalated: the tournament is live with 40 days remaining. Mamee's creator content cadence needs to be active now for Week 2 (Jun 15&ndash;21) before Eid al-Adha (Jun 21) creates a brief pause in World Cup content focus. If creator briefs are not active, act this week.</div>
+    </div>
+    <div class="followup-item">
+      <div class="followup-original">Campaign Asia Media Awards Winners Revealed June 16 &mdash; First Pure Media Planning Awards in Asia-Pacific, 3 Days Away</div>
+      <div class="followup-status pending">Pending</div>
+      <div class="followup-update">Campaign Asia Media Awards announce June 16 &mdash; now 3 days away. Set a reminder to review FMCG client entries from Malaysian and SEA media agencies on the day. If Mamee's current media agency appears, use it as brief reinforcement. If they don't, use the winner profiles to set the standard for a media agency review in H2 2026.</div>
+    </div>
+  </div>
+</div>
 
 </div>
 
 <div class="footer">
-  <div class="footer-text">Mamee Double Decker Intelligence Brief &#x2014; 13 June 2026 &#x2014; Auto-generated 7:00AM MYT</div>
-  <div class="footer-text">For: Creative Director &#x2014; Internal Use Only</div>
+  <div class="footer-text">Mamee Double Decker Intelligence Brief &mdash; 13 June 2026 (Saturday)</div>
+  <div class="footer-text">For: Creative Director &mdash; Internal Use Only</div>
 </div>
-
 </body>
 </html>
