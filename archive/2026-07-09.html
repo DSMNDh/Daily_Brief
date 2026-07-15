@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Mamee Intelligence Brief — 9 July 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --red: #E8192C; --yellow: #FFD000;
+    --dark: #0D0D0D; --dark2: #1A1A1A; --dark3: #242424; --dark4: #2E2E2E;
+    --muted: #888; --text: #F0F0F0; --text-dim: #AAAAAA; --border: rgba(255,255,255,0.07);
+    --green: #22C55E; --blue: #3B82F6; --purple: #A855F7; --orange: #F97316;
+    --teal: #14B8A6; --indigo: #6366F1;
+  }
+  body { font-family: 'Inter', sans-serif; background: var(--dark); color: var(--text); font-size: 14px; line-height: 1.6; }
+  .header { background: linear-gradient(135deg, #0D0D0D 0%, #1a0508 50%, #0D0D0D 100%); border-bottom: 1px solid var(--border); padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+  .header-left { display: flex; align-items: center; gap: 16px; }
+  .logo-mark { width: 38px; height: 38px; background: var(--red); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 16px; color: white; flex-shrink: 0; }
+  .header-title { font-size: 14px; font-weight: 700; color: white; }
+  .header-sub { font-size: 11px; color: var(--text-dim); margin-top: 1px; }
+  .header-right { display: flex; align-items: center; gap: 12px; }
+  .date-badge { background: var(--dark3); border: 1px solid var(--border); padding: 5px 14px; border-radius: 100px; font-size: 12px; font-weight: 500; color: var(--text-dim); }
+  .live-dot { display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: var(--green); text-transform: uppercase; letter-spacing: 0.5px; }
+  .live-dot::before { content: ''; width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .stats-bar { display: flex; align-items: center; padding: 0 32px; background: var(--dark2); border-bottom: 1px solid var(--border); overflow-x: auto; }
+  .stat-item { display: flex; align-items: center; gap: 8px; padding: 10px 20px; border-right: 1px solid var(--border); white-space: nowrap; flex-shrink: 0; }
+  .stat-item:first-child { padding-left: 0; }
+  .stat-label-sm { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); }
+  .stat-value-sm { font-size: 13px; font-weight: 700; color: white; }
+  .stat-change { font-size: 10px; font-weight: 600; margin-left: 2px; }
+  .stat-change.up { color: var(--green); }
+  .stat-change.down { color: #f87171; }
+  .stat-change.flat { color: var(--muted); }
+  .trending-tag { font-size: 10px; font-weight: 700; background: rgba(236,72,153,0.15); color: #f472b6; padding: 2px 8px; border-radius: 100px; margin-left: 4px; }
+  .cal-strip { padding: 14px 32px; border-bottom: 1px solid var(--border); }
+  .cal-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 10px; }
+  .cal-items { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 2px; }
+  .cal-item { flex-shrink: 0; padding: 8px 14px; border-radius: 10px; border: 1px solid var(--border); background: var(--dark2); min-width: 120px; }
+  .cal-item.today { border-color: rgba(232,25,44,0.5); background: rgba(232,25,44,0.08); }
+  .cal-item.holiday { border-color: rgba(34,197,94,0.3); background: rgba(34,197,94,0.05); }
+  .cal-item.commerce { border-color: rgba(249,115,22,0.3); background: rgba(249,115,22,0.05); }
+  .cal-item.moment { border-color: rgba(168,85,247,0.3); background: rgba(168,85,247,0.05); }
+  .cal-item.big { border-color: rgba(255,208,0,0.3); background: rgba(255,208,0,0.05); }
+  .cal-date { font-size: 10px; font-weight: 700; color: var(--muted); margin-bottom: 3px; }
+  .cal-event { font-size: 11px; font-weight: 600; color: var(--text); }
+  .cal-type { font-size: 9px; color: var(--text-dim); margin-top: 2px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 24px 32px; }
+  .grid-wide { grid-column: span 3; }
+  .grid-span2 { grid-column: span 2; }
+  .card { background: var(--dark2); border: 1px solid var(--border); border-radius: 16px; padding: 22px 24px; position: relative; overflow: hidden; }
+  .card-accent { position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+  .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+  .card-icon { font-size: 18px; }
+  .card-title { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; flex: 1; }
+  .card-count { font-size: 10px; font-weight: 600; color: var(--muted); background: var(--dark3); padding: 3px 10px; border-radius: 100px; }
+  .signal-list { display: flex; flex-direction: column; gap: 18px; }
+  .signal-item { padding: 14px 16px; background: var(--dark3); border-radius: 12px; border: 1px solid var(--border); }
+  .signal-headline { font-size: 13px; font-weight: 700; color: var(--text); margin: 8px 0 6px; line-height: 1.4; }
+  .signal-body { font-size: 12px; color: var(--text-dim); line-height: 1.6; margin-bottom: 8px; }
+  .signal-implication { font-size: 11.5px; color: #fbbf24; line-height: 1.5; padding: 8px 12px; background: rgba(251,191,36,0.06); border-left: 2px solid rgba(251,191,36,0.4); border-radius: 0 6px 6px 0; margin-bottom: 8px; }
+  .signal-source { font-size: 10px; color: var(--muted); }
+  .pub-time { color: var(--muted); margin-right: 4px; }
+  .urgency { display: inline-block; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; padding: 2px 9px; border-radius: 100px; margin-bottom: 4px; }
+  .urgency.act { background: rgba(232,25,44,0.15); color: #f87171; border: 1px solid rgba(232,25,44,0.3); }
+  .urgency.watch { background: rgba(255,208,0,0.12); color: #fcd34d; border: 1px solid rgba(255,208,0,0.3); }
+  .urgency.fyi { background: rgba(99,102,241,0.12); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.3); }
+  .news-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 4px; }
+  .news-item { padding: 14px 16px; background: var(--dark3); border-radius: 12px; border: 1px solid var(--border); }
+  .news-headline { font-size: 12.5px; font-weight: 700; color: var(--text); margin: 6px 0 5px; line-height: 1.4; }
+  .news-body { font-size: 11.5px; color: var(--text-dim); line-height: 1.55; margin-bottom: 6px; }
+  .news-implication { font-size: 11px; color: #fbbf24; line-height: 1.5; padding: 6px 10px; background: rgba(251,191,36,0.06); border-left: 2px solid rgba(251,191,36,0.4); border-radius: 0 6px 6px 0; margin-bottom: 6px; }
+  .news-source { font-size: 10px; color: var(--muted); }
+  .my-value-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 16px; }
+  .my-value-box { padding: 10px 12px; background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.2); border-radius: 9px; text-align: center; }
+  .my-value-num { font-size: 22px; font-weight: 900; color: #93c5fd; line-height: 1; margin-bottom: 3px; }
+  .my-value-label { font-size: 9.5px; color: var(--text-dim); line-height: 1.4; }
+  .hero-tag { display: inline-block; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 3px 12px; border-radius: 100px; margin-bottom: 12px; background: rgba(232,25,44,0.15); color: #f87171; border: 1px solid rgba(232,25,44,0.3); }
+  .hero-headline { font-size: 22px; font-weight: 900; line-height: 1.25; color: white; margin-bottom: 14px; }
+  .hero-body { font-size: 13.5px; color: var(--text-dim); line-height: 1.7; margin-bottom: 16px; max-width: 860px; }
+  .hero-implication { font-size: 13px; color: #fbbf24; line-height: 1.6; padding: 12px 18px; background: rgba(251,191,36,0.06); border-left: 3px solid rgba(251,191,36,0.5); border-radius: 0 8px 8px 0; margin-bottom: 14px; max-width: 860px; }
+  .hero-source { font-size: 11px; color: var(--muted); }
+  .sea-country-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .sea-col-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+  .sea-col-label.sg { color: #60a5fa; }
+  .sea-col-label.th { color: #34d399; }
+  .sea-col-label.value { color: #fb923c; }
+  .sea-stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 16px; }
+  .sea-stat-box { padding: 8px 12px; background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.15); border-radius: 8px; text-align: center; }
+  .sea-stat-num { font-size: 18px; font-weight: 900; color: #93c5fd; line-height: 1; margin-bottom: 2px; }
+  .sea-stat-label { font-size: 9px; color: var(--text-dim); line-height: 1.3; }
+  .creative-region-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .creative-region-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+  .creative-region-label.global { color: #c084fc; }
+  .creative-region-label.asia { color: #f472b6; }
+  .creative-region-label.sea { color: #fb923c; }
+  .comp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .comp-item { padding: 16px; background: var(--dark3); border-radius: 12px; border: 1px solid var(--border); }
+  .comp-brand { font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; }
+  .comp-headline { font-size: 12.5px; font-weight: 700; color: var(--text); margin: 8px 0 6px; line-height: 1.4; }
+  .comp-body { font-size: 11.5px; color: var(--text-dim); line-height: 1.55; margin-bottom: 8px; }
+  .comp-implication { font-size: 11px; color: #fbbf24; line-height: 1.5; padding: 6px 10px; background: rgba(251,191,36,0.06); border-left: 2px solid rgba(251,191,36,0.4); border-radius: 0 6px 6px 0; margin-bottom: 6px; }
+  .comp-source { font-size: 10px; color: var(--muted); }
+  .card-hero .card-accent { background: linear-gradient(90deg, var(--red), #f97316); }
+  .card-mynews .card-accent { background: linear-gradient(90deg, #3b82f6, #06b6d4); }
+  .card-mynews .card-title { color: #93c5fd; }
+  .card-fmcg .card-accent { background: linear-gradient(90deg, var(--red), var(--yellow)); }
+  .card-fmcg .card-title { color: #fca5a5; }
+  .card-tiktok .card-accent { background: linear-gradient(90deg, #000, #ff0050); }
+  .card-tiktok .card-title { color: #f9a8d4; }
+  .card-xhs .card-accent { background: linear-gradient(90deg, #ff2442, #ff6b6b); }
+  .card-xhs .card-title { color: #fca5a5; }
+  .card-sea .card-accent { background: linear-gradient(90deg, #0ea5e9, #14b8a6); }
+  .card-sea .card-title { color: #7dd3fc; }
+  .card-creative .card-accent { background: linear-gradient(90deg, #a855f7, #6366f1); }
+  .card-creative .card-title { color: #c084fc; }
+  .card-competitor .card-accent { background: linear-gradient(90deg, #E8192C, #f97316); }
+  .card-competitor .card-title { color: #fca5a5; }
+  .card-wc .card-accent { background: linear-gradient(90deg, #16a34a, #ca8a04); }
+  .card-wc .card-title { color: #86efac; }
+  .wc-layout { display: grid; grid-template-columns: 300px 1fr; gap: 24px; }
+  .wc-section-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+  .wc-section-label.matches { color: #86efac; }
+  .wc-section-label.trends { color: #fcd34d; }
+  .match-list { display: flex; flex-direction: column; gap: 7px; }
+  .match-day-header { font-size: 9.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); margin: 10px 0 5px; }
+  .match-day-header:first-child { margin-top: 0; }
+  .match-item { padding: 9px 13px; background: var(--dark3); border-radius: 9px; border: 1px solid var(--border); }
+  .match-item.today { border-color: rgba(22,163,74,0.4); background: rgba(22,163,74,0.06); }
+  .match-teams { font-size: 12px; font-weight: 700; color: var(--text); line-height: 1.3; }
+  .match-vs { color: var(--muted); font-weight: 400; margin: 0 4px; }
+  .match-time { font-size: 10.5px; color: #86efac; font-weight: 600; margin-top: 3px; }
+  .match-meta { font-size: 10px; color: var(--muted); margin-top: 1px; }
+  .footer { margin: 20px 32px 32px; padding: 14px 22px; background: var(--dark2); border: 1px solid var(--border); border-radius: 12px; display: flex; align-items: center; justify-content: space-between; }
+  .footer-text { font-size: 11px; color: var(--muted); }
+  @media (max-width: 768px) {
+    .header { padding: 14px 16px; flex-wrap: wrap; gap: 10px; }
+    .stats-bar { padding: 0 16px; }
+    .cal-strip { padding: 12px 16px; }
+    .hero-headline { font-size: 17px; }
+    .grid { grid-template-columns: 1fr; padding: 14px 16px 0; gap: 12px; }
+    .grid-wide { grid-column: span 1; }
+    .grid-span2 { grid-column: span 1; }
+    .news-grid { grid-template-columns: 1fr !important; }
+    .my-value-stats { grid-template-columns: repeat(2, 1fr) !important; }
+    .sea-stat-row { grid-template-columns: repeat(2, 1fr); }
+    .sea-country-grid { grid-template-columns: 1fr; }
+    .creative-region-grid { grid-template-columns: 1fr; }
+    .comp-grid { grid-template-columns: 1fr; }
+    .footer { margin: 16px 16px 24px; flex-direction: column; gap: 6px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="logo-mark">M</div>
+    <div>
+      <div class="header-title">Mamee Intelligence Brief</div>
+      <div class="header-sub">Creative Director Daily — Thursday, 9 July 2026</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="date-badge">9 July 2026</div>
+    <div class="live-dot">Live</div>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stat-item"><span class="stat-label-sm">USD/MYR</span><span class="stat-value-sm">4.0825</span><span class="stat-change up">+0.30%</span></div>
+  <div class="stat-item"><span class="stat-label-sm">KLCI</span><span class="stat-value-sm">1,683.61</span><span class="stat-change up">+1.31%</span></div>
+  <div class="stat-item"><span class="stat-label-sm">Brent Crude</span><span class="stat-value-sm">$77.92</span><span class="stat-change up">+5.06%</span></div>
+  <div class="stat-item"><span class="stat-label-sm">TikTok MY Trending</span><span class="trending-tag">#WorldCupQuarterfinals</span><span class="trending-tag">#WeAre26</span><span class="trending-tag">#SetiaAlamNightMarket</span></div>
+  <div class="stat-item"><span class="stat-label-sm">Today Watch</span><span class="stat-value-sm" style="color:#fcd34d;">CMAA Gala Night, Sheraton PJ — tonight</span></div>
+</div>
+
+<div class="cal-strip">
+  <div class="cal-label">Campaign Calendar — Next 14 Days</div>
+  <div class="cal-items">
+    <div class="cal-item today big">
+      <div class="cal-date">9 Jul (Today)</div>
+      <div class="cal-event">World Cup Quarterfinals Begin</div>
+      <div class="cal-type">Sports / Tournament</div>
+    </div>
+    <div class="cal-item big">
+      <div class="cal-date">10 Jul, ~5AM MYT</div>
+      <div class="cal-event">Morocco vs France, QF</div>
+      <div class="cal-type">World Cup</div>
+    </div>
+    <div class="cal-item moment">
+      <div class="cal-date">10-12 Jul</div>
+      <div class="cal-event">Thai Festival Singapore</div>
+      <div class="cal-type">Regional Food Event</div>
+    </div>
+    <div class="cal-item moment">
+      <div class="cal-date">11 Jul</div>
+      <div class="cal-event">Johor State Election Polling Day</div>
+      <div class="cal-type">Political / Media Watch</div>
+    </div>
+    <div class="cal-item big">
+      <div class="cal-date">11 Jul, ~4AM MYT</div>
+      <div class="cal-event">Spain vs Belgium, QF</div>
+      <div class="cal-type">World Cup</div>
+    </div>
+    <div class="cal-item commerce">
+      <div class="cal-date">11-12 Jul</div>
+      <div class="cal-event">Giant Nestlé Supermarket Sweep</div>
+      <div class="cal-type">Retail Activation</div>
+    </div>
+    <div class="cal-item big">
+      <div class="cal-date">12 Jul, 6AM &amp; 9AM MYT</div>
+      <div class="cal-event">England-Norway &amp; Argentina-Switzerland QFs</div>
+      <div class="cal-type">World Cup</div>
+    </div>
+    <div class="cal-item commerce">
+      <div class="cal-date">20 Jul</div>
+      <div class="cal-event">Billion Malaysia Nestlé Promo Ends</div>
+      <div class="cal-type">Retail Promo</div>
+    </div>
+    <div class="cal-item big">
+      <div class="cal-date">19 Jul</div>
+      <div class="cal-event">FIFA World Cup 2026 Final</div>
+      <div class="cal-type">World Cup</div>
+    </div>
+  </div>
+</div>
+
+<div class="grid">
+
+  <div class="card card-hero grid-wide">
+    <div class="card-accent"></div>
+    <div class="hero-tag">World Cup / Competitive Threat</div>
+    <div class="hero-headline">Quarterfinals Begin: The Two-Week Stretch That Decides Who Owns Malaysia's World Cup Snack Table</div>
+    <div class="hero-body">The FIFA World Cup 2026 enters its win-or-go-home quarterfinal stage this week — Morocco vs France, Spain vs Belgium, England vs Norway and Argentina vs Switzerland — the tightest, highest-engagement viewing window of the tournament before the 19 July final. Six weeks of fan-zone content have already saturated Malaysian feeds, and global snack players are moving fast to convert that attention into shelf action: PepsiCo's Lay's has landed a 40-flavor World Cup lineup across Malaysia, Singapore, the Philippines and Korea with a Final-tickets sweepstakes, while Nestlé and McDonald's are running parallel in-store and QSR tie-ins domestically (see Competitor Watch).</div>
+    <div class="hero-implication">Mamee angle: the quarterfinal-to-final window is the last high-attention runway before tournament marketing value decays sharply post-19 July. A limited-run "Quarterfinals to Final" bundle or pack-in collectible needs to be in market within days, not weeks, to compete for the shelf moment Lay's has already claimed.</div>
+    <div class="hero-source"><span class="pub-time">9 Jul 2026</span> <a href="https://laysfwc26.com/" target="_blank">Lay's FIFA World Cup 26</a></div>
+  </div>
+
+  <div class="card card-wc grid-wide">
+    <div class="card-accent"></div>
+    <div class="card-header">
+      <div class="card-icon">&#x26BD;</div>
+      <div class="card-title">World Cup Pulse</div>
+      <div class="card-count">FIFA 2026 — Match Schedule + Activation Intel</div>
+    </div>
+    <div class="wc-layout">
+      <div>
+        <div class="wc-section-label matches">&#x1F4C5; Upcoming Matches — MYT</div>
+        <div class="match-list">
+          <div class="match-day-header">Tonight into Fri 10 Jul</div>
+          <div class="match-item today">
+            <div class="match-teams">Morocco <span class="match-vs">vs</span> France</div>
+            <div class="match-time">~5:00 AM MYT · Quarterfinal</div>
+            <div class="match-meta">Boston Stadium</div>
+          </div>
+          <div class="match-day-header">Sat 11 Jul</div>
+          <div class="match-item">
+            <div class="match-teams">Spain <span class="match-vs">vs</span> Belgium</div>
+            <div class="match-time">~4:00 AM MYT · Quarterfinal</div>
+            <div class="match-meta">Inglewood (Los Angeles)</div>
+          </div>
+          <div class="match-day-header">Sun 12 Jul</div>
+          <div class="match-item">
+            <div class="match-teams">England <span class="match-vs">vs</span> Norway</div>
+            <div class="match-time">~6:00 AM MYT · Quarterfinal</div>
+            <div class="match-meta">Miami Stadium</div>
+          </div>
+          <div class="match-item">
+            <div class="match-teams">Argentina <span class="match-vs">vs</span> Switzerland</div>
+            <div class="match-time">~9:00 AM MYT · Quarterfinal</div>
+            <div class="match-meta">Kansas City Stadium</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="wc-section-label trends">&#x1F525; Activation Intel for Mamee</div>
+        <div class="signal-list">
+          <div class="signal-item">
+            <div class="urgency act">Act Now</div>
+            <div class="signal-headline">Pre-Dawn Kickoffs Are Creating a New "Sahur-Style" Snacking Occasion</div>
+            <div class="signal-body">All four quarterfinals land between 4AM and 9AM MYT this week, pushing Malaysian fans into overnight watch-party and early-morning viewing habits rather than the after-work slot earlier rounds enjoyed.</div>
+            <div class="signal-implication">Mamee angle: film a "Match-Night to Sunrise" TikTok livestream snack spread for tonight's Morocco-France kickoff, tagging #WorldCupQuarterfinals, positioning Mister Potato/Mamee Monster as the pre-dawn watch-party staple before this narrow window closes.</div>
+            <div class="signal-source"><span class="pub-time">9 Jul 2026</span> <a href="https://www.aljazeera.com/sports/2026/7/8/fifa-world-cup-2026-quarterfinal-fixtures-match-previews-schedule" target="_blank">Al Jazeera</a></div>
+          </div>
+          <div class="signal-item">
+            <div class="urgency watch">Watch</div>
+            <div class="signal-headline">McDonald's Malaysia Gamifies Matchday With Free Collectible Cups and FIFA Squishmallows</div>
+            <div class="signal-body">McDonald's Malaysia is running a World Cup Combo plus limited-edition FIFA-themed Squishmallow Happy Meal toys, giving QSR a physical collectible hook that snack brands currently lack.</div>
+            <div class="signal-implication">Mamee angle: a mini schedule card or sticker pack-in across the QF-to-Final window could extend shelf dwell time and give TikTok unboxing creators a reason to feature Mamee packs during match nights.</div>
+            <div class="signal-source"><span class="pub-time">6 Jul 2026</span> <a href="https://linknky.com/culture/2026/07/06/mcdonalds-drops-free-collectible-cups-for-usa-world-cup-matchday/" target="_blank">LINK NKY</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-mynews grid-wide">
+    <div class="card-accent"></div>
+    <div class="card-header">
+      <div class="card-icon">&#x1F1F2;&#x1F1FE;</div>
+      <div class="card-title">Malaysia Now</div>
+      <div class="card-count">4 signals</div>
+    </div>
+    <div class="my-value-stats">
+      <div class="my-value-box"><div class="my-value-num">2.0%</div><div class="my-value-label">CPI Inflation<br>May 2026 reading</div></div>
+      <div class="my-value-box"><div class="my-value-num">9M</div><div class="my-value-label">STR/SARA Recipients<br>RM15B Budget 2026</div></div>
+      <div class="my-value-box"><div class="my-value-num">5.4%</div><div class="my-value-label">GDP Growth<br>Q1 2026</div></div>
+      <div class="my-value-box"><div class="my-value-num">RM600</div><div class="my-value-label">i-Saraan Plus Cap<br>Gig worker EPF match</div></div>
+    </div>
+    <div class="news-grid">
+      <div class="news-item">
+        <div class="urgency fyi">FYI</div>
+        <div class="news-headline">Putrajaya Confirms Fuel Supply Secure Through December 2026</div>
+        <div class="news-body">The Economy Ministry says petroleum supply levels are secure nationwide through year-end, aiming to pre-empt cost-of-living anxiety around fuel access ahead of the state election season.</div>
+        <div class="news-implication">Stabilises the logistics-cost outlook for distribution planning into Q4 — no near-term fuel-driven cost shock expected.</div>
+        <div class="news-source"><span class="pub-time">8 Jul 2026</span> <a href="https://www.malaymail.com/news/malaysia/2026/07/08/govt-says-malaysias-fuel-supply-secure-through-december-2026/226763" target="_blank">Malay Mail</a></div>
+      </div>
+      <div class="news-item">
+        <div class="urgency watch">Watch</div>
+        <div class="news-headline">Mini-Markets and Convenience Stores Set for 13.3% Growth in 2026</div>
+        <div class="news-body">Convenience-format retail is forecast to outgrow every other Malaysian retail segment this year, already holding roughly 48% of retail market share and expanding fastest among cost-conscious, top-up shoppers.</div>
+        <div class="news-implication">Mamee angle: prioritise mini-market and convenience-channel shelf placement and single-serve SKUs over hypermarket bulk packs for the rest of 2026.</div>
+        <div class="news-source"><span class="pub-time">8 Jul 2026</span> <a href="https://www.mordorintelligence.com/industry-reports/malaysian-retail-industry" target="_blank">Mordor Intelligence</a></div>
+      </div>
+      <div class="news-item">
+        <div class="urgency fyi">FYI</div>
+        <div class="news-headline">Malaysia's Economy Grows 5.4% in Q1 2026, Beating Forecasts</div>
+        <div class="news-body">GDP growth outpaced expectations despite global uncertainty, with domestic demand up 5.2% on steady household spending and higher disposable income following the second phase of the civil service pay reform.</div>
+        <div class="news-implication">A resilient domestic demand backdrop supports continued willingness to spend on everyday snacking, even as headline sentiment stays cautious.</div>
+        <div class="news-source"><span class="pub-time">15 May 2026 (latest release)</span> <a href="https://www.mof.gov.my/portal/en/news/press-release/malaysias-economy-grows-5-4-in-q1-2026-outpacing-expectations-amid-global-uncertainty" target="_blank">Ministry of Finance</a></div>
+      </div>
+      <div class="news-item">
+        <div class="urgency fyi">FYI</div>
+        <div class="news-headline">STR/SARA Allocation Rises to RM15 Billion, Reaching 9 Million Recipients</div>
+        <div class="news-body">Budget 2026 cash-aid allocation is up from RM13 billion in 2025, with Phase 2 disbursements already reaching an estimated 5.2 million households and senior citizens this year.</div>
+        <div class="news-implication">Cash-aid timing windows remain a reliable trigger point for value-pack promotions among B40 shoppers.</div>
+        <div class="news-source"><span class="pub-time">2026 Budget release</span> <a href="https://theedgemalaysia.com/node/789546" target="_blank">The Edge Malaysia</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-fmcg">
+    <div class="card-accent"></div>
+    <div class="card-header"><div class="card-icon">&#x1F6D2;</div><div class="card-title">FMCG Radar</div><div class="card-count">3 signals</div></div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <div class="urgency watch">Watch</div>
+        <div class="signal-headline">Nestlé Professional Malaysia Gives Away Aprons Styled on Local Eateries</div>
+        <div class="signal-body">Spend RM150 storewide and redeem one of four limited-edition aprons, each themed on a beloved Malaysian eatery format, running from 7 July while stocks last.</div>
+        <div class="signal-implication">Merchandise tied to local food culture is a cheap loyalty lever — Mamee could apply the same "collectible tied to local identity" mechanic to its own trade promotions.</div>
+        <div class="signal-source"><span class="pub-time">7 Jul 2026</span> <a href="https://www.everydayonsales.com/925024/7-july-2026-onwards-nestle-professional-malaysia-free-limited-edition-apron-promotion-spend-rm150-storewide-and-redeem-exclusive-collectible-aprons/" target="_blank">EverydayOnSales</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="urgency watch">Watch</div>
+        <div class="signal-headline">Giant New Bayan Runs a Nestlé Supermarket Sweep With RM38,000 in Prizes</div>
+        <div class="signal-body">Shoppers who spend RM20 on selected Nestlé products at Giant Malaysia between 11-12 July can enter a supermarket-sweep style contest with goodie bags and free gifts on top.</div>
+        <div class="signal-implication">Low spend thresholds with high-visibility prize pools are an efficient way to drive basket-adds during a quiet mid-month week — worth testing at a single flagship outlet before the World Cup Final rush.</div>
+        <div class="signal-source"><span class="pub-time">8 Jul 2026</span> <a href="https://www.everydayonsales.com/925207/11-12-july-2026-giant-malaysia-nestle-supermarket-sweep-promotion-at-giant-new-bayan-shop-selected-nestle-products-win-prizes-worth-up-to-rm38000/" target="_blank">EverydayOnSales</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="urgency fyi">FYI</div>
+        <div class="signal-headline">Convenience Format Now Holds Roughly 48% of Malaysia's Retail Market</div>
+        <div class="signal-body">Convenience stores and mini-markets continue to out-expand hypermarkets and traditional grocers, growing at a 9.37% CAGR through 2030 as shoppers favour frequent, small top-up trips over bulk shopping.</div>
+        <div class="signal-implication">Pack formats and price points optimised for a single convenience-store visit will outperform bulk SKUs this cycle.</div>
+        <div class="signal-source"><span class="pub-time">8 Jul 2026</span> <a href="https://www.mordorintelligence.com/industry-reports/malaysian-retail-industry" target="_blank">Mordor Intelligence</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-tiktok">
+    <div class="card-accent"></div>
+    <div class="card-header"><div class="card-icon">&#x1F3B5;</div><div class="card-title">TikTok Watch</div><div class="card-count">3 signals</div></div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <div class="urgency watch">Watch</div>
+        <div class="signal-headline">Samyang Buldak Omelette at Setia Alam Night Market Goes Viral</div>
+        <div class="signal-body">A hybrid street-food mashup — Korean fire-noodle sauce folded into a night-market omelette — is drawing crowds and repeat creator visits at Setia Alam, extending Malaysia's appetite for cross-cuisine snack mashups.</div>
+        <div class="signal-implication">Mamee angle: a limited "mashup" recipe card using Mamee Chef seasoning or Mister Potato as an omelette mix-in could ride this same night-market discovery format.</div>
+        <div class="signal-source"><span class="pub-time">8 Jul 2026</span> <a href="https://www.tiktok.com/discover/trending-food-in-malaysia" target="_blank">TikTok Discover</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="urgency act">Act Now</div>
+        <div class="signal-headline">Reaction-Compilation Format Peaks as Quarterfinal Eliminations Begin</div>
+        <div class="signal-body">With four teams eliminated by Sunday, fan reaction compilations and "hold my snack" elimination-night edits are set to spike across Malaysian TikTok this weekend.</div>
+        <div class="signal-implication">Post a same-night reaction/edit video seeded with product placement within hours of each Friday-Sunday kickoff to ride the algorithm spike before it cools.</div>
+        <div class="signal-source"><span class="pub-time">9 Jul 2026</span> <a href="https://www.tiktok.com/discover/world-cup-content-ideas" target="_blank">TikTok Discover</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="urgency fyi">FYI</div>
+        <div class="signal-headline">McDonald's Squishmallow Happy Meal Toys Are Driving Unboxing Content</div>
+        <div class="signal-body">FIFA-themed Squishmallow toys tied to McDonald's Malaysia Happy Meals are generating unboxing and collection videos, extending brand dwell time well past the point of sale.</div>
+        <div class="signal-implication">A cheap, collectible pack-in (schedule card, sticker) could earn Mamee the same unboxing content at a fraction of McDonald's merchandising cost.</div>
+        <div class="signal-source"><span class="pub-time">6 Jul 2026</span> <a href="https://www.tiktok.com/discover/mcd-world-cup-2026-happy-meal" target="_blank">TikTok Discover</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-xhs">
+    <div class="card-accent"></div>
+    <div class="card-header"><div class="card-icon">&#x1F4F1;</div><div class="card-title">XHS Pulse</div><div class="card-count">3 signals</div></div>
+    <div class="signal-list">
+      <div class="signal-item">
+        <div class="urgency fyi">FYI</div>
+        <div class="signal-headline">Male Users Now 30-35% of Malaysia's XHS Base, Up on Tech and Auto Interest</div>
+        <div class="signal-body">XHS Malaysia's user base is broadening beyond its historically female, beauty-first core, with male interest concentrated in tech, investing, grooming, automotive and outdoor content.</div>
+        <div class="signal-implication">Mamee angle: savory, male-skewing snack content (car-ride snacking, outdoor/camping packs) has a growing, under-served audience on XHS worth testing before competitors notice.</div>
+        <div class="signal-source"><span class="pub-time">8 Jul 2026</span> <a href="https://mayindigital.com/xiaohongshu-marketing-malaysia-2026-guide/" target="_blank">Mayin Digital</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="urgency watch">Watch</div>
+        <div class="signal-headline">Tourism Malaysia's XHS Partnership Keeps Steering Chinese Visitors' Food Choices</div>
+        <div class="signal-body">The board's ongoing Visit Malaysia 2026 tie-up with XHS remains the primary digital channel shaping where mainland Chinese tourists choose to eat once they land.</div>
+        <div class="signal-implication">Snack gifting sets aimed at tourists (durian, kaya, white-coffee-adjacent flavours) remain a live opportunity tied to inbound Chinese travel content.</div>
+        <div class="signal-source"><span class="pub-time">8 Jul 2026</span> <a href="https://www.marketing-interactive.com/unlocking-the-4-3-million-opportunity-on-xiaohongshu-for-malaysia-and-singapore" target="_blank">Marketing-Interactive</a></div>
+      </div>
+      <div class="signal-item">
+        <div class="urgency fyi">FYI</div>
+        <div class="signal-headline">Singapore XHS Users Spend 45 Minutes a Day Hunting Peer-Validated Reviews</div>
+        <div class="signal-body">Singaporean users are turning to XHS specifically to avoid polished advertising, favouring unscripted peer reviews over branded content.</div>
+        <div class="signal-implication">Mamee's SG-facing XHS content should lean into raw, creator-led taste-test formats over produced ads to match platform expectations.</div>
+        <div class="signal-source"><span class="pub-time">8 Jul 2026</span> <a href="https://we-interactive.com/xiaohongshu-marketing-singapore-the-ultimate-2026-strategic-guide/" target="_blank">WE Interactive</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-sea grid-wide">
+    <div class="card-accent"></div>
+    <div class="card-header"><div class="card-icon">&#x1F30A;</div><div class="card-title">SEA Pulse</div><div class="card-count">6 signals</div></div>
+    <div class="sea-stat-row">
+      <div class="sea-stat-box"><div class="sea-stat-num">1-2%</div><div class="sea-stat-label">Singapore inflation outlook, H2 2026</div></div>
+      <div class="sea-stat-box"><div class="sea-stat-num">45.5</div><div class="sea-stat-label">Thailand Ipsos NCCI, June 2026 reading</div></div>
+      <div class="sea-stat-box"><div class="sea-stat-num">$77.92</div><div class="sea-stat-label">Brent Crude — regional cost-input pressure</div></div>
+    </div>
+    <div class="sea-country-grid">
+      <div>
+        <div class="sea-col-label sg">&#x1F1F8;&#x1F1EC; Singapore</div>
+        <div class="signal-item">
+          <div class="urgency watch">Watch</div>
+          <div class="signal-headline">Electricity and Town Gas Tariffs Rise for Jul-Sep 2026 on Mideast Conflict</div>
+          <div class="signal-body">Regulated household tariffs climbed this quarter as natural gas costs jumped following renewed Middle East tensions, with EMA urging consumers to compare retail electricity plans.</div>
+          <div class="signal-implication">Rising utility bills compress discretionary snack spend for SG households this quarter — value multipacks may outperform premium SKUs into September.</div>
+          <div class="signal-source"><span class="pub-time">8 Jul 2026</span> <a href="https://www.ema.gov.sg/news-events/news/media-releases/2026/Higher-Electricity-and-Town-Gas-Tariffs-for-July-September-2026" target="_blank">EMA Singapore</a></div>
+        </div>
+        <div class="signal-item">
+          <div class="urgency fyi">FYI</div>
+          <div class="signal-headline">Thai Festival Singapore Brings 100+ Street-Food Booths This Weekend</div>
+          <div class="signal-body">Running 10-12 July, the festival packs Singapore with authentic Thai street food vendors, giving regional cuisines a high-visibility seasonal moment.</div>
+          <div class="signal-implication">A short Thai-flavour limited SKU or sampling booth could ride the same cross-cuisine appetite this weekend in SG.</div>
+          <div class="signal-source"><span class="pub-time">8 Jul 2026</span> <a href="https://thetravelintern.com/things-to-do-in-singapore-2026/" target="_blank">The Travel Intern</a></div>
+        </div>
+      </div>
+      <div>
+        <div class="sea-col-label th">&#x1F1F9;&#x1F1ED; Thailand</div>
+        <div class="signal-item">
+          <div class="urgency watch">Watch</div>
+          <div class="signal-headline">Ipsos: Poverty and Inequality Now Thailand's Second-Biggest Worry at 42%</div>
+          <div class="signal-body">Ipsos's June 2026 "What Worries Thailand?" release finds poverty and social inequality has climbed to the second most-cited national concern, just behind corruption, as economic anxiety broadens beyond pure price worries.</div>
+          <div class="signal-implication">Value-tier and multi-pack formats should be positioned around dependability and household budgeting, not just low price, to match this widening anxiety.</div>
+          <div class="signal-source"><span class="pub-time">Jun 2026</span> <a href="https://www.ipsos.com/en-th/what-worries-thailand-june-2026" target="_blank">Ipsos Thailand</a></div>
+        </div>
+        <div class="signal-item">
+          <div class="urgency fyi">FYI</div>
+          <div class="signal-headline">Egg Prices Rise Again as Thai Producers Pass Through Higher Costs</div>
+          <div class="signal-body">Four Thai egg-producer cooperatives lifted the farm-gate price from 3.60 to 3.80 baht per egg from 6 July, part of a broader trend where 28.5% of popular ready-to-eat dishes have seen price increases this year.</div>
+          <div class="signal-implication">Grocery-level input inflation is real even as headline CPI stays moderate — Thai retail pricing has less room to absorb further cost shocks than the topline number suggests.</div>
+          <div class="signal-source"><span class="pub-time">6 Jul 2026</span> <a href="https://www.fas.usda.gov/data/thailand-food-and-beverage-trends-watch-2026" target="_blank">USDA FAS</a></div>
+        </div>
+      </div>
+      <div>
+        <div class="sea-col-label value">&#x1F4B0; SEA Value Signals</div>
+        <div class="signal-item">
+          <div class="urgency act">Act Now</div>
+          <div class="signal-headline">Brent Crude Jumps 5.06% as Hormuz Tensions Escalate</div>
+          <div class="signal-body">Oil surged to $77.92/bbl after the US revoked an Iran export waiver following attacks on vessels transiting the Strait of Hormuz, raising fresh fears of regional energy-supply disruption.</div>
+          <div class="signal-implication">A sudden freight and packaging-cost spike is likely across SEA within weeks — lock in logistics and resin/packaging contracts now rather than waiting for Q3 renewal cycles.</div>
+          <div class="signal-source"><span class="pub-time">8 Jul 2026</span> <a href="https://tradingeconomics.com/commodity/brent-crude-oil" target="_blank">Trading Economics</a></div>
+        </div>
+        <div class="signal-item">
+          <div class="urgency watch">Watch</div>
+          <div class="signal-headline">Energy Cost Pass-Through Hits Singapore and Thailand in the Same Week</div>
+          <div class="signal-body">SG's utility tariff hike and Thailand's egg-price increase both trace back to the same Mideast-driven energy shock, showing how quickly a single geopolitical event now ripples across regional FMCG cost structures.</div>
+          <div class="signal-implication">Build a shared regional contingency line into Q3 pricing models rather than treating each market's cost pressure as isolated.</div>
+          <div class="signal-source"><span class="pub-time">8 Jul 2026</span> <a href="https://www.ema.gov.sg/news-events/news/media-releases/2026/Higher-Electricity-and-Town-Gas-Tariffs-for-July-September-2026" target="_blank">EMA Singapore</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-creative grid-wide">
+    <div class="card-accent"></div>
+    <div class="card-header"><div class="card-icon">&#x1F3A8;</div><div class="card-title">Creative and Industry</div><div class="card-count">8 signals — Global | Asia | SEA</div></div>
+    <div class="creative-region-grid">
+      <div>
+        <div class="creative-region-label global">&#x1F310; Global</div>
+        <div class="signal-item">
+          <div class="urgency fyi">FYI</div>
+          <div class="signal-headline">Heineken's WhatsApp Voice-Note Bot Wins Cannes Social & Creator Grand Prix</div>
+          <div class="signal-body">"Could Have Been a Heineken" (LePub Milan/São Paulo) rewarded users with free beers at nearby bars for forwarding an absurdly long voice note, built entirely as a custom WhatsApp bot mechanic.</div>
+          <div class="signal-implication">Utility-driven, platform-native mechanics are beating polished films for top creative honours — a simple WhatsApp or TikTok bot-style mechanic could out-perform a produced Mamee ad this cycle.</div>
+          <div class="signal-source"><span class="pub-time">Jul 2026</span> <a href="https://www.contagious.com/en/article/cannes-lions-2026-the-grand-prix-winning-campaigns-7a5dede014f64858beaecb2baaa1d8bf" target="_blank">Contagious</a></div>
+        </div>
+        <div class="signal-item">
+          <div class="urgency fyi">FYI</div>
+          <div class="signal-headline">Mercado Livre Turns a Brazilian Stadium Pitch Into a Giant Barcode</div>
+          <div class="signal-body">"Field Barcode" (GUT São Paulo) won the Outdoor Grand Prix by rendering a 104-metre scannable barcode directly onto Pacaembu stadium's playing surface.</div>
+          <div class="signal-implication">Large-scale, scannable physical media is a fresh way to blend outdoor and commerce — worth exploring for a stadium or mall activation during the World Cup Final week.</div>
+          <div class="signal-source"><span class="pub-time">Jul 2026</span> <a href="https://lbbonline.com/news/Cannes-Lions-2026-Grand-Prix-Winners-in-Brand-Experience-and-Activation-Business-Transformation-Commerce-Effectiveness-Strategy-Innovation-and-Luxury" target="_blank">LBBOnline</a></div>
+        </div>
+        <div class="signal-item">
+          <div class="urgency fyi">FYI</div>
+          <div class="signal-headline">AXA's Insurance Policy Rewrite Wins Creative Effectiveness Grand Prix</div>
+          <div class="signal-body">Publicis Conseil got AXA to add "domestic violence" as a covered event in home insurance contracts, making emergency relocation costs claimable for survivors — a genuine product change, not just a campaign.</div>
+          <div class="signal-implication">The industry is rewarding creative that changes an actual product or policy, not just messaging — a reminder that packaging or formulation change can be a bigger creative story than a new ad.</div>
+          <div class="signal-source"><span class="pub-time">Jul 2026</span> <a href="https://bestmediainfo.com/ad-craft/cannes-lions-2026-winners-that-made-advertising-more-exciting-12120198" target="_blank">BestMediaInfo</a></div>
+        </div>
+      </div>
+      <div>
+        <div class="creative-region-label asia">&#x1F30F; Asia</div>
+        <div class="signal-item">
+          <div class="urgency act">Act Now</div>
+          <div class="signal-headline">Content Marketing Awards Asia Pacific 2026 Gala Lands Tonight in Petaling Jaya</div>
+          <div class="signal-body">MARKETECH APAC's CMAA 2026 Gala Night takes place tonight at Sheraton Petaling Jaya, honouring the region's best content-driven storytelling — a rare home-turf industry moment for Malaysian creative teams.</div>
+          <div class="signal-implication">Attend or send a representative tonight — it's a same-day networking window with regional judges and agencies right in Mamee's backyard.</div>
+          <div class="signal-source"><span class="pub-time">9 Jul 2026</span> <a href="https://marketech-apac.com/awards/cmaa-2026/" target="_blank">MARKETECH APAC</a></div>
+        </div>
+        <div class="signal-item">
+          <div class="urgency watch">Watch</div>
+          <div class="signal-headline">Hashtag Asia Awards 2026 Winners Revealed Tomorrow in Singapore</div>
+          <div class="signal-body">The 5th edition of Marketing-Interactive's Hashtag Asia Awards announces its winners at a gala dinner on 10 July at Sofitel Singapore City Centre, capping a season of social-first campaign recognition.</div>
+          <div class="signal-implication">Track which SEA snack or F&amp;B brands place — a strong showing from a direct competitor is worth a same-week internal debrief.</div>
+          <div class="signal-source"><span class="pub-time">8 Jul 2026</span> <a href="https://www.marketing-interactive.com/meet-the-hashtag-asia-awards-2026-finalists" target="_blank">Marketing-Interactive</a></div>
+        </div>
+        <div class="signal-item">
+          <div class="urgency fyi">FYI</div>
+          <div class="signal-headline">Asia's Creative Trend of 2026: Witty, Culturally Aware, Deliberately Undone</div>
+          <div class="signal-body">Award juries across the region are converging on a preference for culturally specific, lightly-produced storytelling over polished global templates, rewarding brands willing to sound like a local voice rather than a global one.</div>
+          <div class="signal-implication">Mamee's existing Malay/Manglish-inflected tone of voice is well-placed for this shift — lean further into it rather than smoothing it out for regional consistency.</div>
+          <div class="signal-source"><span class="pub-time">8 Jul 2026</span> <a href="https://www.campaignasia.com/article/what-stays-what-changes-what-breaks-trends-shaping-marketing-in-2026/yohws9mztae98g4q1h1eojl170" target="_blank">Campaign Asia</a></div>
+        </div>
+      </div>
+      <div>
+        <div class="creative-region-label sea">&#x1F30A; SEA Industry</div>
+        <div class="signal-item">
+          <div class="urgency watch">Watch</div>
+          <div class="signal-headline">NEXT Awards Indonesia 2026 Entries Close 17 July</div>
+          <div class="signal-body">MARKETECH APAC's NEXT Awards Indonesia entry window shuts on 17 July at 11:59PM, one of the closer regional deadlines still open this month.</div>
+          <div class="signal-implication">If Mamee has an Indonesia-relevant case worth submitting, the entry needs to be finalised within the week.</div>
+          <div class="signal-source"><span class="pub-time">8 Jul 2026</span> <a href="https://marketech-apac.com/awards/next-indonesia-2026/" target="_blank">MARKETECH APAC</a></div>
+        </div>
+        <div class="signal-item">
+          <div class="urgency fyi">FYI</div>
+          <div class="signal-headline">NEXT Awards Malaysia 2026 Entries Open Through 31 July</div>
+          <div class="signal-body">The Malaysia edition of MARKETECH APAC's NEXT Awards has a longer runway, closing at the end of the month.</div>
+          <div class="signal-implication">Lower urgency than the Indonesia deadline, but worth earmarking a Mamee World Cup case study now while the campaign is still fresh.</div>
+          <div class="signal-source"><span class="pub-time">8 Jul 2026</span> <a href="https://marketech-apac.com/awards/next-malaysia-2026/" target="_blank">MARKETECH APAC</a></div>
+        </div>
+        <div class="signal-item">
+          <div class="urgency fyi">FYI</div>
+          <div class="signal-headline">Marketing Technology Awards 2026 Entries Open Through 17 July</div>
+          <div class="signal-body">MARKETECH APAC's new martech-focused award recognises real-world marketing technology impact across the region, closing entries the same week as the Indonesia NEXT Awards.</div>
+          <div class="signal-implication">Worth a submission if Mamee's CRM, loyalty app, or e-commerce personalisation work has measurable results to show.</div>
+          <div class="signal-source"><span class="pub-time">8 Jul 2026</span> <a href="https://marketech-apac.com/marketech-apac-opens-entries-for-marketing-technology-awards-2026-spotlighting-real-world-martech-impact/" target="_blank">MARKETECH APAC</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-competitor grid-wide">
+    <div class="card-accent"></div>
+    <div class="card-header"><div class="card-icon">&#x1F3AF;</div><div class="card-title">Competitor Watch</div><div class="card-count">3 brands tracked</div></div>
+    <div class="comp-grid">
+      <div class="comp-item">
+        <div class="comp-brand" style="color:#fbbf24;">Lay's (PepsiCo)</div>
+        <div class="urgency act">Act Now</div>
+        <div class="comp-headline">40 Global World Cup Flavors Land in Malaysia, Singapore, Philippines, Korea</div>
+        <div class="comp-body">Lay's has rolled out a slate of internationally-inspired limited-edition flavors, including a Canadian Maple Caramel SKU, alongside a sweepstakes for FIFA World Cup 26 Final tickets — its largest-ever single-event flavor tie-in.</div>
+        <div class="comp-implication">Counter with a fast-turnaround limited flavor or bundle before 19 July rather than competing on breadth — Mamee can't match 40 SKUs, but can win on cultural specificity Lay's global rollout lacks.</div>
+        <div class="comp-source"><span class="pub-time">8 Jul 2026</span> <a href="https://laysfwc26.com/" target="_blank">Lay's FIFA World Cup 26</a></div>
+      </div>
+      <div class="comp-item">
+        <div class="comp-brand" style="color:#f472b6;">Nestlé</div>
+        <div class="urgency watch">Watch</div>
+        <div class="comp-headline">Parallel In-Store Pushes: Apron Giveaway and Supermarket Sweep</div>
+        <div class="comp-body">Nestlé is running an eatery-themed apron giveaway (spend RM150) alongside a separate RM38,000 supermarket-sweep contest at Giant New Bayan (spend RM20) — two distinct low-cost, high-visibility mechanics running simultaneously.</div>
+        <div class="comp-implication">Nestlé is testing multiple small mechanics rather than one big campaign — Mamee could pilot a similarly cheap, localised in-store contest at a single flagship outlet to compare cost-per-engagement.</div>
+        <div class="comp-source"><span class="pub-time">8 Jul 2026</span> <a href="https://www.everydayonsales.com/925207/11-12-july-2026-giant-malaysia-nestle-supermarket-sweep-promotion-at-giant-new-bayan-shop-selected-nestle-products-win-prizes-worth-up-to-rm38000/" target="_blank">EverydayOnSales</a></div>
+      </div>
+      <div class="comp-item">
+        <div class="comp-brand" style="color:#2dd4bf;">McDonald's</div>
+        <div class="urgency watch">Watch</div>
+        <div class="comp-headline">Free Collectible Cups and FIFA Squishmallow Happy Meals Drive Matchday Merch</div>
+        <div class="comp-body">McDonald's Malaysia is pairing a World Cup Combo with limited-edition FIFA Squishmallow toys, giving its QSR offer a physical collectible layer that's generating unboxing content beyond the point of sale.</div>
+        <div class="comp-implication">A cheap Mamee pack-in (mini schedule card, sticker set) could replicate the same collectible-driven content loop at a fraction of McDonald's merchandising spend.</div>
+        <div class="comp-source"><span class="pub-time">6 Jul 2026</span> <a href="https://linknky.com/culture/2026/07/06/mcdonalds-drops-free-collectible-cups-for-usa-world-cup-matchday/" target="_blank">LINK NKY</a></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-text">Mamee Double Decker Intelligence Brief — 9 July 2026 — Auto-generated 7:00AM MYT</div>
+  <div class="footer-text">For: Creative Director — Internal Use Only</div>
+</div>
+
+</body>
+</html>
