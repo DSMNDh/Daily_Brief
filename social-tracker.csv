@@ -35,3 +35,7 @@ date,brand,platform,handle,followers,likes_or_engagement,notes
 2026-07-26,Mamee Noodles,Instagram,@mameenoodlesmy,19000,,no change vs 25 Jul
 2026-07-26,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),,208927,no change vs 25 Jul
 2026-07-26,Mamee Noodles,TikTok,@mamee.my,49600,81300,shared MAMEE Official account (not a dedicated Noodles handle); no change vs 25 Jul
+2026-07-26,Mister Potato,Facebook,Mister Potato Malaysia (misterpotatocrisps),191000,,METHOD CHANGE - live browser read now shows followers not page likes (Facebook UI no longer surfaces a likes total); baseline reset to followers today, rounded to nearest K by FB's own UI; prior likes-based history (187005) no longer comparable
+2026-07-26,Mamee Monster,Facebook,Mamee Monster (mymameemonster),48000,,METHOD CHANGE - live browser read now shows followers not page likes; baseline reset to followers today, rounded to nearest K by FB's own UI; prior likes-based history (48815) no longer comparable
+2026-07-26,Corntoz,Facebook,Corntoz Pinko (corntozmy),52000,,METHOD CHANGE - live browser read now shows followers not page likes; baseline reset to followers today, rounded to nearest K by FB's own UI; prior likes-based history (52128) no longer comparable
+2026-07-26,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,METHOD CHANGE - live browser read now shows followers not page likes; baseline reset to followers today, rounded to nearest K by FB's own UI; prior likes-based history (208927) no longer comparable
