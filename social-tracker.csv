@@ -43,3 +43,15 @@ date,brand,platform,handle,followers,likes_or_engagement,notes
 2026-07-26,Mamee Monster,Instagram,@iammameemonster,21900,,METHOD CHANGE - live browser read now works (Chrome session logged into Instagram as of 26 Jul 2026); previously WebSearch-only due to anonymous-access block
 2026-07-26,Corntoz,Instagram,@corntozmalaysia,5474,,METHOD CHANGE - live browser read now works (Chrome session logged into Instagram as of 26 Jul 2026); previously WebSearch-only due to anonymous-access block; exact match to prior baseline
 2026-07-26,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,METHOD CHANGE - live browser read now works (Chrome session logged into Instagram as of 26 Jul 2026); previously WebSearch-only due to anonymous-access block
+2026-07-27,Mister Potato,Instagram,@misterpotato_my,25500,,no change vs 26 Jul
+2026-07-27,Mister Potato,Facebook,Mister Potato Malaysia (misterpotatocrisps),191000,,no change vs 26 Jul (FB UI rounds to nearest K)
+2026-07-27,Mister Potato,TikTok,@misterpotatomy,8146,268200,followers +2 vs 26 Jul; likes +100 engagement vs 26 Jul
+2026-07-27,Mamee Monster,Instagram,@iammameemonster,21900,,no change vs 26 Jul
+2026-07-27,Mamee Monster,Facebook,Mamee Monster (mymameemonster),48000,,no change vs 26 Jul (FB UI rounds to nearest K)
+2026-07-27,Mamee Monster,TikTok,@iammameemonster,141300,874700,followers -200 vs 26 Jul; likes +300 engagement vs 26 Jul
+2026-07-27,Corntoz,Instagram,@corntozmalaysia,5473,,followers -1 vs 26 Jul
+2026-07-27,Corntoz,Facebook,Corntoz Pinko (corntozmy),52000,,no change vs 26 Jul (FB UI rounds to nearest K)
+2026-07-27,Corntoz,TikTok,@corntozmalaysia,18100,261800,followers -100 vs 26 Jul; likes no change vs 26 Jul
+2026-07-27,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,no change vs 26 Jul
+2026-07-27,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,no change vs 26 Jul (FB UI rounds to nearest K)
+2026-07-27,Mamee Noodles,TikTok,@mamee.my,49500,81400,shared MAMEE Official account (not a dedicated Noodles handle); followers -100 vs 26 Jul; likes +100 engagement vs 26 Jul
