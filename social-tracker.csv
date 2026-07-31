@@ -103,3 +103,15 @@ date,brand,platform,handle,followers,likes_or_engagement,notes
 2026-07-31,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,no change vs 30 Jul
 2026-07-31,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,no change vs 30 Jul (FB UI rounds to nearest K)
 2026-07-31,Mamee Noodles,TikTok,@mamee.my,49500,81400,shared MAMEE Official account (not a dedicated Noodles handle); not refreshed today - TikTok bot-check did not resolve; carried forward from 30 Jul
+2026-08-01,Mister Potato,Instagram,@misterpotato_my,25500,,no change vs 31 Jul (IG displays rounded 25.5K)
+2026-08-01,Mister Potato,Facebook,Mister Potato Malaysia (misterpotatocrisps),191000,,no change vs 31 Jul (FB UI rounds to nearest K)
+2026-08-01,Mister Potato,TikTok,@misterpotatomy,8138,268200,not refreshed today - TikTok bot-check escalated to CAPTCHA ("drag the slider to fit the puzzle"); per policy CAPTCHAs are never bypassed; carried forward from 30 Jul
+2026-08-01,Mamee Monster,Instagram,@iammameemonster,22000,,followers ~+100 vs 31 Jul (IG now displays rounded 22K vs 21,900 previously)
+2026-08-01,Mamee Monster,Facebook,Mamee Monster (mymameemonster),48000,,no change vs 31 Jul (FB UI rounds to nearest K)
+2026-08-01,Mamee Monster,TikTok,@iammameemonster,141300,875900,not refreshed today - TikTok bot-check escalated to CAPTCHA; per policy CAPTCHAs are never bypassed; carried forward from 30 Jul
+2026-08-01,Corntoz,Instagram,@corntozmalaysia,5478,,followers +3 vs 31 Jul
+2026-08-01,Corntoz,Facebook,Corntoz Pinko (corntozmy),52000,,no change vs 31 Jul (FB UI rounds to nearest K)
+2026-08-01,Corntoz,TikTok,@corntozmalaysia,18100,261800,not refreshed today - TikTok bot-check escalated to CAPTCHA; per policy CAPTCHAs are never bypassed; carried forward from 30 Jul
+2026-08-01,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,no change vs 31 Jul
+2026-08-01,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,no change vs 31 Jul (FB UI rounds to nearest K)
+2026-08-01,Mamee Noodles,TikTok,@mamee.my,49500,81400,shared MAMEE Official account (not a dedicated Noodles handle); not refreshed today - TikTok bot-check escalated to CAPTCHA; carried forward from 30 Jul
