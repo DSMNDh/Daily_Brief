@@ -127,3 +127,15 @@ date,brand,platform,handle,followers,likes_or_engagement,notes
 2026-08-02,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,no change vs 1 Aug
 2026-08-02,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,no change vs 1 Aug (FB UI rounds to nearest K)
 2026-08-02,Mamee Noodles,TikTok,@mamee.my,49500,81400,shared MAMEE Official account (not a dedicated Noodles handle); not refreshed today - TikTok bot-check did not resolve after repeated retries; carried forward from 1 Aug
+2026-08-03,Mister Potato,Instagram,@misterpotato_my,25500,,no change vs 2 Aug (IG displays rounded 25.5K)
+2026-08-03,Mister Potato,Facebook,Mister Potato Malaysia (misterpotatocrisps),191000,,no change vs 2 Aug (FB UI rounds to nearest K)
+2026-08-03,Mister Potato,TikTok,@misterpotatomy,8138,268200,not refreshed today - TikTok bot-check ("Please wait...") did not resolve after repeated retries with extended waits; carried forward from 1 Aug
+2026-08-03,Mamee Monster,Instagram,@iammameemonster,22000,,no change vs 2 Aug
+2026-08-03,Mamee Monster,Facebook,Mamee Monster (mymameemonster),48000,,no change vs 2 Aug (FB UI rounds to nearest K)
+2026-08-03,Mamee Monster,TikTok,@iammameemonster,141300,875900,not refreshed today - TikTok bot-check did not resolve after repeated retries; carried forward from 1 Aug
+2026-08-03,Corntoz,Instagram,@corntozmalaysia,5480,,followers +1 vs 2 Aug
+2026-08-03,Corntoz,Facebook,Corntoz Pinko (corntozmy),52000,,no change vs 2 Aug (FB UI rounds to nearest K)
+2026-08-03,Corntoz,TikTok,@corntozmalaysia,18100,261800,not refreshed today - TikTok bot-check did not resolve after repeated retries; carried forward from 1 Aug
+2026-08-03,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,no change vs 2 Aug
+2026-08-03,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,no change vs 2 Aug (FB UI rounds to nearest K)
+2026-08-03,Mamee Noodles,TikTok,@mamee.my,49500,81400,shared MAMEE Official account (not a dedicated Noodles handle); not refreshed today - TikTok bot-check did not resolve after repeated retries; carried forward from 1 Aug
