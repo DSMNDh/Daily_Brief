@@ -139,3 +139,15 @@ date,brand,platform,handle,followers,likes_or_engagement,notes
 2026-08-03,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,no change vs 2 Aug
 2026-08-03,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,no change vs 2 Aug (FB UI rounds to nearest K)
 2026-08-03,Mamee Noodles,TikTok,@mamee.my,49500,81400,shared MAMEE Official account (not a dedicated Noodles handle); not refreshed today - TikTok bot-check did not resolve after repeated retries; carried forward from 1 Aug
+2026-08-04,Mister Potato,Instagram,@misterpotato_my,25500,,no change vs 3 Aug (IG displays rounded 25.5K)
+2026-08-04,Mister Potato,Facebook,Mister Potato Malaysia (misterpotatocrisps),191000,,no change vs 3 Aug (FB UI rounds to nearest K)
+2026-08-04,Mister Potato,TikTok,@misterpotatomy,8138,268300,live read succeeded; followers no change vs 3 Aug; cumulative likes +100 vs 3 Aug
+2026-08-04,Mamee Monster,Instagram,@iammameemonster,22000,,no change vs 3 Aug
+2026-08-04,Mamee Monster,Facebook,Mamee Monster (mymameemonster),48000,,no change vs 3 Aug (FB UI rounds to nearest K)
+2026-08-04,Mamee Monster,TikTok,@iammameemonster,142000,892400,live read succeeded; TikTok UI shows rounded 142K followers (+700 vs 3 Aug's 141300); cumulative likes +16500 vs 3 Aug
+2026-08-04,Corntoz,Instagram,@corntozmalaysia,5479,,followers -1 vs 3 Aug
+2026-08-04,Corntoz,Facebook,Corntoz Pinko (corntozmy),52000,,no change vs 3 Aug (FB UI rounds to nearest K)
+2026-08-04,Corntoz,TikTok,@corntozmalaysia,18100,261800,live read succeeded; no change vs 3 Aug on either metric
+2026-08-04,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,no change vs 3 Aug
+2026-08-04,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,no change vs 3 Aug (FB UI rounds to nearest K)
+2026-08-04,Mamee Noodles,TikTok,@mamee.my,49600,81400,shared MAMEE Official account (not a dedicated Noodles handle); not refreshed via live read - TikTok bot-check (drag-slider puzzle) blocked after repeated retries; WebSearch fallback used for followers (+100 vs 3 Aug's 49500); no cumulative-likes figure available via fallback, carried forward from 3 Aug
