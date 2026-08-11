@@ -235,3 +235,15 @@ date,brand,platform,handle,followers,likes_or_engagement,notes
 2026-08-11,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,live read succeeded; no change vs 10 Aug
 2026-08-11,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live read succeeded; no change vs 10 Aug (FB UI rounds to nearest K)
 2026-08-11,Mamee Noodles,TikTok,@mamee.my,49400,81400,shared MAMEE Official account (not a dedicated Noodles handle); live read succeeded today (CAPTCHA cleared after prior blocked days); no change vs 10 Aug's carried-forward 49400/81400
+2026-08-12,Mister Potato,Instagram,@misterpotato_my,25600,,live read succeeded; followers +100 vs 11 Aug's 25500
+2026-08-12,Mister Potato,Facebook,Mister Potato Malaysia (misterpotatocrisps),191000,,live read succeeded; no change vs 11 Aug (FB UI rounds to nearest K)
+2026-08-12,Mister Potato,TikTok,@misterpotatomy,8138,268500,not refreshed today - TikTok profile page returned a slider CAPTCHA (bot-check) on load and on retry; per policy CAPTCHAs are not solved; carried forward from 11 Aug
+2026-08-12,Mamee Monster,Instagram,@iammameemonster,22200,,live read succeeded; no change vs 11 Aug
+2026-08-12,Mamee Monster,Facebook,Mamee Monster (mymameemonster),48000,,live read succeeded; no change vs 11 Aug (FB UI rounds to nearest K)
+2026-08-12,Mamee Monster,TikTok,@iammameemonster,142500,903300,live read succeeded; followers no change vs 11 Aug's 142500; cumulative likes +400 vs 902900
+2026-08-12,Corntoz,Instagram,@corntozmalaysia,5475,,live read succeeded; followers -2 vs 11 Aug's 5477 (noise)
+2026-08-12,Corntoz,Facebook,Corntoz Pinko (corntozmy),52000,,live read succeeded; no change vs 11 Aug (FB UI rounds to nearest K)
+2026-08-12,Corntoz,TikTok,@corntozmalaysia,18100,261800,not refreshed today - TikTok profile page returned a slider CAPTCHA (bot-check) on load; per policy CAPTCHAs are not solved; carried forward from 11 Aug
+2026-08-12,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,live read succeeded; no change vs 11 Aug
+2026-08-12,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live read succeeded; no change vs 11 Aug (FB UI rounds to nearest K)
+2026-08-12,Mamee Noodles,TikTok,@mamee.my,49400,81400,shared MAMEE Official account (not a dedicated Noodles handle); not refreshed today - TikTok profile page returned a slider CAPTCHA (bot-check) on load; per policy CAPTCHAs are not solved; carried forward from 11 Aug
