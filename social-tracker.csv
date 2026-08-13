@@ -247,3 +247,15 @@ date,brand,platform,handle,followers,likes_or_engagement,notes
 2026-08-12,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,live read succeeded; no change vs 11 Aug
 2026-08-12,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live read succeeded; no change vs 11 Aug (FB UI rounds to nearest K)
 2026-08-12,Mamee Noodles,TikTok,@mamee.my,49400,81400,shared MAMEE Official account (not a dedicated Noodles handle); not refreshed today - TikTok profile page returned a slider CAPTCHA (bot-check) on load; per policy CAPTCHAs are not solved; carried forward from 11 Aug
+2026-08-13,Mister Potato,Instagram,@misterpotato_my,25600,,live read succeeded; no change vs 12 Aug
+2026-08-13,Mister Potato,Facebook,Mister Potato Malaysia (misterpotatocrisps),191000,,live read succeeded; no change vs 12 Aug (FB UI rounds to nearest K)
+2026-08-13,Mister Potato,TikTok,@misterpotatomy,8135,268600,live read succeeded; followers -3 vs 12 Aug's carried-forward 8138 (noise); cumulative likes +100 vs 268500
+2026-08-13,Mamee Monster,Instagram,@iammameemonster,22300,,live read succeeded; followers +100 vs 12 Aug's 22200
+2026-08-13,Mamee Monster,Facebook,Mamee Monster (mymameemonster),48000,,live read succeeded; no change vs 12 Aug (FB UI rounds to nearest K)
+2026-08-13,Mamee Monster,TikTok,@iammameemonster,142600,905400,live read succeeded; followers +100 vs 12 Aug's 142500; cumulative likes +2100 vs 903300
+2026-08-13,Corntoz,Instagram,@corntozmalaysia,5474,,live read succeeded; followers -1 vs 12 Aug's 5475 (noise)
+2026-08-13,Corntoz,Facebook,Corntoz Pinko (corntozmy),52000,,live read succeeded; no change vs 12 Aug (FB UI rounds to nearest K)
+2026-08-13,Corntoz,TikTok,@corntozmalaysia,18100,261800,live read succeeded today; no change vs 12 Aug's carried-forward 18100/261800
+2026-08-13,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,live read succeeded; no change vs 12 Aug
+2026-08-13,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live read succeeded; no change vs 12 Aug (FB UI rounds to nearest K)
+2026-08-13,Mamee Noodles,TikTok,@mamee.my,49400,81400,shared MAMEE Official account (not a dedicated Noodles handle); live read succeeded today; no change vs 12 Aug's carried-forward 49400/81400
