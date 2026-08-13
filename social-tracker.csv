@@ -259,3 +259,15 @@ date,brand,platform,handle,followers,likes_or_engagement,notes
 2026-08-13,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,live read succeeded; no change vs 12 Aug
 2026-08-13,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live read succeeded; no change vs 12 Aug (FB UI rounds to nearest K)
 2026-08-13,Mamee Noodles,TikTok,@mamee.my,49400,81400,shared MAMEE Official account (not a dedicated Noodles handle); live read succeeded today; no change vs 12 Aug's carried-forward 49400/81400
+2026-08-14,Mister Potato,Instagram,@misterpotato_my,25600,,live read succeeded; no change vs 13 Aug
+2026-08-14,Mister Potato,Facebook,Mister Potato Malaysia (misterpotatocrisps),191000,,live read succeeded; no change vs 13 Aug (FB UI rounds to nearest K)
+2026-08-14,Mister Potato,TikTok,@misterpotatomy,8017,268600,not refreshed via live browser today - TikTok profile page returned a slider CAPTCHA (bot-check) on load and on retry; per policy CAPTCHAs are not solved; followers via WebSearch fallback (8017, -118 vs 13 Aug's live 8135, likely search-index staleness not a real drop); likes carried forward from 13 Aug (no reading available)
+2026-08-14,Mamee Monster,Instagram,@iammameemonster,22400,,live read succeeded; followers +100 vs 13 Aug's 22300
+2026-08-14,Mamee Monster,Facebook,Mamee Monster (mymameemonster),48000,,live read succeeded; no change vs 13 Aug (FB UI rounds to nearest K)
+2026-08-14,Mamee Monster,TikTok,@iammameemonster,141500,874400,not refreshed via live browser today - TikTok profile page returned a slider CAPTCHA (bot-check) on load; per policy CAPTCHAs are not solved; figures via WebSearch fallback (rounded to nearest 100, differs from 13 Aug's live 142600/905400 due to search-index rounding/staleness, not confirmed as real movement)
+2026-08-14,Corntoz,Instagram,@corntozmalaysia,5475,,live read succeeded; followers +1 vs 13 Aug's 5474 (noise)
+2026-08-14,Corntoz,Facebook,Corntoz Pinko (corntozmy),52000,,live read succeeded; no change vs 13 Aug (FB UI rounds to nearest K)
+2026-08-14,Corntoz,TikTok,@corntozmalaysia,18100,261800,not refreshed today - TikTok profile page returned a slider CAPTCHA (bot-check) on load; per policy CAPTCHAs are not solved; WebSearch fallback returned no usable figure; carried forward from 13 Aug
+2026-08-14,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,live read succeeded; no change vs 13 Aug
+2026-08-14,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live read succeeded; no change vs 13 Aug (FB UI rounds to nearest K)
+2026-08-14,Mamee Noodles,TikTok,@mamee.my,49300,81300,shared MAMEE Official account (not a dedicated Noodles handle); not refreshed via live browser today - TikTok profile page returned a slider CAPTCHA (bot-check) on load; per policy CAPTCHAs are not solved; figures via WebSearch fallback (rounded to nearest 100, -100/-100 vs 13 Aug's live 49400/81400, likely rounding noise not a real drop)
