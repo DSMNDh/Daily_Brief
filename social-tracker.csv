@@ -271,3 +271,15 @@ date,brand,platform,handle,followers,likes_or_engagement,notes
 2026-08-14,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,live read succeeded; no change vs 13 Aug
 2026-08-14,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live read succeeded; no change vs 13 Aug (FB UI rounds to nearest K)
 2026-08-14,Mamee Noodles,TikTok,@mamee.my,49300,81300,shared MAMEE Official account (not a dedicated Noodles handle); not refreshed via live browser today - TikTok profile page returned a slider CAPTCHA (bot-check) on load; per policy CAPTCHAs are not solved; figures via WebSearch fallback (rounded to nearest 100, -100/-100 vs 13 Aug's live 49400/81400, likely rounding noise not a real drop)
+2026-08-15,Mister Potato,Instagram,@misterpotato_my,25600,,live read succeeded; no change vs 14 Aug
+2026-08-15,Mister Potato,Facebook,Mister Potato Malaysia (misterpotatocrisps),191000,,live read succeeded; no change vs 14 Aug (FB UI rounds to nearest K)
+2026-08-15,Mister Potato,TikTok,@misterpotatomy,8135,268600,live read succeeded today (no CAPTCHA); followers +118 vs 14 Aug's WebSearch-fallback figure of 8017 (that fallback was noted as likely search-index staleness, not a real drop) - today's live figure matches 13 Aug's live read almost exactly; cumulative likes no change vs 268600
+2026-08-15,Mamee Monster,Instagram,@iammameemonster,22500,,live read succeeded; followers +100 vs 14 Aug's 22400
+2026-08-15,Mamee Monster,Facebook,Mamee Monster (mymameemonster),48000,,live read succeeded; no change vs 14 Aug (FB UI rounds to nearest K)
+2026-08-15,Mamee Monster,TikTok,@iammameemonster,142600,905900,live read succeeded today (no CAPTCHA, resolved on retry); followers +1100 vs 14 Aug's WebSearch-fallback figure of 141500 (that fallback was flagged as possibly stale) - today's followers matches 13 Aug's live read of 142600 almost exactly; cumulative likes +500 vs 13 Aug's live 905400 (a cleaner comparison than the 14 Aug fallback figure)
+2026-08-15,Corntoz,Instagram,@corntozmalaysia,5474,,live read succeeded; followers -1 vs 14 Aug's 5475 (noise)
+2026-08-15,Corntoz,Facebook,Corntoz Pinko (corntozmy),52000,,live read succeeded; no change vs 14 Aug (FB UI rounds to nearest K)
+2026-08-15,Corntoz,TikTok,@corntozmalaysia,18100,261800,live read succeeded today (no CAPTCHA); no change vs 14 Aug's carried-forward 18100/261800 - confirms the carried-forward figure was accurate
+2026-08-15,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,live read succeeded; no change vs 14 Aug
+2026-08-15,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live read succeeded; no change vs 14 Aug (FB UI rounds to nearest K)
+2026-08-15,Mamee Noodles,TikTok,@mamee.my,49400,81400,shared MAMEE Official account (not a dedicated Noodles handle); live read succeeded today (no CAPTCHA); followers +100 vs 14 Aug's WebSearch-fallback figure of 49300; cumulative likes +100 vs 81300
