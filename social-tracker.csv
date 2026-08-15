@@ -283,3 +283,15 @@ date,brand,platform,handle,followers,likes_or_engagement,notes
 2026-08-15,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,live read succeeded; no change vs 14 Aug
 2026-08-15,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live read succeeded; no change vs 14 Aug (FB UI rounds to nearest K)
 2026-08-15,Mamee Noodles,TikTok,@mamee.my,49400,81400,shared MAMEE Official account (not a dedicated Noodles handle); live read succeeded today (no CAPTCHA); followers +100 vs 14 Aug's WebSearch-fallback figure of 49300; cumulative likes +100 vs 81300
+2026-08-16,Mister Potato,Instagram,@misterpotato_my,25600,,live read succeeded; no change vs 15 Aug
+2026-08-16,Mister Potato,Facebook,Mister Potato Malaysia (misterpotatocrisps),191000,,live read succeeded; no change vs 15 Aug (FB UI rounds to nearest K)
+2026-08-16,Mister Potato,TikTok,@misterpotatomy,8138,268600,live read succeeded today (no CAPTCHA); followers +3 vs 15 Aug's 8135 (noise); cumulative likes no change vs 268600
+2026-08-16,Mamee Monster,Instagram,@iammameemonster,22600,,live read succeeded; followers +100 vs 15 Aug's 22500
+2026-08-16,Mamee Monster,Facebook,Mamee Monster (mymameemonster),48000,,live read succeeded; no change vs 15 Aug (FB UI rounds to nearest K)
+2026-08-16,Mamee Monster,TikTok,@iammameemonster,142800,916000,live read succeeded today (no CAPTCHA); followers +200 vs 15 Aug's 142600; cumulative likes +10100 vs 15 Aug's 905900 - a real engagement spike, likely tied to recent content performance
+2026-08-16,Corntoz,Instagram,@corntozmalaysia,5474,,live read succeeded; no change vs 15 Aug
+2026-08-16,Corntoz,Facebook,Corntoz Pinko (corntozmy),52000,,live read succeeded; no change vs 15 Aug (FB UI rounds to nearest K)
+2026-08-16,Corntoz,TikTok,@corntozmalaysia,18100,261800,live read succeeded today (no CAPTCHA); no change vs 15 Aug's 18100/261800
+2026-08-16,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,live read succeeded; no change vs 15 Aug
+2026-08-16,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live read succeeded; no change vs 15 Aug (FB UI rounds to nearest K)
+2026-08-16,Mamee Noodles,TikTok,@mamee.my,49400,81400,shared MAMEE Official account (not a dedicated Noodles handle); live read succeeded today (no CAPTCHA); no change vs 15 Aug's 49400/81400
