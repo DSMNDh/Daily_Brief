@@ -307,3 +307,15 @@ date,brand,platform,handle,followers,likes_or_engagement,notes
 2026-08-17,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,live read succeeded; no change vs 16 Aug
 2026-08-17,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live read succeeded; no change vs 16 Aug (FB UI rounds to nearest K)
 2026-08-17,Mamee Noodles,TikTok,@mamee.my,49400,81400,shared MAMEE Official account (not a dedicated Noodles handle); live read succeeded (no CAPTCHA); no change vs 16 Aug's 49400/81400
+2026-08-18,Mister Potato,Instagram,@misterpotato_my,25600,,live read succeeded; no change vs 17 Aug
+2026-08-18,Mister Potato,Facebook,Mister Potato Malaysia (misterpotatocrisps),191000,,live read succeeded; no change vs 17 Aug (FB UI rounds to nearest K)
+2026-08-18,Mister Potato,TikTok,@misterpotatomy,8130,268700,live read succeeded (no CAPTCHA); followers -2 vs 17 Aug's 8132 (noise); cumulative likes no change vs 268700
+2026-08-18,Mamee Monster,Instagram,@iammameemonster,22800,,live read succeeded; no change vs 17 Aug
+2026-08-18,Mamee Monster,Facebook,Mamee Monster (mymameemonster),48000,,live read succeeded; no change vs 17 Aug (FB UI rounds to nearest K)
+2026-08-18,Mamee Monster,TikTok,@iammameemonster,142900,920000,live read succeeded (no CAPTCHA); no change in followers vs 17 Aug's 142900; cumulative likes +200 vs 17 Aug's 919800
+2026-08-18,Corntoz,Instagram,@corntozmalaysia,5479,,live read succeeded; followers +1 vs 17 Aug's 5478 (noise)
+2026-08-18,Corntoz,Facebook,Corntoz Pinko (corntozmy),52000,,live read succeeded; no change vs 17 Aug (FB UI rounds to nearest K)
+2026-08-18,Corntoz,TikTok,@corntozmalaysia,18100,261800,live read hit a CAPTCHA on first attempt; succeeded on retry (no login needed); no change vs 17 Aug's 18100/261800
+2026-08-18,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,live read succeeded; no change vs 17 Aug
+2026-08-18,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live read succeeded; no change vs 17 Aug (FB UI rounds to nearest K)
+2026-08-18,Mamee Noodles,TikTok,@mamee.my,49400,81400,shared MAMEE Official account (not a dedicated Noodles handle); live read succeeded; no change vs 17 Aug's 49400/81400
