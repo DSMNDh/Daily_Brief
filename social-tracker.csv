@@ -343,3 +343,15 @@ date,brand,platform,handle,followers,likes_or_engagement,notes
 2026-08-21,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,live read succeeded; no change vs 19 Aug
 2026-08-21,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live read succeeded; no change vs 19 Aug (FB UI rounds to nearest K)
 2026-08-21,Mamee Noodles,TikTok,@mamee.my,49400,81400,shared MAMEE Official account (not a dedicated Noodles handle); live read succeeded; no change vs 19 Aug's 49400/81400
+2026-08-22,Mister Potato,Instagram,@misterpotato_my,25600,,live read succeeded; no change vs 21 Aug
+2026-08-22,Mister Potato,Facebook,Mister Potato Malaysia (misterpotatocrisps),191000,,live read succeeded; no change vs 21 Aug (FB UI rounds to nearest K)
+2026-08-22,Mister Potato,TikTok,@misterpotatomy,8137,268700,live read succeeded (no CAPTCHA on retry); followers +4 vs 21 Aug's 8133 (noise); cumulative likes no change vs 268700
+2026-08-22,Mamee Monster,Instagram,@iammameemonster,23100,,live read succeeded; followers +100 vs 21 Aug's 23000
+2026-08-22,Mamee Monster,Facebook,Mamee Monster (mymameemonster),48000,,live read succeeded; no change vs 21 Aug (FB UI rounds to nearest K)
+2026-08-22,Mamee Monster,TikTok,@iammameemonster,143100,924100,not refreshed today - page repeatedly returned "Something went wrong" after 4 retries; carried forward 21 Aug's 143100 followers / 924100 cumulative likes
+2026-08-22,Corntoz,Instagram,@corntozmalaysia,5473,,live read succeeded; followers -7 vs 21 Aug's 5480 (noise)
+2026-08-22,Corntoz,Facebook,Corntoz Pinko (corntozmy),52000,,live read succeeded; no change vs 21 Aug (FB UI rounds to nearest K)
+2026-08-22,Corntoz,TikTok,@corntozmalaysia,18100,261800,not refreshed today - page repeatedly returned "Something went wrong" after 3 retries; carried forward 21 Aug's 18100/261800
+2026-08-22,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,live read succeeded; no change vs 21 Aug
+2026-08-22,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live read succeeded; no change vs 21 Aug (FB UI rounds to nearest K)
+2026-08-22,Mamee Noodles,TikTok,@mamee.my,49400,81400,shared MAMEE Official account (not a dedicated Noodles handle); not refreshed today - page repeatedly returned "Something went wrong" after 3 retries; carried forward 21 Aug's 49400/81400
