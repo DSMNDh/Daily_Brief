@@ -367,3 +367,15 @@ date,brand,platform,handle,followers,likes_or_engagement,notes
 2026-08-23,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,live read succeeded; no change vs 22 Aug
 2026-08-23,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live read succeeded; no change vs 22 Aug (FB UI rounds to nearest K)
 2026-08-23,Mamee Noodles,TikTok,@mamee.my,49400,81400,shared MAMEE Official account (not a dedicated Noodles handle); not refreshed today - persistent "Please wait" bot-check screen; carried forward 22 Aug's 49400/81400
+2026-08-24,Mister Potato,Instagram,@misterpotato_my,25600,,live read succeeded; no change vs 23 Aug
+2026-08-24,Mister Potato,Facebook,Mister Potato Malaysia (misterpotatocrisps),191000,,live read succeeded; no change vs 23 Aug (FB UI rounds to nearest K)
+2026-08-24,Mister Potato,TikTok,@misterpotatomy,8137,268700,not refreshed today - persistent "Please wait"/"Something went wrong" bot-check screen across 4+ retries; WebSearch fallback found no current figure; carried forward 23 Aug's 8137/268700
+2026-08-24,Mamee Monster,Instagram,@iammameemonster,23200,,live read succeeded; no change vs 23 Aug
+2026-08-24,Mamee Monster,Facebook,Mamee Monster (mymameemonster),48000,,live read succeeded; no change vs 23 Aug (FB UI rounds to nearest K)
+2026-08-24,Mamee Monster,TikTok,@iammameemonster,143100,924100,not refreshed today - persistent "Something went wrong" bot-check screen across 3 retries; WebSearch fallback found no current figure; carried forward 23 Aug's 143100/924100
+2026-08-24,Corntoz,Instagram,@corntozmalaysia,5474,,live read succeeded; no change vs 23 Aug
+2026-08-24,Corntoz,Facebook,Corntoz Pinko (corntozmy),52000,,live read succeeded; no change vs 23 Aug (FB UI rounds to nearest K)
+2026-08-24,Corntoz,TikTok,@corntozmalaysia,18100,261800,live read succeeded; no change vs 23 Aug's 18100/261800
+2026-08-24,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,live read succeeded; no change vs 23 Aug
+2026-08-24,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live read succeeded; no change vs 23 Aug (FB UI rounds to nearest K)
+2026-08-24,Mamee Noodles,TikTok,@mamee.my,49400,81400,shared MAMEE Official account (not a dedicated Noodles handle); not refreshed today - persistent "Something went wrong" bot-check screen; WebSearch fallback found no current figure; carried forward 23 Aug's 49400/81400
