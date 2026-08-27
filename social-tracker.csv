@@ -379,3 +379,15 @@ date,brand,platform,handle,followers,likes_or_engagement,notes
 2026-08-24,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,live read succeeded; no change vs 23 Aug
 2026-08-24,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live read succeeded; no change vs 23 Aug (FB UI rounds to nearest K)
 2026-08-24,Mamee Noodles,TikTok,@mamee.my,49400,81400,shared MAMEE Official account (not a dedicated Noodles handle); not refreshed today - persistent "Something went wrong" bot-check screen; WebSearch fallback found no current figure; carried forward 23 Aug's 49400/81400
+2026-08-27,Mister Potato,Instagram,@misterpotato_my,25700,,live read succeeded; +100 vs 24 Aug's 25600
+2026-08-27,Mister Potato,Facebook,Mister Potato Malaysia (misterpotatocrisps),191000,,live read succeeded; no change vs 24 Aug (FB UI rounds to nearest K)
+2026-08-27,Mister Potato,TikTok,@misterpotatomy,8138,268800,live read succeeded; +1 vs 24 Aug's 8137 followers; +100 vs 268700 cumulative likes
+2026-08-27,Mamee Monster,Instagram,@iammameemonster,23500,,live read succeeded; +300 vs 24 Aug's 23200
+2026-08-27,Mamee Monster,Facebook,Mamee Monster (mymameemonster),49000,,live read succeeded; +1000 vs 24 Aug's 48000 (FB UI rounds to nearest K)
+2026-08-27,Mamee Monster,TikTok,@iammameemonster,144900,953600,live read succeeded; +1800 vs 24 Aug's 143100 followers; +29500 vs 924100 cumulative likes; bio now reads "Im taking over the account now lol" on both IG and TikTok - possible handoff to a new social manager/creator, worth watching
+2026-08-27,Corntoz,Instagram,@corntozmalaysia,5475,,live read succeeded; +1 vs 24 Aug's 5474 (noise)
+2026-08-27,Corntoz,Facebook,Corntoz Pinko (corntozmy),51000,,live read succeeded; -1000 vs 24 Aug's 52000 (FB UI rounds to nearest K)
+2026-08-27,Corntoz,TikTok,@corntozmalaysia,18100,261800,live read succeeded; no change vs 24 Aug's 18100/261800
+2026-08-27,Mamee Noodles,Instagram,@mameenoodlesmy,18500,,live read succeeded; no change vs 24 Aug
+2026-08-27,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live read succeeded; no change vs 24 Aug (FB UI rounds to nearest K)
+2026-08-27,Mamee Noodles,TikTok,@mamee.my,49300,81400,shared MAMEE Official account (not a dedicated Noodles handle); live read succeeded; -100 vs 24 Aug's 49400 followers; no change vs 81400 cumulative likes
