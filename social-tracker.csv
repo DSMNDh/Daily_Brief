@@ -475,3 +475,15 @@ date,brand,platform,handle,followers,likes_or_engagement,notes
 2026-09-05,Mamee Noodles,Instagram,@mameenoodlesmy,18600,,live read succeeded; no change vs 4 Sept
 2026-09-05,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live read succeeded; no change vs 4 Sept (FB UI rounds to nearest K)
 2026-09-05,Mamee Noodles,TikTok,@mamee.my,49300,81400,shared MAMEE Official account (not a dedicated Noodles handle); not refreshed today - persistent no-content/bot-check screen across 3+ retries; carried forward 4 Sept's 49300/81400
+2026-09-06,Mister Potato,Instagram,@misterpotato_my,25900,,live read succeeded; no change vs 5 Sept
+2026-09-06,Mister Potato,Facebook,Mister Potato Malaysia (misterpotatocrisps),191000,,live read succeeded; no change vs 5 Sept (FB UI rounds to nearest K)
+2026-09-06,Mister Potato,TikTok,@misterpotatomy,8144,269100,live read succeeded; +1 follower vs 5 Sept's 8143 (flat); +100 cumulative likes vs 5 Sept's 269000
+2026-09-06,Mamee Monster,Instagram,@iammameemonster,24100,,live read succeeded; +100 vs 5 Sept's 24000; bio still reads "Im taking over the account now lol"
+2026-09-06,Mamee Monster,Facebook,Mamee Monster (mymameemonster),49000,,live read succeeded; no change vs 5 Sept (FB UI rounds to nearest K); bio still reads "Im taking over the account now lol"
+2026-09-06,Mamee Monster,TikTok,@iammameemonster,146300,971600,not refreshed today - persistent "Please wait"/no-content bot-check across 4+ retries; carried forward 5 Sept's 146300/971600
+2026-09-06,Corntoz,Instagram,@corntozmalaysia,5805,,live read succeeded; +73 vs 5 Sept's 5732
+2026-09-06,Corntoz,Facebook,Corntoz Pinko (corntozmy),51000,,live read succeeded; no change vs 5 Sept (FB UI rounds to nearest K)
+2026-09-06,Corntoz,TikTok,@corntozmalaysia,18100,262200,live read succeeded; no change in followers vs 5 Sept's 18100; +100 cumulative likes vs 5 Sept's 262100
+2026-09-06,Mamee Noodles,Instagram,@mameenoodlesmy,18600,,live read succeeded; no change vs 5 Sept
+2026-09-06,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live read succeeded; no change vs 5 Sept (FB UI rounds to nearest K)
+2026-09-06,Mamee Noodles,TikTok,@mamee.my,49300,81400,shared MAMEE Official account (not a dedicated Noodles handle); live read succeeded; no change vs 5 Sept
