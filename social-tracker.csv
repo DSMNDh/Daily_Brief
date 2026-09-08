@@ -511,3 +511,15 @@ date,brand,platform,handle,followers,likes_or_engagement,notes
 2026-09-08,Mamee Noodles,Instagram,@mameenoodlesmy,18600,,live read succeeded; no change vs 7 Sept
 2026-09-08,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live read succeeded; no change vs 7 Sept (FB UI rounds to nearest K)
 2026-09-08,Mamee Noodles,TikTok,@mamee.my,49300,81400,shared MAMEE Official account (not a dedicated Noodles handle); live read succeeded; no change vs 7 Sept
+2026-09-09,Mister Potato,Instagram,@misterpotato_my,26000,,live read succeeded; no change vs 8 Sept's 26000 (IG UI displays as "26K")
+2026-09-09,Mister Potato,Facebook,Mister Potato Malaysia (misterpotatocrisps),191000,,live read succeeded; no change vs 8 Sept (FB UI rounds to nearest K)
+2026-09-09,Mister Potato,TikTok,@misterpotatomy,8138,269100,live read succeeded; -1 follower vs 8 Sept's 8139 (noise); no change cumulative likes vs 8 Sept's 269100
+2026-09-09,Mamee Monster,Instagram,@iammameemonster,24200,,live read succeeded; +100 vs 8 Sept's 24100; bio still reads "Im taking over the account now lol"
+2026-09-09,Mamee Monster,Facebook,Mamee Monster (mymameemonster),49000,,live read succeeded; no change vs 8 Sept (FB UI rounds to nearest K); bio still reads "Im taking over the account now lol"
+2026-09-09,Mamee Monster,TikTok,@iammameemonster,146700,976000,live read succeeded; +100 followers vs 8 Sept's 146600; +1000 cumulative likes vs 8 Sept's 975000
+2026-09-09,Corntoz,Instagram,@corntozmalaysia,6043,,live read succeeded; +162 vs 8 Sept's 5881
+2026-09-09,Corntoz,Facebook,Corntoz Pinko (corntozmy),51000,,live read succeeded; no change vs 8 Sept (FB UI rounds to nearest K)
+2026-09-09,Corntoz,TikTok,@corntozmalaysia,18100,262200,live read succeeded; no change vs 8 Sept
+2026-09-09,Mamee Noodles,Instagram,@mameenoodlesmy,18600,,live read succeeded; no change vs 8 Sept
+2026-09-09,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live read succeeded; no change vs 8 Sept (FB UI rounds to nearest K)
+2026-09-09,Mamee Noodles,TikTok,@mamee.my,49300,81400,shared MAMEE Official account (not a dedicated Noodles handle); live read succeeded; no change vs 8 Sept
