@@ -655,3 +655,15 @@ date,brand,platform,handle,followers,likes_or_engagement,notes
 2026-09-23,Mamee Noodles,Instagram,@mameenoodlesmy,18600,,live browser read via built-in browser pane; no change vs 22 Sept
 2026-09-23,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live browser read via built-in browser pane; no change vs 22 Sept (FB UI rounds to nearest K)
 2026-09-23,Mamee Noodles,TikTok,@mamee.my,49200,81500,shared MAMEE Official account (not a dedicated Noodles handle); live browser read via built-in browser pane; -100 followers vs 22 Sept; +100 cumulative likes vs 22 Sept
+2026-09-24,Mister Potato,Instagram,@misterpotato_my,26100,,live browser read via built-in browser pane (Claude in Chrome unavailable this run); no change vs 23 Sept
+2026-09-24,Mister Potato,Facebook,Mister Potato Malaysia (misterpotatocrisps),191000,,live browser read via built-in browser pane; no change vs 23 Sept (FB UI rounds to nearest K)
+2026-09-24,Mister Potato,TikTok,@misterpotatomy,8122,269200,live browser read via built-in browser pane; -3 followers vs 23 Sept; likes no change
+2026-09-24,Mamee Monster,Instagram,@iammameemonster,24800,,live browser read via built-in browser pane; no change vs 23 Sept
+2026-09-24,Mamee Monster,Facebook,Mamee Monster (mymameemonster),49000,,live browser read via built-in browser pane; no change vs 23 Sept (FB UI rounds to nearest K)
+2026-09-24,Mamee Monster,TikTok,@iammameemonster,148300,990900,live browser read via built-in browser pane; no change vs 23 Sept
+2026-09-24,Corntoz,Instagram,@corntozmalaysia,6354,,live browser read via built-in browser pane; -12 vs 23 Sept
+2026-09-24,Corntoz,Facebook,Corntoz Pinko (corntozmy),51000,,live browser read via built-in browser pane; no change vs 23 Sept (FB UI rounds to nearest K)
+2026-09-24,Corntoz,TikTok,@corntozmalaysia,18000,262200,live browser read via built-in browser pane; no change vs 23 Sept (FB/TikTok rounding); likes no change
+2026-09-24,Mamee Noodles,Instagram,@mameenoodlesmy,18600,,live browser read via built-in browser pane; no change vs 23 Sept
+2026-09-24,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live browser read via built-in browser pane; no change vs 23 Sept (FB UI rounds to nearest K)
+2026-09-24,Mamee Noodles,TikTok,@mamee.my,49200,81500,shared MAMEE Official account (not a dedicated Noodles handle); live browser read via built-in browser pane; no change vs 23 Sept
