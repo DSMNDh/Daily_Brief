@@ -643,3 +643,15 @@ date,brand,platform,handle,followers,likes_or_engagement,notes
 2026-09-22,Mamee Noodles,Instagram,@mameenoodlesmy,18600,,not refreshed today - Claude in Chrome unavailable this run; WebSearch returned ~19K consistent with prior reading; treated as no change vs 21 Sept
 2026-09-22,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,not refreshed today - Claude in Chrome unavailable this run; no reliable WebSearch figure found; carried forward from 21 Sept (FB UI rounds to nearest K)
 2026-09-22,Mamee Noodles,TikTok,@mamee.my,49300,81400,shared MAMEE Official account (not a dedicated Noodles handle); not refreshed today - Claude in Chrome unavailable this run; WebSearch confirmed 49.3K followers consistent with prior reading but cumulative-likes not available via search so carried forward from 21 Sept
+2026-09-23,Mister Potato,Instagram,@misterpotato_my,26100,,live browser read via built-in browser pane (Claude in Chrome unavailable this run; used Claude's own browser pane instead); +100 vs 22 Sept
+2026-09-23,Mister Potato,Facebook,Mister Potato Malaysia (misterpotatocrisps),191000,,live browser read via built-in browser pane; no change vs 22 Sept (FB UI rounds to nearest K)
+2026-09-23,Mister Potato,TikTok,@misterpotatomy,8125,269200,live browser read via built-in browser pane; +2 followers vs 22 Sept; likes no change
+2026-09-23,Mamee Monster,Instagram,@iammameemonster,24800,,live browser read via built-in browser pane; +200 vs 22 Sept
+2026-09-23,Mamee Monster,Facebook,Mamee Monster (mymameemonster),49000,,live browser read via built-in browser pane; no change vs 22 Sept (FB UI rounds to nearest K)
+2026-09-23,Mamee Monster,TikTok,@iammameemonster,148300,990900,live browser read via built-in browser pane; +600 followers vs 22 Sept; +6100 cumulative likes vs 22 Sept (FB post shows a viral Keretapi Sarong appearance driving the spike)
+2026-09-23,Corntoz,Instagram,@corntozmalaysia,6366,,live browser read via built-in browser pane; +82 vs 22 Sept
+2026-09-23,Corntoz,Facebook,Corntoz Pinko (corntozmy),51000,,live browser read via built-in browser pane; no change vs 22 Sept (FB UI rounds to nearest K)
+2026-09-23,Corntoz,TikTok,@corntozmalaysia,18000,262200,live browser read via built-in browser pane; -100 followers vs 22 Sept (within FB/TikTok rounding); likes no change
+2026-09-23,Mamee Noodles,Instagram,@mameenoodlesmy,18600,,live browser read via built-in browser pane; no change vs 22 Sept
+2026-09-23,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live browser read via built-in browser pane; no change vs 22 Sept (FB UI rounds to nearest K)
+2026-09-23,Mamee Noodles,TikTok,@mamee.my,49200,81500,shared MAMEE Official account (not a dedicated Noodles handle); live browser read via built-in browser pane; -100 followers vs 22 Sept; +100 cumulative likes vs 22 Sept
