@@ -691,3 +691,15 @@ date,brand,platform,handle,followers,likes_or_engagement,notes
 2026-10-08,Mamee Noodles,Instagram,@mameenoodlesmy,18600,,live browser read via built-in browser pane; no change vs 25 Sept
 2026-10-08,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live browser read via built-in browser pane; no change vs 25 Sept (FB UI rounds to nearest K)
 2026-10-08,Mamee Noodles,TikTok,@mamee.my,49200,81500,shared MAMEE Official account (not a dedicated Noodles handle); live browser read via built-in browser pane; no change vs 25 Sept
+2026-10-09,Mister Potato,Instagram,@misterpotato_my,26100,,live browser read via built-in browser pane (Chrome extension not connected this run); no change vs 8 Oct; 815 posts
+2026-10-09,Mister Potato,Facebook,Mister Potato Malaysia (misterpotatocrisps),191000,,live browser read via built-in browser pane; no change vs 8 Oct (FB UI rounds to nearest K)
+2026-10-09,Mister Potato,TikTok,@misterpotatomy,8134,269400,not refreshed today - TikTok bot-check screen did not resolve across four attempts; WebSearch fallback returned no figure for this handle; carried forward from 8 Oct
+2026-10-09,Mamee Monster,Instagram,@iammameemonster,25000,,live browser read via built-in browser pane; no change vs 8 Oct; 824 posts (+1 post)
+2026-10-09,Mamee Monster,Facebook,Mamee Monster (mymameemonster),49000,,live browser read via built-in browser pane; no change vs 8 Oct (FB UI rounds to nearest K)
+2026-10-09,Mamee Monster,TikTok,@iammameemonster,148200,991400,not refreshed today - TikTok bot-check did not resolve; WebSearch fallback returned a cached 148.3K/991.2K whose likes sat BELOW yesterday's live read so it was rejected as stale; carried forward from 8 Oct
+2026-10-09,Corntoz,Instagram,@corntozmalaysia,6797,,live browser read via built-in browser pane; -7 vs 8 Oct; 494 posts
+2026-10-09,Corntoz,Facebook,Corntoz Pinko (corntozmy),51000,,live browser read via built-in browser pane; no change vs 8 Oct (FB UI rounds to nearest K)
+2026-10-09,Corntoz,TikTok,@corntozmalaysia,18000,262300,not refreshed today - TikTok bot-check did not resolve; carried forward from 8 Oct
+2026-10-09,Mamee Noodles,Instagram,@mameenoodlesmy,18600,,live browser read via built-in browser pane; no change vs 8 Oct; 635 posts
+2026-10-09,Mamee Noodles,Facebook,MAMEE Noodles (mameenoodlesmy),208000,,live browser read via built-in browser pane; no change vs 8 Oct (FB UI rounds to nearest K)
+2026-10-09,Mamee Noodles,TikTok,@mamee.my,49200,81500,shared MAMEE Official account (not a dedicated Noodles handle); not refreshed today - TikTok bot-check did not resolve; carried forward from 8 Oct
