@@ -1,6 +1,4 @@
-<meta name="claude:viewport-fit-sides" content="cover">
-<title>Mamee Consumer and Retail Briefing</title>
-<style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="claude:viewport-fit-sides" content="cover"><title>Mamee Consumer and Retail Briefing</title><style>
   :root {
     --bg: #07090F; --panel: rgba(22,26,38,0.78); --panel-line: rgba(255,255,255,0.07);
     --fg: #EEF1F8; --muted: #8A93A8; --dim: #5C6478;
@@ -53,46 +51,4 @@
     .span2 { grid-column: auto; }
     .app { padding-block: 16px 28px; }
   }
-</style>
-
-<div class="app"><main class="grid" id="root"></main></div>
-
-<script>
-const ITEMS = [{"market": "Malaysia", "date": "2026-10-12", "status": "verified, policy context", "headline": "Seven takeaways from Malaysia Budget 2027 for marketers", "why": "Consumer prices and marketing budgets for 2027 planning", "source": "Marketing-Interactive", "url": ""}, {"market": "Malaysia", "date": "2026-10-13", "status": "verified", "headline": "IKEA Kuching reworks large-format stores for omnichannel shopping", "why": "Store formats are changing; shopping is moving to omnichannel", "source": "Marketing-Interactive", "url": ""}, {"market": "Thailand", "date": "2026-10-09", "status": "listed under PR news", "headline": "Mali Family & Kids Awards 2026 honours brands trusted by mothers", "why": "Parent trust as a brand signal in household categories", "source": "Nation Thailand", "url": "https://www.nationthailand.com/pr-news/40072063"}, {"market": "Thailand", "date": "2026-10-08", "status": "listed under PR news", "headline": "Decoding NEO: Why FMCG must stay forever young", "why": "Commentary on keeping packaged-goods brands relevant", "source": "Nation Thailand", "url": "https://www.nationthailand.com/pr-news/40072023"}, {"market": "Thailand", "date": "2026-10-06", "status": "press release", "headline": "Calbee launches POP LAYERS multilayer corn snack in Thailand (Salt, Cheese, BBQ), sold first at 7-Eleven", "why": "Snack entrant using Indonesian GuriBee know-how; 7-Eleven as the launch channel", "source": "Thailand Business News", "url": "https://www.thailand-business-news.com/pr-news/calbee-to-launch-new-asia-oceania-strategic-brand-pop-layers-in-thailand"}, {"market": "Thailand", "date": "2026-10-06", "status": "verified", "headline": "Thailand inflation rose to 2.82% in September, highest in five months, driven by fuel", "why": "Central bank expected to hold its 1.0% policy rate through 2026", "source": "Kaohoon International", "url": "https://www.kaohooninternational.com/?p=592192"}];
-const MARKETS = [
-  {name: "Malaysia", note: "Two items in the window."},
-  {name: "Thailand", note: "Four items in the window. Two are press releases or PR news."},
-  {name: "Singapore", note: "Nothing dated in the last 2 weeks."},
-  {name: "Australia", note: "Nothing dated in the last 2 weeks."}
-];
-function el(tag, cls, text) { const n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
-const root = document.getElementById("root");
-
-const top = el("section", "card span2");
-top.appendChild(el("div", "muted", "Wednesday, 14 October 2026 · Window: 30 Sep–14 Oct 2026"));
-top.appendChild(el("div", "title", "Consumer and retail: Malaysia, Thailand, Singapore, Australia"));
-top.appendChild(el("p", "lede", "Consumer, retail and food-and-drink news dated in the last 2 weeks (30 Sep–14 Oct 2026). Malaysia and Thailand have items in this window. Nothing dated in the window was found for Singapore or Australia."));
-root.appendChild(top);
-
-MARKETS.forEach(m => {
-  const c = el("section", "card");
-  const items = ITEMS.filter(i => i.market === m.name);
-  const h = el("div", "head"); h.appendChild(el("h3", null, m.name)); h.appendChild(el("span", "pill", items.length ? `${items.length} item${items.length>1?"s":""}` : "Gap")); c.appendChild(h);
-  if (!items.length) c.appendChild(el("p", "gap", m.note));
-  items.forEach(i => {
-    const it = el("div", "item");
-    const chips = el("div", "chips");
-    chips.appendChild(el("span", "chip date", i.date));
-    chips.appendChild(el("span", "chip", i.status));
-    it.appendChild(chips);
-    it.appendChild(el("p", "h", i.headline));
-    if (i.why) it.appendChild(el("p", "why", i.why));
-    const src = el("p", "src");
-    if (i.url) { const a = el("a", null, i.source + " ↗"); a.href = i.url; a.target = "_blank"; a.rel = "noopener"; src.appendChild(a); }
-    else src.appendChild(el("span", null, i.source + " · link not recorded"));
-    it.appendChild(src);
-    c.appendChild(it);
-  });
-  root.appendChild(c);
-});
-</script>
+</style></head><body><div class="app"><main class="grid"><section class="card span2"><div class="muted">Wednesday, 14 October 2026 · Window: 30 Sep–14 Oct 2026</div><div class="title">Malaysia, Thailand, Singapore, Australia: consumer, creative and competitors</div><p class="lede">Only items dated in the last 2 weeks. Gaps mean nothing dated was found in the window, not that nothing happened. Nearer-to-window items are noted in the gap text.</p></section><section class="card "><div class="head"><h3>Consumer and retail: Malaysia</h3><span class="pill">2 items</span></div><div class="item"><div class="chips"><span class="chip date">2026-10-12</span><span class="chip">verified, policy context</span></div><p class="h">Seven takeaways from Malaysia Budget 2027 for marketers</p><p class="why">Consumer prices and marketing budgets for 2027 planning</p><p class="src"><span>Marketing-Interactive · link not recorded</span></p></div><div class="item"><div class="chips"><span class="chip date">2026-10-13</span><span class="chip">verified</span></div><p class="h">IKEA Kuching reworks large-format stores for omnichannel shopping</p><p class="why">Store formats are changing; shopping is moving to omnichannel</p><p class="src"><span>Marketing-Interactive · link not recorded</span></p></div></section><section class="card "><div class="head"><h3>Consumer and retail: Thailand</h3><span class="pill">3 items</span></div><div class="item"><div class="chips"><span class="chip date">2026-10-09</span><span class="chip">listed under PR news</span></div><p class="h">Mali Family &amp; Kids Awards 2026 honours brands trusted by mothers</p><p class="why">Parent trust as a brand signal in household categories</p><p class="src"><a href="https://www.nationthailand.com/pr-news/40072063" target="_blank" rel="noopener">Nation Thailand ↗</a></p></div><div class="item"><div class="chips"><span class="chip date">2026-10-08</span><span class="chip">listed under PR news</span></div><p class="h">Decoding NEO: Why FMCG must stay forever young</p><p class="why">Commentary on keeping packaged-goods brands relevant</p><p class="src"><a href="https://www.nationthailand.com/pr-news/40072023" target="_blank" rel="noopener">Nation Thailand ↗</a></p></div><div class="item"><div class="chips"><span class="chip date">2026-10-06</span><span class="chip">verified</span></div><p class="h">Thailand inflation rose to 2.82% in September, highest in five months, driven by fuel</p><p class="why">Central bank expected to hold its 1.0% policy rate through 2026</p><p class="src"><a href="https://www.kaohooninternational.com/?p=592192" target="_blank" rel="noopener">Kaohoon International ↗</a></p></div></section><section class="card "><div class="head"><h3>Consumer and retail: Singapore</h3><span class="pill">Gap</span></div><p class="gap">Nothing dated in the last 2 weeks.</p></section><section class="card "><div class="head"><h3>Consumer and retail: Australia</h3><span class="pill">Gap</span></div><p class="gap">Nothing dated in the last 2 weeks.</p></section><section class="card span2"><div class="head"><h3>Creative and campaigns</h3><span class="pill">Gap</span></div><p class="gap">No dated creative or campaign item in the last 2 weeks for these four markets. Nearest dated items are older: Tourism Malaysia Creator Family (1 Sep 2026), BLWN taking Kia Malaysia creative (29 Jun 2026), ADFEST 2026 results (23 Mar 2026).</p></section><section class="card span2"><div class="head"><h3>Competitor watch</h3><span class="pill">1 move</span></div><div class="item"><div class="chips"><span class="chip date">2026-10-06</span><span class="chip">press release</span></div><p class="h">Calbee launches POP LAYERS multilayer corn snack in Thailand (Salt, Cheese, BBQ), sold first at 7-Eleven</p><p class="why">Snack entrant using Indonesian GuriBee know-how; 7-Eleven as the launch channel</p><p class="src"><a href="https://www.thailand-business-news.com/pr-news/calbee-to-launch-new-asia-oceania-strategic-brand-pop-layers-in-thailand" target="_blank" rel="noopener">Thailand Business News ↗</a></p></div><p class="gap">Jack &#x27;n Jill, Munchy&#x27;s, Oreo / Mondelez, Mister Potato, Pringles: no dated move in the window. The Oreo Thins regional campaign and the URC purchase of Munchy&#x27;s are older (2019 and undated).</p></section></main></div></body></html>
