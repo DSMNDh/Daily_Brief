@@ -1,0 +1,232 @@
+<style>
+#dash-root{--color-bg:#07090F;--color-panel:rgba(22,26,38,.78);--color-border-line:rgba(255,255,255,.07);--color-fg:#EEF1F8;--color-fg-muted:#8A93A8;--color-ok:#4D8DFF;font:15px/1.45 -apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif;color:var(--color-fg);background:radial-gradient(900px 600px at 100% 0%,rgba(77,141,255,.22),transparent 60%),radial-gradient(800px 500px at 100% 100%,rgba(255,140,60,.16),transparent 60%),radial-gradient(700px 500px at 0% 0%,rgba(139,108,255,.12),transparent 60%),linear-gradient(180deg,#0B0E18 0%,#07090F 100%);border-radius:28px;padding:16px;color-scheme:dark}
+#dash-root *{box-sizing:border-box}
+#dash-root .lt{font-size:34px;font-weight:700;letter-spacing:-.02em;margin:0 0 2px;line-height:1.1}
+#dash-root .ls{color:var(--color-fg-muted);font-size:13px;margin:0 0 12px}
+#dash-root .seg{display:flex;background:rgba(22,26,38,.78);border-radius:12px;padding:3px;margin:0 0 12px;gap:2px;overflow-x:auto}
+#dash-root .seg button{flex:1 0 auto;border:0;background:none;font:inherit;font-size:13px;padding:7px 10px;border-radius:9px;color:var(--color-fg-muted);cursor:pointer;white-space:nowrap}
+#dash-root .seg button.on{background:#262B3D;color:var(--color-fg);font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.4)}
+#dash-root .g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:stretch}
+#dash-root .card{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:22px;box-shadow:0 1px 0 rgba(255,255,255,.04) inset;padding:14px 16px;min-width:0}
+#dash-root .card{display:flex;flex-direction:column;min-width:0}
+#dash-root .card.wide{grid-column:1/-1}
+#dash-root .card > .donut,#dash-root .card > .bars{flex:1}
+#dash-root .card > .donut{justify-content:center}
+#dash-root .card > .bars{justify-content:center}
+#dash-root .card h2{font-size:12px;font-weight:600;color:var(--color-fg-muted);text-transform:uppercase;letter-spacing:.05em;margin:0 0 10px}
+#dash-root .kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+#dash-root .kpi{border-radius:18px;padding:12px;color:#fff;min-width:0}
+#dash-root .kpi .n{font-size:28px;font-weight:700;line-height:1}
+#dash-root .kpi .l{font-size:11px;opacity:.92;margin-top:6px;line-height:1.25}
+#dash-root .donut{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+#dash-root .donut svg{flex-shrink:0}
+#dash-root .leg{display:flex;flex-direction:column;gap:8px;min-width:0;flex:1}
+#dash-root .leg div{display:flex;align-items:center;gap:8px;font-size:13px}
+#dash-root .dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+#dash-root .bars{display:flex;flex-direction:column;gap:10px}
+#dash-root .bar .top{display:flex;justify-content:space-between;font-size:13px;margin-bottom:5px}
+#dash-root .bar .top b{font-weight:600}
+#dash-root .track{height:10px;border-radius:6px;background:var(--color-bg);overflow:hidden}
+#dash-root .fill{height:100%;border-radius:6px;width:0;transition:width .8s cubic-bezier(.2,.8,.2,1)}
+#dash-root .tl{position:relative;height:64px;margin:4px 6px 2px;flex:none}
+#dash-root .tl .axis{position:absolute;left:0;right:0;top:24px;height:2px;background:var(--color-border-line);border-radius:2px}
+#dash-root .tl .pt{position:absolute;top:13px;width:22px;height:22px;margin-left:-11px;border-radius:50%;border:3px solid var(--color-panel);cursor:default}
+#dash-root .tl .lab{position:absolute;top:0;font-size:10px;color:var(--color-fg-muted);transform:translateX(-50%);white-space:nowrap}
+#dash-root .tl .edge{position:absolute;top:44px;font-size:10px;color:var(--color-fg-muted)}
+#dash-root .sec{font-size:12px;font-weight:600;color:var(--color-fg-muted);text-transform:uppercase;letter-spacing:.05em;margin:18px 2px 10px}
+#dash-root .list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#dash-root .item{display:flex;gap:12px;align-items:flex-start;padding:14px;background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:20px;min-width:0}
+#dash-root .ico{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;flex-shrink:0;color:#fff;font-size:15px;font-weight:700}
+#dash-root .body{min-width:0;flex:1}
+#dash-root .meta{font-size:11px;color:var(--color-fg-muted);display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+#dash-root .pill{font-size:10px;padding:2px 8px;border-radius:999px;background:var(--color-bg);color:var(--color-fg-muted);font-weight:600}
+#dash-root .pill.hot{background:rgba(255,164,58,.14);color:#FFA43A}
+#dash-root .h{font-weight:700;font-size:14px;line-height:1.35;margin:5px 0 0;overflow-wrap:anywhere}
+@media(max-width:640px){#dash-root .list{grid-template-columns:minmax(0,1fr)}}
+#dash-root .bk .tn{min-height:78px;padding:10px 12px;border-radius:14px;background:rgba(255,164,58,.12);margin-bottom:4px;display:flex;flex-direction:column;justify-content:center}
+#dash-root .bk .tr{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--color-border-line)}
+#dash-root .bk .tr .mk{width:6px;height:6px;border-radius:50%;background:#FFA43A;margin-top:7px;flex-shrink:0}
+#dash-root .bk .tx{min-width:0;display:flex;flex-direction:column;gap:2px}
+#dash-root .bk .tr .d{font-size:10.5px;font-weight:500;color:var(--color-fg-muted);letter-spacing:.01em}
+#dash-root .bk .tr .hl{font-size:12.5px;font-weight:700;line-height:1.35;overflow-wrap:anywhere}
+#dash-root .bk .tr.muted{color:var(--color-fg-muted);font-weight:500;border-top:0}
+#dash-root .buckets{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+#dash-root .bk{border-radius:20px;padding:14px;background:var(--color-bg);border:1px solid var(--color-border-line);min-width:0;display:flex;flex-direction:column}
+#dash-root .bk .hd{display:flex;justify-content:space-between;align-items:center;gap:6px;margin-bottom:12px}
+#dash-root .bk .nm{font-size:15px;font-weight:700;letter-spacing:-.01em}
+#dash-root .bk .cc{font-size:10px;font-weight:600;padding:3px 8px;border-radius:999px;background:rgba(77,141,255,.18);color:#4D8DFF;letter-spacing:.04em}
+#dash-root .bk .lbl{font-size:9.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:#FFA43A;margin-bottom:3px}
+#dash-root .bk .th{font-size:13px;font-weight:700;line-height:1.3;overflow-wrap:anywhere}
+@media(max-width:640px){#dash-root .buckets{grid-template-columns:repeat(2,minmax(0,1fr))}}
+#dash-root .item:first-child{border-top:0}
+#dash-root .pill.hot{background:rgba(255,164,58,.16);color:#FFA43A;font-weight:600}
+#dash-root details{margin-top:8px}
+#dash-root summary{font-size:13px;color:var(--color-ok);cursor:pointer;list-style:none;font-weight:500}
+#dash-root summary::-webkit-details-marker{display:none}
+#dash-root .more{font-size:13px;color:var(--color-fg-muted);margin-top:8px;overflow-wrap:anywhere}
+#dash-root .more .idea{margin-top:8px;padding:8px 10px;border-radius:12px;background:var(--color-bg);color:var(--color-fg)}
+#dash-root .more a{color:var(--color-fg);text-decoration:underline}
+#dash-root .empty{color:var(--color-fg-muted);padding:20px;text-align:center}
+@media(max-width:640px){#dash-root .lt{font-size:28px}#dash-root .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}#dash-root .g{grid-template-columns:minmax(0,1fr)}}
+</style>
+<div id="dash-root">
+  <div class="lt">Briefing</div>
+  <p class="ls" id="sub">Creative and marketing team</p>
+  <div class="seg" id="seg"></div>
+  <div class="g">
+    <section class="card wide"><h2>At a glance</h2><div class="kpis" id="kpis"></div></section>
+    <section class="card"><h2>What we're tracking</h2><div class="donut" id="donut"></div></section>
+    <section class="card"><h2>Coverage by market</h2><div class="bars" id="bars"></div></section>
+    <section class="card wide"><h2>Timeline · last 14 days</h2><div class="tl" id="tl"></div></section>
+  </div>
+  <section class="card wide" style="margin-top:10px"><h2>Trends by country</h2><div class="buckets" id="buckets"></div></section>
+  <section class="card wide" style="margin-top:10px"><h2>Top KOLs by country</h2><div class="buckets" id="kols"></div></section>
+  <h2 class="sec">Items</h2>
+  <div class="list" id="list"></div>
+</div>
+<script>
+(function () {
+  var ORDER = ["Consumer and retail", "Market trends", "Top KOLs", "Competitor watch", "Social trends", "Inspiration"];
+  var COL = {"Consumer and retail": "#4D8DFF", "Market trends": "#7FB0FF", "Top KOLs": "#8B6CFF", "Competitor watch": "#FFA43A", "Social trends": "#5EE0C4", "Inspiration": "#34D399"};
+  var ICO = {"Consumer and retail": "C", "Market trends": "◎", "Top KOLs": "★", "Competitor watch": "!", "Social trends": "#", "Inspiration": "★"};
+  var MK = ["Malaysia", "Thailand", "Singapore", "Australia"];
+  var WIN_END = Date.UTC(2026, 9, 14), WIN_START = Date.UTC(2026, 8, 30);
+  var active = "All";
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+  function safeUrl(u) { return /^https?:\/\//i.test(String(u || "")) ? String(u) : ""; }
+  function dayMs(s) { var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(s || "")); return m ? Date.UTC(+m[1], +m[2] - 1, +m[3]) : null; }
+  function fmt(ms) { var d = new Date(ms); return d.getUTCDate() + " " + ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][d.getUTCMonth()]; }
+
+  function donut(counts, total) {
+    var r = 46, c = 2 * Math.PI * r, off = 0, parts = "";
+    ORDER.forEach(function (s) {
+      var n = counts[s] || 0; if (!n || !total) return;
+      var len = c * n / total;
+      parts += '<circle cx="60" cy="60" r="' + r + '" fill="none" stroke="' + COL[s] + '" stroke-width="16" stroke-dasharray="' + (len - 2).toFixed(2) + ' ' + c.toFixed(2) + '" stroke-dashoffset="' + (-off).toFixed(2) + '" transform="rotate(-90 60 60)"/>';
+      off += len;
+    });
+    return '<svg width="120" height="120" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="' + r + '" fill="none" stroke="rgba(127,127,127,.15)" stroke-width="16"/>' + parts + '<text x="60" y="58" text-anchor="middle" font-size="22" font-weight="700" fill="currentColor">' + total + '</text><text x="60" y="74" text-anchor="middle" font-size="10" fill="currentColor" opacity=".6">items</text></svg>';
+  }
+
+  function render() {
+    var d = dash.data("briefing");
+    var list = document.getElementById("list"), seg = document.getElementById("seg");
+    var kpis = document.getElementById("kpis"), donutEl = document.getElementById("donut");
+    var bars = document.getElementById("bars"), tl = document.getElementById("tl");
+    list.textContent = ""; seg.textContent = ""; kpis.textContent = ""; donutEl.textContent = ""; bars.textContent = ""; tl.textContent = "";
+    if (d.status !== "ok") { list.appendChild(el("p", "empty", d.status === "loading" ? "Loading…" : "Briefing data did not load.")); return; }
+    var rows = Array.isArray(d.data) ? d.data : [];
+    var total = rows.length;
+    var counts = {}; ORDER.forEach(function (s) { counts[s] = rows.filter(function (r) { return r.section === s; }).length; });
+    var linked = rows.filter(function (r) { return safeUrl(r.url); }).length;
+    var mkCount = {}; MK.forEach(function (m) { mkCount[m] = rows.filter(function (r) { return r.market === m; }).length; });
+    var maxMk = Math.max(1, Math.max.apply(null, MK.map(function (m) { return mkCount[m]; })));
+
+    // Sub-title
+    document.getElementById("sub").textContent = total + " items · Malaysia, Thailand, Singapore, Australia";
+
+    // KPIs
+    [[total, "Items in window", "#4D8DFF"], [counts["Competitor watch"], "Competitor moves", "#FFA43A"], [counts["Inspiration"], "Ideas to borrow", "#4D8DFF"], [linked, "With source link", "#5EE0C4"]].forEach(function (k) {
+      var t = el("div", "kpi"); t.style.background = k[2];
+      t.appendChild(el("div", "n", String(k[0]))); t.appendChild(el("div", "l", k[1])); kpis.appendChild(t);
+    });
+
+    // Donut
+    donutEl.insertAdjacentHTML("beforeend", donut(counts, total));
+    var leg = el("div", "leg");
+    ORDER.forEach(function (s) { var r = el("div"); var dt = el("span", "dot"); dt.style.background = COL[s]; r.appendChild(dt); r.appendChild(el("span", null, s)); r.appendChild(el("b", null, String(counts[s]))); leg.appendChild(r); });
+    donutEl.appendChild(leg);
+
+    // Market bars
+    MK.forEach(function (m) {
+      var b = el("div", "bar"); var top = el("div", "top"); top.appendChild(el("span", null, m)); top.appendChild(el("b", null, String(mkCount[m]))); b.appendChild(top);
+      var tr = el("div", "track"); var f = el("div", "fill"); f.style.background = "linear-gradient(90deg,#4D8DFF,#FFA43A)"; tr.appendChild(f); b.appendChild(tr);
+      bars.appendChild(b);
+      requestAnimationFrame(function () { f.style.width = (mkCount[m] / maxMk * 100).toFixed(0) + "%"; });
+    });
+
+    // Timeline (dated items only)
+    var dated = rows.map(function (r) { return { r: r, t: dayMs(r.date) }; }).filter(function (x) { return x.t !== null && x.t >= WIN_START && x.t <= WIN_END; });
+    var span = WIN_END - WIN_START;
+    var axis = el("div", "axis"); tl.appendChild(axis);
+    dated.forEach(function (x, i) {
+      var p = el("div", "pt"); p.style.left = ((x.t - WIN_START) / span * 100).toFixed(1) + "%";
+      p.style.top = "13px"; p.style.background = COL[x.r.section] || "#888";
+      p.title = fmt(x.t) + " · " + (x.r.headline || "");
+      tl.appendChild(p);
+    });
+    var s1 = el("div", "edge", "30 Sep"); s1.style.left = "0"; tl.appendChild(s1);
+    var s2 = el("div", "edge", "14 Oct"); s2.style.right = "0"; tl.appendChild(s2);
+    var mid = el("div", "lab", "7 Oct"); mid.style.left = "50%"; mid.style.top = "44px"; tl.appendChild(mid);
+    if (!dated.length) tl.appendChild(el("p", "empty", "No dated items in this window."));
+
+    // Country trend buckets
+    var bk = document.getElementById("buckets"); bk.textContent = "";
+    var CODE = {"Malaysia": "MY", "Singapore": "SG", "Thailand": "TH", "Australia": "AU"};
+    var isTop = function (r) { return /^Top news/.test(r.date_status || ""); };
+    MK.forEach(function (m) {
+      var tr = rows.filter(function (r) { return r.section === "Market trends" && r.market === m; });
+      var top = tr.filter(isTop)[0];
+      var rest = tr.filter(function (r) { return r !== top; });
+      var b = el("div", "bk");
+      var hd = el("div", "hd"); hd.appendChild(el("span", "nm", m)); b.appendChild(hd);
+      if (top) {
+        var tn = el("div", "tn"); tn.appendChild(el("div", "lbl", "Top news")); tn.appendChild(el("div", "th", top.headline || "")); b.appendChild(tn);
+      }
+      rest.forEach(function (r) {
+        var row = el("div", "tr"); row.appendChild(el("span", "mk"));
+        var txt = el("div", "tx"); txt.appendChild(el("span", "d", r.date || "")); txt.appendChild(el("span", "hl", r.headline || "")); row.appendChild(txt);
+        b.appendChild(row);
+      });
+      if (!tr.length) b.appendChild(el("div", "tr muted", "No trend found yet"));
+      bk.appendChild(b);
+    });
+
+    // Top KOLs by country
+    var kb = document.getElementById("kols"); kb.textContent = "";
+    MK.forEach(function (m) {
+      var ks = rows.filter(function (r) { return r.section === "Top KOLs" && r.market === m; });
+      var b = el("div", "bk");
+      var hd = el("div", "hd"); hd.appendChild(el("span", "nm", m)); b.appendChild(hd);
+      if (!ks.length) b.appendChild(el("div", "tr muted", "No ranking found"));
+      ks.forEach(function (r) {
+        var row = el("div", "tr"); row.appendChild(el("span", "mk"));
+        var txt = el("div", "tx"); txt.appendChild(el("span", "d", (r.source || "") + " · " + (r.date_status || ""))); txt.appendChild(el("span", "hl", r.headline || "")); row.appendChild(txt);
+        b.appendChild(row);
+      });
+      kb.appendChild(b);
+    });
+
+    // Filter
+    ["All"].concat(ORDER).forEach(function (name) {
+      var b = el("button", active === name ? "on" : "", name);
+      b.type = "button";
+      b.addEventListener("click", function () { active = name; render(); });
+      seg.appendChild(b);
+    });
+
+    // List
+    var shown = rows.filter(function (r) { return active === "All" || r.section === active; });
+    if (!shown.length) { list.appendChild(el("p", "empty", "Nothing in this section.")); return; }
+    shown.forEach(function (r) {
+      var item = el("div", "item");
+      var ico = el("div", "ico", ICO[r.section] || "•"); ico.style.background = COL[r.section] || "#8E8E93"; item.appendChild(ico);
+      var body = el("div", "body");
+      var meta = el("div", "meta");
+      meta.appendChild(el("span", null, r.date || "")); if (r.market) meta.appendChild(el("span", "pill", r.market));
+      if (r.date_status) meta.appendChild(el("span", /unconfirmed|month|background/i.test(r.date_status) ? "pill hot" : "pill", r.date_status));
+      body.appendChild(meta);
+      body.appendChild(el("p", "h", r.headline || ""));
+      var det = el("details"); det.appendChild(el("summary", null, "Details"));
+      var more = el("div", "more");
+      if (r.why) more.appendChild(el("div", null, r.why));
+      if (r.idea) { var i = el("div", "idea"); i.appendChild(el("b", null, "Idea: ")); i.appendChild(document.createTextNode(r.idea)); more.appendChild(i); }
+      var u = safeUrl(r.url); var src = el("div", null, (r.source || "Source") + (u ? "" : " · link not recorded"));
+      if (u) { src.textContent = ""; var a = el("a", null, (r.source || "Source") + " ↗"); a.href = u; a.target = "_blank"; a.rel = "noopener"; src.appendChild(a); }
+      more.appendChild(src); det.appendChild(more); body.appendChild(det);
+      item.appendChild(body); list.appendChild(item);
+    });
+  }
+  dash.onData(render);
+})();
+</script>
