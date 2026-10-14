@@ -1,0 +1,98 @@
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Mamee Consumer and Retail Briefing</title>
+<style>
+  :root {
+    --bg: #07090F; --panel: rgba(22,26,38,0.78); --panel-line: rgba(255,255,255,0.07);
+    --fg: #EEF1F8; --muted: #8A93A8; --dim: #5C6478;
+    --blue: #4D8DFF; --violet: #8B6CFF; --amber: #FFA43A;
+    --chip: rgba(127,127,127,0.14);
+    color-scheme: dark;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #EEF1F8; --panel: rgba(255,255,255,0.86); --panel-line: rgba(20,30,60,0.10);
+      --fg: #161B28; --muted: #5F6779; --dim: #8A92A4; --chip: rgba(20,30,60,0.07); color-scheme: light;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #EEF1F8; --panel: rgba(255,255,255,0.86); --panel-line: rgba(20,30,60,0.10);
+    --fg: #161B28; --muted: #5F6779; --dim: #8A92A4; --chip: rgba(20,30,60,0.07); color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; color: var(--fg); background: var(--bg);
+    background-image: radial-gradient(1200px 700px at 100% 0%, rgba(255,140,60,0.16), transparent 60%),
+                      radial-gradient(900px 600px at 0% 0%, rgba(77,141,255,0.20), transparent 60%);
+    font: 14px/1.5 system-ui, -apple-system, "Inter", sans-serif;
+    padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  a { color: var(--blue); text-decoration: none; overflow-wrap: anywhere; }
+  a:hover { text-decoration: underline; }
+  .app { max-width: 1180px; margin: 0 auto; padding-block: 28px 40px; }
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; min-width: 0; }
+  .card { background: var(--panel); border: 1px solid var(--panel-line); border-radius: 20px; padding: 20px 22px; min-width: 0; backdrop-filter: blur(12px); }
+  .head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; gap: 10px; }
+  .head h3 { margin: 0; font-size: 14px; font-weight: 600; }
+  .pill { font-size: 12px; color: var(--muted); background: var(--chip); padding: 4px 10px; border-radius: 999px; white-space: nowrap; }
+  .span2 { grid-column: span 2; }
+  .muted { color: var(--muted); font-size: 12px; }
+  .title { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; margin: 4px 0 8px; }
+  .lede { color: var(--muted); max-width: 760px; }
+  .gap { color: var(--amber); font-size: 13px; margin: 0; }
+  .item { padding: 12px 0; border-top: 1px solid var(--panel-line); min-width: 0; }
+  .item:first-of-type { border-top: 0; padding-top: 0; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; }
+  .chip { font-size: 11px; background: var(--chip); color: var(--muted); padding: 2px 8px; border-radius: 999px; }
+  .chip.date { color: var(--fg); font-weight: 600; }
+  .h { font-weight: 600; overflow-wrap: anywhere; margin: 0 0 4px; }
+  .why { color: var(--muted); font-size: 13px; margin: 0 0 6px; overflow-wrap: anywhere; }
+  .src { font-size: 12px; }
+  .src span { color: var(--dim); }
+  @media (max-width: 760px) {
+    .grid { grid-template-columns: minmax(0, 1fr); }
+    .span2 { grid-column: auto; }
+    .app { padding-block: 16px 28px; }
+  }
+</style>
+
+<div class="app"><main class="grid" id="root"></main></div>
+
+<script>
+const ITEMS = [{"market": "Malaysia", "date": "2026-10-12", "status": "verified, policy context", "headline": "Seven takeaways from Malaysia Budget 2027 for marketers", "why": "Consumer prices and marketing budgets for 2027 planning", "source": "Marketing-Interactive", "url": ""}, {"market": "Malaysia", "date": "2026-10-13", "status": "verified", "headline": "IKEA Kuching reworks large-format stores for omnichannel shopping", "why": "Store formats are changing; shopping is moving to omnichannel", "source": "Marketing-Interactive", "url": ""}, {"market": "Thailand", "date": "2026-10-09", "status": "listed under PR news", "headline": "Mali Family & Kids Awards 2026 honours brands trusted by mothers", "why": "Parent trust as a brand signal in household categories", "source": "Nation Thailand", "url": "https://www.nationthailand.com/pr-news/40072063"}, {"market": "Thailand", "date": "2026-10-08", "status": "listed under PR news", "headline": "Decoding NEO: Why FMCG must stay forever young", "why": "Commentary on keeping packaged-goods brands relevant", "source": "Nation Thailand", "url": "https://www.nationthailand.com/pr-news/40072023"}, {"market": "Thailand", "date": "2026-10-06", "status": "press release", "headline": "Calbee launches POP LAYERS multilayer corn snack in Thailand (Salt, Cheese, BBQ), sold first at 7-Eleven", "why": "Snack entrant using Indonesian GuriBee know-how; 7-Eleven as the launch channel", "source": "Thailand Business News", "url": "https://www.thailand-business-news.com/pr-news/calbee-to-launch-new-asia-oceania-strategic-brand-pop-layers-in-thailand"}, {"market": "Thailand", "date": "2026-10-06", "status": "verified", "headline": "Thailand inflation rose to 2.82% in September, highest in five months, driven by fuel", "why": "Central bank expected to hold its 1.0% policy rate through 2026", "source": "Kaohoon International", "url": "https://www.kaohooninternational.com/?p=592192"}];
+const MARKETS = [
+  {name: "Malaysia", note: "Two items in the window."},
+  {name: "Thailand", note: "Four items in the window. Two are press releases or PR news."},
+  {name: "Singapore", note: "Nothing dated in the last 2 weeks."},
+  {name: "Australia", note: "Nothing dated in the last 2 weeks."}
+];
+function el(tag, cls, text) { const n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+const root = document.getElementById("root");
+
+const top = el("section", "card span2");
+top.appendChild(el("div", "muted", "Wednesday, 14 October 2026 · Window: 30 Sep–14 Oct 2026"));
+top.appendChild(el("div", "title", "Consumer and retail: Malaysia, Thailand, Singapore, Australia"));
+top.appendChild(el("p", "lede", "Consumer, retail and food-and-drink news dated in the last 2 weeks (30 Sep–14 Oct 2026). Malaysia and Thailand have items in this window. Nothing dated in the window was found for Singapore or Australia."));
+root.appendChild(top);
+
+MARKETS.forEach(m => {
+  const c = el("section", "card");
+  const items = ITEMS.filter(i => i.market === m.name);
+  const h = el("div", "head"); h.appendChild(el("h3", null, m.name)); h.appendChild(el("span", "pill", items.length ? `${items.length} item${items.length>1?"s":""}` : "Gap")); c.appendChild(h);
+  if (!items.length) c.appendChild(el("p", "gap", m.note));
+  items.forEach(i => {
+    const it = el("div", "item");
+    const chips = el("div", "chips");
+    chips.appendChild(el("span", "chip date", i.date));
+    chips.appendChild(el("span", "chip", i.status));
+    it.appendChild(chips);
+    it.appendChild(el("p", "h", i.headline));
+    if (i.why) it.appendChild(el("p", "why", i.why));
+    const src = el("p", "src");
+    if (i.url) { const a = el("a", null, i.source + " ↗"); a.href = i.url; a.target = "_blank"; a.rel = "noopener"; src.appendChild(a); }
+    else src.appendChild(el("span", null, i.source + " · link not recorded"));
+    it.appendChild(src);
+    c.appendChild(it);
+  });
+  root.appendChild(c);
+});
+</script>
