@@ -1,0 +1,242 @@
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Dark Glass Dashboard UI</title>
+<style>
+  :root {
+    --bg: #07090F; --panel: rgba(22,26,38,0.78); --panel-line: rgba(255,255,255,0.07);
+    --fg: #EEF1F8; --muted: #8A93A8; --dim: #5C6478;
+    --blue: #4D8DFF; --violet: #8B6CFF; --amber: #FFA43A; --green: #3DDC97; --red: #FF5C6C;
+    --glow: rgba(77,141,255,0.25);
+    color-scheme: dark;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #EEF1F8; --panel: rgba(255,255,255,0.86); --panel-line: rgba(20,30,60,0.10);
+      --fg: #161B28; --muted: #5F6779; --dim: #8A92A4; --glow: rgba(77,141,255,0.15); color-scheme: light;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #EEF1F8; --panel: rgba(255,255,255,0.86); --panel-line: rgba(20,30,60,0.10);
+    --fg: #161B28; --muted: #5F6779; --dim: #8A92A4; --glow: rgba(77,141,255,0.15); color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; color: var(--fg);
+    background: radial-gradient(1200px 700px at 100% 0%, rgba(255,140,60,0.18), transparent 60%),
+                radial-gradient(900px 600px at 0% 0%, rgba(77,141,255,0.22), transparent 60%), var(--bg);
+    font: 14px/1.5 system-ui, -apple-system, "Inter", sans-serif;
+    padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  .app { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; max-width: 1180px; margin: 0 auto; padding-block: 28px 40px; }
+  .rail { background: var(--panel); border: 1px solid var(--panel-line); border-radius: 22px; padding: 18px 0;
+    display: flex; flex-direction: column; align-items: center; gap: 18px; position: sticky; top: 16px; align-self: start; height: calc(100vh - 56px); min-height: 560px; backdrop-filter: blur(12px); }
+  .rail .ico { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; color: var(--muted); }
+  .rail .ico.on { background: var(--blue); color: #fff; box-shadow: 0 8px 22px var(--glow); }
+  .rail .spacer { flex: 1; }
+  .rail .who { font-size: 11px; color: var(--muted); display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .rail .avatar { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, var(--blue), var(--violet)); }
+  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; min-width: 0; }
+  .card { background: var(--panel); border: 1px solid var(--panel-line); border-radius: 20px; padding: 20px 22px; min-width: 0; backdrop-filter: blur(12px); position: relative; overflow: hidden; }
+  .card h3 { margin: 0; font-size: 14px; font-weight: 600; }
+  .card .head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; gap: 10px; }
+  .pill { font-size: 12px; color: var(--muted); background: rgba(127,127,127,0.12); padding: 4px 10px; border-radius: 999px; white-space: nowrap; }
+  .span2 { grid-column: span 2; }
+  .muted { color: var(--muted); font-size: 12px; }
+  .big { font-size: 40px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.05; }
+  .greet .name { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; margin-top: 4px; }
+  .greet .time { position: absolute; right: 22px; top: 20px; background: rgba(127,127,127,0.14); padding: 6px 12px; border-radius: 999px; font-size: 13px; }
+  .greet .sub { color: var(--muted); margin-top: 10px; max-width: 220px; }
+  .greet svg { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 110px; opacity: 0.9; }
+  .weather .temp { font-size: 46px; font-weight: 600; }
+  .weather .hl { display: flex; gap: 14px; margin-top: 12px; font-size: 13px; color: var(--muted); }
+  .ring-wrap { display: flex; align-items: center; gap: 22px; }
+  .ring { width: 140px; height: 140px; flex-shrink: 0; }
+  .stats { display: flex; gap: 28px; margin-top: 22px; }
+  .stats .k { font-size: 12px; color: var(--muted); }
+  .stats .v { font-size: 22px; font-weight: 600; }
+  .timer { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .timer .face { width: 170px; height: 170px; position: relative; }
+  .timer .face .t { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .timer .face .t b { font-size: 26px; font-weight: 600; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; border: 0; padding: 9px 22px; border-radius: 999px; background: rgba(77,141,255,0.18); color: var(--fg); font: inherit; font-size: 13px; cursor: pointer; }
+  .btn::before { content: ""; border-left: 8px solid var(--blue); border-top: 5px solid transparent; border-bottom: 5px solid transparent; }
+  .task { display: flex; align-items: center; gap: 12px; padding: 11px 0; border-top: 1px solid var(--panel-line); }
+  .task:first-of-type { border-top: 0; }
+  .check { width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid var(--dim); display: grid; place-items: center; flex-shrink: 0; font-size: 11px; color: #fff; }
+  .check.done { background: var(--blue); border-color: var(--blue); }
+  .task .name { flex: 1; min-width: 0; }
+  .task .state { font-size: 12px; color: var(--dim); }
+  .task .state.prog { color: var(--amber); }
+  .mood-val { color: var(--blue); font-size: 17px; font-weight: 600; }
+  .bars { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; align-items: end; height: 170px; margin-top: 12px; position: relative; }
+  .bar { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; gap: 8px; }
+  .bar .track { width: 8px; height: 100%; border-radius: 6px; background: rgba(127,127,127,0.12); position: relative; overflow: hidden; }
+  .bar .fill { position: absolute; left: 0; right: 0; bottom: 0; border-radius: 6px; background: linear-gradient(180deg, #7FB0FF, var(--blue)); }
+  .bar.on .fill { background: linear-gradient(180deg, #9EC5FF, var(--blue)); box-shadow: 0 0 14px var(--glow); }
+  .bar span { font-size: 11px; color: var(--muted); }
+  .bar.on span { color: var(--fg); font-weight: 600; }
+  .tip { position: absolute; background: #1F2535; color: #fff; font-size: 11px; padding: 3px 8px; border-radius: 8px; }
+  .shortcuts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .sc { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 6px; border-radius: 14px; background: rgba(127,127,127,0.08); font-size: 11px; color: var(--muted); }
+  .sc i { width: 26px; height: 26px; border-radius: 8px; background: linear-gradient(135deg, rgba(77,141,255,0.5), rgba(139,108,255,0.5)); display: block; }
+  .event { display: grid; grid-template-columns: 52px minmax(0,1fr) auto; gap: 12px; align-items: center; padding: 12px 0; border-top: 1px solid var(--panel-line); }
+  .event:first-of-type { border-top: 0; }
+  .event .d { text-align: center; font-size: 11px; color: var(--muted); line-height: 1.2; }
+  .event .d b { display: block; font-size: 18px; color: var(--fg); }
+  .event .t { font-weight: 600; }
+  .event .dot { width: 9px; height: 9px; border-radius: 50%; }
+  .status .ring { width: 150px; height: 150px; margin: 4px auto 14px; display: block; }
+  .meter { display: grid; grid-template-columns: 70px 1fr 40px; gap: 10px; align-items: center; font-size: 12px; color: var(--muted); padding: 6px 0; }
+  .meter .bar2 { height: 4px; border-radius: 4px; background: rgba(127,127,127,0.18); overflow: hidden; }
+  .meter .bar2 i { display: block; height: 100%; background: linear-gradient(90deg, var(--blue), var(--violet)); border-radius: 4px; }
+  .meter em { font-style: normal; text-align: right; color: var(--fg); }
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .span2 { grid-column: span 2; }
+  }
+  @media (max-width: 620px) {
+    .app { grid-template-columns: minmax(0, 1fr); padding-block: 16px 28px; }
+    .rail { flex-direction: row; height: auto; min-height: 0; position: static; padding: 10px 14px; border-radius: 18px; justify-content: space-between; }
+    .rail .spacer { display: none; }
+    .rail .who { flex-direction: row; }
+    .grid { grid-template-columns: minmax(0, 1fr); }
+    .span2 { grid-column: auto; }
+  }
+</style>
+
+<div class="app">
+  <nav class="rail" aria-label="Sidebar">
+    <div class="ico on" title="Home"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 3 10.5h2.5V20h5v-5.5h3V20h5v-9.5H21z"/></svg></div>
+    <div class="ico" title="Apps"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg></div>
+    <div class="ico" title="Analytics"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17l6-6 4 4 8-8"/></svg></div>
+    <div class="ico" title="Calendar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
+    <div class="ico" title="Files"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 6a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+    <div class="ico" title="Settings"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1.2l2-1.5-2-3.4-2.4 1a7 7 0 0 0-2-1.2L14 3h-4l-.5 2.7a7 7 0 0 0-2 1.2l-2.4-1-2 3.4 2 1.5A7 7 0 0 0 5 12c0 .4 0 .8.1 1.2l-2 1.5 2 3.4 2.4-1a7 7 0 0 0 2 1.2L10 21h4l.5-2.7a7 7 0 0 0 2-1.2l2.4 1 2-3.4-2-1.5c.1-.4.1-.8.1-1.2z"/></svg></div>
+    <div class="spacer"></div>
+    <div class="who"><span>Light</span><span class="ico" style="width:auto;height:auto;color:var(--muted)">☼</span></div>
+    <div class="who"><span class="avatar"></span><span>Aaru ›</span></div>
+  </nav>
+
+  <main class="grid">
+    <section class="card greet span2" style="min-height:230px">
+      <div class="muted">Good Evening,</div>
+      <div class="name">Aaru</div>
+      <div class="sub">Stay focused and make it happen.</div>
+      <span class="time">07:45 PM</span>
+      <svg viewBox="0 0 600 110" preserveAspectRatio="none" aria-hidden="true">
+        <defs><linearGradient id="wg" x1="0" x2="1"><stop offset="0" stop-color="#4D8DFF" stop-opacity="0"/><stop offset=".5" stop-color="#4D8DFF"/><stop offset="1" stop-color="#8B6CFF" stop-opacity=".2"/></linearGradient></defs>
+        <path d="M0 80 C60 60 90 30 140 50 S220 90 270 55 S350 20 400 40 S470 80 520 45 S580 30 600 35" fill="none" stroke="url(#wg)" stroke-width="2.2"/>
+        <g fill="#4D8DFF"><circle cx="140" cy="50" r="3"/><circle cx="270" cy="55" r="3"/><circle cx="400" cy="40" r="3"/><circle cx="520" cy="45" r="3"/></g>
+      </svg>
+    </section>
+
+    <section class="card weather">
+      <div class="head"><span class="muted">May 24, 2025</span></div>
+      <div style="font-size:14px;color:var(--muted);margin-top:-8px">Saturday</div>
+      <div style="display:flex;align-items:center;gap:14px;margin-top:14px">
+        <svg width="52" height="44" viewBox="0 0 52 44" aria-hidden="true"><circle cx="30" cy="16" r="9" fill="#FFB347"/><path d="M12 36a8 8 0 0 1 2-15.6A11 11 0 0 1 36 22a7 7 0 0 1 2 14z" fill="#9FB8D8"/></svg>
+        <div><div class="temp" style="font-size:40px;font-weight:600">27°</div><div class="muted">Cloudy</div></div>
+      </div>
+      <div class="hl"><span>H: 31°</span><span>L: 21°</span></div>
+    </section>
+
+    <section class="card span2">
+      <div class="head"><h3>Productivity</h3><span class="pill">Today ▾</span></div>
+      <div class="ring-wrap">
+        <div>
+          <div class="big">78%</div>
+          <div class="muted" style="margin-top:6px">Great Progress!</div>
+        </div>
+        <svg class="ring" viewBox="0 0 140 140" aria-label="78 percent">
+          <defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4D8DFF"/><stop offset="1" stop-color="#8B6CFF"/></linearGradient></defs>
+          <circle cx="70" cy="70" r="58" fill="none" stroke="rgba(127,127,127,0.14)" stroke-width="12"/>
+          <circle cx="70" cy="70" r="58" fill="none" stroke="url(#rg)" stroke-width="12" stroke-linecap="round" stroke-dasharray="284 364" transform="rotate(-90 70 70)"/>
+        </svg>
+      </div>
+      <div class="stats">
+        <div><div class="k">Tasks Completed</div><div class="v">14</div></div>
+        <div><div class="k">Total Tasks</div><div class="v">18</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="head"><h3>Focus Timer</h3></div>
+      <div class="timer">
+        <div class="face">
+          <svg viewBox="0 0 170 170" width="170" height="170" aria-hidden="true">
+            <defs><linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFA43A"/><stop offset="1" stop-color="#FF6B8A"/></linearGradient></defs>
+            <circle cx="85" cy="85" r="74" fill="none" stroke="rgba(127,127,127,0.16)" stroke-width="10"/>
+            <circle cx="85" cy="85" r="74" fill="none" stroke="url(#fg)" stroke-width="10" stroke-linecap="round" stroke-dasharray="330 465" transform="rotate(-90 85 85)"/>
+          </svg>
+          <div class="t"><b>25:00</b><span class="muted">Deep Work</span></div>
+        </div>
+        <button class="btn">Start</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="head"><h3>Tasks</h3><span class="muted" style="font-size:18px">+</span></div>
+      <div class="task"><span class="check done">✓</span><span class="name">UI/UX Research</span><span class="state">Completed</span></div>
+      <div class="task"><span class="check done">✓</span><span class="name">Design Dashboard</span><span class="state">Completed</span></div>
+      <div class="task"><span class="check"></span><span class="name">Prototype App</span><span class="state prog">In Progress</span></div>
+      <div class="task"><span class="check"></span><span class="name">User Testing</span><span class="state">Pending</span></div>
+    </section>
+
+    <section class="card">
+      <div class="head"><h3>Current Mood</h3></div>
+      <div class="mood-val">Focused</div>
+      <svg viewBox="0 0 300 80" width="100%" height="80" preserveAspectRatio="none" aria-hidden="true" style="margin:8px 0">
+        <defs><linearGradient id="mg" x1="0" x2="1"><stop offset="0" stop-color="#4D8DFF" stop-opacity="0"/><stop offset=".5" stop-color="#4D8DFF"/><stop offset="1" stop-color="#8B6CFF" stop-opacity="0"/></linearGradient></defs>
+        <path d="M0 40 C40 20 70 60 110 40 S180 20 220 42 S270 60 300 36" fill="none" stroke="url(#mg)" stroke-width="2.4"/>
+      </svg>
+      <div class="muted">Distractions</div>
+      <div style="color:var(--green);font-size:13px;margin-top:2px">Low</div>
+    </section>
+
+    <section class="card span2">
+      <div class="head"><h3>Weekly Activity</h3><span class="pill">This Week ▾</span></div>
+      <div class="bars">
+        <div class="tip" style="left:calc(71% - 20px);top:-6px">7.8h</div>
+        <div class="bar"><div class="track"><div class="fill" style="height:38%"></div></div><span>Mon</span></div>
+        <div class="bar"><div class="track"><div class="fill" style="height:34%"></div></div><span>Tue</span></div>
+        <div class="bar"><div class="track"><div class="fill" style="height:40%"></div></div><span>Wed</span></div>
+        <div class="bar"><div class="track"><div class="fill" style="height:44%"></div></div><span>Thu</span></div>
+        <div class="bar"><div class="track"><div class="fill" style="height:58%"></div></div><span>Fri</span></div>
+        <div class="bar on"><div class="track"><div class="fill" style="height:88%"></div></div><span>Sat</span></div>
+        <div class="bar"><div class="track"><div class="fill" style="height:46%"></div></div><span>Sun</span></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="head"><h3>Shortcuts</h3></div>
+      <div class="shortcuts">
+        <div class="sc"><i></i>Notes</div>
+        <div class="sc"><i></i>Files</div>
+        <div class="sc"><i></i>Music</div>
+        <div class="sc"><i></i>Calendar</div>
+        <div class="sc"><i></i>Camera</div>
+        <div class="sc"><i></i>Slack</div>
+      </div>
+    </section>
+
+    <section class="card span2">
+      <div class="head"><h3>Upcoming Events</h3><span class="muted" style="color:var(--blue)">View All</span></div>
+      <div class="event"><div class="d"><b>25</b>MAY</div><div><div class="t">Project Meeting</div><div class="muted">10:00 AM – 11:00 AM</div></div><span class="dot" style="background:var(--blue)"></span></div>
+      <div class="event"><div class="d"><b>26</b>MAY</div><div><div class="t">Design Review</div><div class="muted">02:00 PM – 03:30 PM</div></div><span class="dot" style="background:var(--amber)"></span></div>
+      <div class="event"><div class="d"><b>28</b>MAY</div><div><div class="t">Client Call</div><div class="muted">11:00 AM – 12:00 PM</div></div><span class="dot" style="background:var(--green)"></span></div>
+    </section>
+
+    <section class="card status">
+      <div class="head"><h3>System Status</h3></div>
+      <svg class="ring" viewBox="0 0 150 150" aria-label="92 percent optimal">
+        <defs><linearGradient id="sg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4D8DFF"/><stop offset="1" stop-color="#8B6CFF"/></linearGradient></defs>
+        <circle cx="75" cy="75" r="62" fill="none" stroke="rgba(127,127,127,0.14)" stroke-width="10"/>
+        <circle cx="75" cy="75" r="62" fill="none" stroke="url(#sg)" stroke-width="10" stroke-linecap="round" stroke-dasharray="365 390" transform="rotate(-90 75 75)"/>
+        <text x="75" y="72" text-anchor="middle" font-size="22" font-weight="600" fill="currentColor">92%</text>
+        <text x="75" y="92" text-anchor="middle" font-size="11" fill="#8A93A8">Optimal</text>
+      </svg>
+      <div class="meter"><span>Storage</span><div class="bar2"><i style="width:78%"></i></div><em>78%</em></div>
+      <div class="meter"><span>Battery</span><div class="bar2"><i style="width:82%"></i></div><em>82%</em></div>
+      <div class="meter"><span>Network</span><div class="bar2"><i style="width:94%"></i></div><em>94%</em></div>
+    </section>
+  </main>
+</div>
