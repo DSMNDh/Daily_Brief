@@ -1,6 +1,8 @@
 <style>
 #dash-root{--color-bg:#07090F;--color-panel:rgba(22,26,38,.78);--color-border-line:rgba(255,255,255,.07);--color-fg:#EEF1F8;--color-fg-muted:#8A93A8;--color-ok:#4D8DFF;font:15px/1.45 -apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif;color:var(--color-fg);background:radial-gradient(900px 600px at 100% 0%,rgba(77,141,255,.22),transparent 60%),radial-gradient(800px 500px at 100% 100%,rgba(255,140,60,.16),transparent 60%),radial-gradient(700px 500px at 0% 0%,rgba(139,108,255,.12),transparent 60%),linear-gradient(180deg,#0B0E18 0%,#07090F 100%);border-radius:28px;padding:16px;color-scheme:dark}
 #dash-root *{box-sizing:border-box}
+#dash-root .hdr{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+#dash-root .dt{font-size:13px;font-weight:600;color:var(--color-fg-muted);text-align:right;padding-top:10px;white-space:nowrap}
 #dash-root .lt{font-size:34px;font-weight:700;letter-spacing:-.02em;margin:0 0 2px;line-height:1.1}
 #dash-root .ls{color:var(--color-fg-muted);font-size:13px;margin:0 0 12px}
 #dash-root .seg{display:flex;background:rgba(22,26,38,.78);border-radius:12px;padding:3px;margin:0 0 12px;gap:2px;overflow-x:auto}
@@ -73,8 +75,7 @@
 @media(max-width:640px){#dash-root .lt{font-size:28px}#dash-root .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}#dash-root .g{grid-template-columns:minmax(0,1fr)}}
 </style>
 <div id="dash-root">
-  <div class="lt">Briefing</div>
-  <p class="ls" id="sub">Creative and marketing team</p>
+  <div class="hdr"><div><div class="lt">Briefing</div><p class="ls" id="sub">Creative and marketing team</p></div><div class="dt" id="today"></div></div>
   <div class="seg" id="seg"></div>
   <div class="g">
     <section class="card wide"><h2>At a glance</h2><div class="kpis" id="kpis"></div></section>
@@ -232,6 +233,7 @@
       item.appendChild(body); (colsEl[r.market] || colsEl[MK[0]]).appendChild(item);
     });
   }
+  document.getElementById("today").textContent = new Date().toLocaleDateString("en-GB", {weekday: "long", day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Kuala_Lumpur"});
   dash.onData(render);
 })();
 </script>
